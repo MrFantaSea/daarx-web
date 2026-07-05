@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!-- daarx.money — nothing for sale. not finished. the code will be the truth. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DAARX &amp; L10N</title>
+<meta name="description" content="Private money. Two kinds — one to keep, one to spend. One of them works with no internet. Launching 2028. Nothing for sale.">
+<link rel="canonical" href="https://daarx.money/">
+<style>
+  :root{
+    --bg:#060706;
+    --ink:#e9e9e3;
+    --dim:#5a615a;
+    --faint:#2c312d;
+    --green:#4ae08c;
+    --gold:#d6ab52;
+    --steel:#8b9199;
+    --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--mono);
+    font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
+    letter-spacing:.01em;overflow-x:hidden;
+  }
+  ::selection{background:var(--green);color:var(--bg)}
+
+  /* the only color anywhere: the two coin names */
+  .d{color:var(--green)}
+  .l{color:var(--gold)}
+  .amp{color:var(--steel);font-weight:400}
+
+  .wrap{max-width:56rem;margin:0 auto;padding:0 2rem}
+
+  /* tiny fixed wordmark, top-left */
+  .top{position:fixed;top:0;left:0;right:0;z-index:10;padding:1.6rem 2rem;
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:.82rem;letter-spacing:.06em;
+    background:linear-gradient(180deg,rgba(6,7,6,.9),rgba(6,7,6,0));
+  }
+  .top .mk{font-weight:700}
+  .top .yr{color:var(--faint);font-weight:400;letter-spacing:.1em}
+
+  /* each idea = its own tall breathing space */
+  .beat{min-height:88vh;display:flex;flex-direction:column;justify-content:center;
+    padding:9rem 0 4rem}
+  .beat.short{min-height:70vh}
+  .beat:first-of-type{min-height:100vh}
+
+  .big{
+    font-weight:800;letter-spacing:-.03em;line-height:1.06;
+    font-size:clamp(2.6rem,9vw,6rem);
+  }
+  .big .cursor{color:var(--green);font-weight:400;animation:blink 1.25s step-end infinite}
+  @keyframes blink{50%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){.cursor{animation:none}}
+
+  .mid{font-weight:700;letter-spacing:-.02em;line-height:1.15;
+    font-size:clamp(1.7rem,5vw,3.2rem);max-width:16em}
+  .mid .dim{color:var(--dim)}
+
+  .note{color:var(--dim);font-size:clamp(1rem,2.2vw,1.2rem);line-height:1.7;
+    max-width:30em;margin-top:2rem}
+  .note b{color:var(--ink);font-weight:600}
+
+  .kick{color:var(--faint);font-size:.8rem;letter-spacing:.22em;
+    text-transform:uppercase;margin-bottom:2rem}
+
+  /* the two coins, as words in space — not cards */
+  .pair{display:flex;flex-direction:column;gap:3.5rem;margin-top:1rem}
+  .pair .one .nm{font-size:clamp(2rem,6vw,3.6rem);font-weight:800;letter-spacing:.02em}
+  .pair .one .desc{color:var(--dim);font-size:clamp(1rem,2.2vw,1.2rem);
+    max-width:26em;margin-top:.6rem;line-height:1.6}
+  .pair .one .desc b{color:var(--ink);font-weight:600}
+
+  /* hairline — the only chrome */
+  .rule{height:1px;background:var(--faint);margin:0;border:none}
+
+  footer{padding:6rem 0 7rem}
+  footer .end{font-size:clamp(1.4rem,4vw,2.4rem);font-weight:800;letter-spacing:-.02em}
+  footer .sub{color:var(--faint);font-size:.82rem;letter-spacing:.08em;margin-top:1.6rem;line-height:1.9}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <span class="mk"><span class="d">DAARX</span> <span class="amp">&amp;</span> <span class="l">L10N</span></span>
+  <span class="yr">2028</span>
+</div>
+
+<div class="wrap">
+
+  <!-- 1 · the one line -->
+  <section class="beat">
+    <h1 class="big">Money that minds its own business.<span class="cursor">_</span></h1>
+    <p class="note">Every payment you make with Bitcoin is public, and stays that way forever. It doesn't have to be.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- 2 · what it is -->
+  <section class="beat">
+    <div class="kick">what it is</div>
+    <p class="mid">Private money, in two kinds. <span class="d">DAARX</span> to keep. <span class="l">L10N</span> to spend.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- 3 · the two, spelled out -->
+  <section class="beat">
+    <div class="pair">
+      <div class="one">
+        <div class="nm d">DAARX</div>
+        <div class="desc">A <b>set amount</b> that can't be printed or watered down. No one sees what you hold, who you pay, or how much.</div>
+      </div>
+      <div class="one">
+        <div class="nm l">L10N</div>
+        <div class="desc">Like cash, on your phone. <b>Works with no internet</b> — tap and pay, in person, even with no signal.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- 4 · the hook -->
+  <section class="beat short">
+    <p class="mid">One of them <span class="dim">works when</span> nothing else does.</p>
+    <p class="note">No power, no signal, off the grid — cards stop, banks stop, Bitcoin stops. This keeps going.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- 5 · coming soon -->
+  <section class="beat short">
+    <p class="mid"><span class="dim">Coming soon.</span></p>
+  </section>
+
+</div>
+
+<hr class="rule">
+
+<!-- sign off -->
+<footer>
+  <div class="wrap">
+    <p class="end"><span class="d">DAARX</span> <span class="amp">&amp;</span> <span class="l">L10N</span></p>
+    <p class="sub">launching 2028 · no company · no bank · nothing for sale</p>
+  </div>
+</footer>
+
+</body>
+</html>
