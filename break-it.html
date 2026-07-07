@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- daarx.money/break-it — the public attack log + credit board. goes live with the testnet. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Break it — DAARX · L10N · OPEN</title>
+<meta name="description" content="We pay experts to break it before launch, and we publish the attempts. Find something real on the test network and your name goes on the log — permanently.">
+<style>
+  :root{--bg:#060706;--ink:#e9e9e3;--dim:#5a615a;--faint:#2c312d;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--red:#e0664a;--steel:#8b9199;
+    --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:16px;line-height:1.7;letter-spacing:.01em}
+  ::selection{background:var(--red);color:var(--bg)}
+  a{color:var(--steel);text-decoration:none}a:hover,a:focus{color:var(--ink)}
+  .wrap{max-width:46rem;margin:0 auto;padding:6rem 2rem 5rem}
+  .crumb{color:var(--faint);font-size:.82rem;letter-spacing:.1em;margin-bottom:4rem}
+  .crumb a{color:var(--dim)}
+  h1{font-size:clamp(2.4rem,8vw,4.5rem);font-weight:800;letter-spacing:-.02em}
+  h1 .x{color:var(--red)}
+  .tag{color:var(--dim);font-size:clamp(1.05rem,2.4vw,1.3rem);margin:.8rem 0 3.5rem;max-width:32em}
+  h2{color:var(--faint);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;margin:3.2rem 0 1rem}
+  p{color:var(--dim);max-width:34em;margin-bottom:1.1rem}
+  p b{color:var(--ink);font-weight:600}
+  .steps{margin:1rem 0;display:flex;flex-direction:column;gap:1.4rem;counter-reset:s}
+  .step{display:flex;gap:1.2rem;align-items:baseline}
+  .step .n{color:var(--red);font-weight:700;min-width:1.6em}
+  .step .b{color:var(--dim);max-width:32em}
+  .step .b b{color:var(--ink)}
+  .board{margin:1.2rem 0;border:1px solid var(--faint);border-radius:2px}
+  .board .hd{display:flex;padding:.6rem 1rem;border-bottom:1px solid var(--faint);
+    color:var(--faint);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
+  .board .row{display:flex;padding:.7rem 1rem;color:var(--dim)}
+  .board .row+.row{border-top:1px solid var(--faint)}
+  .board .c1{flex:0 0 6.5em;color:var(--steel)} .board .c2{flex:1}
+  .empty{padding:1.4rem 1rem;color:var(--faint);font-style:italic}
+  .cta{margin-top:1rem;color:var(--dim)}
+  .cta b{color:var(--ink)}
+  .soon{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--faint);color:var(--dim)}
+  .soon b{color:var(--red);font-weight:600}
+  footer{color:var(--faint);font-size:.8rem;letter-spacing:.08em;margin-top:4rem;line-height:1.9}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><a href="/">← daarx.money</a></div>
+  <h1>Break it<span class="x">.</span></h1>
+  <p class="tag">The privacy is new cryptography. New cryptography earns trust one way: people try to break it, in the open, and the attempts get published — the ones that failed <b>and</b> the ones that didn't.</p>
+
+  <h2>the deal before launch</h2>
+  <p>Independent experts are <b>paid to attack</b> the code before it ever holds real value. We write down, in advance, exactly what "a break" would look like — so "we found nothing" means something instead of "we didn't look." Every attempt lands on this log. If a real break is found, <b>the launch waits</b> until it's fixed and re-tested. The date can move; this can't be skipped.</p>
+
+  <h2>the test network — where you come in</h2>
+  <p>For months before launch, all three chains run in public with coins that are <b>worthless on purpose</b>. Anything goes: fuzz it, forge it, try to spend what isn't yours, try to see what should be hidden. Nothing you can do to the test network costs anyone anything — that's the point of it existing.</p>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><span class="b">Grab test coins from the <b>faucet</b> and a node from <b>run-a-node</b> (both live when the testnet drops).</span></div>
+    <div class="step"><span class="n">2</span><span class="b">Try to break something real — soundness (make money from nothing, double-spend) or privacy (de-anonymize a payment).</span></div>
+    <div class="step"><span class="n">3</span><span class="b">Report it <b>here</b> (intake below). Reproducible + real → it goes on the log with your name.</span></div>
+  </div>
+
+  <h2>the credit board</h2>
+  <p>No cash prize, no token, nothing for sale — on either side. What you get is <b>permanent public credit</b> on the record that outlives the bug: the person who found the thing everyone else missed. When the whitepapers publish, the log publishes with them.</p>
+  <div class="board">
+    <div class="hd"><span class="c1">testnet</span><span class="c2">finding · credited to</span></div>
+    <div class="empty">— opens with the test network, late 2026 —</div>
+  </div>
+
+  <h2>report something</h2>
+  <p>Intake opens with the testnet: a form here, plus a dedicated address and a <b>PGP key</b> for anything sensitive (report privately first; we publish after it's fixed). <span style="color:var(--faint)">[PGP fingerprint published at testnet drop — founder-generated.]</span></p>
+
+  <div class="soon">This page fills in when the <b>test network drops, late 2026</b>. Until then it's a promise with a shape: the pre-committed definition of failure, the standing invitation, and a log that starts empty and honest.</div>
+
+  <footer><a href="/">daarx.money</a> · <a href="/daarx.html">DAARX</a> · <a href="/l10n.html">L10N</a> · <a href="/open.html">OPEN</a><br>test coins are worthless on purpose · nothing here is advice</footer>
+</div>
+</body>
+</html>
