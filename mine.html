@@ -5,24 +5,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mine it — run a node · DAARX · L10N · OPEN</title>
-<meta name="description" content="Help secure the network on your own computer. Free plug-and-go image, or a built rig. Optional monthly memberships. Participation, not profit — the coin starts at zero. Reserve a rig now; nothing is charged until the store opens.">
+<meta name="description" content="Help secure the network on your own computer. Free plug-and-go image, or a built rig — from a $299 node box to a Threadripper monster. Participation, not profit. New parts, priority shipping included. Reserve now; nothing is charged until the store opens.">
 <link rel="canonical" href="https://daarx.money/mine.html">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23d6ab52'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23d6ab52'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX · L10N · OPEN">
 <meta property="og:title" content="Mine it — run a node · DAARX · L10N · OPEN">
-<meta property="og:description" content="Help secure the network on your own computer. Free plug-and-go image, or a built rig. Optional monthly memberships. Participation, not profit — the coin starts at zero. Reserve a rig now; nothing is charged until the store opens.">
+<meta property="og:description" content="Free plug-and-go image, or a built rig — from a $299 node box to a Threadripper monster. Participation, not profit. New parts, priority shipping included. Reserve now; nothing charged until the store opens.">
 <meta property="og:url" content="https://daarx.money/mine.html">
 <meta property="og:image" content="https://daarx.money/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mine it — run a node · DAARX · L10N · OPEN">
-<meta name="twitter:description" content="Help secure the network on your own computer. Free plug-and-go image, or a built rig. Optional monthly memberships. Participation, not profit. Reserve a rig now; nothing is charged until the store opens.">
+<meta name="twitter:description" content="Free plug-and-go image, or a built rig — $299 node box to a Threadripper monster. Participation, not profit. Reserve now; nothing charged until the store opens.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 <style>
-  :root{--bg:#060706;--ink:#e9e9e3;--dim:#d3d8d0;--faint:#b0b6ad;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--steel:#a8aeb4;
+  :root{--bg:#060706;--ink:#e9e9e3;--dim:#d3d8d0;--faint:#6b726a;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--steel:#a8aeb4;
     --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace}
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:16px;line-height:1.7;letter-spacing:.01em}
@@ -43,12 +43,13 @@
   .honest b{color:var(--ink);font-weight:600}
   .honest p{margin-bottom:0}
 
-  /* product rows — rig + membership, one clean line each */
+  /* product rows */
   .menu{display:flex;flex-direction:column;gap:0;border:1px solid var(--faint);border-radius:2px;overflow:hidden}
   .item{display:flex;justify-content:space-between;gap:1.2rem;align-items:baseline;padding:1.1rem 1.3rem;flex-wrap:wrap}
   .item+.item{border-top:1px solid var(--faint)}
   .item .l{flex:1;min-width:14rem}
   .item .nm{color:var(--ink);font-weight:700}
+  .item .nm .hz{color:var(--blue);font-weight:400;font-size:.8rem;letter-spacing:.04em;margin-left:.6em}
   .item .ds{color:var(--dim);font-size:.92rem;margin-top:.25rem}
   .item .pr{color:var(--steel);font-weight:700;white-space:nowrap}
   .item .pr.free{color:var(--green)}
@@ -86,7 +87,7 @@
   .soon b{color:var(--steel);font-weight:600}
   footer{color:var(--faint);font-size:.8rem;letter-spacing:.08em;margin-top:4rem;line-height:1.9}
 
-  /* ── TRON grid: a receding neon floor, behind all content, motion-safe ── */
+  /* ── TRON grid ── */
   .grid{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
     perspective:34rem;perspective-origin:50% 42%}
   .grid::before{content:"";position:absolute;left:-75%;right:-75%;bottom:-20%;height:150%;
@@ -112,42 +113,75 @@
 <div class="wrap">
   <div class="crumb"><a href="/">← daarx.money</a></div>
   <h1>Mine it<span class="dot">.</span></h1>
-  <p class="tag">Help secure the network on a normal computer. Pick how hands-on you want to be, add a membership if you want one, reserve it below.</p>
+  <p class="tag">Pick your machine, plug it in, help hold the network up. From a $299 node box to a Threadripper monster.</p>
 
   <div class="honest">
-    <p>The node and miner are <b>free and open source</b> — always free. This is <b>participation, not profit</b>: a fair-launch coin starts at zero, and early on power can cost more than you mine. The <b>coins are never for sale</b> — the rig is just hardware. No company yet; nothing here is charged.</p>
+    <p>The node and miner are <b>free and open source</b> — always free. This is <b>participation, not profit</b>: a fair-launch coin starts at zero, and early on power can cost more than you mine. The <b>coins are never for sale</b> — the rig is just hardware. Every build is <b>new parts</b>, tier-1 power, and ships <b>priority — included</b>. No company yet; nothing here is charged.</p>
   </div>
 
-  <h2>the rig — pick one</h2>
+  <h2>just run a node</h2>
   <div class="menu">
     <div class="item">
-      <div class="l"><div class="nm">Do it yourself</div><div class="ds">Free image + parts list. You buy the parts (~$1,150) and build it.</div></div>
-      <div class="pr free">free</div>
-    </div>
-    <div class="item">
-      <div class="l"><div class="nm">We build it</div><div class="ds">Assembled, configured, tested. Plug in and mine.</div></div>
-      <div class="pr">~$1,899</div>
-    </div>
-    <div class="item">
-      <div class="l"><div class="nm">Concierge <span style="color:var(--faint);font-weight:400;font-size:.8rem">· limited</span></div><div class="ds">Hand-built, set up personally, a year of priority support.</div></div>
-      <div class="pr">~$3,299</div>
+      <div class="l"><div class="nm">Node Box</div><div class="ds">Plug in, run a full node. Supports and decentralizes the network. <b>No mining, no earnings</b> — ~10W, silent, tiny.</div></div>
+      <div class="pr">$299</div>
     </div>
   </div>
-  <p class="note"><b>Prices are estimates, subject to change.</b> Parts (especially RAM/SSD) are volatile in 2026; the real store stamps every price with the date it was checked. The box mines to <b>your own wallet</b>, and every order ships <b>priority — shipping's included</b>.</p>
+  <p class="note">The purest way to help: a node keeps the network honest and hard to censor. You do it to support it, not to earn.</p>
 
-  <h2>what's in the build</h2>
-  <p>Exactly what's in the rig — the same hardware whether you build it or we do. No mystery parts.</p>
-  <div class="spec">
-    <div class="r"><span class="k">CPU</span><span class="v"><b>Ryzen 9 5900XT</b> (or 5950X) — 16 cores, ~20 kH/s on RandomX</span></div>
-    <div class="r"><span class="k">Board</span><span class="v">B550, ATX</span></div>
-    <div class="r"><span class="k">Memory</span><span class="v">16 GB DDR4-3600, dual channel</span></div>
-    <div class="r"><span class="k">Power</span><span class="v">650W 80+ Gold (Seasonic / Corsair)</span></div>
-    <div class="r"><span class="k">Graphics</span><span class="v">Intel Arc A310 — display only</span></div>
-    <div class="r"><span class="k">Cooling</span><span class="v">dual-tower air cooler</span></div>
-    <div class="r"><span class="k">Case</span><span class="v">airflow ATX</span></div>
-    <div class="r"><span class="k">Storage</span><span class="v">500 GB NVMe SSD</span></div>
+  <h2>mine, made easy</h2>
+  <p>The small, quiet boxes — plug-and-go, low effort, low power. They mine a little; you buy them for <b>convenience and form factor</b>, not earnings.</p>
+  <div class="menu">
+    <div class="item">
+      <div class="l"><div class="nm">Mini Miner <span class="hz">~6–8 kH/s</span></div><div class="ds">A tiny, silent box that mines a little and runs a node. Set it and forget it.</div></div>
+      <div class="pr">$699</div>
+    </div>
+    <div class="item">
+      <div class="l"><div class="nm">Beefier Mini <span class="hz">~16–20 kH/s</span></div><div class="ds">A real 16-core (Ryzen 9 7945HX) in a 2-liter silent box. <b>Same power as the Standard tower</b>, a fraction of the size.</div></div>
+      <div class="pr">$1,899</div>
+    </div>
   </div>
-  <p class="note">~$1,150 in parts at today's prices. Want it lighter or beefier? Custom builds are on the way — say so in your reservation and we'll spec one.</p>
+
+  <h2>the rigs</h2>
+  <div class="menu">
+    <div class="item">
+      <div class="l"><div class="nm">Standard <span class="hz">~20 kH/s</span></div><div class="ds">16-core Ryzen 9 5900XT. The <b>value pick</b> — the most hashrate per dollar.</div></div>
+      <div class="pr">$1,899</div>
+    </div>
+    <div class="item">
+      <div class="l"><div class="nm">Pro <span class="hz">~27 kH/s</span></div><div class="ds">16-core Ryzen 9 9950X on AM5. The top desktop — more hashrate and an upgrade path.</div></div>
+      <div class="pr">$2,299</div>
+    </div>
+  </div>
+
+  <h2>BIG_DOG</h2>
+  <p>When you want the most hashrate there is. Threadripper — many cores, quad-channel memory, a serious machine.</p>
+  <div class="menu">
+    <div class="item">
+      <div class="l"><div class="nm">BIG_DOG <span class="hz">~40 kH/s</span></div><div class="ds">32-core Threadripper 7970X. Roughly <b>three Standard rigs</b> in one box.</div></div>
+      <div class="pr">$6,999</div>
+    </div>
+    <div class="item">
+      <div class="l"><div class="nm">BIG_DOG MAX <span class="hz">~84 kH/s</span></div><div class="ds">64-core Threadripper 7980X. The absolute unit — the most hashrate we build.</div></div>
+      <div class="pr">$9,999</div>
+    </div>
+  </div>
+  <p class="note"><b>Prices are estimates for reservation, subject to change.</b> Parts (especially RAM/SSD) are volatile in 2026; the real store stamps every price with the date it was checked. Every build uses <b>new parts</b>, a tier-1 PSU, ships <b>priority (included)</b>, and mines to <b>your own wallet</b>.</p>
+
+  <h2>rather build it yourself? — free</h2>
+  <p>The flashable plug-and-go image and the vetted parts list, <b>free</b>. Buy your own parts, flash it, mine. The software is free and open, so this is too — you never have to buy hardware from us.</p>
+
+  <h2>what's in a Standard build</h2>
+  <div class="spec">
+    <div class="r"><span class="k">CPU</span><span class="v"><b>Ryzen 9 5900XT</b> — 16 cores, ~20 kH/s on RandomX</span></div>
+    <div class="r"><span class="k">Board</span><span class="v">B550, ATX (AM4)</span></div>
+    <div class="r"><span class="k">Memory</span><span class="v">16 GB DDR4-3600, dual channel</span></div>
+    <div class="r"><span class="k">Power</span><span class="v">650W 80+ Gold, tier-1 (Seasonic / Corsair)</span></div>
+    <div class="r"><span class="k">Graphics</span><span class="v">Intel Arc A310 — display only</span></div>
+    <div class="r"><span class="k">Cooling</span><span class="v">air cooler, built for 24/7</span></div>
+    <div class="r"><span class="k">Case</span><span class="v">airflow ATX</span></div>
+    <div class="r"><span class="k">Storage</span><span class="v">NVMe SSD</span></div>
+  </div>
+  <p class="note">Bigger builds step up the CPU + platform (Pro/BIG_DOG move to AM5/Threadripper). Full spec for each ships with the store.</p>
 
   <h2>monthly membership — optional, add any</h2>
   <div class="menu">
@@ -164,9 +198,33 @@
       <div class="pr">~$20<span class="per">/mo</span></div>
     </div>
   </div>
-  <p class="note">Memberships are optional and stack — pick none, one, or several. Prices firm up at launch. There's also an <b>optional pool</b> (a 1–2% fee taken only from what you actually earn); you can always mine solo instead.</p>
+  <p class="note">Optional and stackable — pick none, one, or several. There's also an <b>optional pool</b> (1–2% of what you actually earn); you can always mine solo.</p>
 
-  <h2>reserve a rig</h2>
+  <h2>accessories</h2>
+  <div class="menu">
+    <div class="item">
+      <div class="l"><div class="nm">Status display</div><div class="ds">A little screen for your rig — live hashrate, uptime, temps, at a glance.</div></div>
+      <div class="pr">$79</div>
+    </div>
+    <div class="item">
+      <div class="l"><div class="nm">Cold-storage kit</div><div class="ds">A fireproof metal plate to back up your wallet. Mine it, then lock it down.</div></div>
+      <div class="pr">$49</div>
+    </div>
+    <div class="item">
+      <div class="l"><div class="nm">Pre-flashed USB</div><div class="ds">The free image on a ready-to-boot stick, if you'd rather not flash it yourself.</div></div>
+      <div class="pr">$29</div>
+    </div>
+    <div class="item">
+      <div class="l"><div class="nm">Merch</div><div class="ds">Tees, hoodies, stickers — wear the pride.</div></div>
+      <div class="pr">from $28</div>
+    </div>
+    <div class="item">
+      <div class="l"><div class="nm">Starter bundle</div><div class="ds">Any rig + cold-storage kit + pre-flashed USB, a little cheaper together.</div></div>
+      <div class="pr">save $30</div>
+    </div>
+  </div>
+
+  <h2>reserve yours</h2>
   <div class="reserve">
     <div class="ttl">Get in line — no payment yet.</div>
     <p>Tell us what you'd want and we'll hold your place. <b>Nothing is charged now</b> — reserving just gets you first in line and tells us how many to build. When the store opens (at mainnet, if it's ready), we reach out and you decide then.</p>
@@ -180,11 +238,16 @@
         <input type="text" name="name" placeholder="Name or handle" required>
         <input type="email" name="email" placeholder="Email" required>
       </div>
-      <div class="lbl">Which rig?</div>
-      <select name="rig">
-        <option>Do it yourself — free image (I'll build it)</option>
-        <option>We build it — ~$1,899</option>
-        <option>Concierge — ~$3,299</option>
+      <div class="lbl">Which one?</div>
+      <select name="product">
+        <option>Node Box — $299</option>
+        <option>Mini Miner — $699</option>
+        <option>Beefier Mini — $1,899</option>
+        <option>Standard — $1,899</option>
+        <option>Pro — $2,299</option>
+        <option>BIG_DOG (32-core) — $6,999</option>
+        <option>BIG_DOG MAX (64-core) — $9,999</option>
+        <option>Free image — I'll build it myself</option>
         <option>Not sure yet — just interested</option>
       </select>
       <div class="lbl">Add a membership? (optional)</div>
@@ -192,6 +255,12 @@
         <label><input type="checkbox" name="membership_managed" value="yes">Managed</label>
         <label><input type="checkbox" name="membership_hosting" value="yes">Hosting</label>
         <label><input type="checkbox" name="membership_community" value="yes">Community</label>
+      </div>
+      <div class="lbl">Any accessories? (optional)</div>
+      <div class="checks">
+        <label><input type="checkbox" name="acc_display" value="yes">Status display</label>
+        <label><input type="checkbox" name="acc_coldstorage" value="yes">Cold-storage kit</label>
+        <label><input type="checkbox" name="acc_usb" value="yes">Pre-flashed USB</label>
       </div>
       <input type="hidden" name="delivery" value="Priority shipping — included">
       <textarea name="notes" rows="2" placeholder="Anything else? (optional)"></textarea>
