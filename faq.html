@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- daarx.money/faq — the plain answers to the questions people actually ask. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ — DAARX · L10N · OPEN</title>
+<meta name="description" content="The plain answers: it is not an investment, the coins are never for sale, the software is free, mining is the only way in, and nothing is charged until the network is live.">
+<link rel="canonical" href="https://daarx.money/faq.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23d6ab52'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23d6ab52'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DAARX · L10N · OPEN">
+<meta property="og:title" content="FAQ — DAARX · L10N · OPEN">
+<meta property="og:description" content="The plain answers: it is not an investment, the coins are never for sale, the software is free, mining is the only way in, and nothing is charged until the network is live.">
+<meta property="og:url" content="https://daarx.money/faq.html">
+<meta property="og:image" content="https://daarx.money/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ — DAARX · L10N · OPEN">
+<meta name="twitter:description" content="The plain answers: it is not an investment, the coins are never for sale, the software is free, mining is the only way in, and nothing is charged until the network is live.">
+<meta name="twitter:image" content="https://daarx.money/og.png">
+<style>
+  :root{--bg:#060706;--ink:#e9e9e3;--dim:#d3d8d0;--faint:#b0b6ad;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--red:#e0664a;--steel:#a8aeb4;
+    --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:16px;line-height:1.7;letter-spacing:.01em}
+  ::selection{background:var(--red);color:var(--bg)}
+  a{color:var(--steel);text-decoration:none}a:hover,a:focus{color:var(--ink)}
+  .wrap{max-width:46rem;margin:0 auto;padding:6rem 2rem 5rem;position:relative;z-index:1}
+  .crumb{color:var(--faint);font-size:.82rem;letter-spacing:.1em;margin-bottom:4rem}
+  .crumb a{color:var(--dim)}
+  h1{font-size:clamp(2.4rem,8vw,4.5rem);font-weight:800;letter-spacing:-.02em}
+  h1 .x{color:var(--green)}
+  .tag{color:var(--dim);font-size:clamp(1.05rem,2.4vw,1.3rem);margin:.8rem 0 3.5rem;max-width:32em}
+  h2{color:var(--ink);font-size:1.05rem;font-weight:600;letter-spacing:-.01em;margin:2.8rem 0 .7rem}
+  p{color:var(--dim);max-width:34em;margin-bottom:1.1rem}
+  p b{color:var(--ink);font-weight:600}
+  .contact{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--faint);color:var(--dim)}
+  .contact a{color:var(--green)}
+  footer{color:var(--faint);font-size:.8rem;letter-spacing:.08em;margin-top:4rem;line-height:1.9}
+
+  /* ── TRON grid: a receding neon floor, behind all content, motion-safe ── */
+  .grid{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+    perspective:34rem;perspective-origin:50% 42%}
+  .grid::before{content:"";position:absolute;left:-75%;right:-75%;bottom:-20%;height:150%;
+    background-image:
+      repeating-linear-gradient(to right,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem),
+      repeating-linear-gradient(to bottom,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem);
+    transform:rotateX(72deg);transform-origin:50% 100%;opacity:.32;
+    -webkit-mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
+    mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
+    animation:grid-drift 16s linear infinite}
+  @keyframes grid-drift{from{background-position:0 0}to{background-position:0 4rem}}
+  @media (prefers-reduced-motion:reduce){.grid::before{animation:none}}
+
+  /* ── neon bloom: soft halo on the heading accent ── */
+  h1 .x{text-shadow:0 0 8px rgba(74,224,140,.85),0 0 20px rgba(74,224,140,.45),0 0 40px rgba(74,224,140,.2)}
+  .contact a{text-shadow:0 0 8px rgba(74,224,140,.5),0 0 18px rgba(74,224,140,.25)}
+</style>
+</head>
+<body>
+<div class="grid" aria-hidden="true"></div>
+<div class="wrap">
+  <div class="crumb"><a href="/">← daarx.money</a></div>
+  <h1>FAQ<span class="x">.</span></h1>
+  <p class="tag">Plain answers to the questions people actually ask. No spin.</p>
+
+  <h2>Is this an investment? Will I make money?</h2>
+  <p>No. This is participation, not profit. A fair-launch coin starts at zero, and early on your power can cost more than you mine. You do it to own in early and help secure the network, never for guaranteed income. No promises.</p>
+
+  <h2>Are the coins for sale?</h2>
+  <p>Never. No premine, no presale, no token sale. Mining is the only way in, for everyone. The rigs are separate hardware; buying one gets you a computer, not coins.</p>
+
+  <h2>Do I need to be technical?</h2>
+  <p>No. The plug-and-go image does the setup: flash it (or buy it pre-flashed), plug in, it mines. Or buy a built rig and skip all of it.</p>
+
+  <h2>Is the software really free?</h2>
+  <p>Yes. The node and miner are free and open source, always. You only pay for hardware and convenience if you want them.</p>
+
+  <h2>When does it ship? When can I mine?</h2>
+  <p>The network isn't live yet. Testnet late 2026, mainnet target 2027, only if it's ready. Reservations are open now; the real store and shipping come with the network, and nothing is charged until then.</p>
+
+  <h2>What's the catch?</h2>
+  <p>There isn't a hidden one. The coins are worth nothing at launch, the software is free, and we say so plainly. If you're here for guaranteed profit, this isn't it. If you're here to own in early and help build something honest, it is.</p>
+
+  <h2>Why buy a rig instead of building my own?</h2>
+  <p>You don't have to. The image and the parts list are free. Buy a rig only if you'd rather we handle the building, testing, and support.</p>
+
+  <h2>Is there a node-only option?</h2>
+  <p>Yes. The Node Box runs a full node without mining, around $299. It earns nothing; it helps secure and decentralize the network.</p>
+
+  <h2>What happens to my info when I reserve?</h2>
+  <p>We collect your email and what you're interested in, only to reach you when the store opens. We don't sell or share it, and you can drop off anytime. See the <a href="/privacy.html">privacy page</a>.</p>
+
+  <div class="contact">Still have a question? Email us at <a href="mailto:daarxmoney@proton.me">daarxmoney@proton.me</a>.</div>
+
+  <footer><a href="/">daarx.money</a> · <a href="/daarx.html">DAARX</a> · <a href="/l10n.html">L10N</a> · <a href="/open.html">OPEN</a> · <a href="/break-it.html">break it</a> · <a href="/mine.html">mine it</a> · faq · <a href="/privacy.html">privacy</a><br>no coins for sale · nothing here is advice</footer>
+</div>
+</body>
+</html>
