@@ -22,13 +22,13 @@
 <meta name="twitter:description" content="Break it for real on the test network and fix it: a share of the $1,000 bounty pool, a seat at the launch party, your name on the log — permanently. Every attempt gets published.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 <style>
-  :root{--bg:#060706;--ink:#e9e9e3;--dim:#838a82;--faint:#6b726a;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--red:#e0664a;--steel:#8b9199;
+  :root{--bg:#060706;--ink:#e9e9e3;--dim:#a4aaa1;--faint:#888f87;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--red:#e0664a;--steel:#8b9199;
     --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace}
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:16px;line-height:1.7;letter-spacing:.01em}
   ::selection{background:var(--red);color:var(--bg)}
   a{color:var(--steel);text-decoration:none}a:hover,a:focus{color:var(--ink)}
-  .wrap{max-width:46rem;margin:0 auto;padding:6rem 2rem 5rem}
+  .wrap{max-width:46rem;margin:0 auto;padding:6rem 2rem 5rem;position:relative;z-index:1}
   .crumb{color:var(--faint);font-size:.82rem;letter-spacing:.1em;margin-bottom:4rem}
   .crumb a{color:var(--dim)}
   h1{font-size:clamp(2.4rem,8vw,4.5rem);font-weight:800;letter-spacing:-.02em}
@@ -56,15 +56,15 @@
   footer{color:var(--faint);font-size:.8rem;letter-spacing:.08em;margin-top:4rem;line-height:1.9}
 
   /* ── TRON grid: a receding neon floor, behind all content, motion-safe ── */
-  .grid{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;
+  .grid{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
     perspective:34rem;perspective-origin:50% 42%}
   .grid::before{content:"";position:absolute;left:-75%;right:-75%;bottom:-20%;height:150%;
     background-image:
-      repeating-linear-gradient(to right,rgba(99,185,214,.55) 0 1px,transparent 1px 4rem),
-      repeating-linear-gradient(to bottom,rgba(99,185,214,.55) 0 1px,transparent 1px 4rem);
-    transform:rotateX(77deg);transform-origin:50% 100%;opacity:.09;
-    -webkit-mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 42%,transparent 80%);
-    mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 42%,transparent 80%);
+      repeating-linear-gradient(to right,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem),
+      repeating-linear-gradient(to bottom,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem);
+    transform:rotateX(72deg);transform-origin:50% 100%;opacity:.32;
+    -webkit-mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
+    mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
     animation:grid-drift 16s linear infinite}
   @keyframes grid-drift{from{background-position:0 0}to{background-position:0 4rem}}
   @media (prefers-reduced-motion:reduce){.grid::before{animation:none}}

@@ -22,13 +22,13 @@
 <meta name="twitter:description" content="Help secure the network on your own computer. Free plug-and-go image, or a built rig. Optional monthly memberships. Participation, not profit. Reserve a rig now; nothing is charged until the store opens.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 <style>
-  :root{--bg:#060706;--ink:#e9e9e3;--dim:#838a82;--faint:#6b726a;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--steel:#8b9199;
+  :root{--bg:#060706;--ink:#e9e9e3;--dim:#a4aaa1;--faint:#888f87;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--steel:#8b9199;
     --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace}
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:16px;line-height:1.7;letter-spacing:.01em}
   ::selection{background:var(--steel);color:var(--bg)}
   a{color:var(--steel);text-decoration:none}a:hover,a:focus{color:var(--ink)}
-  .wrap{max-width:46rem;margin:0 auto;padding:6rem 2rem 5rem}
+  .wrap{max-width:46rem;margin:0 auto;padding:6rem 2rem 5rem;position:relative;z-index:1}
   .crumb{color:var(--faint);font-size:.82rem;letter-spacing:.1em;margin-bottom:4rem}
   .crumb a{color:var(--dim)}
   h1{font-size:clamp(2.4rem,8vw,4.5rem);font-weight:800;letter-spacing:-.02em;color:var(--steel)}
@@ -55,6 +55,11 @@
   .item .pr .per{color:var(--faint);font-weight:400;font-size:.8rem}
   .note{color:var(--faint);font-size:.85rem;margin-top:.9rem;max-width:34em;line-height:1.65}
   .note b{color:var(--dim);font-weight:600}
+  .spec{margin:1rem 0;display:flex;flex-direction:column;gap:.55rem;font-size:.95rem;border:1px solid var(--faint);border-radius:2px;padding:1.1rem 1.3rem}
+  .spec .r{display:flex;gap:1rem;align-items:baseline}
+  .spec .k{color:var(--faint);min-width:6.5em;text-transform:uppercase;font-size:.72rem;letter-spacing:.12em}
+  .spec .v{color:var(--dim)}
+  .spec .v b{color:var(--ink);font-weight:600}
 
   /* pre-order form */
   .reserve{border:1px solid var(--faint);border-radius:2px;padding:1.5rem 1.4rem;margin-top:1.2rem}
@@ -82,15 +87,15 @@
   footer{color:var(--faint);font-size:.8rem;letter-spacing:.08em;margin-top:4rem;line-height:1.9}
 
   /* ── TRON grid: a receding neon floor, behind all content, motion-safe ── */
-  .grid{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;
+  .grid{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
     perspective:34rem;perspective-origin:50% 42%}
   .grid::before{content:"";position:absolute;left:-75%;right:-75%;bottom:-20%;height:150%;
     background-image:
-      repeating-linear-gradient(to right,rgba(99,185,214,.55) 0 1px,transparent 1px 4rem),
-      repeating-linear-gradient(to bottom,rgba(99,185,214,.55) 0 1px,transparent 1px 4rem);
-    transform:rotateX(77deg);transform-origin:50% 100%;opacity:.11;
-    -webkit-mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 42%,transparent 80%);
-    mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 42%,transparent 80%);
+      repeating-linear-gradient(to right,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem),
+      repeating-linear-gradient(to bottom,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem);
+    transform:rotateX(72deg);transform-origin:50% 100%;opacity:.32;
+    -webkit-mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
+    mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
     animation:grid-drift 16s linear infinite}
   @keyframes grid-drift{from{background-position:0 0}to{background-position:0 4rem}}
   @media (prefers-reduced-motion:reduce){.grid::before{animation:none}}
@@ -129,6 +134,20 @@
     </div>
   </div>
   <p class="note"><b>Prices are estimates, subject to change.</b> Parts (especially RAM/SSD) are volatile in 2026; the real store stamps every price with the date it was checked. The box mines to <b>your own wallet</b>.</p>
+
+  <h2>what's in the build</h2>
+  <p>Exactly what's in the rig — the same hardware whether you build it or we do. No mystery parts.</p>
+  <div class="spec">
+    <div class="r"><span class="k">CPU</span><span class="v"><b>Ryzen 9 5950X</b> — 16 cores, ~20 kH/s on RandomX</span></div>
+    <div class="r"><span class="k">Board</span><span class="v">B550, ATX</span></div>
+    <div class="r"><span class="k">Memory</span><span class="v">16 GB DDR4-3600, dual channel</span></div>
+    <div class="r"><span class="k">Power</span><span class="v">650W 80+ Gold (Seasonic / Corsair)</span></div>
+    <div class="r"><span class="k">Graphics</span><span class="v">Intel Arc A310 — display only</span></div>
+    <div class="r"><span class="k">Cooling</span><span class="v">dual-tower air cooler</span></div>
+    <div class="r"><span class="k">Case</span><span class="v">airflow ATX</span></div>
+    <div class="r"><span class="k">Storage</span><span class="v">500 GB NVMe SSD</span></div>
+  </div>
+  <p class="note">~$1,150 in parts at today's prices. Want it lighter or beefier? Custom builds are on the way — say so in your reservation and we'll spec one.</p>
 
   <h2>monthly membership — optional, add any</h2>
   <div class="menu">
