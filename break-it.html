@@ -6,6 +6,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Break it — DAARX · L10N · OPEN</title>
 <meta name="description" content="Break it for real on the test network and fix it: a share of the $1,000 bounty pool, a seat at the launch party, your name on the log — permanently. Every attempt gets published.">
+<link rel="canonical" href="https://daarx.money/break-it.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23d6ab52'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23d6ab52'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DAARX · L10N · OPEN">
+<meta property="og:title" content="Break it — DAARX · L10N · OPEN">
+<meta property="og:description" content="Break it for real on the test network and fix it: a share of the $1,000 bounty pool, a seat at the launch party, your name on the log — permanently. Every attempt gets published.">
+<meta property="og:url" content="https://daarx.money/break-it.html">
+<meta property="og:image" content="https://daarx.money/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Break it — DAARX · L10N · OPEN">
+<meta name="twitter:description" content="Break it for real on the test network and fix it: a share of the $1,000 bounty pool, a seat at the launch party, your name on the log — permanently. Every attempt gets published.">
+<meta name="twitter:image" content="https://daarx.money/og.png">
 <style>
   :root{--bg:#060706;--ink:#e9e9e3;--dim:#5a615a;--faint:#2c312d;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--red:#e0664a;--steel:#8b9199;
     --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace}
@@ -39,9 +54,29 @@
   .soon{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--faint);color:var(--dim)}
   .soon b{color:var(--red);font-weight:600}
   footer{color:var(--faint);font-size:.8rem;letter-spacing:.08em;margin-top:4rem;line-height:1.9}
+
+  /* ── TRON grid: a receding neon floor, behind all content, motion-safe ── */
+  .grid{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;
+    perspective:34rem;perspective-origin:50% 42%}
+  .grid::before{content:"";position:absolute;left:-75%;right:-75%;bottom:-20%;height:150%;
+    background-image:
+      repeating-linear-gradient(to right,rgba(99,185,214,.55) 0 1px,transparent 1px 4rem),
+      repeating-linear-gradient(to bottom,rgba(99,185,214,.55) 0 1px,transparent 1px 4rem);
+    transform:rotateX(77deg);transform-origin:50% 100%;opacity:.09;
+    -webkit-mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 42%,transparent 80%);
+    mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 42%,transparent 80%);
+    animation:grid-drift 16s linear infinite}
+  @keyframes grid-drift{from{background-position:0 0}to{background-position:0 4rem}}
+  @media (prefers-reduced-motion:reduce){.grid::before{animation:none}}
+
+  /* ── neon bloom: soft halos on heading + accents, readability preserved ── */
+  h1 .x{text-shadow:0 0 10px rgba(224,102,74,.55),0 0 24px rgba(224,102,74,.25)}
+  .step .n{text-shadow:0 0 8px rgba(224,102,74,.45)}
+  .soon b{text-shadow:0 0 8px rgba(224,102,74,.4)}
 </style>
 </head>
 <body>
+<div class="grid" aria-hidden="true"></div>
 <div class="wrap">
   <div class="crumb"><a href="/">← daarx.money</a></div>
   <h1>Break it<span class="x">.</span></h1>
@@ -59,7 +94,7 @@
   </div>
 
   <h2>the bounty pool + the credit board</h2>
-  <p>There's a <b>$1,000 bounty pool</b> on the whole testnet phase. Break something real <b>and fix it</b>, and you earn a <b>share of the pool</b> — shares are weighted by severity, one award per distinct root cause — plus <b>a seat at the launch party</b>, champagne's on us. A capped pool, not per-bug prizes: this is a fair launch with no war chest, and a small number honestly promised beats a big one that couldn't be paid. Every genuine find — fixed or not — earns <b>permanent public credit</b> on the record that outlives the bug: the person who found the thing everyone else missed. When the whitepapers publish, the log publishes with them. No token, nothing for sale — on either side. The pre-committed break definition above is the bar; official terms post with the intake. <b>When it pays:</b> awards are settled <b>at mainnet launch</b> — there's no guaranteed pay date, because the launch itself is readiness-gated and the date can move (the testing never shrinks to hit one). The credit is immediate and permanent; the cash waits for a real chain. <b>And the log never closes</b> — it keeps running after launch, for as long as the chains do.</p>
+  <p>There's a <b>$1,000 bounty pool</b> on the whole testnet phase. Break something real <b>and fix it</b>, and you earn a <b>share of the pool</b> — shares are weighted by severity, one award per distinct root cause — plus <b>a seat at the launch party</b>, champagne's on us. A capped pool, not per-bug prizes: this is a fair launch with no war chest, and a small number honestly promised beats a big one that couldn't be paid. Every genuine find — fixed or not — earns <b>permanent public credit</b> on the record that outlives the bug: the person who found the thing everyone else missed. When the whitepapers publish, the log publishes with them. No token, no coins for sale — on either side. The pre-committed break definition above is the bar; official terms post with the intake. <b>When it pays:</b> awards are settled <b>at mainnet launch</b> — there's no guaranteed pay date, because the launch itself is readiness-gated and the date can move (the testing never shrinks to hit one). The credit is immediate and permanent; the cash waits for a real chain. <b>And the log never closes</b> — it keeps running after launch, for as long as the chains do.</p>
   <div class="board">
     <div class="hd"><span class="c1">testnet</span><span class="c2">finding · credited to</span></div>
     <div class="empty">— opens with the test network, late 2026 —</div>
@@ -70,7 +105,7 @@
 
   <div class="soon">This page fills in when the <b>test network drops, late 2026</b>. Until then it's a promise with a shape: the pre-committed definition of failure, the standing invitation, and a log that starts empty and honest.</div>
 
-  <footer><a href="/">daarx.money</a> · <a href="/daarx.html">DAARX</a> · <a href="/l10n.html">L10N</a> · <a href="/open.html">OPEN</a><br>test coins are worthless on purpose · nothing here is advice</footer>
+  <footer><a href="/">daarx.money</a> · <a href="/daarx.html">DAARX</a> · <a href="/l10n.html">L10N</a> · <a href="/open.html">OPEN</a> · break it · <a href="/mine.html">mine it</a><br>test coins are worthless on purpose · nothing here is advice</footer>
 </div>
 </body>
 </html>

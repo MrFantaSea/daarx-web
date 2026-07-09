@@ -6,6 +6,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OPEN — the one for machines</title>
 <meta name="description" content="Accountability for machines. Every account public by design, and the fund that maintains it keeps its books on the chain. Full whitepaper publishes with the testnet.">
+<link rel="canonical" href="https://daarx.money/open.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23d6ab52'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23d6ab52'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DAARX · L10N · OPEN">
+<meta property="og:title" content="OPEN — the one for machines">
+<meta property="og:description" content="Accountability for machines. Every account public by design, and the fund that maintains it keeps its books on the chain. Full whitepaper publishes with the testnet.">
+<meta property="og:url" content="https://daarx.money/open.html">
+<meta property="og:image" content="https://daarx.money/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OPEN — the one for machines">
+<meta name="twitter:description" content="Accountability for machines. Every account public by design, and the fund that maintains it keeps its books on the chain. Full whitepaper publishes with the testnet.">
+<meta name="twitter:image" content="https://daarx.money/og.png">
 <style>
   :root{--bg:#060706;--ink:#e9e9e3;--dim:#5a615a;--faint:#2c312d;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--steel:#8b9199;
     --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace}
@@ -28,9 +43,28 @@
   .soon{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--faint);color:var(--dim)}
   .soon b{color:var(--blue);font-weight:600}
   footer{color:var(--faint);font-size:.8rem;letter-spacing:.08em;margin-top:4rem;line-height:1.9}
+
+  /* ── TRON grid: a receding neon floor, behind all content, motion-safe ── */
+  .grid{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;
+    perspective:34rem;perspective-origin:50% 42%}
+  .grid::before{content:"";position:absolute;left:-75%;right:-75%;bottom:-20%;height:150%;
+    background-image:
+      repeating-linear-gradient(to right,rgba(99,185,214,.55) 0 1px,transparent 1px 4rem),
+      repeating-linear-gradient(to bottom,rgba(99,185,214,.55) 0 1px,transparent 1px 4rem);
+    transform:rotateX(77deg);transform-origin:50% 100%;opacity:.09;
+    -webkit-mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 42%,transparent 80%);
+    mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 42%,transparent 80%);
+    animation:grid-drift 16s linear infinite}
+  @keyframes grid-drift{from{background-position:0 0}to{background-position:0 4rem}}
+  @media (prefers-reduced-motion:reduce){.grid::before{animation:none}}
+
+  /* ── neon bloom: soft halo on the heading + coin accent, readability preserved ── */
+  h1{text-shadow:0 0 10px rgba(99,185,214,.5),0 0 24px rgba(99,185,214,.22)}
+  .soon b{text-shadow:0 0 8px rgba(99,185,214,.4)}
 </style>
 </head>
 <body>
+<div class="grid" aria-hidden="true"></div>
 <div class="wrap">
   <div class="crumb"><a href="/">← daarx.money</a></div>
   <h1>OPEN</h1>
@@ -55,7 +89,7 @@
 
   <div class="soon">The <b>full whitepaper</b> — the account model, the endowment covenant, the registry cryptography, the threat model, all of it — publishes with the <b>test network, late 2026</b>.</div>
 
-  <footer>OPEN · one of three · <a href="/daarx.html">DAARX</a> · <a href="/l10n.html">L10N</a><br>nothing for sale · nothing here is advice</footer>
+  <footer><a href="/">daarx.money</a> · <a href="/daarx.html">DAARX</a> · <a href="/l10n.html">L10N</a> · OPEN · <a href="/break-it.html">break it</a> · <a href="/mine.html">mine it</a><br>no coins for sale · nothing here is advice</footer>
 </div>
 </body>
 </html>

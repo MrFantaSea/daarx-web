@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<!-- daarx.money — nothing for sale. not finished. the code will be the truth. -->
+<!-- daarx.money — no coins for sale. not finished. the code will be the truth. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DAARX · L10N · OPEN</title>
-<meta name="description" content="Privacy for people. Accountability for machines. Three coins, one launch — testnet 2026, mainnet March 2027, only if it's ready. No premine. Nothing for sale.">
+<meta name="description" content="Privacy for people. Accountability for machines. Three coins, one launch — testnet 2026, mainnet March 2027, only if it's ready. No premine. No coins for sale.">
 <link rel="canonical" href="https://daarx.money/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23d6ab52'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23d6ab52'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DAARX · L10N · OPEN">
+<meta property="og:title" content="DAARX · L10N · OPEN — privacy for people, accountability for machines">
+<meta property="og:description" content="Privacy for people. Accountability for machines. Three coins, one launch — testnet 2026, mainnet March 2027, only if it's ready. No premine. No coins for sale.">
+<meta property="og:url" content="https://daarx.money/">
+<meta property="og:image" content="https://daarx.money/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DAARX · L10N · OPEN — privacy for people, accountability for machines">
+<meta name="twitter:description" content="Privacy for people. Accountability for machines. Three coins, one launch — testnet 2026, mainnet March 2027, only if it's ready. No premine. No coins for sale.">
+<meta name="twitter:image" content="https://daarx.money/og.png">
 <style>
   :root{
     --bg:#060706;
@@ -95,9 +109,33 @@
   footer{padding:6rem 0 7rem}
   footer .end{font-size:clamp(1.4rem,4vw,2.4rem);font-weight:800;letter-spacing:-.02em}
   footer .sub{color:var(--faint);font-size:.82rem;letter-spacing:.08em;margin-top:1.6rem;line-height:1.9}
+
+  /* ── TRON grid: a receding neon floor, behind all content, motion-safe ── */
+  .grid{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;
+    perspective:34rem;perspective-origin:50% 42%}
+  .grid::before{content:"";position:absolute;left:-75%;right:-75%;bottom:-20%;height:150%;
+    background-image:
+      repeating-linear-gradient(to right,rgba(99,185,214,.55) 0 1px,transparent 1px 4rem),
+      repeating-linear-gradient(to bottom,rgba(99,185,214,.55) 0 1px,transparent 1px 4rem);
+    transform:rotateX(77deg);transform-origin:50% 100%;opacity:.09;
+    -webkit-mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 42%,transparent 80%);
+    mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 42%,transparent 80%);
+    animation:grid-drift 16s linear infinite}
+  @keyframes grid-drift{from{background-position:0 0}to{background-position:0 4rem}}
+  @media (prefers-reduced-motion:reduce){.grid::before{animation:none}}
+
+  /* ── neon bloom: soft halos on headings, coin accents, and the hairlines only ── */
+  .big,.mid{text-shadow:0 0 22px rgba(233,233,227,.12)}
+  .d{text-shadow:0 0 10px rgba(74,224,140,.5),0 0 22px rgba(74,224,140,.22)}
+  .l{text-shadow:0 0 10px rgba(214,171,82,.5),0 0 22px rgba(214,171,82,.22)}
+  .o{text-shadow:0 0 10px rgba(99,185,214,.5),0 0 22px rgba(99,185,214,.22)}
+  .big .cursor{text-shadow:0 0 12px rgba(74,224,140,.6),0 0 26px rgba(74,224,140,.3)}
+  .rule{box-shadow:0 0 10px rgba(99,185,214,.28)}
 </style>
 </head>
 <body>
+
+<div class="grid" aria-hidden="true"></div>
 
 <div class="top">
   <span class="mk"><span class="d">DAARX</span> <span class="amp">·</span> <span class="l">L10N</span> <span class="amp">·</span> <span class="o">OPEN</span></span>
@@ -177,9 +215,18 @@
 
   <hr class="rule">
 
-  <!-- 7 · still true -->
+  <!-- 7 · take part -->
   <section class="beat short">
-    <p class="mid"><span class="dim">Nothing for sale.</span> Still.</p>
+    <div class="kick">take part</div>
+    <p class="mid">Want in early? <span class="dim">Run a node. Mine.</span></p>
+    <p class="note">When the network goes live, anyone can help secure it — on a plain computer, no warehouse. The miner and node are <b>free and open</b>. We'll also build you a ready-to-plug-in box, if you'd rather not. Early on the coin is worth <b>~nothing</b> and the power may cost more than it earns — you do this to <b>own in early and hold the network up</b>, not for income. The coins stay never-for-sale; the rig is a separate thing. <a href="/mine.html" style="color:var(--steel)">run a node &amp; mine →</a></p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- 8 · still true -->
+  <section class="beat short">
+    <p class="mid"><span class="dim">No coins for sale.</span> Still.</p>
   </section>
 
 </div>
@@ -190,7 +237,8 @@
 <footer>
   <div class="wrap">
     <p class="end"><span class="d">DAARX</span> <span class="amp">·</span> <span class="l">L10N</span> <span class="amp">·</span> <span class="o">OPEN</span></p>
-    <p class="sub">one launch · 2027 · no premine · no presale · no bank · nothing for sale<br>
+    <p class="sub" style="letter-spacing:.1em"><a href="/" style="color:var(--steel);text-decoration:none">daarx.money</a> · <a href="/daarx.html" style="color:var(--steel);text-decoration:none">DAARX</a> · <a href="/l10n.html" style="color:var(--steel);text-decoration:none">L10N</a> · <a href="/open.html" style="color:var(--steel);text-decoration:none">OPEN</a> · <a href="/break-it.html" style="color:var(--steel);text-decoration:none">break it</a> · <a href="/mine.html" style="color:var(--steel);text-decoration:none">mine it</a></p>
+    <p class="sub">one launch · 2027 · no premine · no presale · no bank · no coins for sale<br>
     full whitepapers publish with the test network · teasers above, exact papers then<br>
     test coins are worthless on purpose · nothing here is advice</p>
   </div>

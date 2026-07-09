@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!-- daarx.money/mine — run a node & mine. participation, not profit. the rig is separate from the coins; the coins are never for sale. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mine it — run a node · DAARX · L10N · OPEN</title>
+<meta name="description" content="Help secure the network on your own computer. The miner and node are free and open. Free plug-and-go image, or a built box. Participation, not profit — the coin starts at zero value. Reserve interest; nothing is for sale yet.">
+<link rel="canonical" href="https://daarx.money/mine.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23d6ab52'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23d6ab52'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DAARX · L10N · OPEN">
+<meta property="og:title" content="Mine it — run a node · DAARX · L10N · OPEN">
+<meta property="og:description" content="Help secure the network on your own computer. The miner and node are free and open. Free plug-and-go image, or a built box. Participation, not profit — the coin starts at zero value. Reserve interest; nothing is for sale yet.">
+<meta property="og:url" content="https://daarx.money/mine.html">
+<meta property="og:image" content="https://daarx.money/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mine it — run a node · DAARX · L10N · OPEN">
+<meta name="twitter:description" content="Help secure the network on your own computer. The miner and node are free and open. Free plug-and-go image, or a built box. Participation, not profit — the coin starts at zero value. Reserve interest; nothing is for sale yet.">
+<meta name="twitter:image" content="https://daarx.money/og.png">
+<style>
+  :root{--bg:#060706;--ink:#e9e9e3;--dim:#5a615a;--faint:#2c312d;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--steel:#8b9199;
+    --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:16px;line-height:1.7;letter-spacing:.01em}
+  ::selection{background:var(--steel);color:var(--bg)}
+  a{color:var(--steel);text-decoration:none}a:hover,a:focus{color:var(--ink)}
+  .wrap{max-width:46rem;margin:0 auto;padding:6rem 2rem 5rem}
+  .crumb{color:var(--faint);font-size:.82rem;letter-spacing:.1em;margin-bottom:4rem}
+  .crumb a{color:var(--dim)}
+  h1{font-size:clamp(2.4rem,8vw,4.5rem);font-weight:800;letter-spacing:-.02em;color:var(--steel)}
+  h1 .dot{color:var(--dim)}
+  .tag{color:var(--dim);font-size:clamp(1.05rem,2.4vw,1.3rem);margin:.8rem 0 3.5rem;max-width:32em}
+  h2{color:var(--faint);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;margin:3.2rem 0 1rem}
+  p{color:var(--dim);max-width:34em;margin-bottom:1.1rem}
+  p b{color:var(--ink);font-weight:600}
+  .lead b{color:var(--ink)}
+
+  /* the honest banner — participation, not profit */
+  .honest{border:1px solid var(--faint);border-radius:2px;padding:1.3rem 1.3rem;margin:1rem 0 0;color:var(--dim);max-width:none}
+  .honest b{color:var(--ink);font-weight:600}
+
+  /* the three tiers, as rows not cards */
+  .tiers{margin:1.2rem 0;display:flex;flex-direction:column;gap:1.1rem}
+  .tier{border:1px solid var(--faint);border-radius:2px;padding:1.2rem 1.3rem}
+  .tier .th{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+  .tier .nm{color:var(--ink);font-weight:700;font-size:1.05rem;letter-spacing:.01em}
+  .tier .nm .lv{color:var(--faint);font-weight:400;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-right:.6em}
+  .tier .pr{color:var(--steel);font-weight:700;white-space:nowrap}
+  .tier .pr .free{color:var(--green)}
+  .tier .bd{color:var(--dim);margin:.6rem 0 0;max-width:none}
+  .tier .bd b{color:var(--ink)}
+  .tier .why{color:var(--faint);font-size:.85rem;margin-top:.5rem;font-style:italic;max-width:none}
+
+  .caveat{color:var(--faint);font-size:.85rem;line-height:1.7;margin-top:1rem;max-width:34em}
+  .caveat b{color:var(--dim);font-weight:600}
+
+  /* small "extras" list */
+  .adds{margin:1rem 0;display:flex;flex-direction:column;gap:.9rem}
+  .add{display:flex;gap:1.1rem;align-items:baseline}
+  .add .k{color:var(--steel);min-width:9.5em}
+  .add .v{color:var(--dim);max-width:30em}
+  .add .v b{color:var(--ink)}
+
+  /* reserve box */
+  .reserve{border:1px solid var(--faint);border-radius:2px;padding:1.4rem 1.3rem;margin:1.2rem 0}
+  .reserve .ttl{color:var(--ink);font-weight:700;margin-bottom:.6rem}
+  .reserve p{margin-bottom:.8rem}
+  .reserve .ph{color:var(--faint);font-size:.9rem}
+
+  .soon{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--faint);color:var(--dim)}
+  .soon b{color:var(--steel);font-weight:600}
+  footer{color:var(--faint);font-size:.8rem;letter-spacing:.08em;margin-top:4rem;line-height:1.9}
+
+  /* ── TRON grid: a receding neon floor, behind all content, motion-safe ── */
+  .grid{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;
+    perspective:34rem;perspective-origin:50% 42%}
+  .grid::before{content:"";position:absolute;left:-75%;right:-75%;bottom:-20%;height:150%;
+    background-image:
+      repeating-linear-gradient(to right,rgba(99,185,214,.55) 0 1px,transparent 1px 4rem),
+      repeating-linear-gradient(to bottom,rgba(99,185,214,.55) 0 1px,transparent 1px 4rem);
+    transform:rotateX(77deg);transform-origin:50% 100%;opacity:.09;
+    -webkit-mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 42%,transparent 80%);
+    mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.5) 42%,transparent 80%);
+    animation:grid-drift 16s linear infinite}
+  @keyframes grid-drift{from{background-position:0 0}to{background-position:0 4rem}}
+  @media (prefers-reduced-motion:reduce){.grid::before{animation:none}}
+
+  /* ── neon bloom: soft halos on heading + coin accents, readability preserved ── */
+  h1{text-shadow:0 0 10px rgba(139,145,153,.4),0 0 20px rgba(139,145,153,.18)}
+  .d{text-shadow:0 0 10px rgba(74,224,140,.5),0 0 22px rgba(74,224,140,.22)}
+  .l{text-shadow:0 0 10px rgba(214,171,82,.5),0 0 22px rgba(214,171,82,.22)}
+  .tier .pr .free{text-shadow:0 0 10px rgba(74,224,140,.5)}
+  .soon b{text-shadow:0 0 8px rgba(139,145,153,.35)}
+</style>
+</head>
+<body>
+<div class="grid" aria-hidden="true"></div>
+<div class="wrap">
+  <div class="crumb"><a href="/">← daarx.money</a></div>
+  <h1>Mine it<span class="dot">.</span></h1>
+  <p class="tag">When the network goes live, anyone can help secure it — on a plain computer, no warehouse. Here's how you'll take part.</p>
+
+  <p class="lead">The chains are mined with <b>RandomX</b> — the kind of mining a normal CPU does well and a datacenter doesn't. Run a node, point a miner at it, and you help hold the network up. Mining <span class="d" style="color:var(--green)">DAARX</span> secures all three at once. The node and the miner are <b>free and open source</b> — so the software to do this is, and always will be, <b>free</b>.</p>
+
+  <h2>read this before anything else</h2>
+  <div class="honest">
+    <p style="margin-bottom:.9rem"><b>Participation, not profit.</b> This is a fair-launch coin: at the start it is worth <b>about nothing</b>, on purpose. Early on, the power your rig draws may cost <b>more</b> than what it mines. You do this to <b>own in early and help secure the network</b> — never for income. No promise of profit, earnings, or return. If that's not why you're here, this isn't for you.</p>
+    <p style="margin-bottom:0"><b>The coins are never for sale.</b> No premine, no presale, no token sale — mining is the only way in, for everyone, and that never changes. The <b>rig is a separate thing</b>: it's hardware and help, sold apart from the coins. Buying a box is buying a computer, not buying coin. We keep those two completely apart, on purpose.</p>
+  </div>
+
+  <h2>how hands-on do you want to be?</h2>
+  <p>Same recipe, three amounts of effort — your call. The cheapest is free; the others exist only so you don't have to build one yourself.</p>
+
+  <div class="tiers">
+    <div class="tier">
+      <div class="th">
+        <div class="nm"><span class="lv">tier 0</span>Image + recipe — do it yourself</div>
+        <div class="pr"><span class="free">free</span></div>
+      </div>
+      <div class="bd">The flashable plug-and-go image, the vetted parts list with buy links, and the setup checklist. You buy your own parts (roughly <b>~$1,150</b> at today's prices), flash the image, and mine. Because the software is free and open, <b>so is this</b>.</div>
+      <div class="why">the honest floor: you never have to buy hardware from us — mine yourself for free.</div>
+    </div>
+
+    <div class="tier">
+      <div class="th">
+        <div class="nm"><span class="lv">tier 2</span>Built box — we assemble it</div>
+        <div class="pr">~$1,899</div>
+      </div>
+      <div class="bd">A fully built, configured, burned-in, tested rig, shipped ready to plug in and mine. You're paying to skip the build, the BIOS gotchas, and the guesswork — configured, supported, ready out of the box. <b>Not a markup on hidden parts</b>: the parts price is public above.</div>
+      <div class="why">a convenience-and-support premium over raw parts, same idea as any pre-built computer.</div>
+    </div>
+
+    <div class="tier">
+      <div class="th">
+        <div class="nm"><span class="lv">tier 3</span>Concierge — hand-built, white-glove</div>
+        <div class="pr">~$3,299</div>
+      </div>
+      <div class="bd">Hand-built, burned-in over a day or two, serial-labelled, and personally set up — a premium config with a year of direct, priority support. A <b>limited run</b> (a handful per quarter); scarcity is part of what it is.</div>
+      <div class="why">priced for the hands-on time and the small number of slots — routed to Tier 2 if it sells out.</div>
+    </div>
+  </div>
+
+  <p class="caveat"><b>Prices verified as of 2026-07-08, and subject to change.</b> Component prices are unusually volatile right now: a 2026 memory-chip shortage has pushed <b>RAM and SSD prices up two to four times</b> since 2025, and the peak is forecast around mid-2026. We re-verify before publishing any hard number, and every price on the eventual store will carry its own "verified as of {date}" stamp. The figures here are estimates, not quotes.</p>
+
+  <h2>optional, if you want it</h2>
+  <p>Nobody has to take any of these. The box mines to <b>your own wallet</b> with none of them. They're conveniences on top, priced later:</p>
+  <div class="adds">
+    <div class="add"><span class="k">managed</span><span class="v">we watch it, update it, and tune it, with priority support. <b>Opt-in.</b></span></div>
+    <div class="add"><span class="k">hosting</span><span class="v">we run the rig in our space, on our power and cooling. A bigger lift — likely a waitlist before it's real, not day one.</span></div>
+    <div class="add"><span class="k">membership</span><span class="v">managed, plus community and extras. <b>Opt-in.</b></span></div>
+    <div class="add"><span class="k">a pool</span><span class="v">an <b>optional</b> pool the rigs can point at, with a small fee (1–2%) taken only from <b>what you actually earn</b> — so it's ~nothing while the coin is worth ~nothing. You can mine solo or point anywhere else instead; a pool should never hold most of the network.</span></div>
+  </div>
+  <p class="caveat">Same honest note as above: early mining earns little, and power or hosting can cost more than it makes. These are convenience and a bet on the network — <b>not</b> income.</p>
+
+  <h2>the wall — why the rig is kept apart</h2>
+  <p><span class="d" style="color:var(--green)">DAARX</span> and <span class="l" style="color:var(--gold)">L10N</span> have <b>no company behind them</b> — nothing to buy, no one to pressure. That's the whole design, and it doesn't change here. The rig program is a <b>separate</b> thing that sells hardware and help; the protocols stay entity-less on purpose. There is <b>no company formed yet</b> — nothing on this page is a live business, an offering, or a solicitation. When there's a real seller, it will be plainly separate from the coins, and it will never touch how the coins launch.</p>
+
+  <h2>reserve your interest</h2>
+  <div class="reserve">
+    <div class="ttl">Nothing here is for sale yet.</div>
+    <p>There's no checkout, no payment, and nothing to ship — because the network isn't live. What you <b>can</b> do is get on the list, so you hear first when reservations open (at the test network) and when a real store opens (at mainnet, if it's ready).</p>
+    <p><b>Reserving is expressing interest — not buying.</b> No money changes hands, you owe nothing, and you can drop off anytime. It just tells us how many people want in.</p>
+    <p class="ph">The list opens with the <b>test network</b> — that's when reservations open. Check back then. Nothing's for sale until there's a network to mine.</p>
+  </div>
+
+  <div class="soon">This fills in when the <b>test network drops, late 2026</b>: the free image, the parts recipe, the faucet, run-a-node, and reservations. <b>Testnet late 2026, mainnet target 2027 — only if it's ready. The date can move; the testing never shrinks.</b> Until then this is a promise with a shape, not a store.</div>
+
+  <footer><a href="/">daarx.money</a> · <a href="/daarx.html">DAARX</a> · <a href="/l10n.html">L10N</a> · <a href="/open.html">OPEN</a> · <a href="/break-it.html">break it</a> · mine it<br>the coins are never for sale · the rig is separate · participation, not profit · nothing here is advice</footer>
+</div>
+</body>
+</html>
