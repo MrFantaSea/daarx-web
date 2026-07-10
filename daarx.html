@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DAARX — the one to keep</title>
+<script>document.documentElement.classList.add('js')</script>
+<meta name="theme-color" content="#060706">
 <meta name="description" content="A private store of value. Fixed supply, hidden amounts, and a crowd the size of the whole chain. Full whitepaper publishes with the testnet.">
 <link rel="canonical" href="https://daarx.money/daarx.html">
 <link rel="stylesheet" href="/style.css">
@@ -24,41 +26,96 @@
 <meta name="twitter:image" content="https://daarx.money/og.png">
 </head>
 <body class="p-daarx">
+<a class="skip" href="#main">Skip to content</a>
 <div class="grid" aria-hidden="true"></div>
 
-<nav class="nav" aria-label="Primary">
-  <a class="mk" href="/"><span class="d">DAARX</span> <span class="amp">·</span> <span class="l">L10N</span> <span class="amp">·</span> <span class="o">OPEN</span></a>
-  <span class="go">
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">·</span><span class="l">L10N</span><span class="amp">·</span><span class="o">OPEN</span></a>
+  <div class="go">
     <a class="lnk" href="/faq.html">faq</a>
     <a class="lnk" href="/break-it.html">break it</a>
-    <a class="btn" href="/mine.html">Mine it <span class="arw">→</span></a>
-  </span>
+    <a class="btn" href="/mine.html">Mine it <span class="arw">&#8594;</span></a>
+    <details class="nd">
+      <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="navmenu">
+        <a href="/">Home</a>
+        <a href="/daarx.html" aria-current="page">DAARX</a>
+        <a href="/l10n.html">L10N</a>
+        <a href="/open.html">OPEN</a>
+        <a href="/mine.html">Mine it</a>
+        <a href="/break-it.html">Break it</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+    </details>
+  </div>
 </nav>
 
-<main class="wrap">
-  <p class="crumb"><a href="/">← daarx.money</a></p>
-  <h1 class="accent">DAARX</h1>
-  <p class="tag">The one to <b>keep</b>. A private store of value with a supply that never grows.</p>
+<main class="wrap" id="main">
+  <header class="coinhero">
+    <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
+    <div class="heroband">
+      <figure class="hero-figure coinorb hero-in" aria-hidden="true">
+        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DAARX">
+          <defs>
+            <radialGradient id="og" cx="34%" cy="30%" r="82%"><stop offset="0" stop-color="#d9ffe9"/><stop offset="44%" stop-color="#4ae08c"/><stop offset="100%" stop-color="#186b3f"/></radialGradient>
+            <radialGradient id="oh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4ae08c" stop-opacity="0"/><stop offset="55%" stop-color="#4ae08c" stop-opacity=".3"/><stop offset="100%" stop-color="#4ae08c" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle cx="120" cy="120" r="118" fill="url(#oh)" class="crowd"/>
+          <g class="orb-g orb-a"><circle cx="120" cy="120" r="62" fill="url(#og)"/><ellipse cx="100" cy="98" rx="16" ry="11" fill="#fff" opacity=".34"/><ellipse cx="98" cy="96" rx="7.5" ry="5" fill="#fff" opacity=".52"/></g>
+        </svg>
+      </figure>
+      <div class="htxt">
+        <h1 class="accent hero-in">DAARX</h1>
+        <p class="tag hero-in">The one to <b>keep</b>. A private store of value with a supply that never grows.</p>
+        <div class="actions hero-in">
+          <a class="btn solid" href="/mine.html">Reserve a rig <span class="arw">&#8594;</span></a>
+          <a class="btn" href="#more">How it works <span class="arw">&#8595;</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <h2 class="eyebrow">the supply</h2>
-  <p>There will only ever be <b>π × φ</b> of it — about 5.083 septillion base units, chosen once, reached <b>exactly</b> by a hundred-year schedule, and then zero forever. No tail, no committee, no exceptions. The emission table is a frozen list of integers that anyone can recompute.</p>
+  <div class="flow">
+    <h2 class="eyebrow" id="more">the supply</h2>
+    <p>There will only ever be <b>π × φ</b> of it — about 5.083 septillion base units, chosen once, reached <b>exactly</b> by a hundred-year schedule, and then zero forever. No tail, no committee, no exceptions. The emission table is a frozen list of integers that anyone can recompute.</p>
 
-  <h2 class="eyebrow">the privacy</h2>
-  <p>Most privacy coins hide you in a crowd of sixteen. DAARX hides you in <b>the whole chain</b> — every coin ever created is part of your crowd, every time you spend. No decoys to pick badly, no ring to analyze. Amounts are hidden. The only thing the chain ever learns about a coin is if someone tries to spend it twice.</p>
-  <p>Even the fees are designed not to fingerprint you: every fee snaps to one of a short public ladder of amounts, so yours looks like everyone's.</p>
+    <div class="statement">
+      <div class="fig">π × φ<span class="u">the entire supply · fixed forever</span></div>
+      <p class="cap">One number, chosen once and reached to the exact base unit — then <b>zero new coins, forever</b>. Not a target a committee steers toward; a frozen list anyone can recompute.</p>
+    </div>
 
-  <h2 class="eyebrow">the ground it stands on</h2>
-  <div class="facts">
-    <div class="f"><span class="k">block time</span><span class="v">111 seconds</span></div>
-    <div class="f"><span class="k">mining</span><span class="v">RandomX — CPUs, not warehouses</span></div>
-    <div class="f"><span class="k">launch</span><span class="v">fair — no premine, no presale, no coins for sale</span></div>
-    <div class="f"><span class="k">company behind it</span><span class="v">none, on purpose</span></div>
+    <h2 class="eyebrow">the privacy</h2>
+    <p>Most privacy coins hide you in a crowd of sixteen. DAARX hides you in <b>the whole chain</b> — every coin ever created is part of your crowd, every time you spend. No decoys to pick badly, no ring to analyze. Amounts are hidden. The only thing the chain ever learns about a coin is if someone tries to spend it twice.</p>
+    <p>Even the fees are designed not to fingerprint you: every fee snaps to one of a short public ladder of amounts, so yours looks like everyone's.</p>
+
+    <h2 class="eyebrow">the ground it stands on</h2>
+    <div class="facts">
+      <div class="f"><span class="k">block time</span><span class="v">111 seconds</span></div>
+      <div class="f"><span class="k">mining</span><span class="v">RandomX — CPUs, not warehouses</span></div>
+      <div class="f"><span class="k">launch</span><span class="v">fair — no premine, no presale, no coins for sale</span></div>
+      <div class="f"><span class="k">company behind it</span><span class="v">none, on purpose</span></div>
+    </div>
+
+    <h2 class="eyebrow">the limits</h2>
+    <p>The privacy layer is new cryptography built on an audited foundation. It is <b>tested, not proven</b> — so before launch, people are paid from a public bounty to break it — and every attempt gets published. If anything real is found, the launch waits. A public test network runs for months first.</p>
+
+    <div class="soon">The <b>full whitepaper</b> — every parameter, every proof obligation, every limitation stated plainly — publishes with the <b>test network, late 2026</b>. What ships will match it exactly; that's why it waits.</div>
+
+    <div class="endcta">
+      <div class="h">The only way in is to mine it.</div>
+      <p>On day one DAARX is worth exactly nothing — until people show up to mine it and hold it. No premine, no presale, no coins for sale: you don't buy in, you <b>earn in</b>. Reserve a plug-and-play rig, or run the free miner on a computer you own.</p>
+      <div class="actions">
+        <a class="btn solid big" href="/mine.html">Reserve a rig <span class="arw">&#8594;</span></a>
+        <a class="btn" href="/break-it.html">Break it <span class="arw">&#8594;</span></a>
+      </div>
+    </div>
+
+    <div class="crosslinks">
+      <a class="xl x-l" href="/l10n.html"><span class="dot3"></span><span class="xt"><span class="xk">L10N</span><span class="xs">the one to spend — private cash</span></span></a>
+      <a class="xl x-o" href="/open.html"><span class="dot3"></span><span class="xt"><span class="xk">OPEN</span><span class="xs">the one for machines — public</span></span></a>
+    </div>
   </div>
-
-  <h2 class="eyebrow">the limits</h2>
-  <p>The privacy layer is new cryptography built on an audited foundation. It is <b>tested, not proven</b> — so before launch, people are paid from a public bounty to break it — and every attempt gets published. If anything real is found, the launch waits. A public test network runs for months first.</p>
-
-  <div class="soon">The <b>full whitepaper</b> — every parameter, every proof obligation, every limitation stated plainly — publishes with the <b>test network, late 2026</b>. What ships will match it exactly; that's why it waits.</div>
 
 </main>
 
@@ -77,5 +134,23 @@
     <p class="fine">no coins for sale · nothing here is financial advice</p>
   </div>
 </footer>
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  root.classList.add('js');
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var SEL='.reveal,.stagger,.flow>*';
+  var els=[].slice.call(d.querySelectorAll(SEL));
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
+  else{
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{rootMargin:'0px 0px -10% 0px',threshold:.1});
+    els.forEach(function(e){ if(e.getBoundingClientRect().top < innerHeight*0.94){e.classList.add('in');} else {io.observe(e);} });
+  }
+  var nav=d.getElementById('nav');
+  if(nav){var on=function(){nav.classList.toggle('scrolled',(window.scrollY||0)>24)};on();addEventListener('scroll',on,{passive:true});}
+  var nd=d.querySelector('.nd');
+  if(nd){d.addEventListener('click',function(e){if(nd.open&&!nd.contains(e.target))nd.open=false;});}
+})();
+</script>
 </body>
 </html>

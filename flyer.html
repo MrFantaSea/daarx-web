@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--
-  PRINT FLYER — DAARX & L10N
-  ────────────────────────────────────────────────────────────
-  · Toggle paper size (US Letter / A4) and headline variant with
-    the on-screen bar — the bar never prints.
-  · Print at 100% scale, margins "None" (the sheet has its own).
-  · The QR box is a placeholder: drop the real QR <img> in where
-    marked once the domain exists (see DEPLOY-and-QR-runbook.md).
-  · Swap daarx.money before printing.
-  ────────────────────────────────────────────────────────────
--->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -106,13 +95,16 @@
     padding-top:.2in;
   }
   .qr{
-    width:2in;height:2in;flex:0 0 auto;
-    border:3px dashed #111;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;text-align:center;
-    font-size:13pt;font-weight:700;letter-spacing:.1em;line-height:1.5;
+    width:2in;height:2in;flex:0 0 auto;background:#fff;
+    border:2px solid #111;padding:.1in;
+    display:flex;align-items:center;justify-content:center;
   }
-  .qr small{font-size:8pt;font-weight:400;letter-spacing:.02em;color:#444;
-    max-width:1.7in}
+  .qr svg{width:100%;height:100%;display:block}
+  /* coin accents — the print echoes the site's colors */
+  .coin.d{border-color:#1f9d5c}
+  .coin.d .role,.coin.d .name{color:#177a46}
+  .coin.l{border-color:#c39324}
+  .coin.l .role,.coin.l .name{color:#8a6612}
   .domainblock{flex:1;min-width:0}
   .domain{
     font-family:Georgia,serif;font-size:30pt;line-height:1.1;
@@ -152,13 +144,13 @@
   alternative: two coins, designed together.</p>
 
   <div class="coins">
-    <div class="coin">
+    <div class="coin d">
       <div class="role">Savings coin</div>
       <div class="name">DAARX</div>
       <p>Private. Fixed supply that <b>never inflates</b> — issuance ends
       at a hard number, forever.</p>
     </div>
-    <div class="coin">
+    <div class="coin l">
       <div class="role">Spending coin</div>
       <div class="name">L10N</div>
       <p>Built to work like <b>cash</b> — quick, cheap, designed to be
@@ -181,11 +173,7 @@
   not the hype.</p>
 
   <div class="bottom">
-    <div class="qr">
-      QR HERE
-      <small>2&Prime; &times; 2&Prime; — real code drops in when the
-      domain is live</small>
-    </div>
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" class="segno" role="img" aria-label="QR code — daarx.money" preserveAspectRatio="xMidYMid meet"><path class="qrline" stroke="#111" d="M3 3.5h7m1 0h1m1 0h2m1 0h2m3 0h7m-25 1h1m5 0h1m1 0h1m3 0h1m1 0h1m3 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m3 0h2m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m4 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m5 0h1m3 0h1m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-15 1h2m2 0h3m-16 1h1m4 0h4m2 0h2m3 0h1m5 0h2m-25 1h4m1 0h1m3 0h3m1 0h3m3 0h5m-24 1h1m1 0h2m1 0h3m1 0h1m1 0h6m1 0h1m2 0h1m1 0h2m-24 1h1m1 0h1m1 0h1m1 0h3m1 0h2m1 0h1m1 0h4m1 0h1m2 0h1m-24 1h1m1 0h2m1 0h3m1 0h1m1 0h3m1 0h1m1 0h2m4 0h1m-25 1h4m1 0h1m2 0h2m1 0h1m3 0h2m2 0h1m3 0h1m-24 1h1m1 0h1m1 0h1m1 0h2m1 0h2m1 0h4m2 0h4m1 0h2m-25 1h1m2 0h1m4 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h2m1 0h1m-25 1h1m2 0h2m1 0h1m2 0h1m1 0h1m1 0h2m1 0h5m1 0h1m-15 1h1m1 0h2m4 0h1m3 0h1m-21 1h7m1 0h1m3 0h3m1 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m3 0h2m4 0h1m3 0h1m3 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m4 0h7m1 0h3m-25 1h1m1 0h3m1 0h1m4 0h1m1 0h2m1 0h3m4 0h2m-25 1h1m1 0h3m1 0h1m2 0h2m1 0h6m3 0h2m1 0h1m-25 1h1m5 0h1m1 0h2m2 0h2m1 0h2m1 0h3m3 0h1m-25 1h7m5 0h1m3 0h2m3 0h1m2 0h1"/></svg></div>
     <div class="domainblock">
       <div class="domain">daarx.money</div>
       <div class="domain-caption">The whole story, the honest status, and

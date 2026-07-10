@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy — DAARX · L10N · OPEN</title>
+<script>document.documentElement.classList.add('js')</script>
+<meta name="theme-color" content="#060706">
 <meta name="description" content="When you reserve we collect your email and your product choices, only to contact you when the store opens. No tracking, no analytics, no cookies, no accounts. Ask to be deleted anytime.">
 <link rel="canonical" href="https://daarx.money/privacy.html">
 <link rel="stylesheet" href="/style.css">
@@ -23,37 +25,85 @@
 <meta name="twitter:description" content="When you reserve we collect your email and your product choices, only to contact you when the store opens. No tracking, no analytics, no cookies, no accounts. Ask to be deleted anytime.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 </head>
-<body class="p-open">
+<body class="p-open calm">
+<a class="skip" href="#main">Skip to content</a>
 <div class="grid" aria-hidden="true"></div>
 
-<nav class="nav" aria-label="Primary">
-  <a class="mk" href="/"><span class="d">DAARX</span> <span class="amp">·</span> <span class="l">L10N</span> <span class="amp">·</span> <span class="o">OPEN</span></a>
-  <span class="go">
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">·</span><span class="l">L10N</span><span class="amp">·</span><span class="o">OPEN</span></a>
+  <div class="go">
     <a class="lnk" href="/faq.html">faq</a>
     <a class="lnk" href="/break-it.html">break it</a>
-    <a class="btn" href="/mine.html">Mine it <span class="arw">→</span></a>
-  </span>
+    <a class="btn" href="/mine.html">Mine it <span class="arw">&#8594;</span></a>
+    <details class="nd">
+      <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="navmenu">
+        <a href="/">Home</a>
+        <a href="/daarx.html">DAARX</a>
+        <a href="/l10n.html">L10N</a>
+        <a href="/open.html">OPEN</a>
+        <a href="/mine.html">Mine it</a>
+        <a href="/break-it.html">Break it</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/privacy.html" aria-current="page">Privacy</a>
+      </div>
+    </details>
+  </div>
 </nav>
 
-<main class="wrap">
-  <p class="crumb"><a href="/">← daarx.money</a></p>
-  <h1>Privacy<span class="dot">.</span></h1>
-  <p class="tag">We ask for as little as we can, and we use it for one thing.</p>
+<main class="wrap" id="main">
+  <header class="coinhero">
+    <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
+    <div class="heroband">
+      <figure class="hero-figure coinorb hero-in" aria-hidden="true">
+        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Privacy">
+          <defs>
+            <radialGradient id="og" cx="34%" cy="30%" r="82%"><stop offset="0" stop-color="#dff4fb"/><stop offset="44%" stop-color="#63b9d6"/><stop offset="100%" stop-color="#265f76"/></radialGradient>
+            <radialGradient id="oh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#63b9d6" stop-opacity="0"/><stop offset="55%" stop-color="#63b9d6" stop-opacity=".3"/><stop offset="100%" stop-color="#63b9d6" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle cx="120" cy="120" r="118" fill="url(#oh)" class="crowd"/>
+          <g class="orb-g orb-a"><circle cx="120" cy="120" r="62" fill="url(#og)"/><ellipse cx="100" cy="98" rx="16" ry="11" fill="#fff" opacity=".34"/><ellipse cx="98" cy="96" rx="7.5" ry="5" fill="#fff" opacity=".52"/></g>
+        </svg>
+      </figure>
+      <div class="htxt">
+        <h1 class="hero-in">Privacy<span class="dot">.</span></h1>
+        <p class="tag hero-in">We ask for as little as we can, and we use it for one thing.</p>
+        <div class="actions hero-in">
+          <a class="btn solid" href="/mine.html">Reserve a rig <span class="arw">&#8594;</span></a>
+          <a class="btn" href="/faq.html">The FAQ <span class="arw">&#8594;</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <h2 class="eyebrow">what we collect</h2>
-  <p>When you reserve, we collect your <b>email address</b> and the <b>product, membership, and accessory choices</b> you pick. Nothing else. No tracking, no analytics, no cookies, no accounts, no passwords.</p>
+  <div class="flow">
+    <div class="statement">
+      <div class="fig">Just an email.<span class="u">and what you picked</span></div>
+      <p class="cap">That's everything we take when you reserve. <b>No tracking, no analytics, no cookies, no accounts, no passwords</b> — and it's only ever used to reach you when the store opens.</p>
+    </div>
 
-  <h2 class="eyebrow">why</h2>
-  <p>Only to contact you about your reservation when the store opens. That's the whole reason it exists.</p>
+    <div class="cards">
+      <div class="card"><div class="ck">what we collect</div>
+        <p>Your <b>email address</b> and the <b>product, membership, and accessory choices</b> you pick. Nothing else — no tracking, no analytics, no cookies, no accounts, no passwords.</p></div>
+      <div class="card"><div class="ck">why</div>
+        <p>Only to contact you about your reservation when the store opens. That's the whole reason it exists.</p></div>
+      <div class="card"><div class="ck">how it's handled</div>
+        <p>The form sends it through <b>Web3Forms</b>, a form relay, to our own inbox on <b>Proton</b>. We don't sell it, we don't share it, and we don't use it for anything else.</p></div>
+      <div class="card"><div class="ck">your control</div>
+        <p>Reserving is <b>non-binding and free</b>. Ask us to delete you anytime at <a href="mailto:daarxmoney@proton.me">daarxmoney@proton.me</a>, and you're removed.</p></div>
+    </div>
 
-  <h2 class="eyebrow">how it's handled</h2>
-  <p>The reservation form sends it through <b>Web3Forms</b>, a form relay, to our own inbox on <b>Proton</b>. We don't sell it, we don't share it, and we don't use it for anything else.</p>
+    <div class="soon">The fully private, self-hosted store comes at <b>mainnet</b>. Until then, this relay is how reservations reach us — and it stays this small on purpose.</div>
 
-  <h2 class="eyebrow">your control</h2>
-  <p>Reserving is <b>non-binding and free</b>.</p>
-  <p>Ask us to delete you anytime at <a href="mailto:daarxmoney@proton.me">daarxmoney@proton.me</a>, and you're removed.</p>
-
-  <p>The fully private, self-hosted store comes at mainnet. Until then, this relay is how reservations reach us.</p>
+    <div class="endcta">
+      <div class="h">Reserving costs nothing.</div>
+      <p>It's non-binding, and we only ever email you about your spot. When the private store opens at mainnet, the whole flow moves in-house.</p>
+      <div class="actions">
+        <a class="btn solid big" href="/mine.html">Reserve a rig <span class="arw">&#8594;</span></a>
+        <a class="btn" href="mailto:daarxmoney@proton.me">Ask to be deleted <span class="arw">&#8594;</span></a>
+      </div>
+    </div>
+  </div>
 
 </main>
 
@@ -72,5 +122,23 @@
     <p class="fine">no coins for sale · nothing here is financial advice</p>
   </div>
 </footer>
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  root.classList.add('js');
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var SEL='.reveal,.stagger,.flow>*';
+  var els=[].slice.call(d.querySelectorAll(SEL));
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
+  else{
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{rootMargin:'0px 0px -10% 0px',threshold:.1});
+    els.forEach(function(e){ if(e.getBoundingClientRect().top < innerHeight*0.94){e.classList.add('in');} else {io.observe(e);} });
+  }
+  var nav=d.getElementById('nav');
+  if(nav){var on=function(){nav.classList.toggle('scrolled',(window.scrollY||0)>24)};on();addEventListener('scroll',on,{passive:true});}
+  var nd=d.querySelector('.nd');
+  if(nd){d.addEventListener('click',function(e){if(nd.open&&!nd.contains(e.target))nd.open=false;});}
+})();
+</script>
 </body>
 </html>

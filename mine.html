@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mine it — run a node · DAARX · L10N · OPEN</title>
+<script>document.documentElement.classList.add('js')</script>
+<meta name="theme-color" content="#060706">
 <meta name="description" content="Help run the network on your own computer. Free plug-and-go image, or a built rig — from a $299 node box to a Threadripper. Buy it, own it over time, or just rent one. New parts, priority shipping included. Reserve now; nothing charged until the store opens.">
 <link rel="canonical" href="https://daarx.money/mine.html">
 <link rel="stylesheet" href="/style.css">
@@ -22,33 +24,78 @@
 <meta name="twitter:description" content="Free plug-and-go image, or a built rig. Buy it, own it over time, or rent one. Reserve now; nothing charged until the store opens.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 </head>
-<body class="p-mine">
+<body class="p-mine calm">
+<a class="skip" href="#main">Skip to content</a>
 <div class="grid" aria-hidden="true"></div>
 
-<nav class="nav" aria-label="Primary">
-  <a class="mk" href="/"><span class="d">DAARX</span> <span class="amp">·</span> <span class="l">L10N</span> <span class="amp">·</span> <span class="o">OPEN</span></a>
-  <span class="go">
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">·</span><span class="l">L10N</span><span class="amp">·</span><span class="o">OPEN</span></a>
+  <div class="go">
     <a class="lnk" href="/faq.html">faq</a>
-    <a class="btn" href="#reserve">Reserve <span class="arw">→</span></a>
-  </span>
+    <a class="lnk" href="/break-it.html">break it</a>
+    <a class="btn" href="#reserve">Reserve <span class="arw">&#8594;</span></a>
+    <details class="nd">
+      <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="navmenu">
+        <a href="/">Home</a>
+        <a href="/daarx.html">DAARX</a>
+        <a href="/l10n.html">L10N</a>
+        <a href="/open.html">OPEN</a>
+        <a href="/mine.html" aria-current="page">Mine it</a>
+        <a href="/break-it.html">Break it</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+    </details>
+  </div>
 </nav>
 
-<main class="wrap">
-  <p class="crumb"><a href="/">← daarx.money</a></p>
-  <h1>Mine it<span class="dot">.</span></h1>
-  <p class="tag">Pick a machine, plug it in, help hold the network up. From a $299 node box to a Threadripper — buy it, own it over time, or just rent one.</p>
-  <div class="actions">
-    <a class="btn solid" href="#reserve">Reserve your spot <span class="arw">→</span></a>
-    <a class="btn" href="/faq.html">Questions? <span class="arw">→</span></a>
-  </div>
+<main class="wrap" id="main">
+  <header class="coinhero">
+    <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
+    <div class="storehero">
+      <div class="htxt">
+        <h1 class="hero-in">Mine it<span class="dot">.</span></h1>
+        <p class="tag hero-in">Pick a machine, plug it in, help hold the network up. From a $299 node box to a Threadripper — buy it, own it over time, or just rent one.</p>
+        <div class="actions hero-in">
+          <a class="btn solid" href="#reserve">Reserve your spot <span class="arw">&#8594;</span></a>
+          <a class="btn" href="/faq.html">Questions? <span class="arw">&#8594;</span></a>
+        </div>
+      </div>
+      <figure class="rig hero-in" aria-hidden="true">
+        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A mining rig">
+          <defs>
+            <linearGradient id="rigp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171d17"/><stop offset="1" stop-color="#0d110d"/></linearGradient>
+            <radialGradient id="righ" cx="50%" cy="46%" r="52%"><stop offset="0" stop-color="#4ae08c" stop-opacity=".26"/><stop offset="100%" stop-color="#4ae08c" stop-opacity="0"/></radialGradient>
+            <radialGradient id="rigg" cx="42%" cy="34%" r="70%"><stop offset="0" stop-color="#d9ffe9"/><stop offset="45%" stop-color="#4ae08c"/><stop offset="100%" stop-color="#186b3f"/></radialGradient>
+          </defs>
+          <circle cx="120" cy="120" r="112" fill="url(#righ)" class="crowd"/>
+          <rect x="76" y="42" width="88" height="156" rx="14" fill="url(#rigp)" stroke="#3d453c" stroke-width="1.5"/>
+          <g stroke="#39423a" stroke-width="2.4" stroke-linecap="round"><path d="M92 60h56"/><path d="M92 69h56"/><path d="M92 78h56"/></g>
+          <g><rect x="93" y="164" width="11" height="20" rx="2.5" fill="#4ae08c" opacity=".32"/><rect x="108" y="157" width="11" height="27" rx="2.5" fill="#4ae08c" opacity=".55"/><rect x="123" y="150" width="11" height="34" rx="2.5" fill="#4ae08c" opacity=".82"/><rect x="138" y="160" width="9" height="24" rx="2.5" fill="#4ae08c" opacity=".45"/></g>
+          <circle cx="120" cy="120" r="30" fill="none" stroke="#2b322c" stroke-width="2.5"/>
+          <circle class="spin" cx="120" cy="120" r="30" fill="none" stroke="url(#rigg)" stroke-width="3.2" stroke-dasharray="5 9" opacity=".95"/>
+          <circle cx="120" cy="120" r="6.5" fill="url(#rigg)"/>
+        </svg>
+      </figure>
+    </div>
+  </header>
+
+  <div class="flow">
 
   <div class="honest">
-    <p>The node and miner are <b>free and open</b> — always. A rig just makes it plug-and-play. You'd be getting in at the <b>ground floor</b>: it mines to <b>your own wallet</b>, and a fair-launch coin is only worth what the people who show up make it — so being early is the whole point. The coins are never for sale; this is hardware, not an investment. Every build: <b>new parts, tier-1 power, priority shipping included.</b></p>
+    <p>The node and miner are <b>free and open</b> — always; a rig just makes it plug-and-play, mining to <b>your own wallet</b> from day one. This is hardware, not an investment: the coins are never for sale, and a fair-launch coin is worth only what the people who show up make it — so being early is the point. Every build ships with <b>new parts, tier-1 power, and priority shipping included.</b></p>
+  </div>
+
+  <div class="quickcta">
+    <span class="qt"><b>Not sure which?</b> Reserve now, decide when the store opens — nothing's charged.</span>
+    <a class="btn solid" href="#reserve">Reserve a spot <span class="arw">&#8594;</span></a>
   </div>
 
   <h2 class="eyebrow">just run a node</h2>
   <ul class="menu">
     <li><a class="item" href="#reserve" data-sku="Node Box — $299">
+      <span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6.5" width="16" height="11" rx="2.2"/><circle cx="12" cy="12" r="2.3" fill="currentColor" stroke="none"/><path d="M7 12h2.4M14.6 12H17"/></svg></span>
       <span class="main"><span class="nm">Node Box</span><span class="ds">Plug in, run a full node — supports and decentralizes the network. <b>No mining, no earnings</b>; ~10W, silent, tiny.</span></span>
       <span class="side"><span class="pr">$299</span><span class="pick">reserve →</span></span>
     </a></li>
@@ -59,11 +106,13 @@
   <p>Small, quiet boxes — plug-and-go, low effort, low power. They mine a little; you buy them for the <b>convenience and the form factor</b>.</p>
   <ul class="menu">
     <li><a class="item" href="#reserve" data-sku="Mini Miner — $699">
-      <span class="main"><span class="nm">Mini Miner <span class="hz">~6–8 kH/s</span></span><span class="ds">A tiny, silent box that mines a little and runs a node. Set it and forget it.</span></span>
+      <span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="5" width="14" height="14" rx="3.2"/><circle cx="12" cy="12" r="3.4"/><circle cx="12" cy="12" r=".9" fill="currentColor" stroke="none"/></svg></span>
+      <span class="main"><span class="nm">Mini Miner <span class="hz">~6–8 kH/s</span></span><span class="ds">A tiny, silent box that mines a little and runs a node. Set it and forget it.</span><span class="meter"><i style="--h:10%"></i></span></span>
       <span class="side"><span class="pr">$699</span><span class="pick">reserve →</span></span>
     </a></li>
     <li><a class="item" href="#reserve" data-sku="Beefy Mini — $1,399">
-      <span class="main"><span class="nm">Beefy Mini <span class="hz">~16–20 kH/s</span></span><span class="ds">A real 16-core (Ryzen 9 7945HX) in a 2-liter silent box — the most you can mine without a tower.</span></span>
+      <span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="5" width="14" height="14" rx="3.2"/><circle cx="12" cy="12" r="3.4"/><circle cx="12" cy="12" r=".9" fill="currentColor" stroke="none"/></svg></span>
+      <span class="main"><span class="nm">Beefy Mini <span class="hz">~16–20 kH/s</span></span><span class="ds">A real 16-core (Ryzen 9 7945HX) in a 2-liter silent box — the most you can mine without a tower.</span><span class="meter"><i style="--h:24%"></i></span></span>
       <span class="side"><span class="pr">$1,399</span><span class="pick">reserve →</span></span>
     </a></li>
   </ul>
@@ -71,39 +120,48 @@
   <h2 class="eyebrow">the rigs</h2>
   <ul class="menu">
     <li><a class="item hero" href="#reserve" data-sku="Standard — $1,899">
-      <span class="main"><span class="nm">Standard <span class="hz">~20 kH/s</span><span class="chip">value pick</span></span><span class="ds">16-core Ryzen 9 5900XT — the <b>most hashrate per dollar</b>. Where most people should start.</span></span>
+      <span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.2"/><path d="M9.6 6.5h4.8M9.6 9h4.8"/><circle cx="12" cy="17" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+      <span class="main"><span class="nm">Standard <span class="hz">~20 kH/s</span><span class="chip">value pick</span></span><span class="ds">16-core Ryzen 9 5900XT — the <b>most hashrate per dollar</b>. Where most people should start.</span><span class="meter"><i style="--h:24%"></i></span></span>
       <span class="side"><span class="pr">$1,899</span><span class="pick">reserve →</span></span>
     </a></li>
     <li><a class="item" href="#reserve" data-sku="Pro — $2,499">
-      <span class="main"><span class="nm">Pro <span class="hz">~27 kH/s</span></span><span class="ds">16-core Ryzen 9 9950X on AM5 — the top desktop for hashrate, with an upgrade path.</span></span>
+      <span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.2"/><path d="M9.6 6.5h4.8M9.6 9h4.8"/><circle cx="12" cy="17" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+      <span class="main"><span class="nm">Pro <span class="hz">~27 kH/s</span></span><span class="ds">16-core Ryzen 9 9950X on AM5 — the top desktop for hashrate, with an upgrade path.</span><span class="meter"><i style="--h:32%"></i></span></span>
       <span class="side"><span class="pr">$2,499</span><span class="pick">reserve →</span></span>
     </a></li>
   </ul>
-  <p class="note"><b>Prestige builds</b> — same ~27 kH/s as the Pro, premium silicon for people who game and create as well as mine (the 3D cache is for gaming, not hashrate):</p>
+  <details class="expand"><summary>Prestige builds &#8212; premium silicon, same ~27 kH/s <span class="tw">&#8250;</span></summary>
+  <p class="note">Same ~27 kH/s as the Pro; the premium silicon and 3D cache are for gaming and creating, not hashrate:</p>
   <ul class="menu">
     <li><a class="item" href="#reserve" data-sku="Pro ACE — $2,899">
-      <span class="main"><span class="nm">Pro ACE <span class="hz">~27 kH/s</span></span><span class="ds">The X3D flagship — Ryzen 9 9950X3D. Mines like the Pro, games like a beast.</span></span>
+      <span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.2"/><path d="M9.6 6.5h4.8M9.6 9h4.8"/><circle cx="12" cy="17" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+      <span class="main"><span class="nm">Pro ACE <span class="hz">~27 kH/s</span></span><span class="ds">The X3D flagship — Ryzen 9 9950X3D. Mines like the Pro, games like a beast.</span><span class="meter"><i style="--h:32%"></i></span></span>
       <span class="side"><span class="pr">$2,899</span><span class="pick">reserve →</span></span>
     </a></li>
     <li><a class="item" href="#reserve" data-sku="Pro ACE II — $3,299">
-      <span class="main"><span class="nm">Pro ACE II <span class="hz">~27 kH/s</span></span><span class="ds">Ryzen 9 9950X3D2 Dual Edition — 3D cache on both CCDs, 208 MB, the most AMD makes. The best chip there is; same mining class.</span></span>
+      <span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.2"/><path d="M9.6 6.5h4.8M9.6 9h4.8"/><circle cx="12" cy="17" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+      <span class="main"><span class="nm">Pro ACE II <span class="hz">~27 kH/s</span></span><span class="ds">Ryzen 9 9950X3D2 Dual Edition — 3D cache on both CCDs, 208 MB, the most AMD makes. The best chip there is; same mining class.</span><span class="meter"><i style="--h:32%"></i></span></span>
       <span class="side"><span class="pr">$3,299</span><span class="pick">reserve →</span></span>
     </a></li>
   </ul>
+  </details>
 
   <h2 class="eyebrow">BIG_DOG</h2>
   <p>When you want the most hashrate there is. Threadripper — many cores, quad-channel memory, a serious machine.</p>
   <ul class="menu">
     <li><a class="item" href="#reserve" data-sku="BIG_DOG (32-core) — $7,499">
-      <span class="main"><span class="nm">BIG_DOG <span class="hz">~40 kH/s</span></span><span class="ds">32-core Threadripper 7970X — roughly <b>three Standard rigs</b> in one box.</span></span>
+      <span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="8" height="16" rx="2"/><rect x="12.8" y="4" width="7.7" height="16" rx="2"/><circle cx="7.5" cy="16.5" r="1" fill="currentColor" stroke="none"/><circle cx="16.6" cy="16.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+      <span class="main"><span class="nm">BIG_DOG <span class="hz">~40 kH/s</span></span><span class="ds">32-core Threadripper 7970X — roughly <b>three Standard rigs</b> in one box.</span><span class="meter"><i style="--h:48%"></i></span></span>
       <span class="side"><span class="pr">$7,499</span><span class="pick">reserve →</span></span>
     </a></li>
     <li><a class="item hero" href="#reserve" data-sku="BIG_DOG MAX (64-core) — $10,999">
-      <span class="main"><span class="nm">BIG_DOG MAX <span class="hz">~84 kH/s</span><span class="chip">flagship</span></span><span class="ds">64-core Threadripper 7980X — the absolute unit, the most hashrate we build.</span></span>
+      <span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="8" height="16" rx="2"/><rect x="12.8" y="4" width="7.7" height="16" rx="2"/><circle cx="7.5" cy="16.5" r="1" fill="currentColor" stroke="none"/><circle cx="16.6" cy="16.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+      <span class="main"><span class="nm">BIG_DOG MAX <span class="hz">~84 kH/s</span><span class="chip">flagship</span></span><span class="ds">64-core Threadripper 7980X — the absolute unit, the most hashrate we build.</span><span class="meter"><i style="--h:100%"></i></span></span>
       <span class="side"><span class="pr">$10,999</span><span class="pick">reserve →</span></span>
     </a></li>
   </ul>
   <p class="note"><b>Prices are estimates for reservation and can change</b> — parts (especially RAM/SSD) move fast in 2026; the real store stamps every price with the date it was checked. Every build uses new parts, a tier-1 PSU, ships priority (included), and mines to <b>your own wallet</b>.</p>
+  <p class="note"><b>Who stands behind the hardware:</b> every rig is built to order from new parts with a tier-1 PSU, bench-tested before it ships, and backed by a real person on support — priority shipping included; exact warranty and return terms post with the store. No company stands behind the <b>coins</b>, on purpose — the <b>hardware</b> is a different thing, and someone does.</p>
 
   <h2 class="eyebrow">three ways to get one</h2>
   <ul class="menu">
@@ -143,12 +201,14 @@
   <p class="note">Optional and stackable — pick none, one, or several. There's also an <b>optional pool</b> (1–2% of what you actually earn); you can always mine solo.</p>
 
   <h2 class="eyebrow">accessories</h2>
+  <details class="expand"><summary>Show add-ons &#8212; status display, cold-storage, USB, merch <span class="tw">&#8250;</span></summary>
   <ul class="menu">
-    <li><a class="item" href="#reserve" data-sku="Not sure yet — just interested"><span class="main"><span class="nm">Status display</span><span class="ds">A little screen for your rig — live hashrate, uptime, temps, at a glance.</span></span><span class="side"><span class="pr">$79</span><span class="pick">reserve →</span></span></a></li>
-    <li><a class="item" href="#reserve" data-sku="Not sure yet — just interested"><span class="main"><span class="nm">Cold-storage kit</span><span class="ds">A fireproof metal plate to back up your wallet. Mine it, then lock it down.</span></span><span class="side"><span class="pr">$49</span><span class="pick">reserve →</span></span></a></li>
-    <li><a class="item" href="#reserve" data-sku="Not sure yet — just interested"><span class="main"><span class="nm">Pre-flashed USB</span><span class="ds">The free image on a ready-to-boot stick, if you'd rather not flash it yourself.</span></span><span class="side"><span class="pr">$29</span><span class="pick">reserve →</span></span></a></li>
-    <li><a class="item" href="#reserve" data-sku="Not sure yet — just interested"><span class="main"><span class="nm">Merch</span><span class="ds">Tees, hoodies, stickers — wear the pride.</span></span><span class="side"><span class="pr">from $28</span><span class="pick">reserve →</span></span></a></li>
+    <li><a class="item" href="#reserve" data-acc="acc_display"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M9 20h6M12 17v3"/></svg></span><span class="main"><span class="nm">Status display</span><span class="ds">A little screen for your rig — live hashrate, uptime, temps, at a glance.</span></span><span class="side"><span class="pr">$79</span><span class="pick">reserve →</span></span></a></li>
+    <li><a class="item" href="#reserve" data-acc="acc_coldstorage"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6z"/></svg></span><span class="main"><span class="nm">Cold-storage kit</span><span class="ds">A fireproof metal plate to back up your wallet. Mine it, then lock it down.</span></span><span class="side"><span class="pr">$49</span><span class="pick">reserve →</span></span></a></li>
+    <li><a class="item" href="#reserve" data-acc="acc_usb"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="8" height="13" rx="2"/><path d="M10.5 8V4.6a1.5 1.5 0 0 1 3 0V8M12 12v4"/></svg></span><span class="main"><span class="nm">Pre-flashed USB</span><span class="ds">The free image on a ready-to-boot stick, if you'd rather not flash it yourself.</span></span><span class="side"><span class="pr">$29</span><span class="pick">reserve →</span></span></a></li>
+    <li><a class="item" href="#reserve" data-acc="acc_merch"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M8.5 4 5 6.5 6.7 10 9 8.7V20h6V8.7l2.3 1.3L19 6.5 15.5 4a3.5 3.5 0 0 1-7 0z"/></svg></span><span class="main"><span class="nm">Merch</span><span class="ds">Tees, hoodies, stickers — wear the pride.</span></span><span class="side"><span class="pr">from $28</span><span class="pick">reserve →</span></span></a></li>
   </ul>
+  </details>
 
   <h2 class="eyebrow" id="reserve">reserve yours</h2>
   <div class="reserve">
@@ -214,6 +274,8 @@
 
   <div class="soon">The real store — live pricing, checkout, and your build status — opens with the network. <b>Testnet late 2026, mainnet target March 16, 2027, when it's ready.</b> Until then this reserves your place.</div>
 
+  </div>
+
 </main>
 
 <footer>
@@ -240,6 +302,13 @@
       if(sel){for(var i=0;i<sel.options.length;i++){if(sel.options[i].value===sku||sel.options[i].text===sku){sel.selectedIndex=i;break;}}}
     });
   });
+  // Click an accessory row -> tick its checkbox, leave the build select alone.
+  document.querySelectorAll('a.item[data-acc]').forEach(function(row){
+    row.addEventListener('click',function(){
+      var cb=document.querySelector('input[name="'+row.getAttribute('data-acc')+'"]');
+      if(cb){cb.checked=true;}
+    });
+  });
   // Submit to Web3Forms without leaving the page; announce the result.
   var _pf=document.querySelector('form.pre');
   if(_pf){_pf.addEventListener('submit',function(e){
@@ -260,6 +329,24 @@
       .catch(function(){ btn.textContent=orig; btn.disabled=false;
         st.style.color='var(--red)'; st.textContent="Sorry — that didn't send. Please try again in a moment."; });
   });}
+</script>
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  root.classList.add('js');
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var SEL='.reveal,.stagger,.flow>*';
+  var els=[].slice.call(d.querySelectorAll(SEL));
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
+  else{
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{rootMargin:'0px 0px -10% 0px',threshold:.1});
+    els.forEach(function(e){ if(e.getBoundingClientRect().top < innerHeight*0.94){e.classList.add('in');} else {io.observe(e);} });
+  }
+  var nav=d.getElementById('nav');
+  if(nav){var on=function(){nav.classList.toggle('scrolled',(window.scrollY||0)>24)};on();addEventListener('scroll',on,{passive:true});}
+  var nd=d.querySelector('.nd');
+  if(nd){d.addEventListener('click',function(e){if(nd.open&&!nd.contains(e.target))nd.open=false;});}
+})();
 </script>
 </body>
 </html>

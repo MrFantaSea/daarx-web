@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>L10N — the one to spend</title>
+<script>document.documentElement.classList.add('js')</script>
+<meta name="theme-color" content="#060706">
 <meta name="description" content="Private digital cash. Built to be spent — and built to work with no internet. Full whitepaper publishes with the testnet.">
 <link rel="canonical" href="https://daarx.money/l10n.html">
 <link rel="stylesheet" href="/style.css">
@@ -24,41 +26,96 @@
 <meta name="twitter:image" content="https://daarx.money/og.png">
 </head>
 <body class="p-l10n">
+<a class="skip" href="#main">Skip to content</a>
 <div class="grid" aria-hidden="true"></div>
 
-<nav class="nav" aria-label="Primary">
-  <a class="mk" href="/"><span class="d">DAARX</span> <span class="amp">·</span> <span class="l">L10N</span> <span class="amp">·</span> <span class="o">OPEN</span></a>
-  <span class="go">
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">·</span><span class="l">L10N</span><span class="amp">·</span><span class="o">OPEN</span></a>
+  <div class="go">
     <a class="lnk" href="/faq.html">faq</a>
     <a class="lnk" href="/break-it.html">break it</a>
-    <a class="btn" href="/mine.html">Mine it <span class="arw">→</span></a>
-  </span>
+    <a class="btn" href="/mine.html">Mine it <span class="arw">&#8594;</span></a>
+    <details class="nd">
+      <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="navmenu">
+        <a href="/">Home</a>
+        <a href="/daarx.html">DAARX</a>
+        <a href="/l10n.html" aria-current="page">L10N</a>
+        <a href="/open.html">OPEN</a>
+        <a href="/mine.html">Mine it</a>
+        <a href="/break-it.html">Break it</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+    </details>
+  </div>
 </nav>
 
-<main class="wrap">
-  <p class="crumb"><a href="/">← daarx.money</a></p>
-  <h1 class="accent">L10N</h1>
-  <p class="tag">The one to <b>spend</b>. Private digital cash — quick, cheap, tap-to-pay, built to work with no signal.</p>
+<main class="wrap" id="main">
+  <header class="coinhero">
+    <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
+    <div class="heroband">
+      <figure class="hero-figure coinorb hero-in" aria-hidden="true">
+        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="L10N">
+          <defs>
+            <radialGradient id="og" cx="34%" cy="30%" r="82%"><stop offset="0" stop-color="#fff1cf"/><stop offset="44%" stop-color="#e0b458"/><stop offset="100%" stop-color="#7c5c1c"/></radialGradient>
+            <radialGradient id="oh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#e0b458" stop-opacity="0"/><stop offset="55%" stop-color="#e0b458" stop-opacity=".3"/><stop offset="100%" stop-color="#e0b458" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle cx="120" cy="120" r="118" fill="url(#oh)" class="crowd"/>
+          <g class="orb-g orb-a"><circle cx="120" cy="120" r="62" fill="url(#og)"/><ellipse cx="100" cy="98" rx="16" ry="11" fill="#fff" opacity=".34"/><ellipse cx="98" cy="96" rx="7.5" ry="5" fill="#fff" opacity=".52"/></g>
+        </svg>
+      </figure>
+      <div class="htxt">
+        <h1 class="accent hero-in">L10N</h1>
+        <p class="tag hero-in">The one to <b>spend</b>. Private digital cash — quick, cheap, tap-to-pay, built to work with no signal.</p>
+        <div class="actions hero-in">
+          <a class="btn solid" href="/mine.html">Reserve a rig <span class="arw">&#8594;</span></a>
+          <a class="btn" href="#more">How it works <span class="arw">&#8595;</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <h2 class="eyebrow">why a second coin</h2>
-  <p>A coin you hoard and a coin you spend want opposite things. DAARX is scarce by law and never grows. L10N keeps a small, steady trickle of new coins forever — <b>designed to move</b>, not to sit. Same privacy, opposite temperament.</p>
+  <div class="flow">
+    <h2 class="eyebrow" id="more">why a second coin</h2>
+    <p>A coin you hoard and a coin you spend want opposite things. DAARX is scarce by law and never grows. L10N keeps a small, steady trickle of new coins forever — <b>designed to move</b>, not to sit. Same privacy, opposite temperament.</p>
 
-  <h2 class="eyebrow">the cash part</h2>
-  <p>Like cash, on your phone: tap, pay, done — and no one watching the chain sees who paid whom, or how much. It's built toward the hardest promise in digital money: <b>working with no internet</b>. No power, no signal, off the grid — cards stop, banks stop. The offline layer launches with the coin <b>if it passes its tests</b>; the coin doesn't wait for it. That's a promise about testing, not a promise about luck.</p>
-  <p class="note">Its smallest unit is called a <b>tooth</b>.</p>
+    <h2 class="eyebrow">the cash part</h2>
+    <p>Like cash, on your phone: tap, pay, done — and no one watching the chain sees who paid whom, or how much. It's built toward the hardest promise in digital money: <b>working with no internet</b>. No power, no signal, off the grid — cards stop, banks stop. The offline layer launches with the coin <b>if it passes its tests</b>; the coin doesn't wait for it. That's a promise about testing, not a promise about luck.</p>
+    <p class="note">Its smallest unit is called a <b>tooth</b>.</p>
 
-  <h2 class="eyebrow">the ground it stands on</h2>
-  <div class="facts">
-    <div class="f"><span class="k">privacy</span><span class="v">the same full-chain crowd as DAARX</span></div>
-    <div class="f"><span class="k">security</span><span class="v">merged-mined — every DAARX miner secures L10N for free</span></div>
-    <div class="f"><span class="k">blocks</span><span class="v">fast — tuned on the public testnet, frozen before launch</span></div>
-    <div class="f"><span class="k">launch</span><span class="v">fair — no premine, no presale, no company</span></div>
+    <div class="statement">
+      <div class="fig">No signal.<span class="u">still money</span></div>
+      <p class="cap">Cards stop, banks stop, even Bitcoin stops. L10N is built to keep going — the hardest promise in digital money, so the offline layer ships <b>only once it's passed the testing to earn it</b>.</p>
+    </div>
+
+    <h2 class="eyebrow">the ground it stands on</h2>
+    <div class="facts">
+      <div class="f"><span class="k">privacy</span><span class="v">the same full-chain crowd as DAARX</span></div>
+      <div class="f"><span class="k">security</span><span class="v">merged-mined — every DAARX miner secures L10N for free</span></div>
+      <div class="f"><span class="k">blocks</span><span class="v">fast — tuned on the public testnet, frozen before launch</span></div>
+      <div class="f"><span class="k">launch</span><span class="v">fair — no premine, no presale, no company</span></div>
+    </div>
+
+    <h2 class="eyebrow">what's not settled</h2>
+    <p>The exact block cadence and the exact emission numbers get <b>measured, not guessed</b> — the public test network exists to set them from real data before anything is frozen. What we won't do is publish precise numbers today and quietly change them later.</p>
+
+    <div class="soon">The <b>full whitepaper</b> — the emission math, the offline protocol, the merged-mining mechanics, the limitations — publishes with the <b>test network, late 2026</b>, once its numbers are exact.</div>
+
+    <div class="endcta">
+      <div class="h">Private cash you mine.</div>
+      <p>L10N starts at zero and comes only from mining — no premine, no presale, no coins for sale. Every DAARX rig secures L10N for free, so the same machine earns you both. You don't buy in, you <b>earn in</b>.</p>
+      <div class="actions">
+        <a class="btn solid big" href="/mine.html">Reserve a rig <span class="arw">&#8594;</span></a>
+        <a class="btn" href="/faq.html">Questions? <span class="arw">&#8594;</span></a>
+      </div>
+    </div>
+
+    <div class="crosslinks">
+      <a class="xl x-d" href="/daarx.html"><span class="dot3"></span><span class="xt"><span class="xk">DAARX</span><span class="xs">the one to keep — store of value</span></span></a>
+      <a class="xl x-o" href="/open.html"><span class="dot3"></span><span class="xt"><span class="xk">OPEN</span><span class="xs">the one for machines — public</span></span></a>
+    </div>
   </div>
-
-  <h2 class="eyebrow">what's not settled</h2>
-  <p>The exact block cadence and the exact emission numbers get <b>measured, not guessed</b> — the public test network exists to set them from real data before anything is frozen. What we won't do is publish precise numbers today and quietly change them later.</p>
-
-  <div class="soon">The <b>full whitepaper</b> — the emission math, the offline protocol, the merged-mining mechanics, the limitations — publishes with the <b>test network, late 2026</b>, once its numbers are exact.</div>
 
 </main>
 
@@ -77,5 +134,23 @@
     <p class="fine">no coins for sale · nothing here is financial advice</p>
   </div>
 </footer>
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  root.classList.add('js');
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var SEL='.reveal,.stagger,.flow>*';
+  var els=[].slice.call(d.querySelectorAll(SEL));
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
+  else{
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{rootMargin:'0px 0px -10% 0px',threshold:.1});
+    els.forEach(function(e){ if(e.getBoundingClientRect().top < innerHeight*0.94){e.classList.add('in');} else {io.observe(e);} });
+  }
+  var nav=d.getElementById('nav');
+  if(nav){var on=function(){nav.classList.toggle('scrolled',(window.scrollY||0)>24)};on();addEventListener('scroll',on,{passive:true});}
+  var nd=d.querySelector('.nd');
+  if(nd){d.addEventListener('click',function(e){if(nd.open&&!nd.contains(e.target))nd.open=false;});}
+})();
+</script>
 </body>
 </html>
