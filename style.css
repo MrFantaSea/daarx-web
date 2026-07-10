@@ -1,0 +1,279 @@
+/* ============================================================
+   daarx.money — shared design system
+   One source of truth for all web pages (the print flyer is separate).
+   Per-page accent is set with a body class: .p-daarx .p-l10n .p-open
+   .p-break .p-mine — it drives ::selection, headings, and glow.
+   ============================================================ */
+
+:root{
+  /* surface */
+  --bg:#060706;
+  --raise:#0c0f0c;           /* input / raised panel fill */
+
+  /* text ramp — every value AAA on --bg (all ≥ 9.7:1) */
+  --ink:#eef0ea;             /* headings, emphasis, prices */
+  --dim:#d3d8d0;             /* body copy */
+  --faint:#b0b6ad;           /* quiet text: labels, captions, fine print — ONE bright value, everywhere */
+
+  /* structure — kept separate from text so borders stay calm
+     WITHOUT dragging label/helper text down with them */
+  --line:#2b322c;            /* hairlines & borders (quiet) */
+  --line-lit:#3d453c;        /* borders that want a little presence */
+
+  /* coin accents */
+  --green:#4ae08c;           /* DAARX */
+  --gold:#e0b458;            /* L10N */
+  --blue:#63b9d6;            /* OPEN */
+  --red:#e0664a;             /* break-it */
+
+  /* the page's accent — overridden per page below; default green */
+  --accent:var(--green);
+  --accent-rgb:74,224,140;
+
+  --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;
+  --measure:34em;            /* readable line length for mono */
+}
+
+/* per-page accent */
+.p-daarx{--accent:var(--green);--accent-rgb:74,224,140}
+.p-l10n {--accent:var(--gold); --accent-rgb:224,180,88}
+.p-open {--accent:var(--blue); --accent-rgb:99,185,214}
+.p-break{--accent:var(--red);  --accent-rgb:224,102,74}
+.p-mine {--accent:var(--green);--accent-rgb:74,224,140}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:5.5rem}
+body{
+  background:var(--bg);color:var(--ink);font-family:var(--mono);
+  font-size:16px;line-height:1.65;letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--accent);color:var(--bg)}
+
+/* ── LINKS — a reserved, unmistakable affordance ─────────────
+   In-prose links: bright ink + a dim underline that lights up on
+   hover. They read as links without inventing a new hue.        */
+a{color:var(--ink);text-decoration:underline;
+  text-decoration-color:var(--line-lit);text-underline-offset:.22em;
+  text-decoration-thickness:1px;transition:color .15s,text-decoration-color .15s}
+a:hover,a:focus-visible{color:var(--accent);text-decoration-color:var(--accent)}
+
+/* focus is always visible */
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:1px}
+
+/* ── BUTTONS / CTAs — the primary action, unmissable ───────── */
+.btn{display:inline-flex;align-items:center;gap:.5em;
+  font-family:var(--mono);font-weight:700;font-size:.95rem;letter-spacing:.01em;
+  padding:.7rem 1.15rem;border-radius:3px;cursor:pointer;text-decoration:none;
+  border:1px solid var(--accent);color:var(--accent);background:transparent;
+  transition:background .15s,color .15s,box-shadow .15s,transform .15s;min-height:44px}
+.btn .arw{transition:transform .15s}
+.btn:hover,.btn:focus-visible{background:var(--accent);color:var(--bg);
+  box-shadow:0 0 14px rgba(var(--accent-rgb),.5),0 0 30px rgba(var(--accent-rgb),.22)}
+.btn:hover .arw{transform:translateX(3px)}
+.btn.solid{background:var(--accent);color:var(--bg)}
+.btn.solid:hover,.btn.solid:focus-visible{filter:brightness(1.1);
+  box-shadow:0 0 16px rgba(var(--accent-rgb),.6),0 0 34px rgba(var(--accent-rgb),.28)}
+.btn.big{font-size:1rem;padding:.85rem 1.4rem}
+
+/* ── PERSISTENT TOP NAV (every page) ───────────────────────── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:20;
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  padding:1rem 1.4rem;
+  background:linear-gradient(180deg,rgba(6,7,6,.92),rgba(6,7,6,.55) 70%,rgba(6,7,6,0));
+  backdrop-filter:blur(2px)}
+.nav .mk{font-size:.82rem;letter-spacing:.05em;font-weight:700;
+  text-decoration:none;color:var(--ink)}
+.nav .mk:hover{color:var(--ink)}
+.nav .mk .amp{color:var(--faint);font-weight:400}
+.nav .mk .d{color:var(--green)} .nav .mk .l{color:var(--gold)} .nav .mk .o{color:var(--blue)}
+.nav .go{display:flex;align-items:center;gap:1.1rem}
+.nav .go .lnk{font-size:.8rem;letter-spacing:.04em;text-decoration:none;color:var(--faint)}
+.nav .go .lnk:hover,.nav .go .lnk:focus-visible{color:var(--ink)}
+.nav .btn{padding:.5rem .85rem;font-size:.8rem;min-height:40px}
+@media (max-width:34rem){.nav .go .lnk{display:none}}
+
+/* ── LAYOUT ────────────────────────────────────────────────── */
+.wrap{max-width:46rem;margin:0 auto;padding:0 1.5rem;position:relative;z-index:1}
+.wrap.wide{max-width:56rem}
+main{display:block}
+
+/* the three coin colors — the only hues in running text */
+.d{color:var(--green)} .l{color:var(--gold)} .o{color:var(--blue)}
+.amp{color:var(--faint);font-weight:400}
+
+/* ── HEADINGS ──────────────────────────────────────────────── */
+.crumb{color:var(--faint);font-size:.82rem;letter-spacing:.08em;
+  padding-top:5.5rem;margin-bottom:3.5rem}
+h1{font-size:clamp(2.4rem,8vw,4.5rem);font-weight:800;letter-spacing:-.02em;line-height:1.04}
+h1 .dot{color:var(--accent)}                 /* utility pages: ink word + accent dot */
+h1.accent{color:var(--accent)}               /* coin pages: whole word in accent */
+.tag{color:var(--dim);font-size:clamp(1.05rem,2.4vw,1.3rem);
+  margin:.9rem 0 2.5rem;max-width:32em;line-height:1.5}
+.tag b{color:var(--ink);font-weight:600}
+h2{color:var(--ink);font-size:1.05rem;font-weight:600;letter-spacing:-.01em;margin:2.8rem 0 .8rem}
+h2.eyebrow{color:var(--faint);font-size:.8rem;letter-spacing:.22em;
+  text-transform:uppercase;font-weight:400;margin:3.2rem 0 1.1rem}
+p{color:var(--dim);max-width:var(--measure);margin-bottom:1.05rem}
+p b{color:var(--ink);font-weight:600}
+
+/* ── HAIRLINE — one chrome, used everywhere ────────────────── */
+.rule{height:1px;background:var(--line-lit);border:none;margin:0;
+  box-shadow:0 0 10px rgba(var(--accent-rgb),.18)}
+
+/* ── fact / spec lists ─────────────────────────────────────── */
+.facts{margin:1rem 0;display:flex;flex-direction:column;gap:.7rem}
+.facts .f{display:flex;gap:1.2rem;align-items:baseline;flex-wrap:wrap}
+.facts .k{color:var(--faint);font-size:.78rem;letter-spacing:.14em;
+  text-transform:uppercase;min-width:9em}
+.facts .v{color:var(--ink);font-weight:600}
+
+.soon{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--line);color:var(--dim)}
+.soon b{color:var(--accent);font-weight:600}
+
+/* ── HONEST banner ─────────────────────────────────────────── */
+.honest{border:1px solid var(--line-lit);border-radius:3px;padding:1.2rem 1.3rem;
+  color:var(--dim);margin-bottom:.5rem}
+.honest b{color:var(--ink);font-weight:600}
+.honest p{margin-bottom:0;max-width:none}
+
+/* ══ STOREFRONT ════════════════════════════════════════════════
+   price is the loudest element; one hero row per group; rows are
+   real links that prefill the reservation form.                */
+.menu{list-style:none;display:flex;flex-direction:column;gap:0;
+  border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:.4rem 0}
+.item{display:flex;justify-content:space-between;gap:1.2rem;align-items:center;
+  padding:1.05rem 1.25rem;flex-wrap:wrap;text-decoration:none;color:inherit;
+  border-left:2px solid transparent;transition:background .12s,border-color .12s}
+.item+.item{border-top:1px solid var(--line)}
+a.item:hover,a.item:focus-visible{background:rgba(var(--accent-rgb),.05);
+  border-left-color:var(--accent);outline:none}
+a.item:hover .pick,a.item:focus-visible .pick{opacity:1}
+.item .main{flex:1;min-width:14rem}
+.item .nm{color:var(--dim);font-weight:600}
+.item .nm .hz{color:var(--blue);font-weight:400;font-size:.78rem;letter-spacing:.03em;margin-left:.6em}
+.item .ds{color:var(--faint);font-size:.9rem;margin-top:.28rem;line-height:1.5;max-width:36em}
+.item .ds b{color:var(--dim)}
+.item .side{display:flex;flex-direction:column;align-items:flex-end;gap:.15rem;text-align:right}
+.item .pr{color:var(--ink);font-weight:700;font-size:1.15rem;
+  font-variant-numeric:tabular-nums;white-space:nowrap;letter-spacing:-.01em}
+.item .pr.free{color:var(--green);text-shadow:0 0 8px rgba(74,224,140,.55),0 0 20px rgba(74,224,140,.28)}
+.item .pr .per{color:var(--faint);font-weight:400;font-size:.78rem}
+.item .pick{opacity:0;color:var(--accent);font-size:.72rem;letter-spacing:.06em;transition:opacity .12s}
+/* hero row: the value pick / the flagship */
+.item.hero{background:rgba(var(--accent-rgb),.045);border-left-color:var(--accent)}
+.chip{display:inline-block;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--bg);background:var(--accent);padding:.12em .5em;border-radius:2px;
+  font-weight:700;margin-left:.6em;vertical-align:.15em}
+
+.note{color:var(--faint);font-size:.86rem;margin:.9rem 0 0;max-width:36em;line-height:1.55}
+.note b{color:var(--dim);font-weight:600}
+
+.spec{margin:1rem 0;display:flex;flex-direction:column;gap:.55rem;font-size:.94rem;
+  border:1px solid var(--line);border-radius:3px;padding:1.1rem 1.25rem}
+.spec .r{display:flex;gap:1rem;align-items:baseline}
+.spec .k{color:var(--faint);min-width:6.5em;text-transform:uppercase;font-size:.72rem;letter-spacing:.12em}
+.spec .v{color:var(--dim)} .spec .v b{color:var(--ink);font-weight:600}
+
+/* ══ RESERVATION FORM ══════════════════════════════════════════ */
+.reserve{border:1px solid var(--line-lit);border-radius:3px;padding:1.6rem 1.4rem;margin-top:1.2rem}
+.reserve .ttl{color:var(--ink);font-weight:700;font-size:1.15rem;margin-bottom:.5rem}
+.reserve>p{margin-bottom:1.2rem}
+form.pre{display:flex;flex-direction:column;gap:1rem}
+form.pre label.lbl{color:var(--dim);font-size:.85rem;letter-spacing:.02em;
+  display:block;margin-bottom:-.4rem}
+form.pre input,form.pre select,form.pre textarea{
+  background:var(--raise);border:1px solid var(--line-lit);border-radius:3px;color:var(--ink);
+  font-family:var(--mono);font-size:16px;padding:.75rem .85rem;width:100%}   /* 16px = no iOS zoom */
+form.pre input::placeholder,form.pre textarea::placeholder{color:var(--faint)}
+form.pre input:focus-visible,form.pre select:focus-visible,form.pre textarea:focus-visible{
+  outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+form.pre .row2{display:flex;gap:.9rem;flex-wrap:wrap}
+form.pre .row2>*{flex:1;min-width:12rem}
+form.pre fieldset{border:none;padding:0;margin:0}
+form.pre legend{color:var(--dim);font-size:.85rem;margin-bottom:.5rem;padding:0}
+form.pre .checks{display:flex;gap:1.2rem 1.4rem;flex-wrap:wrap}
+form.pre .checks label{display:flex;gap:.5rem;align-items:center;color:var(--dim);
+  font-size:.92rem;cursor:pointer;min-height:24px}
+form.pre .checks input{width:auto;min-width:20px;min-height:20px}
+form.pre button{background:var(--accent);color:var(--bg);border:none;border-radius:3px;
+  font-family:var(--mono);font-weight:700;font-size:1rem;padding:.9rem 1.2rem;cursor:pointer;
+  letter-spacing:.02em;margin-top:.3rem;min-height:48px;transition:filter .15s,box-shadow .15s}
+form.pre button:hover,form.pre button:focus-visible{filter:brightness(1.1);
+  box-shadow:0 0 16px rgba(var(--accent-rgb),.55)}
+.reserve .fine{color:var(--faint);font-size:.84rem;margin-top:1rem;line-height:1.55}
+
+/* ── FOOTER ────────────────────────────────────────────────── */
+footer{margin-top:5rem;padding-bottom:5rem}
+footer .fnav{display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin-bottom:1.2rem}
+footer .fnav a{color:var(--faint);font-size:.85rem;letter-spacing:.03em;text-decoration:none;
+  padding:.4rem 0;min-height:40px;display:inline-flex;align-items:center}
+footer .fnav a:hover,footer .fnav a:focus-visible{color:var(--ink)}
+footer .fnav a[aria-current]{color:var(--ink)}
+footer .fine{color:var(--faint);font-size:.8rem;letter-spacing:.04em;line-height:1.9}
+
+/* ── HERO / NARRATIVE (home) ───────────────────────────────── */
+.beat{min-height:82vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 0 3rem}
+.beat.short{min-height:64vh}
+.beat:first-of-type{min-height:100vh}
+.big{font-weight:800;letter-spacing:-.03em;line-height:1.06;font-size:clamp(2.6rem,9vw,6rem)}
+.big .cursor{color:var(--accent);font-weight:400;animation:blink 1.25s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+.mid{font-weight:700;letter-spacing:-.02em;line-height:1.15;font-size:clamp(1.7rem,5vw,3.2rem);max-width:16em}
+.mid .soft{color:var(--dim)}
+.lede{color:var(--dim);font-size:clamp(1rem,2.2vw,1.2rem);line-height:1.6;max-width:30em;margin-top:1.8rem}
+.lede b{color:var(--ink);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.2rem}
+.pair{display:flex;flex-direction:column;gap:3rem;margin-top:1rem}
+.pair .nm{font-size:clamp(2rem,6vw,3.6rem);font-weight:800;letter-spacing:.02em}
+.pair .desc{color:var(--dim);font-size:clamp(1rem,2.2vw,1.2rem);max-width:26em;margin-top:.6rem;line-height:1.55}
+.pair .desc b{color:var(--ink);font-weight:600}
+.pair .more{margin-top:.8rem}
+.pair .more a{font-size:.9rem}
+.when{margin-top:2.2rem;display:flex;flex-direction:column;gap:1rem;font-size:clamp(1rem,2.2vw,1.2rem)}
+.when .row{display:flex;gap:1.4rem;align-items:baseline;flex-wrap:wrap}
+.when .t{color:var(--faint);letter-spacing:.14em;font-size:.8rem;text-transform:uppercase;min-width:8.5em}
+.when .v{color:var(--ink);font-weight:600}
+.when .v .soft{color:var(--dim);font-weight:400}
+
+/* ── TRON grid: receding neon floor, motion-safe ───────────── */
+.grid{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+  perspective:34rem;perspective-origin:50% 42%}
+.grid::before{content:"";position:absolute;left:-75%;right:-75%;bottom:-20%;height:150%;
+  background-image:
+    repeating-linear-gradient(to right,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem),
+    repeating-linear-gradient(to bottom,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem);
+  transform:rotateX(72deg);transform-origin:50% 100%;opacity:.3;
+  -webkit-mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
+  mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
+  animation:grid-drift 16s linear infinite}
+@keyframes grid-drift{from{background-position:0 0}to{background-position:0 4rem}}
+
+/* ── NEON bloom: reserved for accents only (crisp white type) ─ */
+h1.accent,h1 .dot{text-shadow:0 0 8px rgba(var(--accent-rgb),.8),0 0 20px rgba(var(--accent-rgb),.42),0 0 40px rgba(var(--accent-rgb),.2)}
+.d{text-shadow:0 0 8px rgba(74,224,140,.8),0 0 20px rgba(74,224,140,.42),0 0 40px rgba(74,224,140,.18)}
+.l{text-shadow:0 0 8px rgba(224,180,88,.8),0 0 20px rgba(224,180,88,.42),0 0 40px rgba(224,180,88,.18)}
+.o{text-shadow:0 0 8px rgba(99,185,214,.8),0 0 20px rgba(99,185,214,.42),0 0 40px rgba(99,185,214,.18)}
+.big .cursor{text-shadow:0 0 8px rgba(var(--accent-rgb),.9),0 0 22px rgba(var(--accent-rgb),.5)}
+.soon b{text-shadow:0 0 8px rgba(var(--accent-rgb),.5),0 0 18px rgba(var(--accent-rgb),.25)}
+
+/* ── break-it: numbered steps + the credit-log board (accent-tracking) ── */
+.steps{margin:1rem 0;display:flex;flex-direction:column;gap:1.4rem}
+.step{display:flex;gap:1.2rem;align-items:baseline}
+.step .n{color:var(--accent);font-weight:700;min-width:1.6em;
+  text-shadow:0 0 8px rgba(var(--accent-rgb),.6),0 0 18px rgba(var(--accent-rgb),.3)}
+.step .b{color:var(--dim);max-width:32em}
+.step .b b{color:var(--ink)}
+.board{margin:1.2rem 0;border:1px solid var(--line-lit);border-radius:3px}
+.board .hd{display:flex;padding:.6rem 1rem;border-bottom:1px solid var(--line-lit);
+  color:var(--faint);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
+.board .row{display:flex;padding:.7rem 1rem;color:var(--dim)}
+.board .row+.row{border-top:1px solid var(--line)}
+.board .c1{flex:0 0 6.5em;color:var(--faint)} .board .c2{flex:1}
+.empty{padding:1.4rem 1rem;color:var(--faint);font-style:italic}
+
+@media (prefers-reduced-motion:reduce){
+  .grid::before{animation:none}
+  .big .cursor{animation:none}
+  *{transition:none !important}
+}

@@ -7,8 +7,9 @@
 <title>Break it — DAARX · L10N · OPEN</title>
 <meta name="description" content="Break it for real on the test network and fix it: a share of the $1,000 bounty pool, a seat at the launch party, your name on the log — permanently. Every attempt gets published.">
 <link rel="canonical" href="https://daarx.money/break-it.html">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23d6ab52'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23d6ab52'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23e0b458'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23e0b458'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX · L10N · OPEN">
 <meta property="og:title" content="Break it — DAARX · L10N · OPEN">
@@ -21,71 +22,28 @@
 <meta name="twitter:title" content="Break it — DAARX · L10N · OPEN">
 <meta name="twitter:description" content="Break it for real on the test network and fix it: a share of the $1,000 bounty pool, a seat at the launch party, your name on the log — permanently. Every attempt gets published.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
-<style>
-  :root{--bg:#060706;--ink:#e9e9e3;--dim:#d3d8d0;--faint:#b0b6ad;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--red:#e0664a;--steel:#a8aeb4;
-    --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace}
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:16px;line-height:1.7;letter-spacing:.01em}
-  ::selection{background:var(--red);color:var(--bg)}
-  a{color:var(--steel);text-decoration:none}a:hover,a:focus{color:var(--ink)}
-  .wrap{max-width:46rem;margin:0 auto;padding:6rem 2rem 5rem;position:relative;z-index:1}
-  .crumb{color:var(--faint);font-size:.82rem;letter-spacing:.1em;margin-bottom:4rem}
-  .crumb a{color:var(--dim)}
-  h1{font-size:clamp(2.4rem,8vw,4.5rem);font-weight:800;letter-spacing:-.02em}
-  h1 .x{color:var(--red)}
-  .tag{color:var(--dim);font-size:clamp(1.05rem,2.4vw,1.3rem);margin:.8rem 0 3.5rem;max-width:32em}
-  h2{color:var(--faint);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;margin:3.2rem 0 1rem}
-  p{color:var(--dim);max-width:34em;margin-bottom:1.1rem}
-  p b{color:var(--ink);font-weight:600}
-  .steps{margin:1rem 0;display:flex;flex-direction:column;gap:1.4rem;counter-reset:s}
-  .step{display:flex;gap:1.2rem;align-items:baseline}
-  .step .n{color:var(--red);font-weight:700;min-width:1.6em}
-  .step .b{color:var(--dim);max-width:32em}
-  .step .b b{color:var(--ink)}
-  .board{margin:1.2rem 0;border:1px solid var(--faint);border-radius:2px}
-  .board .hd{display:flex;padding:.6rem 1rem;border-bottom:1px solid var(--faint);
-    color:var(--faint);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
-  .board .row{display:flex;padding:.7rem 1rem;color:var(--dim)}
-  .board .row+.row{border-top:1px solid var(--faint)}
-  .board .c1{flex:0 0 6.5em;color:var(--steel)} .board .c2{flex:1}
-  .empty{padding:1.4rem 1rem;color:var(--faint);font-style:italic}
-  .cta{margin-top:1rem;color:var(--dim)}
-  .cta b{color:var(--ink)}
-  .soon{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--faint);color:var(--dim)}
-  .soon b{color:var(--red);font-weight:600}
-  footer{color:var(--faint);font-size:.8rem;letter-spacing:.08em;margin-top:4rem;line-height:1.9}
-
-  /* ── TRON grid: a receding neon floor, behind all content, motion-safe ── */
-  .grid{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-    perspective:34rem;perspective-origin:50% 42%}
-  .grid::before{content:"";position:absolute;left:-75%;right:-75%;bottom:-20%;height:150%;
-    background-image:
-      repeating-linear-gradient(to right,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem),
-      repeating-linear-gradient(to bottom,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem);
-    transform:rotateX(72deg);transform-origin:50% 100%;opacity:.32;
-    -webkit-mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
-    mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
-    animation:grid-drift 16s linear infinite}
-  @keyframes grid-drift{from{background-position:0 0}to{background-position:0 4rem}}
-  @media (prefers-reduced-motion:reduce){.grid::before{animation:none}}
-
-  /* ── neon bloom: soft halos on heading + accents, readability preserved ── */
-  h1 .x{text-shadow:0 0 8px rgba(224,102,74,.85),0 0 20px rgba(224,102,74,.45),0 0 40px rgba(224,102,74,.2)}
-  .step .n{text-shadow:0 0 8px rgba(224,102,74,.6),0 0 18px rgba(224,102,74,.3)}
-  .soon b{text-shadow:0 0 8px rgba(224,102,74,.6),0 0 18px rgba(224,102,74,.3)}
-</style>
 </head>
-<body>
+<body class="p-break">
 <div class="grid" aria-hidden="true"></div>
-<div class="wrap">
-  <div class="crumb"><a href="/">← daarx.money</a></div>
-  <h1>Break it<span class="x">.</span></h1>
+
+<nav class="nav" aria-label="Primary">
+  <a class="mk" href="/"><span class="d">DAARX</span> <span class="amp">·</span> <span class="l">L10N</span> <span class="amp">·</span> <span class="o">OPEN</span></a>
+  <span class="go">
+    <a class="lnk" href="/faq.html">faq</a>
+    <a class="lnk" href="/break-it.html">break it</a>
+    <a class="btn" href="/mine.html">Mine it <span class="arw">→</span></a>
+  </span>
+</nav>
+
+<main class="wrap">
+  <p class="crumb"><a href="/">← daarx.money</a></p>
+  <h1>Break it<span class="dot">.</span></h1>
   <p class="tag">The privacy is new cryptography. New cryptography earns trust one way: people try to break it, in the open, and the attempts get published — the ones that failed <b>and</b> the ones that didn't.</p>
 
-  <h2>the deal before launch</h2>
+  <h2 class="eyebrow">the deal before launch</h2>
   <p>Anyone can attack the code before it ever holds real value — and there's a <b>bounty</b> on it (below). We write down, in advance, exactly what "a break" would look like — so "we found nothing" means something instead of "we didn't look." Every attempt lands on this log. If a real break is found, <b>the launch waits</b> until it's fixed and re-tested. The date can move; this can't be skipped.</p>
 
-  <h2>the test network — where you come in</h2>
+  <h2 class="eyebrow">the test network — where you come in</h2>
   <p>For months before launch, all three chains run in public with coins that are <b>worthless on purpose</b>. Anything goes: fuzz it, forge it, try to spend what isn't yours, try to see what should be hidden. Nothing you can do to the test network costs anyone anything — that's the point of it existing.</p>
   <div class="steps">
     <div class="step"><span class="n">1</span><span class="b">Grab test coins from the <b>faucet</b> and a node from <b>run-a-node</b> (both live when the testnet drops).</span></div>
@@ -93,19 +51,36 @@
     <div class="step"><span class="n">3</span><span class="b">Report it <b>here</b> (intake below). Reproducible + real → it goes on the log with your name.</span></div>
   </div>
 
-  <h2>the bounty pool + the credit board</h2>
-  <p>There's a <b>$1,000 bounty pool</b> on the whole testnet phase. Break something real <b>and fix it</b>, and you earn a <b>share of the pool</b> — shares are weighted by severity, one award per distinct root cause — plus <b>a seat at the launch party</b>, champagne's on us. A capped pool, not per-bug prizes: this is a fair launch with no war chest, and a small number honestly promised beats a big one that couldn't be paid. Every genuine find — fixed or not — earns <b>permanent public credit</b> on the record that outlives the bug: the person who found the thing everyone else missed. When the whitepapers publish, the log publishes with them. No token, no coins for sale — on either side. The pre-committed break definition above is the bar; official terms post with the intake. <b>When it pays:</b> awards are settled <b>at mainnet launch</b> — there's no guaranteed pay date, because the launch itself is readiness-gated and the date can move (the testing never shrinks to hit one). The credit is immediate and permanent; the cash waits for a real chain. <b>And the log never closes</b> — it keeps running after launch, for as long as the chains do.</p>
+  <h2 class="eyebrow">the bounty pool + the credit board</h2>
+  <p>There's a <b>$1,000 bounty pool</b> on the whole testnet phase. Break something real <b>and fix it</b>, and you earn a <b>share of the pool</b> — shares are weighted by severity, one award per distinct root cause — plus <b>a seat at the launch party</b>, champagne's on us. A capped pool, not per-bug prizes: this is a fair launch with no war chest, and a small number honestly promised beats a big one that couldn't be paid.</p>
+  <p>Every genuine find — fixed or not — earns <b>permanent public credit</b> on the record that outlives the bug: the person who found the thing everyone else missed. When the whitepapers publish, the log publishes with them. No token, no coins for sale — on either side. The pre-committed break definition above is the bar; official terms post with the intake.</p>
+  <p><b>When it pays:</b> awards are settled <b>at mainnet launch</b> — there's no guaranteed pay date, because the launch itself is readiness-gated and the date can move (the testing never shrinks to hit one). The credit is immediate and permanent; the cash waits for a real chain. <b>And the log never closes</b> — it keeps running after launch, for as long as the chains do.</p>
   <div class="board">
     <div class="hd"><span class="c1">testnet</span><span class="c2">finding · credited to</span></div>
     <div class="empty">— opens with the test network, late 2026 —</div>
   </div>
 
-  <h2>report something</h2>
+  <h2 class="eyebrow">report something</h2>
   <p>Intake opens with the testnet: a form here, plus a dedicated address and a <b>PGP key</b> for anything sensitive (report privately first; we publish after it's fixed). <span style="color:var(--faint)">[PGP fingerprint published at testnet drop — founder-generated.]</span></p>
 
   <div class="soon">This page fills in when the <b>test network drops, late 2026</b>. Until then it's a promise with a shape: the pre-committed definition of failure, the standing invitation, and a log that starts empty and honest.</div>
 
-  <footer><a href="/">daarx.money</a> · <a href="/daarx.html">DAARX</a> · <a href="/l10n.html">L10N</a> · <a href="/open.html">OPEN</a> · break it · <a href="/mine.html">mine it</a> · <a href="/faq.html">faq</a> · <a href="/privacy.html">privacy</a><br>test coins are worthless on purpose · nothing here is advice</footer>
-</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav class="fnav" aria-label="Site">
+      <a href="/">daarx.money</a>
+      <a href="/daarx.html">DAARX</a>
+      <a href="/l10n.html">L10N</a>
+      <a href="/open.html">OPEN</a>
+      <a href="/mine.html">mine it</a>
+      <a href="/break-it.html" aria-current="page">break it</a>
+      <a href="/faq.html">faq</a>
+      <a href="/privacy.html">privacy</a>
+    </nav>
+    <p class="fine">test coins are worthless on purpose · nothing here is financial advice</p>
+  </div>
+</footer>
 </body>
 </html>

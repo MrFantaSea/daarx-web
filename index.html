@@ -1,246 +1,155 @@
 <!DOCTYPE html>
-<!-- daarx.money — no coins for sale. not finished. the code will be the truth. -->
+<!-- daarx.money — privacy for people, accountability for machines. one launch, when it's ready. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DAARX · L10N · OPEN</title>
-<meta name="description" content="Privacy for people. Accountability for machines. Three coins, one launch — testnet 2026, mainnet March 2027, only if it's ready. No premine. No coins for sale.">
+<meta name="description" content="Private money for people, accountability for machines. Three coins, one fair launch — testnet 2026, mainnet March 16, 2027 when it's ready. No premine, no presale. Mining is the only way in.">
 <link rel="canonical" href="https://daarx.money/">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23d6ab52'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23d6ab52'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23e0b458'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23e0b458'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX · L10N · OPEN">
-<meta property="og:title" content="DAARX · L10N · OPEN — privacy for people, accountability for machines">
-<meta property="og:description" content="Privacy for people. Accountability for machines. Three coins, one launch — testnet 2026, mainnet March 2027, only if it's ready. No premine. No coins for sale.">
+<meta property="og:title" content="DAARX · L10N · OPEN — private money for people, accountability for machines">
+<meta property="og:description" content="Three coins, one fair launch. Two keep your business private; the third makes machines show their work. Testnet 2026, mainnet March 16, 2027 when it's ready.">
 <meta property="og:url" content="https://daarx.money/">
 <meta property="og:image" content="https://daarx.money/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="DAARX · L10N · OPEN — privacy for people, accountability for machines">
-<meta name="twitter:description" content="Privacy for people. Accountability for machines. Three coins, one launch — testnet 2026, mainnet March 2027, only if it's ready. No premine. No coins for sale.">
+<meta name="twitter:title" content="DAARX · L10N · OPEN — private money for people, accountability for machines">
+<meta name="twitter:description" content="Three coins, one fair launch. Two keep your business private; the third makes machines show their work.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
-<style>
-  :root{
-    --bg:#060706;
-    --ink:#e9e9e3;
-    --dim:#d3d8d0;
-    --faint:#b0b6ad;
-    --green:#4ae08c;
-    --gold:#d6ab52;
-    --blue:#63b9d6;
-    --steel:#a8aeb4;
-    --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    background:var(--bg);color:var(--ink);font-family:var(--mono);
-    font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
-    letter-spacing:.01em;overflow-x:hidden;
-  }
-  ::selection{background:var(--green);color:var(--bg)}
-
-  /* the only color anywhere: the three coin names */
-  .d{color:var(--green)}
-  .l{color:var(--gold)}
-  .o{color:var(--blue)}
-  .amp{color:var(--steel);font-weight:400}
-
-  .wrap{max-width:56rem;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
-
-  /* tiny fixed wordmark, top-left */
-  .top{position:fixed;top:0;left:0;right:0;z-index:10;padding:1.6rem 2rem;
-    display:flex;justify-content:space-between;align-items:center;
-    font-size:.82rem;letter-spacing:.06em;
-    background:linear-gradient(180deg,rgba(6,7,6,.9),rgba(6,7,6,0));
-  }
-  .top .mk{font-weight:700}
-  .top .yr{color:var(--faint);font-weight:400;letter-spacing:.1em}
-
-  /* each idea = its own tall breathing space */
-  .beat{min-height:88vh;display:flex;flex-direction:column;justify-content:center;
-    padding:9rem 0 4rem}
-  .beat.short{min-height:70vh}
-  .beat:first-of-type{min-height:100vh}
-
-  .big{
-    font-weight:800;letter-spacing:-.03em;line-height:1.06;
-    font-size:clamp(2.6rem,9vw,6rem);
-  }
-  .big .cursor{color:var(--green);font-weight:400;animation:blink 1.25s step-end infinite}
-  @keyframes blink{50%{opacity:0}}
-  @media (prefers-reduced-motion:reduce){.cursor{animation:none}}
-
-  .mid{font-weight:700;letter-spacing:-.02em;line-height:1.15;
-    font-size:clamp(1.7rem,5vw,3.2rem);max-width:16em}
-  .mid .dim{color:var(--dim)}
-
-  .note{color:var(--dim);font-size:clamp(1rem,2.2vw,1.2rem);line-height:1.7;
-    max-width:30em;margin-top:2rem}
-  .note b{color:var(--ink);font-weight:600}
-
-  .kick{color:var(--faint);font-size:.8rem;letter-spacing:.22em;
-    text-transform:uppercase;margin-bottom:2rem}
-
-  /* the coins, as words in space — not cards */
-  .pair{display:flex;flex-direction:column;gap:3.5rem;margin-top:1rem}
-  .pair .one .nm{font-size:clamp(2rem,6vw,3.6rem);font-weight:800;letter-spacing:.02em}
-  .pair .one .desc{color:var(--dim);font-size:clamp(1rem,2.2vw,1.2rem);
-    max-width:26em;margin-top:.6rem;line-height:1.6}
-  .pair .one .desc b{color:var(--ink);font-weight:600}
-  .pair .one .more{margin-top:.7rem;font-size:.85rem;letter-spacing:.08em}
-  .pair .one .more a{color:var(--steel);text-decoration:none}
-  .pair .one .more a:hover,.pair .one .more a:focus{color:var(--ink)}
-
-  /* the launch ledger — dates as facts, not hype */
-  .when{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.1rem;
-    font-size:clamp(1rem,2.2vw,1.2rem)}
-  .when .row{display:flex;gap:1.4rem;align-items:baseline;flex-wrap:wrap}
-  .when .t{color:var(--faint);letter-spacing:.14em;font-size:.8rem;text-transform:uppercase;
-    min-width:8.5em}
-  .when .v{color:var(--ink);font-weight:600}
-  .when .v .dim{color:var(--dim);font-weight:400}
-
-  /* hairline — the only chrome */
-  .rule{height:1px;background:var(--faint);margin:0;border:none}
-
-  footer{padding:6rem 0 7rem}
-  footer .end{font-size:clamp(1.4rem,4vw,2.4rem);font-weight:800;letter-spacing:-.02em}
-  footer .sub{color:var(--faint);font-size:.82rem;letter-spacing:.08em;margin-top:1.6rem;line-height:1.9}
-
-  /* ── TRON grid: a receding neon floor, behind all content, motion-safe ── */
-  .grid{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-    perspective:34rem;perspective-origin:50% 42%}
-  .grid::before{content:"";position:absolute;left:-75%;right:-75%;bottom:-20%;height:150%;
-    background-image:
-      repeating-linear-gradient(to right,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem),
-      repeating-linear-gradient(to bottom,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem);
-    transform:rotateX(72deg);transform-origin:50% 100%;opacity:.32;
-    -webkit-mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
-    mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
-    animation:grid-drift 16s linear infinite}
-  @keyframes grid-drift{from{background-position:0 0}to{background-position:0 4rem}}
-  @media (prefers-reduced-motion:reduce){.grid::before{animation:none}}
-
-  /* ── neon bloom: soft halos on headings, coin accents, and the hairlines only ── */
-  .big,.mid{text-shadow:0 0 10px rgba(233,233,227,.3),0 0 24px rgba(233,233,227,.15)}
-  .d{text-shadow:0 0 8px rgba(74,224,140,.85),0 0 20px rgba(74,224,140,.45),0 0 40px rgba(74,224,140,.2)}
-  .l{text-shadow:0 0 8px rgba(214,171,82,.85),0 0 20px rgba(214,171,82,.45),0 0 40px rgba(214,171,82,.2)}
-  .o{text-shadow:0 0 8px rgba(99,185,214,.85),0 0 20px rgba(99,185,214,.45),0 0 40px rgba(99,185,214,.2)}
-  .big .cursor{text-shadow:0 0 8px rgba(74,224,140,.9),0 0 22px rgba(74,224,140,.5),0 0 42px rgba(74,224,140,.24)}
-  .rule{box-shadow:0 0 10px rgba(99,185,214,.28)}
-</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"DAARX · L10N · OPEN","url":"https://daarx.money/","description":"A family of three cryptocurrencies: DAARX (private store of value), L10N (private offline cash), OPEN (accountability chain for machines). Fair launch, no premine, no presale.","email":"daarxmoney@proton.me","foundingDate":"2027"}
+</script>
 </head>
 <body>
-
 <div class="grid" aria-hidden="true"></div>
 
-<div class="top">
-  <span class="mk"><span class="d">DAARX</span> <span class="amp">·</span> <span class="l">L10N</span> <span class="amp">·</span> <span class="o">OPEN</span></span>
-  <span class="yr">2027</span>
-</div>
+<nav class="nav" aria-label="Primary">
+  <a class="mk" href="/"><span class="d">DAARX</span> <span class="amp">·</span> <span class="l">L10N</span> <span class="amp">·</span> <span class="o">OPEN</span></a>
+  <span class="go">
+    <a class="lnk" href="/faq.html">faq</a>
+    <a class="lnk" href="/break-it.html">break it</a>
+    <a class="btn" href="/mine.html">Mine it <span class="arw">→</span></a>
+  </span>
+</nav>
 
-<div class="wrap">
+<main class="wrap wide">
 
-  <!-- 1 · the one line -->
-  <section class="beat">
+  <!-- 1 · the line -->
+  <section class="beat" id="top">
     <h1 class="big">Money that minds its own business.<span class="cursor">_</span></h1>
-    <p class="note">Every payment you make with Bitcoin is public, and stays that way forever. It doesn't have to be. <b>Unless you're a machine</b> — then it should be.</p>
+    <p class="lede">Every payment you make with Bitcoin is public — and stays public forever. It doesn't have to be. <b>Unless you're a machine</b> — then it should be.</p>
+    <div class="actions">
+      <a class="btn solid" href="/mine.html">Run a node &amp; mine <span class="arw">→</span></a>
+      <a class="btn" href="#what">What it is <span class="arw">↓</span></a>
+    </div>
   </section>
 
   <hr class="rule">
 
   <!-- 2 · the thesis -->
-  <section class="beat">
-    <div class="kick">what it is</div>
-    <p class="mid">Privacy for people. <span class="dim">Accountability for machines.</span></p>
-    <p class="note">Three coins, one family, one launch. Two of them keep your business private. The third makes machines show their work.</p>
+  <section class="beat" id="what">
+    <h2 class="eyebrow">what it is</h2>
+    <p class="mid">Privacy for people. <span class="soft">Accountability for machines.</span></p>
+    <p class="lede">Three coins, one family, one launch. Two of them keep your business private. The third makes machines show their work.</p>
   </section>
 
   <hr class="rule">
 
-  <!-- 3 · the three, spelled out -->
+  <!-- 3 · the three -->
   <section class="beat">
+    <h2 class="eyebrow">the three</h2>
     <div class="pair">
       <div class="one">
-        <div class="nm d">DAARX</div>
-        <div class="desc">The one to <b>keep</b>. A set amount that can't be printed or watered down. No one sees what you hold, who you pay, or how much.</div>
-        <div class="more"><a href="/daarx.html">more →</a></div>
+        <h3 class="nm d">DAARX</h3>
+        <p class="desc">The one to <b>keep</b>. A fixed amount that can't be printed or watered down — and no one sees what you hold, who you pay, or how much.</p>
+        <p class="more"><a href="/daarx.html">how DAARX works →</a></p>
       </div>
       <div class="one">
-        <div class="nm l">L10N</div>
-        <div class="desc">The one to <b>spend</b>. Like cash, on your phone. Built to work <b>with no internet</b> — tap and pay, in person, even with no signal.</div>
-        <div class="more"><a href="/l10n.html">more →</a></div>
+        <h3 class="nm l">L10N</h3>
+        <p class="desc">The one to <b>spend</b>. Private digital cash for your phone — quick, cheap, tap-to-pay, and built to work even with <b>no signal</b>.</p>
+        <p class="more"><a href="/l10n.html">how L10N works →</a></p>
       </div>
       <div class="one">
-        <div class="nm o">OPEN</div>
-        <div class="desc">The one for <b>machines</b>. When software pays software, someone should be able to check the receipts. Every OPEN account is <b>public by design</b> — the opposite of the other two, on purpose. Even the fund that maintains it keeps its books on the chain, live, where anyone can read them.</div>
-        <div class="more"><a href="/open.html">more →</a></div>
+        <h3 class="nm o">OPEN</h3>
+        <p class="desc">The one for <b>machines</b>. When software pays software, someone should be able to check the receipts — so every OPEN account is <b>public by design</b>, the exact opposite of the other two, on purpose.</p>
+        <p class="more"><a href="/open.html">how OPEN works →</a></p>
       </div>
     </div>
   </section>
 
   <hr class="rule">
 
-  <!-- 4 · the wall, in plain words -->
+  <!-- 4 · the wall -->
   <section class="beat short">
-    <div class="kick">by design</div>
-    <p class="mid">The private ones don't know your name. <span class="dim">The public one can't hide a thing.</span></p>
-    <p class="note"><span class="d">DAARX</span> and <span class="l">L10N</span> have <b>no company behind them</b> — nothing to buy, no one to pressure. <span class="o">OPEN</span> has books — and they're public. Keeping those two things separate isn't an accident. It's the whole point.</p>
+    <h2 class="eyebrow">by design</h2>
+    <p class="mid">The private ones don't know your name. <span class="soft">The public one can't hide a thing.</span></p>
+    <p class="lede"><span class="d">DAARX</span> and <span class="l">L10N</span> have <b>no company behind them</b> — nothing to buy, no one to lean on. <span class="o">OPEN</span> keeps its books in public, live, for anyone to read. We keep those two things apart on purpose.</p>
   </section>
 
   <hr class="rule">
 
-  <!-- 5 · the hook -->
+  <!-- 5 · the hook (recalibrated: honest, still bold) -->
   <section class="beat short">
-    <p class="mid">One of them <span class="dim">works when</span> nothing else does.</p>
-    <p class="note">No power, no signal, off the grid — cards stop, banks stop, Bitcoin stops. This keeps going.</p>
+    <p class="mid">One of them <span class="soft">is built to work when</span> nothing else does.</p>
+    <p class="lede">No signal, no bank, off the grid — cards stop, banks stop, even Bitcoin stops. <b><span class="l">L10N</span> is built to keep going.</b> It's the hardest promise in digital money, so it goes live only once it's passed the testing to earn it.</p>
   </section>
 
   <hr class="rule">
 
-  <!-- 6 · the launch, honestly -->
+  <!-- 6 · the launch -->
   <section class="beat">
-    <div class="kick">when</div>
+    <h2 class="eyebrow">when</h2>
     <p class="mid">Ready is the date.</p>
     <div class="when">
-      <div class="row"><span class="t">test network</span><span class="v">late 2026 <span class="dim">— all three chains, public, months of trying to break them</span></span></div>
-      <div class="row"><span class="t">launch target</span><span class="v">March 16, 2027 <span class="dim">— only if it's ready. The date can move; the testing never shrinks.</span></span></div>
-      <div class="row"><span class="t">fair launch</span><span class="v">no premine, no presale, <span class="dim">any chain, any pocket</span></span></div>
+      <div class="row"><span class="t">test network</span><span class="v">late 2026 <span class="soft">— all three chains, public, months of people trying to break them</span></span></div>
+      <div class="row"><span class="t">launch target</span><span class="v">March 16, 2027 <span class="soft">— when it's ready. The date can move; the testing won't shrink.</span></span></div>
+      <div class="row"><span class="t">fair launch</span><span class="v">no premine, no presale <span class="soft">— mining is the only way in, for everyone</span></span></div>
     </div>
-    <p class="note">Before launch, anyone who breaks the code for real and fixes it earns a share of a <b>$1,000 bounty pool</b> (paid at mainnet launch — no guaranteed date, the launch is readiness-gated) and a seat at the launch party — and every attempt gets published: <b>the attack log will be public</b>, and it never closes. Credit is immediate; the cash waits for a real chain. If something fails, the launch waits. That's the deal. <a href="/break-it.html" style="color:var(--steel)">break it →</a></p>
+    <p class="lede">Think you can break it? Do it for real on the testnet, fix it, and you earn a share of a <b>$1,000 pool</b> and a seat at the launch party. Every attempt gets published — <b>the attack log is public, and it never closes.</b></p>
+    <div class="actions"><a class="btn" href="/break-it.html">Break it <span class="arw">→</span></a></div>
   </section>
 
   <hr class="rule">
 
-  <!-- 7 · take part -->
+  <!-- 7 · take part (ground-floor framing) -->
   <section class="beat short">
-    <div class="kick">take part</div>
-    <p class="mid">Want in early? <span class="dim">Run a node. Mine.</span></p>
-    <p class="note">When the network goes live, anyone can help secure it — on a plain computer, no warehouse. The miner and node are <b>free and open</b>. We'll also build you a ready-to-plug-in box, if you'd rather not. Early on the coin is worth <b>~nothing</b> and the power may cost more than it earns — you do this to <b>own in early and hold the network up</b>, not for income. The coins stay never-for-sale; the rig is a separate thing. <a href="/mine.html" style="color:var(--steel)">run a node &amp; mine →</a></p>
+    <h2 class="eyebrow">take part</h2>
+    <p class="mid">Want in? <span class="soft">Run a node. Mine.</span></p>
+    <p class="lede">On day one the network is worth exactly nothing — until people show up to mine it, spend it, and hold it. There's no company to make it real; <b>only the people who show up.</b> Get here first and you're not buying a product — you're part of the reason it's worth anything at all. The miner and node are <b>free and open</b> and run on a plain computer; want one built and ready instead? We've got you.</p>
+    <div class="actions"><a class="btn solid" href="/mine.html">Run a node &amp; mine <span class="arw">→</span></a></div>
   </section>
 
   <hr class="rule">
 
-  <!-- 8 · still true -->
+  <!-- 8 · fair-launch flex -->
   <section class="beat short">
-    <p class="mid"><span class="dim">No coins for sale.</span> Still.</p>
+    <p class="mid">It's worth nothing on day one. <span class="soft">What it's worth after is up to whoever shows up.</span></p>
+    <p class="lede">No coins for sale — you don't buy in, you <b>earn in</b>. Get here early, and you're one of the people it's real because of.</p>
   </section>
 
-</div>
+</main>
 
 <hr class="rule">
 
-<!-- sign off -->
 <footer>
-  <div class="wrap">
-    <p class="end"><span class="d">DAARX</span> <span class="amp">·</span> <span class="l">L10N</span> <span class="amp">·</span> <span class="o">OPEN</span></p>
-    <p class="sub" style="letter-spacing:.1em"><a href="/" style="color:var(--steel);text-decoration:none">daarx.money</a> · <a href="/daarx.html" style="color:var(--steel);text-decoration:none">DAARX</a> · <a href="/l10n.html" style="color:var(--steel);text-decoration:none">L10N</a> · <a href="/open.html" style="color:var(--steel);text-decoration:none">OPEN</a> · <a href="/break-it.html" style="color:var(--steel);text-decoration:none">break it</a> · <a href="/mine.html" style="color:var(--steel);text-decoration:none">mine it</a> · <a href="/faq.html" style="color:var(--steel);text-decoration:none">faq</a> · <a href="/privacy.html" style="color:var(--steel);text-decoration:none">privacy</a></p>
-    <p class="sub">one launch · 2027 · no premine · no presale · no bank · no coins for sale<br>
-    full whitepapers publish with the test network · teasers above, exact papers then<br>
-    test coins are worthless on purpose · nothing here is advice</p>
+  <div class="wrap wide">
+    <nav class="fnav" aria-label="Site">
+      <a href="/" aria-current="page">daarx.money</a>
+      <a href="/daarx.html">DAARX</a>
+      <a href="/l10n.html">L10N</a>
+      <a href="/open.html">OPEN</a>
+      <a href="/mine.html">mine it</a>
+      <a href="/break-it.html">break it</a>
+      <a href="/faq.html">faq</a>
+      <a href="/privacy.html">privacy</a>
+    </nav>
+    <p class="fine">one launch · March 16, 2027, when it's ready · no premine · no presale · no company · mining is the only way in<br>
+    full whitepapers publish with the test network · test coins are worthless on purpose · nothing here is financial advice</p>
   </div>
 </footer>
 

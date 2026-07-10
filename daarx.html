@@ -7,8 +7,9 @@
 <title>DAARX — the one to keep</title>
 <meta name="description" content="A private store of value. Fixed supply, hidden amounts, and a crowd the size of the whole chain. Full whitepaper publishes with the testnet.">
 <link rel="canonical" href="https://daarx.money/daarx.html">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23d6ab52'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23d6ab52'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23e0b458'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23e0b458'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX · L10N · OPEN">
 <meta property="og:title" content="DAARX — the one to keep">
@@ -21,63 +22,32 @@
 <meta name="twitter:title" content="DAARX — the one to keep">
 <meta name="twitter:description" content="A private store of value. Fixed supply, hidden amounts, and a crowd the size of the whole chain. Full whitepaper publishes with the testnet.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
-<style>
-  :root{--bg:#060706;--ink:#e9e9e3;--dim:#d3d8d0;--faint:#b0b6ad;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--steel:#a8aeb4;
-    --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace}
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:16px;line-height:1.7;letter-spacing:.01em}
-  ::selection{background:var(--green);color:var(--bg)}
-  a{color:var(--steel);text-decoration:none}a:hover,a:focus{color:var(--ink)}
-  .wrap{max-width:44rem;margin:0 auto;padding:6rem 2rem 5rem;position:relative;z-index:1}
-  .crumb{color:var(--faint);font-size:.82rem;letter-spacing:.1em;margin-bottom:4rem}
-  .crumb a{color:var(--dim)}
-  h1{font-size:clamp(2.4rem,8vw,4.5rem);font-weight:800;letter-spacing:-.02em;color:var(--green)}
-  .tag{color:var(--dim);font-size:clamp(1.05rem,2.4vw,1.3rem);margin:.8rem 0 3.5rem}
-  h2{color:var(--faint);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;margin:3.2rem 0 1rem}
-  p{color:var(--dim);max-width:34em;margin-bottom:1.1rem}
-  p b{color:var(--ink);font-weight:600}
-  .facts{margin:1rem 0;display:flex;flex-direction:column;gap:.7rem}
-  .facts .f{display:flex;gap:1.2rem;align-items:baseline;flex-wrap:wrap}
-  .facts .k{color:var(--faint);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;min-width:9em}
-  .facts .v{color:var(--ink);font-weight:600}
-  .soon{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--faint);color:var(--dim)}
-  .soon b{color:var(--green);font-weight:600}
-  footer{color:var(--faint);font-size:.8rem;letter-spacing:.08em;margin-top:4rem;line-height:1.9}
-
-  /* ── TRON grid: a receding neon floor, behind all content, motion-safe ── */
-  .grid{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-    perspective:34rem;perspective-origin:50% 42%}
-  .grid::before{content:"";position:absolute;left:-75%;right:-75%;bottom:-20%;height:150%;
-    background-image:
-      repeating-linear-gradient(to right,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem),
-      repeating-linear-gradient(to bottom,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem);
-    transform:rotateX(72deg);transform-origin:50% 100%;opacity:.32;
-    -webkit-mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
-    mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
-    animation:grid-drift 16s linear infinite}
-  @keyframes grid-drift{from{background-position:0 0}to{background-position:0 4rem}}
-  @media (prefers-reduced-motion:reduce){.grid::before{animation:none}}
-
-  /* ── neon bloom: soft halo on the heading + coin accent, readability preserved ── */
-  h1{text-shadow:0 0 8px rgba(74,224,140,.85),0 0 20px rgba(74,224,140,.45),0 0 40px rgba(74,224,140,.2)}
-  .soon b{text-shadow:0 0 8px rgba(74,224,140,.6),0 0 18px rgba(74,224,140,.3)}
-</style>
 </head>
-<body>
+<body class="p-daarx">
 <div class="grid" aria-hidden="true"></div>
-<div class="wrap">
-  <div class="crumb"><a href="/">← daarx.money</a></div>
-  <h1>DAARX</h1>
+
+<nav class="nav" aria-label="Primary">
+  <a class="mk" href="/"><span class="d">DAARX</span> <span class="amp">·</span> <span class="l">L10N</span> <span class="amp">·</span> <span class="o">OPEN</span></a>
+  <span class="go">
+    <a class="lnk" href="/faq.html">faq</a>
+    <a class="lnk" href="/break-it.html">break it</a>
+    <a class="btn" href="/mine.html">Mine it <span class="arw">→</span></a>
+  </span>
+</nav>
+
+<main class="wrap">
+  <p class="crumb"><a href="/">← daarx.money</a></p>
+  <h1 class="accent">DAARX</h1>
   <p class="tag">The one to <b>keep</b>. A private store of value with a supply that never grows.</p>
 
-  <h2>the supply</h2>
+  <h2 class="eyebrow">the supply</h2>
   <p>There will only ever be <b>π × φ</b> of it — about 5.083 septillion base units, chosen once, reached <b>exactly</b> by a hundred-year schedule, and then zero forever. No tail, no committee, no exceptions. The emission table is a frozen list of integers that anyone can recompute.</p>
 
-  <h2>the privacy</h2>
+  <h2 class="eyebrow">the privacy</h2>
   <p>Most privacy coins hide you in a crowd of sixteen. DAARX hides you in <b>the whole chain</b> — every coin ever created is part of your crowd, every time you spend. No decoys to pick badly, no ring to analyze. Amounts are hidden. The only thing the chain ever learns about a coin is if someone tries to spend it twice.</p>
   <p>Even the fees are designed not to fingerprint you: every fee snaps to one of a short public ladder of amounts, so yours looks like everyone's.</p>
 
-  <h2>the ground it stands on</h2>
+  <h2 class="eyebrow">the ground it stands on</h2>
   <div class="facts">
     <div class="f"><span class="k">block time</span><span class="v">111 seconds</span></div>
     <div class="f"><span class="k">mining</span><span class="v">RandomX — CPUs, not warehouses</span></div>
@@ -85,12 +55,27 @@
     <div class="f"><span class="k">company behind it</span><span class="v">none, on purpose</span></div>
   </div>
 
-  <h2>the honest part</h2>
-  <p>The privacy layer is new cryptography built on an audited foundation. It is <b>tested, not proven</b> — so before launch, outside experts get paid to break it, the attempts get published, and if anything real is found, the launch waits. A public test network runs for months first.</p>
+  <h2 class="eyebrow">the limits</h2>
+  <p>The privacy layer is new cryptography built on an audited foundation. It is <b>tested, not proven</b> — so before launch, people are paid from a public bounty to break it — and every attempt gets published. If anything real is found, the launch waits. A public test network runs for months first.</p>
 
   <div class="soon">The <b>full whitepaper</b> — every parameter, every proof obligation, every limitation stated plainly — publishes with the <b>test network, late 2026</b>. What ships will match it exactly; that's why it waits.</div>
 
-  <footer><a href="/">daarx.money</a> · DAARX · <a href="/l10n.html">L10N</a> · <a href="/open.html">OPEN</a> · <a href="/break-it.html">break it</a> · <a href="/mine.html">mine it</a> · <a href="/faq.html">faq</a> · <a href="/privacy.html">privacy</a><br>no coins for sale · nothing here is advice</footer>
-</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav class="fnav" aria-label="Site">
+      <a href="/">daarx.money</a>
+      <a href="/daarx.html" aria-current="page">DAARX</a>
+      <a href="/l10n.html">L10N</a>
+      <a href="/open.html">OPEN</a>
+      <a href="/mine.html">mine it</a>
+      <a href="/break-it.html">break it</a>
+      <a href="/faq.html">faq</a>
+      <a href="/privacy.html">privacy</a>
+    </nav>
+    <p class="fine">no coins for sale · nothing here is financial advice</p>
+  </div>
+</footer>
 </body>
 </html>

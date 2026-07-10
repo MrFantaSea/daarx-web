@@ -7,8 +7,9 @@
 <title>OPEN — the one for machines</title>
 <meta name="description" content="Accountability for machines. Every account public by design, and the fund that maintains it keeps its books on the chain. Full whitepaper publishes with the testnet.">
 <link rel="canonical" href="https://daarx.money/open.html">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23d6ab52'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23d6ab52'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23e0b458'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23e0b458'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX · L10N · OPEN">
 <meta property="og:title" content="OPEN — the one for machines">
@@ -21,62 +22,31 @@
 <meta name="twitter:title" content="OPEN — the one for machines">
 <meta name="twitter:description" content="Accountability for machines. Every account public by design, and the fund that maintains it keeps its books on the chain. Full whitepaper publishes with the testnet.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
-<style>
-  :root{--bg:#060706;--ink:#e9e9e3;--dim:#d3d8d0;--faint:#b0b6ad;--green:#4ae08c;--gold:#d6ab52;--blue:#63b9d6;--steel:#a8aeb4;
-    --mono:'SF Mono',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace}
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:16px;line-height:1.7;letter-spacing:.01em}
-  ::selection{background:var(--blue);color:var(--bg)}
-  a{color:var(--steel);text-decoration:none}a:hover,a:focus{color:var(--ink)}
-  .wrap{max-width:44rem;margin:0 auto;padding:6rem 2rem 5rem;position:relative;z-index:1}
-  .crumb{color:var(--faint);font-size:.82rem;letter-spacing:.1em;margin-bottom:4rem}
-  .crumb a{color:var(--dim)}
-  h1{font-size:clamp(2.4rem,8vw,4.5rem);font-weight:800;letter-spacing:-.02em;color:var(--blue)}
-  .tag{color:var(--dim);font-size:clamp(1.05rem,2.4vw,1.3rem);margin:.8rem 0 3.5rem}
-  h2{color:var(--faint);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;margin:3.2rem 0 1rem}
-  p{color:var(--dim);max-width:34em;margin-bottom:1.1rem}
-  p b{color:var(--ink);font-weight:600}
-  .facts{margin:1rem 0;display:flex;flex-direction:column;gap:.7rem}
-  .facts .f{display:flex;gap:1.2rem;align-items:baseline;flex-wrap:wrap}
-  .facts .k{color:var(--faint);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;min-width:9em}
-  .facts .v{color:var(--ink);font-weight:600}
-  .soon{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--faint);color:var(--dim)}
-  .soon b{color:var(--blue);font-weight:600}
-  footer{color:var(--faint);font-size:.8rem;letter-spacing:.08em;margin-top:4rem;line-height:1.9}
-
-  /* ── TRON grid: a receding neon floor, behind all content, motion-safe ── */
-  .grid{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-    perspective:34rem;perspective-origin:50% 42%}
-  .grid::before{content:"";position:absolute;left:-75%;right:-75%;bottom:-20%;height:150%;
-    background-image:
-      repeating-linear-gradient(to right,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem),
-      repeating-linear-gradient(to bottom,rgba(110,200,235,.9) 0 1.5px,transparent 1.5px 4rem);
-    transform:rotateX(72deg);transform-origin:50% 100%;opacity:.32;
-    -webkit-mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
-    mask-image:linear-gradient(to top,#000 0%,#000 40%,transparent 100%);
-    animation:grid-drift 16s linear infinite}
-  @keyframes grid-drift{from{background-position:0 0}to{background-position:0 4rem}}
-  @media (prefers-reduced-motion:reduce){.grid::before{animation:none}}
-
-  /* ── neon bloom: soft halo on the heading + coin accent, readability preserved ── */
-  h1{text-shadow:0 0 8px rgba(99,185,214,.85),0 0 20px rgba(99,185,214,.45),0 0 40px rgba(99,185,214,.2)}
-  .soon b{text-shadow:0 0 8px rgba(99,185,214,.6),0 0 18px rgba(99,185,214,.3)}
-</style>
 </head>
-<body>
+<body class="p-open">
 <div class="grid" aria-hidden="true"></div>
-<div class="wrap">
-  <div class="crumb"><a href="/">← daarx.money</a></div>
-  <h1>OPEN</h1>
+
+<nav class="nav" aria-label="Primary">
+  <a class="mk" href="/"><span class="d">DAARX</span> <span class="amp">·</span> <span class="l">L10N</span> <span class="amp">·</span> <span class="o">OPEN</span></a>
+  <span class="go">
+    <a class="lnk" href="/faq.html">faq</a>
+    <a class="lnk" href="/break-it.html">break it</a>
+    <a class="btn" href="/mine.html">Mine it <span class="arw">→</span></a>
+  </span>
+</nav>
+
+<main class="wrap">
+  <p class="crumb"><a href="/">← daarx.money</a></p>
+  <h1 class="accent">OPEN</h1>
   <p class="tag">The one for <b>machines</b>. When software pays software, someone should be able to check the receipts.</p>
 
-  <h2>the inversion</h2>
+  <h2 class="eyebrow">the inversion</h2>
   <p>Its siblings hide everything. OPEN hides <b>nothing</b> — every account is public by design, every payment auditable by anyone, forever. That's not a compromise; it's the product. Machines don't have privacy rights. They have <b>obligations</b> — and obligations need receipts.</p>
 
-  <h2>who pays for it</h2>
+  <h2 class="eyebrow">who pays for it</h2>
   <p><b>No premine.</b> At launch, the supply is zero — same as its siblings. A fixed slice of new coins funds the endowment that maintains the chain, and that endowment's books live <b>on the chain itself</b>: every coin it receives, every coin it spends, itemized, throttled by protocol rule, readable by anyone. The maintainers can't hide from the chain they maintain.</p>
 
-  <h2>the ground it stands on</h2>
+  <h2 class="eyebrow">the ground it stands on</h2>
   <div class="facts">
     <div class="f"><span class="k">blocks</span><span class="v">27 seconds — machine-speed</span></div>
     <div class="f"><span class="k">security</span><span class="v">merged-mined — DAARX's miners are OPEN's shield</span></div>
@@ -84,12 +54,27 @@
     <div class="f"><span class="k">launch</span><span class="v">fair — supply starts at zero, same as its siblings</span></div>
   </div>
 
-  <h2>the restraint</h2>
-  <p>The interesting machinery — markets, arbitration, dividends — is <b>deliberately not at launch</b>. Each piece is reserved, named, and locked behind its own kill-switch conditions, activated only when independent review says it's safe. Some of those switches are designed to stay off for years. Shipping less on purpose is the feature.</p>
+  <h2 class="eyebrow">the restraint</h2>
+  <p>The interesting machinery — markets, arbitration, and more — is <b>deliberately not at launch</b>. Each piece is reserved, named, and locked behind its own kill-switch conditions, activated only when independent review says it's safe. Some of those switches are designed to stay off for years.</p>
 
   <div class="soon">The <b>full whitepaper</b> — the account model, the endowment covenant, the registry cryptography, the threat model, all of it — publishes with the <b>test network, late 2026</b>.</div>
 
-  <footer><a href="/">daarx.money</a> · <a href="/daarx.html">DAARX</a> · <a href="/l10n.html">L10N</a> · OPEN · <a href="/break-it.html">break it</a> · <a href="/mine.html">mine it</a> · <a href="/faq.html">faq</a> · <a href="/privacy.html">privacy</a><br>no coins for sale · nothing here is advice</footer>
-</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav class="fnav" aria-label="Site">
+      <a href="/">daarx.money</a>
+      <a href="/daarx.html">DAARX</a>
+      <a href="/l10n.html">L10N</a>
+      <a href="/open.html" aria-current="page">OPEN</a>
+      <a href="/mine.html">mine it</a>
+      <a href="/break-it.html">break it</a>
+      <a href="/faq.html">faq</a>
+      <a href="/privacy.html">privacy</a>
+    </nav>
+    <p class="fine">no coins for sale · nothing here is financial advice</p>
+  </div>
+</footer>
 </body>
 </html>
