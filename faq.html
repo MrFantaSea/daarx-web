@@ -69,14 +69,46 @@
     <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
     <div class="heroband">
       <figure class="hero-figure coinorb hero-in" aria-hidden="true">
-        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FAQ">
-          <defs>
-            <radialGradient id="og" cx="34%" cy="30%" r="82%"><stop offset="0" stop-color="#d9ffe9"/><stop offset="44%" stop-color="#4ae08c"/><stop offset="100%" stop-color="#186b3f"/></radialGradient>
-            <radialGradient id="oh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4ae08c" stop-opacity="0"/><stop offset="55%" stop-color="#4ae08c" stop-opacity=".3"/><stop offset="100%" stop-color="#4ae08c" stop-opacity="0"/></radialGradient>
-          </defs>
-          <circle cx="120" cy="120" r="118" fill="url(#oh)" class="crowd"/>
-          <g class="orb-g orb-a"><circle cx="120" cy="120" r="62" fill="url(#og)"/><ellipse cx="100" cy="98" rx="16" ry="11" fill="#fff" opacity=".34"/><ellipse cx="98" cy="96" rx="7.5" ry="5" fill="#fff" opacity=".52"/></g>
-        </svg>
+        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FAQ — plain answers">
+  <defs>
+    <linearGradient id="faqPanel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#171d17"/><stop offset="1" stop-color="#0d110d"/>
+    </linearGradient>
+    <radialGradient id="faqHalo" cx="50%" cy="46%" r="54%">
+      <stop offset="0" stop-color="rgba(var(--accent-rgb),.26)"/>
+      <stop offset="100%" stop-color="rgba(var(--accent-rgb),0)"/>
+    </radialGradient>
+    <radialGradient id="faqGloss" cx="40%" cy="33%" r="115%">
+      <stop offset="0" stop-color="#eef0ea"/>
+      <stop offset="14%" stop-color="rgba(var(--accent-rgb),1)"/>
+      <stop offset="72%" stop-color="rgba(var(--accent-rgb),1)"/>
+      <stop offset="100%" stop-color="rgba(6,7,6,.62)"/>
+    </radialGradient>
+  </defs>
+  <!-- ambient halo (reuses the site's .crowd breathe) -->
+  <circle class="crowd" cx="120" cy="120" r="116" fill="url(#faqHalo)"/>
+  <!-- crowd field: the many people asking, gathered around the answer -->
+  <g fill="var(--accent)">
+    <circle cx="46" cy="180" r="5" opacity=".52"/>
+    <circle cx="41" cy="150" r="4" opacity=".4"/>
+    <circle cx="46" cy="122" r="3.1" opacity=".28"/>
+    <circle cx="58" cy="98" r="2.5" opacity=".2"/>
+    <circle cx="196" cy="166" r="4.4" opacity=".38"/>
+    <circle cx="203" cy="136" r="3" opacity=".26"/>
+    <circle cx="192" cy="106" r="2.4" opacity=".18"/>
+  </g>
+  <!-- answer tile: paneled body + accent rim + top gloss edge -->
+  <rect x="62" y="56" width="116" height="128" rx="26" fill="url(#faqPanel)" stroke="rgba(var(--accent-rgb),.32)" stroke-width="1.5"/>
+  <path d="M84 58 H156" stroke="#eef0ea" stroke-opacity=".16" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- the question: bright accent hook + glossy top highlight -->
+  <path d="M106 108 C98 98 98 82 108 74 C118 66 134 68 141 80 C148 92 143 104 130 108 C123 110 120 116 120 124" stroke="var(--accent)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M104 100 C100 90 101 80 109 74" stroke="#eef0ea" stroke-opacity=".5" stroke-width="3.2" stroke-linecap="round"/>
+  <!-- the answer: a glowing, glossy verified-check sphere as the mark's dot -->
+  <circle class="ask-pulse" cx="120" cy="150" r="22" fill="rgba(var(--accent-rgb),.5)"/>
+  <circle cx="120" cy="150" r="15" fill="url(#faqGloss)"/>
+  <ellipse cx="115" cy="144" rx="5.4" ry="3.6" fill="#eef0ea" opacity=".6"/>
+  <path d="M112 150.5 l5.4 5.6 l9.4 -11" stroke="#060706" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
       </figure>
       <div class="htxt">
         <h1 class="hero-in">FAQ<span class="dot">.</span></h1>

@@ -56,14 +56,46 @@
     <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
     <div class="heroband">
       <figure class="hero-figure coinorb hero-in" aria-hidden="true">
-        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Break it">
-          <defs>
-            <radialGradient id="og" cx="34%" cy="30%" r="82%"><stop offset="0" stop-color="#ffe0d6"/><stop offset="44%" stop-color="#e0664a"/><stop offset="100%" stop-color="#7c2f1c"/></radialGradient>
-            <radialGradient id="oh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#e0664a" stop-opacity="0"/><stop offset="55%" stop-color="#e0664a" stop-opacity=".3"/><stop offset="100%" stop-color="#e0664a" stop-opacity="0"/></radialGradient>
-          </defs>
-          <circle cx="120" cy="120" r="118" fill="url(#oh)" class="crowd"/>
-          <g class="orb-g orb-a"><circle cx="120" cy="120" r="62" fill="url(#og)"/><path d="M92 78 L118 116 L104 120 L128 162" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".72" fill="none"/><ellipse cx="100" cy="94" rx="14" ry="9" fill="#fff" opacity=".26"/></g>
-        </svg>
+        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A shield probed by attack vectors, one crack forming">
+  <defs>
+    <linearGradient id="brk-panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171d17"/><stop offset="1" stop-color="#0d110d"/></linearGradient>
+    <radialGradient id="brk-halo" cx="50%" cy="46%" r="52%"><stop offset="0" stop-color="var(--accent)" stop-opacity=".28"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></radialGradient>
+    <radialGradient id="brk-gloss" cx="40%" cy="32%" r="72%"><stop offset="0" stop-color="#eef0ea"/><stop offset="46%" stop-color="var(--accent)"/><stop offset="1" stop-color="#0d110d"/></radialGradient>
+    <clipPath id="brk-sh"><path d="M80 54 H160 V102 C160 140 144 163 120 177 C96 163 80 140 80 102 Z"/></clipPath>
+  </defs>
+  <circle cx="120" cy="120" r="112" fill="url(#brk-halo)" class="brk-halo" opacity=".7"/>
+  <g stroke="rgba(var(--accent-rgb),.2)" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="1.5 4.5">
+    <path d="M66 26 L120 60"/>
+    <path d="M212 96 L159 102"/>
+    <path d="M48 172 L86 140"/>
+  </g>
+  <path d="M80 54 H160 V102 C160 140 144 163 120 177 C96 163 80 140 80 102 Z" fill="url(#brk-panel)" stroke="rgba(var(--accent-rgb),.42)" stroke-width="1.6"/>
+  <g clip-path="url(#brk-sh)" stroke="rgba(var(--accent-rgb),.13)" stroke-width="1.4">
+    <path d="M82 96h76"/><path d="M82 122h76"/>
+  </g>
+  <g class="brk-crack" opacity=".92" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M120 68 L112 94 L127 106 L116 134 L129 156" stroke="var(--accent)" stroke-width="6" opacity=".5"/>
+    <path d="M120 68 L112 94 L127 106 L116 134 L129 156" stroke="#eef0ea" stroke-width="2.1"/>
+  </g>
+  <g fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round">
+    <path class="brk-probe" d="M66 26 L120 60" stroke-dashoffset="-34"/>
+    <path class="brk-probe brk-p2" d="M212 96 L159 102" stroke-dashoffset="-34"/>
+    <path class="brk-probe brk-p3" d="M48 172 L86 140" stroke-dashoffset="-34"/>
+  </g>
+  <circle class="brk-spark brk-sb" cx="159" cy="102" r="3.2" fill="var(--accent)" opacity=".5"/>
+  <circle class="brk-spark brk-sc" cx="86" cy="140" r="3.2" fill="var(--accent)" opacity=".5"/>
+  <g class="brk-core" opacity=".92">
+    <circle cx="120" cy="63" r="14" fill="var(--accent)" opacity=".26"/>
+    <circle cx="120" cy="63" r="9" fill="none" stroke="var(--accent)" stroke-width="1.6" opacity=".7"/>
+    <circle cx="120" cy="63" r="6" fill="url(#brk-gloss)"/>
+  </g>
+  <g>
+    <ellipse cx="182" cy="180" rx="15" ry="4.6" fill="rgba(var(--accent-rgb),.3)"/>
+    <ellipse cx="182" cy="172" rx="15" ry="4.6" fill="rgba(var(--accent-rgb),.5)"/>
+    <ellipse cx="182" cy="164" rx="15" ry="5" fill="url(#brk-gloss)" stroke="rgba(var(--accent-rgb),.55)" stroke-width="1"/>
+    <path d="M182 158.5 V169.5 M186 161 q-4.5 -2.2 -7 .3 q-1.8 1.8 1.2 3 l3.6 1.2 q3 1 1.2 2.9 q-2.6 2.4 -7 .2" fill="none" stroke="#060706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
       </figure>
       <div class="htxt">
         <h1 class="hero-in">Break it<span class="dot">.</span></h1>

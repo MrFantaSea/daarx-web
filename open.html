@@ -56,14 +56,56 @@
     <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
     <div class="heroband">
       <figure class="hero-figure coinorb hero-in" aria-hidden="true">
-        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="OPEN">
-          <defs>
-            <radialGradient id="og" cx="34%" cy="30%" r="82%"><stop offset="0" stop-color="#dff4fb"/><stop offset="44%" stop-color="#63b9d6"/><stop offset="100%" stop-color="#265f76"/></radialGradient>
-            <radialGradient id="oh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#63b9d6" stop-opacity="0"/><stop offset="55%" stop-color="#63b9d6" stop-opacity=".3"/><stop offset="100%" stop-color="#63b9d6" stop-opacity="0"/></radialGradient>
-          </defs>
-          <circle cx="120" cy="120" r="118" fill="url(#oh)" class="crowd"/>
-          <g class="orb-g orb-a"><circle cx="120" cy="120" r="62" fill="url(#og)"/><ellipse cx="100" cy="98" rx="16" ry="11" fill="#fff" opacity=".34"/><ellipse cx="98" cy="96" rx="7.5" ry="5" fill="#fff" opacity=".52"/></g>
-        </svg>
+        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A transparent public ledger">
+  <defs>
+    <linearGradient id="glassBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="var(--accent)" stop-opacity=".16"/>
+      <stop offset="1" stop-color="var(--accent)" stop-opacity=".04"/>
+    </linearGradient>
+    <radialGradient id="glassHalo" cx="50%" cy="46%" r="55%">
+      <stop offset="0" stop-color="var(--accent)" stop-opacity=".26"/>
+      <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glassGloss" cx="40%" cy="32%" r="72%">
+      <stop offset="0" stop-color="#eef0ea"/>
+      <stop offset="45%" stop-color="var(--accent)"/>
+      <stop offset="100%" stop-color="#0d110d"/>
+    </radialGradient>
+  </defs>
+  <circle cx="120" cy="120" r="116" fill="url(#glassHalo)" class="crowd"/>
+  <rect x="73" y="45" width="120" height="124" rx="13" fill="rgba(var(--accent-rgb),.03)" stroke="var(--accent)" stroke-width="1.3" stroke-opacity=".24"/>
+  <path d="M61 60 74 47 M179 60 192 47 M179 180 192 167" stroke="var(--accent)" stroke-width="1.3" stroke-opacity=".26" stroke-linecap="round"/>
+  <rect x="60" y="58" width="120" height="124" rx="13" fill="url(#glassBody)" stroke="var(--accent)" stroke-width="1.6" stroke-opacity=".7"/>
+  <rect x="67" y="61" width="106" height="3" rx="1.5" fill="#eef0ea" opacity=".12"/>
+  <circle cx="76" cy="74" r="3" fill="var(--accent)"/>
+  <rect x="84" y="71.5" width="40" height="5" rx="2.5" fill="rgba(var(--accent-rgb),.55)"/>
+  <path d="M68 87 H172" stroke="var(--accent)" stroke-width="1" stroke-opacity=".26"/>
+  <g class="glass-row glass-r1" opacity=".82">
+    <circle cx="76" cy="100" r="3.2" fill="var(--accent)"/>
+    <rect x="88" y="97.25" width="64" height="5.5" rx="2.75" fill="rgba(var(--accent-rgb),.72)"/>
+    <path d="M161 98.5 164 101.9 170.5 93.9" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g class="glass-row glass-r2" opacity=".82">
+    <circle cx="76" cy="122" r="3.2" fill="var(--accent)"/>
+    <rect x="88" y="119.25" width="48" height="5.5" rx="2.75" fill="rgba(var(--accent-rgb),.72)"/>
+    <path d="M161 120.5 164 123.9 170.5 115.9" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g class="glass-row glass-r3" opacity=".82">
+    <circle cx="76" cy="144" r="3.2" fill="var(--accent)"/>
+    <rect x="88" y="141.25" width="70" height="5.5" rx="2.75" fill="rgba(var(--accent-rgb),.72)"/>
+    <path d="M161 142.5 164 145.9 170.5 137.9" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g class="glass-row glass-r4" opacity=".82">
+    <circle cx="76" cy="166" r="3.2" fill="var(--accent)"/>
+    <rect x="88" y="163.25" width="54" height="5.5" rx="2.75" fill="rgba(var(--accent-rgb),.72)"/>
+    <path d="M161 164.5 164 167.9 170.5 159.9" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g class="glass-scan" opacity=".9">
+    <rect x="66" y="93" width="108" height="14" rx="7" fill="rgba(var(--accent-rgb),.14)"/>
+    <rect x="66" y="99.2" width="108" height="1.6" rx=".8" fill="var(--accent)"/>
+    <circle cx="72" cy="100" r="5.5" fill="url(#glassGloss)"/>
+  </g>
+</svg>
       </figure>
       <div class="htxt">
         <h1 class="accent hero-in">OPEN</h1>

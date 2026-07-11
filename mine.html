@@ -93,6 +93,50 @@
   </div>
 
   <h2 class="eyebrow">just run a node</h2>
+  <figure class="secfig node-fig" aria-hidden="true"><svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="nodeChassis" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#171d17"/><stop offset="1" stop-color="#0d110d"/>
+    </linearGradient>
+    <radialGradient id="nodeHalo" cx="50%" cy="50%" r="52%">
+      <stop offset="0" stop-color="var(--accent)" stop-opacity=".26"/>
+      <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nodeGloss" cx="40%" cy="32%" r="72%">
+      <stop offset="0" stop-color="#d9ffe9"/>
+      <stop offset="45%" stop-color="var(--accent)"/>
+      <stop offset="100%" stop-color="#0d110d"/>
+    </radialGradient>
+  </defs>
+  <!-- ambient halo -->
+  <circle cx="120" cy="120" r="110" fill="url(#nodeHalo)" class="node-halo"/>
+  <!-- network pulse: concentric rings radiating from behind the box -->
+  <g fill="none" stroke="var(--accent)" stroke-width="1.6">
+    <circle class="node-ring node-r1" cx="120" cy="124" r="46" opacity=".3"/>
+    <circle class="node-ring node-r2" cx="120" cy="124" r="62" opacity=".2"/>
+    <circle class="node-ring node-r3" cx="120" cy="124" r="80" opacity=".12"/>
+  </g>
+  <!-- device body + glossy top edge -->
+  <rect x="66" y="87" width="108" height="74" rx="14" fill="url(#nodeChassis)" stroke="#3d453c" stroke-width="1.5"/>
+  <path d="M82 88 H158" stroke="#eef0ea" stroke-opacity=".08" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- status display strip + readout lines -->
+  <rect x="76" y="97" width="88" height="24" rx="6" fill="#060706" fill-opacity=".55" stroke="rgba(var(--accent-rgb),.12)" stroke-width="1"/>
+  <rect x="104" y="104.5" width="50" height="5" rx="2.5" fill="rgba(var(--accent-rgb),.55)"/>
+  <rect x="104" y="113.5" width="34" height="5" rx="2.5" fill="rgba(var(--accent-rgb),.28)"/>
+  <!-- recessed ports -->
+  <g>
+    <rect x="78" y="134" width="24" height="14" rx="3" fill="#060706" stroke="rgba(var(--accent-rgb),.3)" stroke-width="1"/>
+    <rect x="83" y="139" width="14" height="4" rx="2" fill="rgba(var(--accent-rgb),.16)"/>
+    <rect x="108" y="134" width="24" height="14" rx="3" fill="#060706" stroke="rgba(var(--accent-rgb),.3)" stroke-width="1"/>
+    <rect x="113" y="139" width="14" height="4" rx="2" fill="rgba(var(--accent-rgb),.16)"/>
+  </g>
+  <!-- vents -->
+  <path d="M142 133V151M149 133V151M156 133V151M163 133V151" stroke="#39423a" stroke-width="2.6" stroke-linecap="round"/>
+  <!-- focal status LED: soft breathing glow, glossy core, specular -->
+  <circle class="node-led" cx="90.5" cy="109" r="12" fill="rgba(var(--accent-rgb),.22)"/>
+  <circle cx="90.5" cy="109" r="6.5" fill="url(#nodeGloss)" stroke="rgba(var(--accent-rgb),.5)" stroke-width=".8"/>
+  <circle cx="88" cy="106.5" r="1.7" fill="#eef0ea" opacity=".9"/>
+</svg></figure>
   <ul class="menu">
     <li><a class="item" href="#reserve" data-sku="Node Box — $299">
       <span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6.5" width="16" height="11" rx="2.2"/><circle cx="12" cy="12" r="2.3" fill="currentColor" stroke="none"/><path d="M7 12h2.4M14.6 12H17"/></svg></span>
@@ -148,6 +192,39 @@
 
   <h2 class="eyebrow">BIG_DOG</h2>
   <p>When you want the most hashrate there is. Threadripper — many cores, quad-channel memory, a serious machine.</p>
+  <figure class="secfig bigdog-fig" aria-hidden="true"><svg class="bigdog-svg" viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="bigdog-panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171d17"/><stop offset="1" stop-color="#0d110d"/></linearGradient>
+    <radialGradient id="bigdog-halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="var(--accent)" stop-opacity=".24"/><stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/></radialGradient>
+    <radialGradient id="bigdog-gloss" cx="40%" cy="32%" r="72%"><stop offset="0" stop-color="#d9ffe9"/><stop offset="48%" stop-color="var(--accent)"/><stop offset="100%" stop-color="#0d110d"/></radialGradient>
+  </defs>
+  <!-- wide ambient halo hugging the pair -->
+  <ellipse class="bigdog-halo" cx="150" cy="120" rx="146" ry="118" fill="url(#bigdog-halo)"/>
+  <!-- twin chassis towers -->
+  <rect x="40" y="34" width="78" height="176" rx="13" fill="url(#bigdog-panel)" stroke="#3d453c" stroke-width="1.5"/>
+  <rect x="182" y="34" width="78" height="176" rx="13" fill="url(#bigdog-panel)" stroke="#3d453c" stroke-width="1.5"/>
+  <!-- top vent grilles -->
+  <g stroke="#39423a" stroke-width="2.4" stroke-linecap="round"><path d="M54 50h50M54 58h50M54 66h50"/><path d="M196 50h50M196 58h50M196 66h50"/></g>
+  <!-- connecting bus bar bridging the towers -->
+  <rect x="112" y="113" width="76" height="18" rx="4.5" fill="url(#bigdog-panel)" stroke="#3d453c" stroke-width="1.3"/>
+  <path class="bigdog-bus" d="M120 122h60" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+  <!-- dual graduated hashrate meters -->
+  <g class="bigdog-bars-l" fill="var(--accent)"><rect x="55" y="182" width="13" height="18" rx="2.5" opacity=".5"/><rect x="73" y="174" width="13" height="26" rx="2.5" opacity=".85"/><rect x="91" y="186" width="13" height="14" rx="2.5" opacity=".4"/></g>
+  <g class="bigdog-bars-r" fill="var(--accent)"><rect x="197" y="185" width="13" height="15" rx="2.5" opacity=".42"/><rect x="215" y="172" width="13" height="28" rx="2.5" opacity=".8"/><rect x="233" y="180" width="13" height="20" rx="2.5" opacity=".55"/></g>
+  <!-- four glowing spinning fans (staggered) -->
+  <circle cx="79" cy="96" r="21" fill="none" stroke="#2b322c" stroke-width="2.5"/>
+  <circle class="bigdog-spin1" cx="79" cy="96" r="21" fill="none" stroke="url(#bigdog-gloss)" stroke-width="3" stroke-dasharray="5 9" opacity=".95"/>
+  <circle cx="79" cy="96" r="6" fill="url(#bigdog-gloss)"/>
+  <circle cx="79" cy="148" r="21" fill="none" stroke="#2b322c" stroke-width="2.5"/>
+  <circle class="bigdog-spin2" cx="79" cy="148" r="21" fill="none" stroke="url(#bigdog-gloss)" stroke-width="3" stroke-dasharray="5 9" opacity=".95"/>
+  <circle cx="79" cy="148" r="6" fill="url(#bigdog-gloss)"/>
+  <circle cx="221" cy="96" r="21" fill="none" stroke="#2b322c" stroke-width="2.5"/>
+  <circle class="bigdog-spin3" cx="221" cy="96" r="21" fill="none" stroke="url(#bigdog-gloss)" stroke-width="3" stroke-dasharray="5 9" opacity=".95"/>
+  <circle cx="221" cy="96" r="6" fill="url(#bigdog-gloss)"/>
+  <circle cx="221" cy="148" r="21" fill="none" stroke="#2b322c" stroke-width="2.5"/>
+  <circle class="bigdog-spin4" cx="221" cy="148" r="21" fill="none" stroke="url(#bigdog-gloss)" stroke-width="3" stroke-dasharray="5 9" opacity=".95"/>
+  <circle cx="221" cy="148" r="6" fill="url(#bigdog-gloss)"/>
+</svg></figure>
   <ul class="menu">
     <li><a class="item" href="#reserve" data-sku="BIG_DOG (32-core) — $7,499">
       <span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="8" height="16" rx="2"/><rect x="12.8" y="4" width="7.7" height="16" rx="2"/><circle cx="7.5" cy="16.5" r="1" fill="currentColor" stroke="none"/><circle cx="16.6" cy="16.5" r="1" fill="currentColor" stroke="none"/></svg></span>
@@ -193,6 +270,60 @@
   <p class="note">Bigger builds step up the CPU + platform (Pro/BIG_DOG move to AM5/Threadripper). The full spec for each ships with the store.</p>
 
   <h2 class="eyebrow">memberships — optional, add any</h2>
+  <figure class="secfig memb-fig" aria-hidden="true"><svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <radialGradient id="memb-halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="var(--accent)" stop-opacity=".26"/>
+      <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="memb-chassis" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#171d17"/>
+      <stop offset="1" stop-color="#0d110d"/>
+    </linearGradient>
+    <radialGradient id="memb-gloss" cx="38%" cy="32%" r="72%">
+      <stop offset="0" stop-color="#eef0ea"/>
+      <stop offset="50%" stop-color="var(--accent)"/>
+      <stop offset="100%" stop-color="#0d110d"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ambient accent halo (breathes) -->
+  <circle class="memb-breathe" cx="120" cy="120" r="112" fill="url(#memb-halo)"/>
+
+  <!-- outer "recurring" cycle ring (slow counter-rotation) -->
+  <circle class="memb-cycle" cx="120" cy="120" r="95" fill="none" stroke="rgba(var(--accent-rgb),.22)" stroke-width="1" stroke-dasharray="2 9" stroke-linecap="round"/>
+
+  <!-- orbit path the members ride -->
+  <circle cx="120" cy="120" r="74" fill="none" stroke="rgba(var(--accent-rgb),.13)" stroke-width="1"/>
+
+  <!-- the pool of members: linked node ring, slowly orbiting the hub -->
+  <g class="memb-orbit">
+    <path class="memb-flow" fill="none" stroke="rgba(var(--accent-rgb),.3)" stroke-width="1" stroke-linecap="round" d="M120 120L120 46M120 120L184.09 83M120 120L184.09 157M120 120L120 194M120 120L55.91 157M120 120L55.91 83"/>
+    <polygon class="memb-shimmer" fill="none" stroke="var(--accent)" stroke-opacity=".4" stroke-width="1.4" stroke-linejoin="round" points="120,46 184.09,83 184.09,157 120,194 55.91,157 55.91,83"/>
+    <circle cx="120" cy="46" r="10" fill="url(#memb-halo)"/>
+    <circle cx="184.09" cy="83" r="10" fill="url(#memb-halo)"/>
+    <circle cx="184.09" cy="157" r="10" fill="url(#memb-halo)"/>
+    <circle cx="120" cy="194" r="10" fill="url(#memb-halo)"/>
+    <circle cx="55.91" cy="157" r="10" fill="url(#memb-halo)"/>
+    <circle cx="55.91" cy="83" r="10" fill="url(#memb-halo)"/>
+    <circle cx="120" cy="46" r="6" fill="url(#memb-gloss)" stroke="rgba(var(--accent-rgb),.5)" stroke-width=".75"/>
+    <circle cx="184.09" cy="83" r="6" fill="url(#memb-gloss)" stroke="rgba(var(--accent-rgb),.5)" stroke-width=".75"/>
+    <circle cx="184.09" cy="157" r="6" fill="url(#memb-gloss)" stroke="rgba(var(--accent-rgb),.5)" stroke-width=".75"/>
+    <circle cx="120" cy="194" r="6" fill="url(#memb-gloss)" stroke="rgba(var(--accent-rgb),.5)" stroke-width=".75"/>
+    <circle cx="55.91" cy="157" r="6" fill="url(#memb-gloss)" stroke="rgba(var(--accent-rgb),.5)" stroke-width=".75"/>
+    <circle cx="55.91" cy="83" r="6" fill="url(#memb-gloss)" stroke="rgba(var(--accent-rgb),.5)" stroke-width=".75"/>
+  </g>
+
+  <!-- central hub: THE POOL -->
+  <circle cx="120" cy="120" r="44" fill="url(#memb-halo)"/>
+  <circle cx="120" cy="120" r="34" fill="url(#memb-chassis)" stroke="#3d453c" stroke-width="1.5"/>
+  <circle cx="120" cy="120" r="29" fill="url(#memb-gloss)" stroke="rgba(var(--accent-rgb),.5)" stroke-width="1"/>
+  <circle cx="120" cy="120" r="21" fill="none" stroke="#060706" stroke-opacity=".3" stroke-width="1.3"/>
+  <circle cx="120" cy="120" r="14" fill="none" stroke="rgba(var(--accent-rgb),.35)" stroke-width="1"/>
+  <ellipse class="memb-glint" cx="110" cy="106" rx="9" ry="5" fill="#eef0ea" opacity=".5" transform="rotate(-35 110 106)"/>
+  <circle cx="107" cy="104" r="1.9" fill="#d9ffe9" opacity=".7"/>
+  <circle class="memb-core" cx="120" cy="120" r="6" fill="url(#memb-gloss)" stroke="rgba(var(--accent-rgb),.6)" stroke-width=".8"/>
+</svg></figure>
   <ul class="menu">
     <li class="item"><span class="main"><span class="nm">Managed</span><span class="ds">We monitor, update, and tune your rig, with priority support.</span></span><span class="side"><span class="pr">~$25<span class="per">/mo</span></span></span></li>
     <li class="item"><span class="main"><span class="nm">Hosting <span class="hz">· waitlist</span></span><span class="ds">We run the rig for you — our space, power, and cooling.</span></span><span class="side"><span class="pr">~$75<span class="per">/mo</span></span></span></li>
@@ -210,7 +341,73 @@
   </ul>
   </details>
 
-  <h2 class="eyebrow" id="reserve">reserve yours</h2>
+    <h2 class="eyebrow">Proof-of-Squish&trade;</h2>
+  <div class="squishblock">
+    <figure class="squish-fig" aria-hidden="true"><svg viewBox="0 0 300 210" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A three-pack of soft squishy fidget toys, one in each coin color" aria-hidden="true">
+  <defs>
+    <radialGradient id="squishHalo" cx="50%" cy="52%" r="55%"><stop offset="0" stop-color="#d9ffe9" stop-opacity=".13"/><stop offset="1" stop-color="#d9ffe9" stop-opacity="0"/></radialGradient>
+    <radialGradient id="squishGloss" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffffff" stop-opacity=".92"/><stop offset=".5" stop-color="#ffffff" stop-opacity=".18"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="squishBodyGold" cx="34%" cy="26%" r="80%"><stop offset="0" stop-color="#f8e6b6"/><stop offset=".42" stop-color="#e0b458"/><stop offset="1" stop-color="#7c5a1e"/></radialGradient>
+    <radialGradient id="squishBodyBlue" cx="34%" cy="26%" r="80%"><stop offset="0" stop-color="#cbeaf5"/><stop offset=".42" stop-color="#63b9d6"/><stop offset="1" stop-color="#285f76"/></radialGradient>
+    <radialGradient id="squishBodyGreen" cx="34%" cy="26%" r="80%"><stop offset="0" stop-color="#bff6d7"/><stop offset=".42" stop-color="#4ae08c"/><stop offset="1" stop-color="#17643a"/></radialGradient>
+    <radialGradient id="squishPoolGold" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#e0b458" stop-opacity=".4"/><stop offset="1" stop-color="#e0b458" stop-opacity="0"/></radialGradient>
+    <radialGradient id="squishPoolBlue" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#63b9d6" stop-opacity=".4"/><stop offset="1" stop-color="#63b9d6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="squishPoolGreen" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4ae08c" stop-opacity=".5"/><stop offset="1" stop-color="#4ae08c" stop-opacity="0"/></radialGradient>
+  </defs>
+
+  <circle class="squish-halo" cx="150" cy="118" r="120" fill="url(#squishHalo)"/>
+
+  <!-- ground glow pools -->
+  <ellipse class="squish-pool squish-b" cx="104" cy="149" rx="45" ry="13" fill="url(#squishPoolGold)"/>
+  <ellipse class="squish-pool squish-c" cx="198" cy="146" rx="44" ry="13" fill="url(#squishPoolBlue)"/>
+  <ellipse class="squish-pool" cx="151" cy="171" rx="52" ry="15" fill="url(#squishPoolGreen)"/>
+
+  <!-- contact shadows -->
+  <ellipse cx="104" cy="149" rx="28" ry="7.5" fill="#060706" opacity=".5"/>
+  <ellipse cx="198" cy="146" rx="27" ry="7.4" fill="#060706" opacity=".5"/>
+  <ellipse cx="151" cy="170" rx="32" ry="9" fill="#060706" opacity=".55"/>
+
+  <!-- GOLD (back-left) — OPEN "O" -->
+  <g class="squish-blob squish-b">
+    <path d="M104.0,79.0 C112.9,78.7 125.7,84.4 131.8,90.5 C137.9,96.7 140.2,107.9 140.8,116.0 C141.5,124.1 141.6,134.4 135.4,139.3 C129.3,144.1 114.1,145.2 104.0,144.9 C93.9,144.7 81.5,142.5 74.7,137.7 C67.9,132.9 62.4,123.5 63.1,116.0 C63.7,108.5 71.6,98.8 78.5,92.6 C85.3,86.5 95.1,79.4 104.0,79.0 Z" fill="url(#squishBodyGold)" stroke="#5c4213" stroke-opacity=".4" stroke-width="1.1"/>
+    <g stroke-width="2.4" stroke-linecap="round" fill="none">
+      <path d="M104,109 A7,9 0 1 0 104,127 A7,9 0 1 0 104,109" transform="translate(-0.7,-0.7)" stroke="#6e4f17" stroke-opacity=".55"/>
+      <path d="M104,109 A7,9 0 1 0 104,127 A7,9 0 1 0 104,109" transform="translate(0.7,0.7)" stroke="#f7e7bd" stroke-opacity=".5"/>
+    </g>
+    <ellipse cx="93.9" cy="102.4" rx="17.2" ry="12.2" fill="url(#squishGloss)" transform="rotate(-20 93.9 102.4)"/>
+    <ellipse cx="90.7" cy="97.3" rx="3.5" ry="2.6" fill="#ffffff" opacity=".85" transform="rotate(-20 90.7 97.3)"/>
+  </g>
+
+  <!-- BLUE (back-right) — L10N "L" -->
+  <g class="squish-blob squish-c">
+    <path d="M198.0,81.2 C207.3,81.1 220.0,82.8 226.2,88.3 C232.4,93.7 235.3,106.3 235.2,114.0 C235.2,121.7 232.3,129.6 226.1,134.7 C219.9,139.8 207.3,144.6 198.0,144.6 C188.7,144.6 176.3,139.7 170.0,134.6 C163.7,129.5 160.2,121.6 160.3,114.0 C160.4,106.4 164.2,94.4 170.5,88.9 C176.8,83.4 188.7,81.3 198.0,81.2 Z" fill="url(#squishBodyBlue)" stroke="#1f4f63" stroke-opacity=".4" stroke-width="1.1"/>
+    <g stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M194,107 L194,125 L206,125" transform="translate(-0.7,-0.7)" stroke="#24586e" stroke-opacity=".55"/>
+      <path d="M194,107 L194,125 L206,125" transform="translate(0.7,0.7)" stroke="#d6f0f8" stroke-opacity=".5"/>
+    </g>
+    <ellipse cx="188.1" cy="100.8" rx="16.7" ry="11.9" fill="url(#squishGloss)" transform="rotate(-20 188.1 100.8)"/>
+    <ellipse cx="185.1" cy="95.8" rx="3.4" ry="2.5" fill="#ffffff" opacity=".85" transform="rotate(-20 185.1 95.8)"/>
+  </g>
+
+  <!-- GREEN (front, star) — DAARX "D" -->
+  <g class="squish-blob">
+    <path d="M151.0,91.3 C161.4,91.8 172.7,98.9 180.8,105.9 C188.8,112.8 198.9,124.5 199.3,133.0 C199.7,141.5 191.3,150.9 183.2,156.7 C175.2,162.5 162.2,167.6 151.0,167.9 C139.8,168.3 122.9,164.7 115.8,158.9 C108.7,153.1 108.0,142.3 108.4,133.0 C108.8,123.7 111.1,110.1 118.2,103.2 C125.3,96.2 140.6,90.9 151.0,91.3 Z" fill="url(#squishBodyGreen)" stroke="#124f30" stroke-opacity=".45" stroke-width="1.2"/>
+    <g stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M145,124 L145,146 M145,124 C156,124 160,130 160,135 C160,140 156,146 145,146" transform="translate(-0.7,-0.7)" stroke="#0f4b2e" stroke-opacity=".5"/>
+      <path d="M145,124 L145,146 M145,124 C156,124 160,130 160,135 C160,140 156,146 145,146" transform="translate(0.7,0.7)" stroke="#cdf6de" stroke-opacity=".55"/>
+    </g>
+    <ellipse cx="139.3" cy="117.4" rx="19.8" ry="14.0" fill="url(#squishGloss)" transform="rotate(-20 139.3 117.4)"/>
+    <ellipse cx="135.7" cy="111.5" rx="4.0" ry="3.0" fill="#ffffff" opacity=".9" transform="rotate(-20 135.7 111.5)"/>
+  </g>
+</svg></figure>
+    <div class="squishtxt">
+      <p class="tag">Three coins, three squishes.</p>
+      <p>A soft desk fidget in each coin color &#8212; green, gold, and blue. <b>A desk fidget, not an investment.</b> Reserve the 3-pack; nothing&#39;s charged, same as everything else on this page.</p>
+      <a class="btn solid" href="#reserve" data-acc="acc_squish">Reserve the 3-pack <span class="arw">&#8594;</span></a>
+    </div>
+  </div>
+
+<h2 class="eyebrow" id="reserve">reserve yours</h2>
   <div class="reserve">
     <p class="ttl">Get in line — no payment yet.</p>
     <p>Tell us what you'd want and we'll hold your place. <b>Nothing is charged now</b> — reserving gets you first in line and tells us how many to build. When the store opens (at mainnet, when it's ready), we reach out and you decide then.</p>
@@ -261,6 +458,7 @@
           <label><input type="checkbox" name="acc_coldstorage" value="yes">Cold-storage kit</label>
           <label><input type="checkbox" name="acc_usb" value="yes">Pre-flashed USB</label>
           <label><input type="checkbox" name="acc_merch" value="yes">Merch</label>
+          <label><input type="checkbox" name="acc_squish" value="yes">Proof-of-Squish 3-pack</label>
         </div>
       </fieldset>
       <input type="hidden" name="delivery" value="Priority shipping — included">
@@ -303,7 +501,7 @@
     });
   });
   // Click an accessory row -> tick its checkbox, leave the build select alone.
-  document.querySelectorAll('a.item[data-acc]').forEach(function(row){
+  document.querySelectorAll('a[data-acc]').forEach(function(row){
     row.addEventListener('click',function(){
       var cb=document.querySelector('input[name="'+row.getAttribute('data-acc')+'"]');
       if(cb){cb.checked=true;}

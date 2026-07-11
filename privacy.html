@@ -56,14 +56,29 @@
     <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
     <div class="heroband">
       <figure class="hero-figure coinorb hero-in" aria-hidden="true">
-        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Privacy">
-          <defs>
-            <radialGradient id="og" cx="34%" cy="30%" r="82%"><stop offset="0" stop-color="#dff4fb"/><stop offset="44%" stop-color="#63b9d6"/><stop offset="100%" stop-color="#265f76"/></radialGradient>
-            <radialGradient id="oh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#63b9d6" stop-opacity="0"/><stop offset="55%" stop-color="#63b9d6" stop-opacity=".3"/><stop offset="100%" stop-color="#63b9d6" stop-opacity="0"/></radialGradient>
-          </defs>
-          <circle cx="120" cy="120" r="118" fill="url(#oh)" class="crowd"/>
-          <g class="orb-g orb-a"><circle cx="120" cy="120" r="62" fill="url(#og)"/><ellipse cx="100" cy="98" rx="16" ry="11" fill="#fff" opacity=".34"/><ellipse cx="98" cy="96" rx="7.5" ry="5" fill="#fff" opacity=".52"/></g>
-        </svg>
+        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="vaultp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171d17"/><stop offset="1" stop-color="#0d110d"/></linearGradient>
+    <radialGradient id="vaulth" cx="50%" cy="46%" r="52%"><stop offset="0" stop-color="var(--accent)" stop-opacity=".26"/><stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/></radialGradient>
+    <radialGradient id="vaultg" cx="40%" cy="34%" r="72%"><stop offset="0" stop-color="#eef0ea"/><stop offset="44%" stop-color="var(--accent)"/><stop offset="100%" stop-color="rgba(var(--accent-rgb),.6)"/></radialGradient>
+  </defs>
+  <circle cx="120" cy="120" r="116" fill="url(#vaulth)" class="crowd"/>
+  <rect x="51" y="70" width="138" height="92" rx="14" fill="url(#vaultp)" stroke="rgba(var(--accent-rgb),.28)" stroke-width="1.5"/>
+  <path d="M64 72 L176 72 L120 125 Z" fill="rgba(var(--accent-rgb),.055)"/>
+  <path d="M64 72 L120 125 L176 72" fill="none" stroke="rgba(var(--accent-rgb),.34)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M66 73 H174" stroke="#eef0ea" stroke-width="1" opacity=".05" stroke-linecap="round"/>
+  <circle cx="120" cy="138" r="34" fill="url(#vaulth)" opacity=".5" class="vault-shimmer"/>
+  <g class="vault-shackle">
+    <path d="M108 122 V110 a12 12 0 0 1 24 0 V122" fill="none" stroke="var(--accent)" stroke-opacity=".18" stroke-width="11" stroke-linecap="round"/>
+    <path d="M108 122 V110 a12 12 0 0 1 24 0 V122" fill="none" stroke="url(#vaultg)" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <rect x="98" y="118" width="44" height="42" rx="9" fill="url(#vaultp)" stroke="rgba(var(--accent-rgb),.42)" stroke-width="1.5"/>
+  <path d="M107 126 H133" stroke="#eef0ea" stroke-width="1.4" opacity=".12" stroke-linecap="round"/>
+  <circle cx="120" cy="139" r="10.5" fill="#0d110d" stroke="rgba(var(--accent-rgb),.5)" stroke-width="1"/>
+  <circle cx="120" cy="139" r="8" fill="url(#vaultg)"/>
+  <circle cx="120" cy="137" r="2.4" fill="#0d110d"/>
+  <path d="M118.4 138.5 L121.6 138.5 L120.8 143.6 L119.2 143.6 Z" fill="#0d110d"/>
+</svg>
       </figure>
       <div class="htxt">
         <h1 class="hero-in">Privacy<span class="dot">.</span></h1>

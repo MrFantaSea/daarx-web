@@ -56,14 +56,47 @@
     <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
     <div class="heroband">
       <figure class="hero-figure coinorb hero-in" aria-hidden="true">
-        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="L10N">
-          <defs>
-            <radialGradient id="og" cx="34%" cy="30%" r="82%"><stop offset="0" stop-color="#fff1cf"/><stop offset="44%" stop-color="#e0b458"/><stop offset="100%" stop-color="#7c5c1c"/></radialGradient>
-            <radialGradient id="oh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#e0b458" stop-opacity="0"/><stop offset="55%" stop-color="#e0b458" stop-opacity=".3"/><stop offset="100%" stop-color="#e0b458" stop-opacity="0"/></radialGradient>
-          </defs>
-          <circle cx="120" cy="120" r="118" fill="url(#oh)" class="crowd"/>
-          <g class="orb-g orb-a"><circle cx="120" cy="120" r="62" fill="url(#og)"/><ellipse cx="100" cy="98" rx="16" ry="11" fill="#fff" opacity=".34"/><ellipse cx="98" cy="96" rx="7.5" ry="5" fill="#fff" opacity=".52"/></g>
-        </svg>
+        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Offline tap-to-pay: a coin passing between two phones with signal struck through">
+  <defs>
+    <linearGradient id="l10nChassis" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171d17"/><stop offset="1" stop-color="#0d110d"/></linearGradient>
+    <radialGradient id="l10nHalo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="var(--accent)" stop-opacity=".26"/><stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/></radialGradient>
+    <radialGradient id="l10nGloss" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="#eef0ea"/><stop offset="50%" stop-color="var(--accent)"/><stop offset="100%" stop-color="#0d110d"/></radialGradient>
+  </defs>
+  <circle cx="120" cy="120" r="112" fill="url(#l10nHalo)" class="crowd"/>
+  <g transform="rotate(-9 70 154)">
+    <rect x="40" y="98" width="60" height="112" rx="13" fill="url(#l10nChassis)" stroke="#3d453c" stroke-width="1.5"/>
+    <rect x="46" y="106" width="48" height="96" rx="8" fill="#060706" stroke="rgba(var(--accent-rgb),.18)" stroke-width="1"/>
+    <rect x="60" y="192" width="20" height="3" rx="1.5" fill="rgba(var(--accent-rgb),.35)"/>
+    <g class="l10n-emit" fill="none" stroke="var(--accent)" stroke-width="2.6" stroke-linecap="round" opacity=".8">
+      <path d="M58 136 A15 15 0 0 1 58 164"/>
+      <path d="M58 141 A10 10 0 0 1 58 159"/>
+      <path d="M58 146 A5 5 0 0 1 58 154"/>
+    </g>
+  </g>
+  <g transform="rotate(9 168 158)">
+    <rect x="142" y="112" width="52" height="92" rx="12" fill="url(#l10nChassis)" stroke="#3d453c" stroke-width="1.5"/>
+    <rect x="147" y="119" width="42" height="78" rx="7" fill="#060706" stroke="rgba(var(--accent-rgb),.18)" stroke-width="1"/>
+    <circle cx="168" cy="140" r="9" fill="none" stroke="var(--accent)" stroke-width="2" opacity=".65"/>
+    <rect x="158" y="189" width="20" height="2.6" rx="1.3" fill="rgba(var(--accent-rgb),.3)"/>
+  </g>
+  <g>
+    <rect x="156" y="64" width="6" height="8" rx="1.6" fill="rgba(var(--accent-rgb),.2)"/>
+    <rect x="165" y="58" width="6" height="14" rx="1.6" fill="rgba(var(--accent-rgb),.2)"/>
+    <rect x="174" y="51" width="6" height="21" rx="1.6" fill="rgba(var(--accent-rgb),.2)"/>
+    <rect x="183" y="44" width="6" height="28" rx="1.6" fill="rgba(var(--accent-rgb),.2)"/>
+    <path d="M150 71 L196 40" stroke="#060706" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+    <path d="M150 71 L196 40" stroke="rgba(var(--accent-rgb),.6)" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+  <path d="M92 120 Q116 78 148 122" stroke="rgba(var(--accent-rgb),.3)" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.5 7"/>
+  <g class="l10n-tap">
+    <circle cx="116" cy="100" r="27" fill="url(#l10nHalo)"/>
+    <circle cx="116" cy="100" r="17" fill="url(#l10nGloss)" stroke="rgba(var(--accent-rgb),.55)" stroke-width="1"/>
+    <circle cx="116" cy="100" r="11.5" fill="none" stroke="#060706" stroke-width="1.3" opacity=".3"/>
+    <circle cx="116" cy="100" r="2.6" fill="#060706" opacity=".28"/>
+    <ellipse cx="109.5" cy="93" rx="6" ry="4" fill="#eef0ea" opacity=".5"/>
+    <circle cx="107.5" cy="92" r="1.9" fill="#fff" opacity=".7"/>
+  </g>
+</svg>
       </figure>
       <div class="htxt">
         <h1 class="accent hero-in">L10N</h1>

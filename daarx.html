@@ -56,14 +56,86 @@
     <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
     <div class="heroband">
       <figure class="hero-figure coinorb hero-in" aria-hidden="true">
-        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DAARX">
-          <defs>
-            <radialGradient id="og" cx="34%" cy="30%" r="82%"><stop offset="0" stop-color="#d9ffe9"/><stop offset="44%" stop-color="#4ae08c"/><stop offset="100%" stop-color="#186b3f"/></radialGradient>
-            <radialGradient id="oh" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4ae08c" stop-opacity="0"/><stop offset="55%" stop-color="#4ae08c" stop-opacity=".3"/><stop offset="100%" stop-color="#4ae08c" stop-opacity="0"/></radialGradient>
-          </defs>
-          <circle cx="120" cy="120" r="118" fill="url(#oh)" class="crowd"/>
-          <g class="orb-g orb-a"><circle cx="120" cy="120" r="62" fill="url(#og)"/><ellipse cx="100" cy="98" rx="16" ry="11" fill="#fff" opacity=".34"/><ellipse cx="98" cy="96" rx="7.5" ry="5" fill="#fff" opacity=".52"/></g>
-        </svg>
+        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A DAARX coin sealed in a vault ring, hidden in a crowd">
+  <defs>
+    <linearGradient id="vaultp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#171d17"/><stop offset="1" stop-color="#0d110d"/>
+    </linearGradient>
+    <radialGradient id="vaulth" cx="50%" cy="50%" r="52%">
+      <stop offset="0" stop-color="var(--accent)" stop-opacity="0"/>
+      <stop offset="52%" stop-color="var(--accent)" stop-opacity=".3"/>
+      <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vaultg" cx="42%" cy="34%" r="72%">
+      <stop offset="0" stop-color="#d9ffe9"/>
+      <stop offset="45%" stop-color="var(--accent)"/>
+      <stop offset="100%" stop-color="#0d110d"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ambient halo (reuses site .crowd breathe) -->
+  <circle cx="120" cy="120" r="118" fill="url(#vaulth)" class="crowd"/>
+
+  <!-- the crowd: many faint accent dots, two offset breathing groups -->
+  <g class="vault-swarm-a">
+    <circle cx="44" cy="96" r="2.4" fill="rgba(var(--accent-rgb),.30)"/>
+    <circle cx="74" cy="62" r="2.0" fill="rgba(var(--accent-rgb),.26)"/>
+    <circle cx="120" cy="30" r="2.6" fill="rgba(var(--accent-rgb),.36)"/>
+    <circle cx="176" cy="60" r="2.2" fill="rgba(var(--accent-rgb),.28)"/>
+    <circle cx="204" cy="122" r="2.4" fill="rgba(var(--accent-rgb),.30)"/>
+    <circle cx="178" cy="180" r="2.0" fill="rgba(var(--accent-rgb),.24)"/>
+    <circle cx="120" cy="206" r="2.5" fill="rgba(var(--accent-rgb),.34)"/>
+    <circle cx="60" cy="178" r="2.0" fill="rgba(var(--accent-rgb),.24)"/>
+  </g>
+  <g class="vault-swarm-b">
+    <circle cx="52" cy="156" r="2.0" fill="rgba(var(--accent-rgb),.24)"/>
+    <circle cx="96" cy="40" r="1.6" fill="rgba(var(--accent-rgb),.18)"/>
+    <circle cx="152" cy="40" r="1.6" fill="rgba(var(--accent-rgb),.18)"/>
+    <circle cx="196" cy="92" r="1.8" fill="rgba(var(--accent-rgb),.20)"/>
+    <circle cx="196" cy="152" r="1.6" fill="rgba(var(--accent-rgb),.18)"/>
+    <circle cx="150" cy="198" r="1.7" fill="rgba(var(--accent-rgb),.20)"/>
+    <circle cx="88" cy="198" r="1.6" fill="rgba(var(--accent-rgb),.18)"/>
+    <circle cx="40" cy="148" r="1.7" fill="rgba(var(--accent-rgb),.20)"/>
+  </g>
+
+  <!-- vault-door ring: hard-cap seal -->
+  <circle cx="120" cy="120" r="52" fill="none" stroke="url(#vaultp)" stroke-width="27"/>
+  <circle cx="120" cy="120" r="65.5" fill="none" stroke="#3d453c" stroke-width="1.5"/>
+  <circle cx="120" cy="120" r="38.5" fill="none" stroke="#0d110d" stroke-width="2"/>
+
+  <!-- vault bolts (top position left open for the glinting lock) -->
+  <g fill="#39423a" stroke="#2b322c" stroke-width="1">
+    <circle cx="156.8" cy="83.2" r="3.2"/>
+    <circle cx="172" cy="120" r="3.2"/>
+    <circle cx="156.8" cy="156.8" r="3.2"/>
+    <circle cx="120" cy="172" r="3.2"/>
+    <circle cx="83.2" cy="156.8" r="3.2"/>
+    <circle cx="68" cy="120" r="3.2"/>
+    <circle cx="83.2" cy="83.2" r="3.2"/>
+  </g>
+
+  <!-- the coin you keep: one glossy disc in the aperture -->
+  <circle cx="120" cy="120" r="33" fill="url(#vaultg)"/>
+  <circle cx="120" cy="120" r="33" fill="none" stroke="var(--accent)" stroke-width="1.4" opacity=".72"/>
+  <circle cx="120" cy="120" r="26" fill="none" stroke="#0d110d" stroke-width="1.3" opacity=".5"/>
+  <!-- engraved phi (golden ratio -> pi x phi supply) -->
+  <circle cx="120" cy="120" r="8.5" fill="none" stroke="#0d110d" stroke-width="3" opacity=".5"/>
+  <line x1="120" y1="101" x2="120" y2="139" stroke="#0d110d" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+  <!-- gloss hotspot -->
+  <ellipse cx="108" cy="105" rx="12" ry="7" fill="#eef0ea" opacity=".26"/>
+  <ellipse cx="106" cy="103" rx="5" ry="3" fill="#d9ffe9" opacity=".5"/>
+
+  <!-- rotating seal that turns and glints around the coin -->
+  <circle cx="120" cy="120" r="38" fill="none" stroke="rgba(var(--accent-rgb),.22)" stroke-width="1"/>
+  <circle class="vault-seal" cx="120" cy="120" r="38" fill="none" stroke="url(#vaultg)" stroke-width="2.8" stroke-dasharray="3 10" stroke-linecap="round" opacity=".9"/>
+
+  <!-- focal: the lock indicator glints -->
+  <g class="vault-glint">
+    <circle cx="120" cy="68" r="7" fill="rgba(var(--accent-rgb),.3)"/>
+    <circle cx="120" cy="68" r="3.6" fill="url(#vaultg)"/>
+    <path d="M120 63 L121.4 66.6 L125 68 L121.4 69.4 L120 73 L118.6 69.4 L115 68 L118.6 66.6 Z" fill="#d9ffe9" opacity=".85"/>
+  </g>
+</svg>
       </figure>
       <div class="htxt">
         <h1 class="accent hero-in">DAARX</h1>
