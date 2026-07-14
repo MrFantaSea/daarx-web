@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<!-- daarx.money/l10n — teaser. the full whitepaper publishes with the testnet. -->
+<!-- daarx.money/l10n — protocol-only design and development status. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>L10N — the one to spend</title>
+<title>L10N — protocol design status</title>
 <script>document.documentElement.classList.add('js')</script>
 <meta name="theme-color" content="#060706">
-<meta name="description" content="Private digital cash. Built to be spent — and built to work with no internet. Full whitepaper publishes with the testnet.">
+<meta name="description" content="L10N is an unlaunched private-cash protocol design. Merged mining, emissions, and offline transfer remain under implementation and test; no public testnet or offline product is live.">
 <link rel="canonical" href="https://daarx.money/l10n.html">
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23e0b458'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
@@ -15,14 +15,14 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX · L10N · OPEN">
 <meta property="og:title" content="L10N — the one to spend">
-<meta property="og:description" content="Private digital cash. Built to be spent — and built to work with no internet. Full whitepaper publishes with the testnet.">
+<meta property="og:description" content="An unlaunched private-cash protocol under implementation and test. Offline transfer is not an available product.">
 <meta property="og:url" content="https://daarx.money/l10n.html">
 <meta property="og:image" content="https://daarx.money/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="L10N — the one to spend">
-<meta name="twitter:description" content="Private digital cash. Built to be spent — and built to work with no internet. Full whitepaper publishes with the testnet.">
+<meta name="twitter:description" content="L10N is an unlaunched private-cash protocol. Offline transfer is not an available product.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 </head>
 <body class="p-l10n">
@@ -34,7 +34,7 @@
   <div class="go">
     <a class="lnk" href="/faq.html">faq</a>
     <a class="lnk" href="/break-it.html">break it</a>
-    <a class="btn" href="/mine.html">Mine it <span class="arw">&#8594;</span></a>
+    <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
     <details class="nd">
       <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
       <div class="navmenu">
@@ -42,7 +42,7 @@
         <a href="/daarx.html">DAARX</a>
         <a href="/l10n.html" aria-current="page">L10N</a>
         <a href="/open.html">OPEN</a>
-        <a href="/mine.html">Mine it</a>
+        <a href="/mine.html">Mining plans</a>
         <a href="/break-it.html">Break it</a>
         <a href="/faq.html">FAQ</a>
         <a href="/privacy.html">Privacy</a>
@@ -100,9 +100,9 @@
       </figure>
       <div class="htxt">
         <h1 class="accent hero-in">L10N</h1>
-        <p class="tag hero-in">The one to <b>spend</b>. Private digital cash — quick, cheap, tap-to-pay, built to work with no signal.</p>
+        <p class="tag hero-in">The one designed to <b>spend</b>. Private-cash and offline-transfer goals, not a live network or available payment product.</p>
         <div class="actions hero-in">
-          <a class="btn solid" href="/mine.html">Reserve a rig <span class="arw">&#8594;</span></a>
+          <a class="btn solid" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
           <a class="btn" href="#more">How it works <span class="arw">&#8595;</span></a>
         </div>
       </div>
@@ -111,35 +111,35 @@
 
   <div class="flow">
     <h2 class="eyebrow" id="more">why a second coin</h2>
-    <p>A coin you hoard and a coin you spend want opposite things. DAARX is scarce by law and never grows. L10N keeps a small, steady trickle of new coins forever — <b>designed to move</b>, not to sit. Same privacy, opposite temperament.</p>
+    <p>A store-of-value design and a spending design want different economics. L10N currently targets a small continuing emission and is <b>designed to move</b>, but its exact parameters, merged-mining integration, wallet flow, and public network have not been released.</p>
 
     <h2 class="eyebrow">the cash part</h2>
-    <p>Like cash, on your phone: tap, pay, done — and no one watching the chain sees who paid whom, or how much. It's built toward the hardest promise in digital money: <b>working with no internet</b>. No power, no signal, off the grid — cards stop, banks stop. The offline layer launches with the coin <b>if it passes its tests</b>; the coin doesn't wait for it. That's a promise about testing, not a promise about luck.</p>
-    <p class="note">Its smallest unit is called a <b>tooth</b>.</p>
+    <p>The target is private phone cash with an optional offline layer. Offline value is difficult: devices, replay protection, fraud limits, recovery, settlement, and merchant risk all matter. The current app work is not a production wallet and offline transfer is <b>not approved for public use</b>.</p>
+    <p class="note">The current design calls the smallest unit a <b>tooth</b>. This page covers the L10N protocol only; L10N$HARE and Rally are separate products and will have a separate public property.</p>
 
     <div class="statement">
-      <div class="fig">No signal.<span class="u">still money</span></div>
-      <p class="cap">Cards stop, banks stop, even Bitcoin stops. L10N is built to keep going — the hardest promise in digital money, so the offline layer ships <b>only once it's passed the testing to earn it</b>.</p>
+      <div class="fig">No signal?<span class="u">research and test target</span></div>
+      <p class="cap">An offline layer could be released only after it passes protocol, device, fraud, recovery, and real-world tests. Today it has not earned that claim.</p>
     </div>
 
     <h2 class="eyebrow">the ground it stands on</h2>
     <div class="facts">
-      <div class="f"><span class="k">privacy</span><span class="v">the same full-chain crowd as DAARX</span></div>
-      <div class="f"><span class="k">security</span><span class="v">merged-mined — every DAARX miner secures L10N for free</span></div>
-      <div class="f"><span class="k">blocks</span><span class="v">fast — tuned on the public testnet, frozen before launch</span></div>
-      <div class="f"><span class="k">launch</span><span class="v">fair — no premine, no presale, no company</span></div>
+      <div class="f"><span class="k">privacy target</span><span class="v">full-chain anonymity design inherited from DAARX</span></div>
+      <div class="f"><span class="k">security target</span><span class="v">merged mining — integration is not launch-complete</span></div>
+      <div class="f"><span class="k">blocks</span><span class="v">cadence remains subject to public measurement</span></div>
+      <div class="f"><span class="k">current status</span><span class="v">no public testnet, payment release, or offline release</span></div>
     </div>
 
     <h2 class="eyebrow">what's not settled</h2>
-    <p>The exact block cadence and the exact emission numbers get <b>measured, not guessed</b> — the public test network exists to set them from real data before anything is frozen. What we won't do is publish precise numbers today and quietly change them later.</p>
+    <p>The exact block cadence and emission numbers must be <b>measured, not guessed</b>. A future public test network is intended to produce evidence before parameters are frozen; no such public network exists today.</p>
 
-    <div class="soon">The <b>full whitepaper</b> — the emission math, the offline protocol, the merged-mining mechanics, the limitations — publishes with the <b>test network, late 2026</b>, once its numbers are exact.</div>
+    <div class="soon"><b>Status — July 14, 2026:</b> the emission, merged-mining, wallet, and offline designs remain under audit and integration. The public testnet and final whitepaper are not released, and no release date is promised.</div>
 
     <div class="endcta">
-      <div class="h">Private cash you mine.</div>
-      <p>L10N starts at zero and comes only from mining — no premine, no presale, no coins for sale. Every DAARX rig secures L10N for free, so the same machine earns you both. You don't buy in, you <b>earn in</b>.</p>
+      <div class="h">Private cash designed to be mined.</div>
+      <p>The intended launch policy starts at zero with no premine, presale, or coin sale. Merged mining and the release wallet must be verified before anyone can actually earn or spend L10N.</p>
       <div class="actions">
-        <a class="btn solid big" href="/mine.html">Reserve a rig <span class="arw">&#8594;</span></a>
+        <a class="btn solid big" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
         <a class="btn" href="/faq.html">Questions? <span class="arw">&#8594;</span></a>
       </div>
     </div>
@@ -159,7 +159,7 @@
       <a href="/daarx.html">DAARX</a>
       <a href="/l10n.html" aria-current="page">L10N</a>
       <a href="/open.html">OPEN</a>
-      <a href="/mine.html">mine it</a>
+      <a href="/mine.html">mining plans</a>
       <a href="/break-it.html">break it</a>
       <a href="/faq.html">faq</a>
       <a href="/privacy.html">privacy</a>

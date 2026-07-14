@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<!-- daarx.money/daarx — teaser. the full whitepaper publishes with the testnet. -->
+<!-- daarx.money/daarx — current protocol design and development status. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DAARX — the one to keep</title>
+<title>DAARX — protocol design status</title>
 <script>document.documentElement.classList.add('js')</script>
 <meta name="theme-color" content="#060706">
-<meta name="description" content="A private store of value. Fixed supply, hidden amounts, and a crowd the size of the whole chain. Full whitepaper publishes with the testnet.">
+<meta name="description" content="DAARX is an unlaunched protocol design targeting fixed integer emission, private amounts, and full-chain anonymity. Its implementation remains under audit; there is no public testnet release.">
 <link rel="canonical" href="https://daarx.money/daarx.html">
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23e0b458'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
@@ -15,14 +15,14 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX · L10N · OPEN">
 <meta property="og:title" content="DAARX — the one to keep">
-<meta property="og:description" content="A private store of value. Fixed supply, hidden amounts, and a crowd the size of the whole chain. Full whitepaper publishes with the testnet.">
+<meta property="og:description" content="An unlaunched private-money protocol under active implementation and audit. No public testnet release is live.">
 <meta property="og:url" content="https://daarx.money/daarx.html">
 <meta property="og:image" content="https://daarx.money/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DAARX — the one to keep">
-<meta name="twitter:description" content="A private store of value. Fixed supply, hidden amounts, and a crowd the size of the whole chain. Full whitepaper publishes with the testnet.">
+<meta name="twitter:description" content="DAARX is an unlaunched private-money protocol under active implementation and audit.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 </head>
 <body class="p-daarx">
@@ -34,7 +34,7 @@
   <div class="go">
     <a class="lnk" href="/faq.html">faq</a>
     <a class="lnk" href="/break-it.html">break it</a>
-    <a class="btn" href="/mine.html">Mine it <span class="arw">&#8594;</span></a>
+    <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
     <details class="nd">
       <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
       <div class="navmenu">
@@ -42,7 +42,7 @@
         <a href="/daarx.html" aria-current="page">DAARX</a>
         <a href="/l10n.html">L10N</a>
         <a href="/open.html">OPEN</a>
-        <a href="/mine.html">Mine it</a>
+        <a href="/mine.html">Mining plans</a>
         <a href="/break-it.html">Break it</a>
         <a href="/faq.html">FAQ</a>
         <a href="/privacy.html">Privacy</a>
@@ -139,9 +139,9 @@
       </figure>
       <div class="htxt">
         <h1 class="accent hero-in">DAARX</h1>
-        <p class="tag hero-in">The one to <b>keep</b>. A private store of value with a supply that never grows.</p>
+        <p class="tag hero-in">The one designed to <b>keep</b>. A private-money protocol target, not a live network or available asset.</p>
         <div class="actions hero-in">
-          <a class="btn solid" href="/mine.html">Reserve a rig <span class="arw">&#8594;</span></a>
+          <a class="btn solid" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
           <a class="btn" href="#more">How it works <span class="arw">&#8595;</span></a>
         </div>
       </div>
@@ -150,35 +150,35 @@
 
   <div class="flow">
     <h2 class="eyebrow" id="more">the supply</h2>
-    <p>There will only ever be <b>π × φ</b> of it — about 5.083 septillion base units, chosen once, reached <b>exactly</b> by a hundred-year schedule, and then zero forever. No tail, no committee, no exceptions. The emission table is a frozen list of integers that anyone can recompute.</p>
+    <p>The current consensus design targets <b>π × φ</b> base units — about 5.083 septillion — reached exactly by an integer-only hundred-year schedule and then zero emission. The table is implemented and testable, but it is not a promise about an unlaunched asset and remains subject to the final consensus review and genesis process.</p>
 
     <div class="statement">
-      <div class="fig">π × φ<span class="u">the entire supply · fixed forever</span></div>
-      <p class="cap">One number, chosen once and reached to the exact base unit — then <b>zero new coins, forever</b>. Not a target a committee steers toward; a frozen list anyone can recompute.</p>
+      <div class="fig">π × φ<span class="u">current consensus design target</span></div>
+      <p class="cap">The implementation uses a deterministic integer table that can be recomputed. It becomes a live supply rule only after final review, genesis, and public launch.</p>
     </div>
 
     <h2 class="eyebrow">the privacy</h2>
-    <p>Most privacy coins hide you in a crowd of sixteen. DAARX hides you in <b>the whole chain</b> — every coin ever created is part of your crowd, every time you spend. No decoys to pick badly, no ring to analyze. Amounts are hidden. The only thing the chain ever learns about a coin is if someone tries to spend it twice.</p>
-    <p>Even the fees are designed not to fingerprint you: every fee snaps to one of a short public ladder of amounts, so yours looks like everyone's.</p>
+    <p>DAARX targets a <b>full-chain anonymity set</b> rather than a small ring and uses hidden amounts with spent-tag checks. That is the cryptographic design and implementation target, not a guarantee of anonymity: metadata, endpoint compromise, implementation flaws, network observation, and novel cryptanalysis remain threats that require public testing.</p>
+    <p>Fees are designed to use a short public ladder to reduce fee fingerprinting. The ingress policy and end-to-end miner path still require launch-level integration evidence.</p>
 
     <h2 class="eyebrow">the ground it stands on</h2>
     <div class="facts">
-      <div class="f"><span class="k">block time</span><span class="v">111 seconds</span></div>
-      <div class="f"><span class="k">mining</span><span class="v">RandomX — CPUs, not warehouses</span></div>
-      <div class="f"><span class="k">launch</span><span class="v">fair — no premine, no presale, no coins for sale</span></div>
-      <div class="f"><span class="k">company behind it</span><span class="v">none, on purpose</span></div>
+      <div class="f"><span class="k">block target</span><span class="v">111 seconds — current parameter</span></div>
+      <div class="f"><span class="k">proof of work</span><span class="v">RandomX — implemented, still undergoing integration tests</span></div>
+      <div class="f"><span class="k">launch policy</span><span class="v">designed for no premine, presale, or coin sale</span></div>
+      <div class="f"><span class="k">current status</span><span class="v">no public testnet release; standalone testnet miner unavailable</span></div>
     </div>
 
     <h2 class="eyebrow">the limits</h2>
-    <p>The privacy layer is new cryptography built on an audited foundation. It is <b>tested, not proven</b> — so before launch, people are paid from a public bounty to break it — and every attempt gets published. If anything real is found, the launch waits. A public test network runs for months first.</p>
+    <p>The privacy layer is new cryptography built on reviewed dependencies. It is <b>tested, not proven</b>, and the project has not completed the independent review and long public soak required for a launch claim. A security program is planned but no bounty is currently open.</p>
 
-    <div class="soon">The <b>full whitepaper</b> — every parameter, every proof obligation, every limitation stated plainly — publishes with the <b>test network, late 2026</b>. What ships will match it exactly; that's why it waits.</div>
+    <div class="soon"><b>Status — July 14, 2026:</b> implementation and audit work are active. The public testnet package, integrated testnet miner, release wallet, independent review evidence, operational runbooks, and final whitepaper are not released. No release date is promised.</div>
 
     <div class="endcta">
-      <div class="h">The only way in is to mine it.</div>
-      <p>On day one DAARX is worth exactly nothing — until people show up to mine it and hold it. No premine, no presale, no coins for sale: you don't buy in, you <b>earn in</b>. Reserve a plug-and-play rig, or run the free miner on a computer you own.</p>
+      <div class="h">Mining is the intended distribution path.</div>
+      <p>The launch design has no premine, presale, or coin sale. That policy becomes meaningful only if a reviewed network launches. Today there is no public testnet mining release and rig submissions are non-binding market research, not orders.</p>
       <div class="actions">
-        <a class="btn solid big" href="/mine.html">Reserve a rig <span class="arw">&#8594;</span></a>
+        <a class="btn solid big" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
         <a class="btn" href="/break-it.html">Break it <span class="arw">&#8594;</span></a>
       </div>
     </div>
@@ -198,7 +198,7 @@
       <a href="/daarx.html" aria-current="page">DAARX</a>
       <a href="/l10n.html">L10N</a>
       <a href="/open.html">OPEN</a>
-      <a href="/mine.html">mine it</a>
+      <a href="/mine.html">mining plans</a>
       <a href="/break-it.html">break it</a>
       <a href="/faq.html">faq</a>
       <a href="/privacy.html">privacy</a>

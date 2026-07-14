@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<!-- daarx.money/open — teaser. the full whitepaper publishes with the testnet. -->
+<!-- daarx.money/open — future protocol design status. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OPEN — the one for machines</title>
+<title>OPEN — future protocol design</title>
 <script>document.documentElement.classList.add('js')</script>
 <meta name="theme-color" content="#060706">
-<meta name="description" content="Accountability for machines. Every account public by design, and the fund that maintains it keeps its books on the chain. Full whitepaper publishes with the testnet.">
+<meta name="description" content="OPEN is a future machine-accountability protocol design. It is not a running public ledger, mineable network, or available product.">
 <link rel="canonical" href="https://daarx.money/open.html">
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23e0b458'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
@@ -15,14 +15,14 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX · L10N · OPEN">
 <meta property="og:title" content="OPEN — the one for machines">
-<meta property="og:description" content="Accountability for machines. Every account public by design, and the fund that maintains it keeps its books on the chain. Full whitepaper publishes with the testnet.">
+<meta property="og:description" content="A future public-accounting protocol design for machines. OPEN is not a running network or available product.">
 <meta property="og:url" content="https://daarx.money/open.html">
 <meta property="og:image" content="https://daarx.money/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="OPEN — the one for machines">
-<meta name="twitter:description" content="Accountability for machines. Every account public by design, and the fund that maintains it keeps its books on the chain. Full whitepaper publishes with the testnet.">
+<meta name="twitter:description" content="OPEN is a future public-accounting protocol design, not a running network.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 </head>
 <body class="p-open">
@@ -34,7 +34,7 @@
   <div class="go">
     <a class="lnk" href="/faq.html">faq</a>
     <a class="lnk" href="/break-it.html">break it</a>
-    <a class="btn" href="/mine.html">Mine it <span class="arw">&#8594;</span></a>
+    <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
     <details class="nd">
       <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
       <div class="navmenu">
@@ -42,7 +42,7 @@
         <a href="/daarx.html">DAARX</a>
         <a href="/l10n.html">L10N</a>
         <a href="/open.html" aria-current="page">OPEN</a>
-        <a href="/mine.html">Mine it</a>
+        <a href="/mine.html">Mining plans</a>
         <a href="/break-it.html">Break it</a>
         <a href="/faq.html">FAQ</a>
         <a href="/privacy.html">Privacy</a>
@@ -111,7 +111,7 @@
         <h1 class="accent hero-in">OPEN</h1>
         <p class="tag hero-in">The one for <b>machines</b>. When software pays software, someone should be able to check the receipts.</p>
         <div class="actions hero-in">
-          <a class="btn solid" href="/mine.html">Reserve a rig <span class="arw">&#8594;</span></a>
+          <a class="btn solid" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
           <a class="btn" href="#more">How it works <span class="arw">&#8595;</span></a>
         </div>
       </div>
@@ -120,34 +120,34 @@
 
   <div class="flow">
     <h2 class="eyebrow" id="more">the inversion</h2>
-    <p>Its siblings hide everything. OPEN hides <b>nothing</b> — every account is public by design, every payment auditable by anyone, forever. That's not a compromise; it's the product. Machines don't have privacy rights. They have <b>obligations</b> — and obligations need receipts.</p>
+    <p>OPEN is designed as the inverse of its siblings: public accounts and auditable payments for machine activity. That is a <b>future protocol design</b>, not a description of a running ledger or a guarantee that every machine payment will be verifiable.</p>
 
     <div class="statement">
-      <div class="fig">Hides nothing.<span class="u">public by design</span></div>
-      <p class="cap">Every account public, every payment auditable by anyone, forever — the exact opposite of DAARX and L10N, <b>on purpose</b>. Even the fund that maintains the chain keeps its books on the chain.</p>
+      <div class="fig">Public by design.<span class="u">future protocol target</span></div>
+      <p class="cap">The design target makes accounts, payments, and the maintenance fund public by protocol rule. It must still be implemented, reviewed, threat-modeled, and tested.</p>
     </div>
 
     <h2 class="eyebrow">who pays for it</h2>
-    <p><b>No premine.</b> At launch, the supply is zero — same as its siblings. A fixed slice of new coins funds the endowment that maintains the chain, and that endowment's books live <b>on the chain itself</b>: every coin it receives, every coin it spends, itemized, throttled by protocol rule, readable by anyone. The maintainers can't hide from the chain they maintain.</p>
+    <p>The current economic design starts at zero and assigns a protocol-limited share of emission to a transparent maintenance endowment. The allocation, controls, accounting, governance, and legal treatment are not final and no live fund exists.</p>
 
     <h2 class="eyebrow">the ground it stands on</h2>
     <div class="facts">
-      <div class="f"><span class="k">blocks</span><span class="v">27 seconds — machine-speed</span></div>
-      <div class="f"><span class="k">security</span><span class="v">merged-mined — DAARX's miners are OPEN's shield</span></div>
-      <div class="f"><span class="k">accounts</span><span class="v">public by design, every one</span></div>
-      <div class="f"><span class="k">launch</span><span class="v">fair — supply starts at zero, same as its siblings</span></div>
+      <div class="f"><span class="k">block target</span><span class="v">27 seconds — provisional design parameter</span></div>
+      <div class="f"><span class="k">security target</span><span class="v">merged mining — not launch-integrated</span></div>
+      <div class="f"><span class="k">accounts</span><span class="v">public by design — implementation incomplete</span></div>
+      <div class="f"><span class="k">current status</span><span class="v">future protocol; no public network or mining</span></div>
     </div>
 
     <h2 class="eyebrow">the restraint</h2>
-    <p>The interesting machinery — markets, arbitration, and more — is <b>deliberately not at launch</b>. Each piece is reserved, named, and locked behind its own kill-switch conditions, activated only when independent review says it's safe. Some of those switches are designed to stay off for years.</p>
+    <p>The current design would keep markets, arbitration, and other complex machinery <b>out of an initial release</b>. Any later feature would need explicit activation conditions, implementation, independent review, and public evidence; none of those controls is a live system today.</p>
 
-    <div class="soon">The <b>full whitepaper</b> — the account model, the endowment covenant, the registry cryptography, the threat model, all of it — publishes with the <b>test network, late 2026</b>.</div>
+    <div class="soon"><b>Status — July 14, 2026:</b> OPEN remains a future protocol workstream. Its account model, endowment, registry, threat model, implementation, testnet, and whitepaper are not public release artifacts, and no release date is promised.</div>
 
     <div class="endcta">
-      <div class="h">One rig mines all three.</div>
-      <p>OPEN starts at zero too, and it's merged-mined — the same DAARX rig secures it and earns it for free. No premine, no presale, no coins for sale: you don't buy in, you <b>earn in</b>.</p>
+      <div class="h">A future merged-mining design.</div>
+      <p>The goal is to let a compatible DAARX miner contribute work to OPEN without a separate proof-of-work run. That path is not release-ready and no rig can mine a public OPEN network today.</p>
       <div class="actions">
-        <a class="btn solid big" href="/mine.html">Reserve a rig <span class="arw">&#8594;</span></a>
+        <a class="btn solid big" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
         <a class="btn" href="/break-it.html">Break it <span class="arw">&#8594;</span></a>
       </div>
     </div>
@@ -167,7 +167,7 @@
       <a href="/daarx.html">DAARX</a>
       <a href="/l10n.html">L10N</a>
       <a href="/open.html" aria-current="page">OPEN</a>
-      <a href="/mine.html">mine it</a>
+      <a href="/mine.html">mining plans</a>
       <a href="/break-it.html">break it</a>
       <a href="/faq.html">faq</a>
       <a href="/privacy.html">privacy</a>

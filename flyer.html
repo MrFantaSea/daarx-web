@@ -42,7 +42,7 @@
     padding:.3rem .8rem;font:inherit;cursor:pointer;
   }
   .toolbar button.on{background:#d6ab52;color:#181818;border-color:#d6ab52;font-weight:600}
-  .toolbar .hint{color:#888;font-size:.75rem}
+  .toolbar .hint{color:#aaa;font-size:.75rem}
   body{padding-top:3.2rem}
   @media print{body{padding-top:0}}
 
@@ -114,74 +114,80 @@
 
   /* screen responsiveness for previewing on a phone */
   @media screen and (max-width:940px){
-    .page{transform-origin:top center;transform:scale(.44);margin-bottom:-58%}
+    .page{transform-origin:top left;transform:scale(.44);margin-left:max(0px,calc((100vw - 359.04px)/2));margin-bottom:-58%}
+  }
+  @media screen and (max-width:374px){
+    .page{transform:scale(.415);margin-left:max(0px,calc((100vw - 338.64px)/2))}
+  }
+  @media screen and (max-width:340px){
+    .page{transform:scale(.39);margin-left:max(0px,calc((100vw - 318.24px)/2))}
   }
 </style>
 </head>
 <body class="letter variant-a">
 
-<div class="toolbar">
+<header class="toolbar">
   <b>FLYER PREVIEW</b>
   <span>Paper:
-    <button id="btn-letter" class="on" onclick="setPaper('letter')">US Letter</button>
-    <button id="btn-a4" onclick="setPaper('a4')">A4</button>
+    <button type="button" id="btn-letter" class="on" aria-pressed="true" onclick="setPaper('letter')">US Letter</button>
+    <button type="button" id="btn-a4" aria-pressed="false" onclick="setPaper('a4')">A4</button>
   </span>
   <span>Headline:
-    <button id="btn-a" class="on" onclick="setVariant('a')">&ldquo;Bitcoin isn&rsquo;t private.&rdquo;</button>
-    <button id="btn-b" onclick="setVariant('b')">&ldquo;Your money doesn&rsquo;t have to be public.&rdquo;</button>
+    <button type="button" id="btn-a" class="on" aria-pressed="true" onclick="setVariant('a')">&ldquo;Bitcoin isn&rsquo;t private.&rdquo;</button>
+    <button type="button" id="btn-b" aria-pressed="false" onclick="setVariant('b')">&ldquo;Your money doesn&rsquo;t have to be public.&rdquo;</button>
   </span>
-  <button onclick="window.print()">Print&hellip;</button>
+  <button type="button" onclick="window.print()">Print&hellip;</button>
   <span class="hint">Print at 100% scale · margins: None · this bar doesn&rsquo;t print</span>
-</div>
+</header>
 
-<div class="page">
+<main class="page">
 
-  <div class="headline h-a">Bitcoin<br>isn&rsquo;t <span class="accent">private.</span></div>
-  <div class="headline h-b">Your money doesn&rsquo;t have to be <span class="accent">public.</span></div>
+  <h1 class="headline h-a">Bitcoin<br>isn&rsquo;t <span class="accent">private.</span></h1>
+  <h1 class="headline h-b">Your money doesn&rsquo;t have to be <span class="accent">public.</span></h1>
 
-  <p class="subhead">Every Bitcoin payment is <b>public and permanent</b> —
-  most people don&rsquo;t realize that. We&rsquo;re building the
-  alternative: two coins, designed together.</p>
+  <p class="subhead">Bitcoin&rsquo;s base ledger exposes payment history.
+  We&rsquo;re researching two private-money protocols designed together.
+  <b>Neither has launched publicly.</b></p>
 
   <div class="coins">
     <div class="coin d">
       <div class="role">Savings coin</div>
       <div class="name">DAARX</div>
-      <p>Private. Fixed supply that <b>never inflates</b> — issuance ends
-      at a hard number, forever.</p>
+      <p>Targets hidden amounts and an exact integer emission schedule
+      that eventually ends. <b>Unlaunched and still under audit.</b></p>
     </div>
     <div class="coin l">
       <div class="role">Spending coin</div>
       <div class="name">L10N</div>
-      <p>Built to work like <b>cash</b> — quick, cheap, designed to be
-      usable even with <b>no internet</b>.</p>
+      <p>Targets private phone cash and a possible offline layer.
+      <b>No public wallet, payment network, or offline release exists.</b></p>
     </div>
   </div>
 
-  <p class="who"><b>For anyone who believes their finances are their own
-  business.</b> The billions without bank access. Anyone who&rsquo;s watched
-  money get weaponized — accounts frozen, payments blocked — and wants an
-  option that just works.</p>
+  <p class="who"><b>Research for people who believe financial privacy
+  matters.</b> Privacy can fail through software, metadata, endpoints, or
+  new cryptanalysis. These unfinished protocols are not usable payment
+  alternatives today and may never launch.</p>
 
   <hr class="rule">
 
-  <p class="creed"><span>OPEN CODE</span><span class="dot">·</span><span>NO
-  COMPANY</span><span class="dot">·</span><span>NO BANK</span></p>
+  <p class="creed"><span>OPEN DEVELOPMENT</span><span class="dot">·</span><span>NO
+  COIN SALE</span><span class="dot">·</span><span>NO LIVE NETWORK</span></p>
 
-  <p class="status">In development · test network late 2026 · mainnet target March 2027, only if it&rsquo;s ready · not audited yet — and we&rsquo;ll keep saying so until it is.
-  Nothing is for sale: no token sale, no presale, no ICO. Read the code,
-  not the hype.</p>
+  <p class="status">In development · no public testnet or supported miner release · March 2027 is a non-binding planning target · not independently audited.
+  Nothing is for sale: no token sale, hardware sale, presale, or ICO.
+  Protocol behavior remains a design claim until verified in a public release.</p>
 
   <div class="bottom">
     <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" class="segno" role="img" aria-label="QR code — daarx.money" preserveAspectRatio="xMidYMid meet"><path class="qrline" stroke="#111" d="M3 3.5h7m1 0h1m1 0h2m1 0h2m3 0h7m-25 1h1m5 0h1m1 0h1m3 0h1m1 0h1m3 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m3 0h2m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m4 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m5 0h1m3 0h1m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-15 1h2m2 0h3m-16 1h1m4 0h4m2 0h2m3 0h1m5 0h2m-25 1h4m1 0h1m3 0h3m1 0h3m3 0h5m-24 1h1m1 0h2m1 0h3m1 0h1m1 0h6m1 0h1m2 0h1m1 0h2m-24 1h1m1 0h1m1 0h1m1 0h3m1 0h2m1 0h1m1 0h4m1 0h1m2 0h1m-24 1h1m1 0h2m1 0h3m1 0h1m1 0h3m1 0h1m1 0h2m4 0h1m-25 1h4m1 0h1m2 0h2m1 0h1m3 0h2m2 0h1m3 0h1m-24 1h1m1 0h1m1 0h1m1 0h2m1 0h2m1 0h4m2 0h4m1 0h2m-25 1h1m2 0h1m4 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h2m1 0h1m-25 1h1m2 0h2m1 0h1m2 0h1m1 0h1m1 0h2m1 0h5m1 0h1m-15 1h1m1 0h2m4 0h1m3 0h1m-21 1h7m1 0h1m3 0h3m1 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m3 0h2m4 0h1m3 0h1m3 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m4 0h7m1 0h3m-25 1h1m1 0h3m1 0h1m4 0h1m1 0h2m1 0h3m4 0h2m-25 1h1m1 0h3m1 0h1m2 0h2m1 0h6m3 0h2m1 0h1m-25 1h1m5 0h1m1 0h2m2 0h2m1 0h2m1 0h3m3 0h1m-25 1h7m5 0h1m3 0h2m3 0h1m2 0h1"/></svg></div>
     <div class="domainblock">
       <div class="domain">daarx.money</div>
-      <div class="domain-caption">The whole story, the honest status, and
-      the code — one page, no signup.</div>
+      <div class="domain-caption">Current development status, limitations,
+      protocol goals, and non-binding hardware research.</div>
     </div>
   </div>
 
-</div>
+</main>
 
 <script>
   // Paper-size + headline toggles. @page size is injected dynamically
@@ -199,8 +205,13 @@
     document.body.classList.add('variant-'+v);
     tag('btn-a', v==='a'); tag('btn-b', v==='b');
   }
-  function tag(id,on){ document.getElementById(id).classList.toggle('on',on); }
+  function tag(id,on){
+    var button=document.getElementById(id);
+    button.classList.toggle('on',on);
+    button.setAttribute('aria-pressed',String(on));
+  }
   setPaper('letter');
+  setVariant('a');
 </script>
 
 </body>
