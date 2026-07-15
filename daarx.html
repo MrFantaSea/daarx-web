@@ -4,12 +4,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DAARX — protocol design status</title>
+<title>DAARX — private-value protocol dossier</title>
 <script>document.documentElement.classList.add('js')</script>
-<meta name="theme-color" content="#060706">
+<meta name="theme-color" content="#020504">
 <meta name="description" content="DAARX is an unlaunched protocol design targeting fixed integer emission, private amounts, and full-chain membership proofs. It is under development, local testing, and internal review; there is no public testnet release.">
 <link rel="canonical" href="https://daarx.money/daarx.html">
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/inner-shell.css">
+<link rel="stylesheet" href="/protocol-modules.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%234df19a' stroke-width='2'/></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%234df19a' stroke-width='9'/></svg>">
 <meta property="og:type" content="website">
@@ -25,15 +27,16 @@
 <meta name="twitter:description" content="DAARX is an unlaunched private-money protocol under development, local testing, and internal review.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 </head>
-<body class="p-daarx">
+<body class="p-daarx protocol-page">
 <a class="skip" href="#main">Skip to content</a>
-<div class="grid" aria-hidden="true"></div>
+<div class="protocol-field" aria-hidden="true"></div>
 
 <nav class="nav" id="nav" aria-label="Primary">
-  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">·</span><span class="l">L10N</span><span class="amp">·</span><span class="o">OPEN</span></a>
+  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">/</span><span class="l">L10N</span><span class="amp">/</span><span class="o">OPEN</span></a>
   <div class="go">
-    <a class="lnk" href="/faq.html">faq</a>
-    <a class="lnk" href="/break-it.html">break it</a>
+    <a class="lnk" href="/daarx.html" aria-current="page">DAARX</a>
+    <a class="lnk" href="/#status">status</a>
+    <a class="lnk" href="/break-it.html">security</a>
     <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
     <details class="nd">
       <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
@@ -43,7 +46,7 @@
         <a href="/l10n.html">L10N</a>
         <a href="/open.html">OPEN</a>
         <a href="/mine.html">Mining plans</a>
-        <a href="/break-it.html">Break it</a>
+        <a href="/break-it.html">Security</a>
         <a href="/faq.html">FAQ</a>
         <a href="/privacy.html">Privacy</a>
       </div>
@@ -51,179 +54,186 @@
   </div>
 </nav>
 
-<main class="wrap" id="main">
-  <header class="coinhero">
-    <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
-    <div class="heroband">
-      <figure class="hero-figure coinorb hero-in" aria-hidden="true">
-        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A DAARX coin sealed in a vault ring, hidden in a crowd">
-  <defs>
-    <linearGradient id="vaultp" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#171d17"/><stop offset="1" stop-color="#0d110d"/>
-    </linearGradient>
-    <radialGradient id="vaulth" cx="50%" cy="50%" r="52%">
-      <stop offset="0" stop-color="var(--accent)" stop-opacity="0"/>
-      <stop offset="52%" stop-color="var(--accent)" stop-opacity=".3"/>
-      <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="vaultg" cx="42%" cy="34%" r="72%">
-      <stop offset="0" stop-color="#d9ffe9"/>
-      <stop offset="45%" stop-color="var(--accent)"/>
-      <stop offset="100%" stop-color="#0d110d"/>
-    </radialGradient>
-  </defs>
+<main id="main">
+  <section class="protocol-hero" aria-labelledby="hero-title">
+    <div class="protocol-frame" aria-hidden="true"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+    <div class="protocol-coordinate top" aria-hidden="true">DAX::PRIVATE_VALUE / DOSSIER 01</div>
+    <div class="protocol-coordinate bottom" aria-hidden="true">CONCEPT MAP / NOT NETWORK TELEMETRY</div>
 
-  <!-- ambient halo (reuses site .crowd breathe) -->
-  <circle cx="120" cy="120" r="118" fill="url(#vaulth)" class="crowd"/>
+    <div class="protocol-shell protocol-hero-layout">
+      <div class="protocol-hero-copy">
+        <p class="protocol-flag">PRE-TESTNET <span>/</span> DEVELOPMENT ACTIVE</p>
+        <h1 id="hero-title">DAARX</h1>
+        <span class="protocol-ordinal">PROTOCOL 01 / PRIVATE VALUE</span>
+        <h2>The one designed to <em>keep.</em></h2>
+        <p class="protocol-lede">A private-money protocol target built around fixed integer emission, private amounts, and full-chain membership proofs.</p>
+        <p class="protocol-truth"><strong>It is not a live network or available asset.</strong> Development, local testing, and internal review are active; no public testnet release exists.</p>
+        <div class="protocol-actions">
+          <a class="module-button primary" href="#architecture"><span>Inspect the architecture</span><span aria-hidden="true">&#8595;</span></a>
+          <a class="module-button" href="/#status"><span>System status</span><span aria-hidden="true">&#8594;</span></a>
+        </div>
+      </div>
 
-  <!-- the crowd: many faint accent dots, two offset breathing groups -->
-  <g class="vault-swarm-a">
-    <circle cx="44" cy="96" r="2.4" fill="rgba(var(--accent-rgb),.30)"/>
-    <circle cx="74" cy="62" r="2.0" fill="rgba(var(--accent-rgb),.26)"/>
-    <circle cx="120" cy="30" r="2.6" fill="rgba(var(--accent-rgb),.36)"/>
-    <circle cx="176" cy="60" r="2.2" fill="rgba(var(--accent-rgb),.28)"/>
-    <circle cx="204" cy="122" r="2.4" fill="rgba(var(--accent-rgb),.30)"/>
-    <circle cx="178" cy="180" r="2.0" fill="rgba(var(--accent-rgb),.24)"/>
-    <circle cx="120" cy="206" r="2.5" fill="rgba(var(--accent-rgb),.34)"/>
-    <circle cx="60" cy="178" r="2.0" fill="rgba(var(--accent-rgb),.24)"/>
-  </g>
-  <g class="vault-swarm-b">
-    <circle cx="52" cy="156" r="2.0" fill="rgba(var(--accent-rgb),.24)"/>
-    <circle cx="96" cy="40" r="1.6" fill="rgba(var(--accent-rgb),.18)"/>
-    <circle cx="152" cy="40" r="1.6" fill="rgba(var(--accent-rgb),.18)"/>
-    <circle cx="196" cy="92" r="1.8" fill="rgba(var(--accent-rgb),.20)"/>
-    <circle cx="196" cy="152" r="1.6" fill="rgba(var(--accent-rgb),.18)"/>
-    <circle cx="150" cy="198" r="1.7" fill="rgba(var(--accent-rgb),.20)"/>
-    <circle cx="88" cy="198" r="1.6" fill="rgba(var(--accent-rgb),.18)"/>
-    <circle cx="40" cy="148" r="1.7" fill="rgba(var(--accent-rgb),.20)"/>
-  </g>
-
-  <!-- vault-door ring: hard-cap seal -->
-  <circle cx="120" cy="120" r="52" fill="none" stroke="url(#vaultp)" stroke-width="27"/>
-  <circle cx="120" cy="120" r="65.5" fill="none" stroke="#3d453c" stroke-width="1.5"/>
-  <circle cx="120" cy="120" r="38.5" fill="none" stroke="#0d110d" stroke-width="2"/>
-
-  <!-- vault bolts (top position left open for the glinting lock) -->
-  <g fill="#39423a" stroke="#2b322c" stroke-width="1">
-    <circle cx="156.8" cy="83.2" r="3.2"/>
-    <circle cx="172" cy="120" r="3.2"/>
-    <circle cx="156.8" cy="156.8" r="3.2"/>
-    <circle cx="120" cy="172" r="3.2"/>
-    <circle cx="83.2" cy="156.8" r="3.2"/>
-    <circle cx="68" cy="120" r="3.2"/>
-    <circle cx="83.2" cy="83.2" r="3.2"/>
-  </g>
-
-  <!-- the coin you keep: one glossy disc in the aperture -->
-  <circle cx="120" cy="120" r="33" fill="url(#vaultg)"/>
-  <circle cx="120" cy="120" r="33" fill="none" stroke="var(--accent)" stroke-width="1.4" opacity=".72"/>
-  <circle cx="120" cy="120" r="26" fill="none" stroke="#0d110d" stroke-width="1.3" opacity=".5"/>
-  <!-- engraved phi (golden ratio -> pi x phi supply) -->
-  <circle cx="120" cy="120" r="8.5" fill="none" stroke="#0d110d" stroke-width="3" opacity=".5"/>
-  <line x1="120" y1="101" x2="120" y2="139" stroke="#0d110d" stroke-width="3" stroke-linecap="round" opacity=".5"/>
-  <!-- gloss hotspot -->
-  <ellipse cx="108" cy="105" rx="12" ry="7" fill="#eef0ea" opacity=".26"/>
-  <ellipse cx="106" cy="103" rx="5" ry="3" fill="#d9ffe9" opacity=".5"/>
-
-  <!-- rotating seal that turns and glints around the coin -->
-  <circle cx="120" cy="120" r="38" fill="none" stroke="rgba(var(--accent-rgb),.22)" stroke-width="1"/>
-  <circle class="vault-seal" cx="120" cy="120" r="38" fill="none" stroke="url(#vaultg)" stroke-width="2.8" stroke-dasharray="3 10" stroke-linecap="round" opacity=".9"/>
-
-  <!-- focal: the lock indicator glints -->
-  <g class="vault-glint">
-    <circle cx="120" cy="68" r="7" fill="rgba(var(--accent-rgb),.3)"/>
-    <circle cx="120" cy="68" r="3.6" fill="url(#vaultg)"/>
-    <path d="M120 63 L121.4 66.6 L125 68 L121.4 69.4 L120 73 L118.6 69.4 L115 68 L118.6 66.6 Z" fill="#d9ffe9" opacity=".85"/>
-  </g>
-</svg>
+      <figure class="protocol-hero-visual" aria-labelledby="daarx-visual-caption">
+        <svg viewBox="0 0 760 700" fill="none" aria-hidden="true" focusable="false">
+          <defs>
+            <radialGradient id="dax-core" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#dffff0"/><stop offset=".25" stop-color="#4ae08c"/><stop offset="1" stop-color="#07110b"/></radialGradient>
+            <linearGradient id="dax-shell" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4ae08c" stop-opacity=".32"/><stop offset=".5" stop-color="#10251a" stop-opacity=".12"/><stop offset="1" stop-color="#4ae08c" stop-opacity=".05"/></linearGradient>
+            <filter id="dax-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="9" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <g class="visual-grid"><path d="M20 110H740M20 210H740M20 310H740M20 410H740M20 510H740M120 40V650M220 40V650M320 40V650M420 40V650M520 40V650M620 40V650"/></g>
+          <path d="M70 354L182 150L438 92L665 226L690 470L484 620L216 574Z" fill="url(#dax-shell)" stroke="#4ae08c" stroke-opacity=".15"/>
+          <path d="M129 358L222 196L432 148L611 252L632 448L469 564L255 526Z" fill="#020705" stroke="#4ae08c" stroke-opacity=".31"/>
+          <path class="visual-rail faint" d="M24 122C192 122 216 248 372 350S598 521 748 521"/>
+          <path class="visual-rail" d="M18 558C168 558 227 472 360 355S584 184 742 184"/>
+          <g opacity=".32">
+            <circle cx="124" cy="248" r="3" fill="#4ae08c"/><circle cx="165" cy="435" r="3" fill="#4ae08c"/><circle cx="230" cy="141" r="3" fill="#4ae08c"/><circle cx="269" cy="560" r="3" fill="#4ae08c"/><circle cx="350" cy="116" r="3" fill="#4ae08c"/><circle cx="457" cy="588" r="3" fill="#4ae08c"/><circle cx="535" cy="161" r="3" fill="#4ae08c"/><circle cx="650" cy="350" r="3" fill="#4ae08c"/><circle cx="579" cy="515" r="3" fill="#4ae08c"/>
+          </g>
+          <g transform="translate(380 350)" filter="url(#dax-glow)">
+            <path d="M0-142L123-71V71L0 142L-123 71V-71Z" fill="rgba(74,224,140,.04)" stroke="#4ae08c" stroke-opacity=".45" stroke-width="2"/>
+            <path d="M0-103L89-52V52L0 103L-89 52V-52Z" fill="#020705" stroke="#4ae08c" stroke-opacity=".72" stroke-width="2"/>
+            <circle class="visual-core" cx="0" cy="0" r="58"/>
+            <circle cx="0" cy="0" r="33" fill="url(#dax-core)"/>
+            <path d="M-16 3L-5 14L19-15" stroke="#061009" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle class="visual-node" cx="0" cy="-103" r="5"/><circle class="visual-node n2" cx="89" cy="52" r="5"/><circle class="visual-node n3" cx="-89" cy="52" r="5"/>
+          </g>
+          <g fill="#8fa79a" font-family="monospace" font-size="10" letter-spacing="1.2"><text x="65" y="342">MEMBERSHIP SET</text><text x="518" y="249">SPENT TAG</text><text x="507" y="544">HIDDEN AMOUNT</text></g>
+          <rect class="visual-scan" x="86" y="98" width="592" height="38"/>
+        </svg>
+        <div class="hero-readout-module">
+          <p><span>PROTOCOL STATE</span><span>2026.07.15</span></p>
+          <dl>
+            <div><dt>PUBLIC NETWORK</dt><dd class="not-live">NOT LIVE</dd></div>
+            <div><dt>CONSENSUS CORE</dt><dd>LOCAL TESTING</dd></div>
+            <div><dt>PROFESSIONAL AUDIT</dt><dd>NOT COMPLETE</dd></div>
+          </dl>
+        </div>
+        <figcaption id="daarx-visual-caption">Conceptual privacy-vault map. Not a live topology or assurance claim.</figcaption>
       </figure>
-      <div class="htxt">
-        <h1 class="accent hero-in">DAARX</h1>
-        <p class="tag hero-in">The one designed to <b>keep</b>. A private-money protocol target, not a live network or available asset.</p>
-        <div class="actions hero-in">
-          <a class="btn solid" href="#more">How it works <span class="arw">&#8595;</span></a>
-          <a class="btn" href="/#status">System status <span class="arw">&#8594;</span></a>
+    </div>
+  </section>
+
+  <section class="module-strip" aria-label="DAARX status summary">
+    <div class="module-strip-track">
+      <span class="warning"><i aria-hidden="true"></i><b>PUBLIC TESTNET</b> / NOT LIVE</span>
+      <span><i aria-hidden="true"></i><b>CORE WORK</b> / ACTIVE</span>
+      <span><i aria-hidden="true"></i><b>COIN SALE</b> / NONE</span>
+      <span><i aria-hidden="true"></i><b>CLAIM LEVEL</b> / PRE-LAUNCH</span>
+    </div>
+  </section>
+
+  <section class="module-section brief-section" id="architecture" aria-labelledby="brief-title">
+    <div class="protocol-shell brief-grid">
+      <header class="module-section-intro reveal">
+        <p class="module-index">01 <span>/</span> SYSTEM BRIEF</p>
+        <h2 id="brief-title">Privacy is a <em>boundary.</em></h2>
+        <p>The design targets private value on a deterministic base. It does not turn a protocol into a blanket anonymity guarantee.</p>
+      </header>
+
+      <div class="brief-stack reveal">
+        <article class="brief-item">
+          <p class="brief-number">01</p>
+          <div><p class="panel-code">THE SUPPLY</p><h3>Integer-only, then zero.</h3><p>The current consensus design targets <b>&pi; &times; &phi;</b> base units—about 5.083 septillion—reached exactly by an integer-only hundred-year schedule and then zero emission. The table is implemented and testable, but it is not a promise about an unlaunched asset and remains subject to final consensus review and the genesis process.</p></div>
+        </article>
+        <article class="brief-item">
+          <p class="brief-number">02</p>
+          <div><p class="panel-code">THE PRIVACY</p><h3>Membership across the chain.</h3><p>DAARX's current consensus implementation activates CTS full-chain membership proofs from genesis and exercises the real prover and verifier in local tests. Fees are designed to use a short public ladder to reduce fee fingerprinting.</p></div>
+        </article>
+        <article class="brief-item">
+          <p class="brief-number">03</p>
+          <div><p class="panel-code">THE LIMIT</p><h3>Tested is not proven.</h3><p>The privacy layer is new cryptography built on reviewed dependencies. The project has not completed the independent review and long public soak required for a launch claim. A security program is planned, but no bounty is currently open.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="module-section inspection-section" aria-labelledby="inspection-title">
+    <div class="protocol-shell">
+      <header class="module-section-intro split reveal">
+        <div>
+          <p class="module-index">02 <span>/</span> PRIVACY INSPECTION</p>
+          <h2 id="inspection-title">Mechanism. Evidence. <em>Boundary.</em></h2>
+        </div>
+        <p>Move through the three inspection layers. These diagrams explain the design and its evidence; they do not simulate a live network.</p>
+      </header>
+
+      <div class="inspection-console reveal" data-inspection>
+        <div class="inspection-bar"><span><i></i><i></i><i></i> DAX::PRIVACY_STACK</span><span>STATIC DESIGN INSPECTION</span></div>
+        <div class="inspection-tabs" role="tablist" aria-label="DAARX inspection layers">
+          <button id="dax-tab-mechanism" type="button" role="tab" aria-selected="true" aria-controls="dax-panel-mechanism" data-inspection-tab>01 / MECHANISM</button>
+          <button id="dax-tab-evidence" type="button" role="tab" aria-selected="false" aria-controls="dax-panel-evidence" data-inspection-tab tabindex="-1">02 / EVIDENCE</button>
+          <button id="dax-tab-boundary" type="button" role="tab" aria-selected="false" aria-controls="dax-panel-boundary" data-inspection-tab tabindex="-1">03 / BOUNDARY</button>
+        </div>
+        <p class="sr-only" aria-live="polite"></p>
+
+        <div class="inspection-panel is-active" id="dax-panel-mechanism" role="tabpanel" aria-labelledby="dax-tab-mechanism">
+          <div class="inspection-panel-copy"><p class="panel-code">LAYER 01 / CONSENSUS TARGET</p><h3>The crowd is the cover.</h3><p>CTS full-chain membership proofs are intended to let a valid spend prove membership without identifying the spent output. Hidden amounts and spent-tag checks remain part of deterministic consensus.</p><p class="limit">An anonymity-set design is not a guarantee of end-to-end anonymity.</p></div>
+          <div class="inspection-schematic" aria-hidden="true"><svg viewBox="0 0 560 310"><g class="schematic-grid"><path d="M0 52H560M0 104H560M0 156H560M0 208H560M0 260H560M93 0V310M186 0V310M279 0V310M372 0V310M465 0V310"/></g><path class="schematic-muted" d="M50 80L165 124L92 245M165 124L280 155L408 78M280 155L460 240M408 78L510 148"/><path class="schematic-route" d="M48 80C182 62 180 250 280 155S399 60 510 148"/><g><circle class="schematic-node" cx="50" cy="80" r="7"/><circle class="schematic-node" cx="165" cy="124" r="7"/><circle class="schematic-node" cx="92" cy="245" r="7"/><circle class="schematic-node" cx="280" cy="155" r="10"/><circle class="schematic-node" cx="408" cy="78" r="7"/><circle class="schematic-node" cx="460" cy="240" r="7"/><circle class="schematic-node" cx="510" cy="148" r="7"/></g><path class="schematic-shield" d="M280 105L319 123V161C319 194 300 215 280 225C260 215 241 194 241 161V123Z"/><path d="M262 161L275 174L300 145" fill="none" stroke="#4ae08c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+
+        <div class="inspection-panel" id="dax-panel-evidence" role="tabpanel" aria-labelledby="dax-tab-evidence">
+          <div class="inspection-panel-copy"><p class="panel-code">LAYER 02 / CURRENT EVIDENCE</p><h3>Real paths, local tests.</h3><p>The current implementation exercises the real prover and verifier in local tests. Some upstream FCMP components have published review artifacts; DAARX's composition, adapters, and consensus integration have not received an independent professional security audit.</p><p class="limit">The ingress policy and end-to-end miner path still require launch-level integration evidence.</p></div>
+          <div class="inspection-schematic" aria-hidden="true"><svg viewBox="0 0 560 310"><g class="schematic-grid"><path d="M0 52H560M0 104H560M0 156H560M0 208H560M0 260H560M93 0V310M186 0V310M279 0V310M372 0V310M465 0V310"/></g><rect x="50" y="92" width="126" height="126" class="schematic-shield"/><rect x="384" y="92" width="126" height="126" fill="none" stroke="rgba(205,220,212,.3)" stroke-width="2"/><path class="schematic-route" d="M176 155H384"/><circle class="schematic-node" cx="280" cy="155" r="9"/><path d="M79 158L103 181L148 128" fill="none" stroke="#4ae08c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M424 132L470 178M470 132L424 178" fill="none" stroke="#efb64f" stroke-width="5" stroke-linecap="round"/><text class="schematic-label" x="67" y="243">LOCAL TEST PATH</text><text class="schematic-label" x="398" y="243">INDEPENDENT AUDIT</text></svg></div>
+        </div>
+
+        <div class="inspection-panel" id="dax-panel-boundary" role="tabpanel" aria-labelledby="dax-tab-boundary">
+          <div class="inspection-panel-copy"><p class="panel-code">LAYER 03 / THREAT SURFACE</p><h3>The ledger is not the whole system.</h3><p>Metadata, endpoint compromise, implementation flaws, network observation, and novel cryptanalysis remain threats that require public testing. Protocol privacy cannot erase failures outside its proven boundary.</p><p class="limit">No independent professional security audit or long public soak has been completed.</p></div>
+          <div class="inspection-schematic" aria-hidden="true"><svg viewBox="0 0 560 310"><g class="schematic-grid"><path d="M0 52H560M0 104H560M0 156H560M0 208H560M0 260H560M93 0V310M186 0V310M279 0V310M372 0V310M465 0V310"/></g><path class="schematic-shield" d="M280 64L375 108V174C375 230 329 266 280 283C231 266 185 230 185 174V108Z"/><circle class="schematic-node" cx="280" cy="163" r="11"/><path class="schematic-route" d="M64 48L184 110M495 52L375 110M75 268L193 224M486 271L366 225"/><g><circle class="schematic-alert" cx="64" cy="48" r="7"/><circle class="schematic-alert" cx="495" cy="52" r="7"/><circle class="schematic-alert" cx="75" cy="268" r="7"/><circle class="schematic-alert" cx="486" cy="271" r="7"/></g><text class="schematic-label" x="43" y="30">NETWORK</text><text class="schematic-label" x="447" y="34">ENDPOINT</text><text class="schematic-label" x="40" y="297">METADATA</text><text class="schematic-label" x="429" y="299">IMPLEMENTATION</text></svg></div>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <div class="flow">
-    <h2 class="eyebrow" id="more">the supply</h2>
-    <p>The current consensus design targets <b>π × φ</b> base units — about 5.083 septillion — reached exactly by an integer-only hundred-year schedule and then zero emission. The table is implemented and testable, but it is not a promise about an unlaunched asset and remains subject to the final consensus review and genesis process.</p>
+  <section class="module-section spec-section" aria-labelledby="spec-title">
+    <div class="protocol-shell">
+      <header class="module-section-intro split reveal">
+        <div><p class="module-index">03 <span>/</span> SPECIFICATION + STATE</p><h2 id="spec-title">Parameters with <em>qualifiers.</em></h2></div>
+        <p>Every row distinguishes a current design or implementation fact from a launch claim. There is no public network behind this display.</p>
+      </header>
 
-    <div class="statement">
-      <div class="fig">π × φ<span class="u">current consensus design target</span></div>
-      <p class="cap">The implementation uses a deterministic integer table that can be recomputed. It becomes a live supply rule only after final review, genesis, and public launch.</p>
-    </div>
+      <div class="spec-console reveal">
+        <div class="spec-bar"><strong>DAX::CURRENT_DESIGN</strong><span>SNAPSHOT / 2026.07.15</span></div>
+        <dl class="spec-rows">
+          <div><dt>Supply design</dt><dd>&pi; &times; &phi; base units, reached exactly by the current integer schedule</dd></div>
+          <div><dt>Block target</dt><dd>111 seconds — current parameter</dd></div>
+          <div><dt>Proof of work</dt><dd>RandomX — implemented, still undergoing integration tests</dd></div>
+          <div><dt>Fee design</dt><dd>Short public ladder intended to reduce fee fingerprinting</dd></div>
+          <div><dt>Launch policy</dt><dd>Designed for no premine, presale, or coin sale</dd></div>
+          <div><dt>Current status</dt><dd class="caution">No public testnet release; standalone testnet miner unavailable</dd></div>
+        </dl>
+      </div>
 
-    <h2 class="eyebrow">the privacy</h2>
-    <p>DAARX's current consensus implementation activates <b>CTS full-chain membership proofs</b> from genesis and exercises the real prover and verifier in local tests. This is an anonymity-set design, not a guarantee of end-to-end anonymity: metadata, endpoint compromise, implementation flaws, network observation, and novel cryptanalysis remain threats that require public testing.</p>
-    <p>Some upstream FCMP components have published review artifacts; DAARX's composition, adapters, and consensus integration have not received an independent professional security audit.</p>
-    <p>Fees are designed to use a short public ladder to reduce fee fingerprinting. The ingress policy and end-to-end miner path still require launch-level integration evidence.</p>
-
-    <h2 class="eyebrow">the ground it stands on</h2>
-    <div class="facts">
-      <div class="f"><span class="k">block target</span><span class="v">111 seconds — current parameter</span></div>
-      <div class="f"><span class="k">proof of work</span><span class="v">RandomX — implemented, still undergoing integration tests</span></div>
-      <div class="f"><span class="k">launch policy</span><span class="v">designed for no premine, presale, or coin sale</span></div>
-      <div class="f"><span class="k">current status</span><span class="v">no public testnet release; standalone testnet miner unavailable</span></div>
-    </div>
-
-    <h2 class="eyebrow">the limits</h2>
-    <p>The privacy layer is new cryptography built on reviewed dependencies. It is <b>tested, not proven</b>, and the project has not completed the independent review and long public soak required for a launch claim. A security program is planned but no bounty is currently open.</p>
-
-    <div class="soon"><b>Status — July 15, 2026:</b> development, local testing, and internal review are active. The public testnet package, supported public miner, transactional release wallet, independent review evidence, operational runbooks, and final whitepaper are not released. No release date is promised.</div>
-
-    <div class="endcta">
-      <div class="h">Mining is the intended distribution path.</div>
-      <p>The launch design has no premine, presale, or coin sale. That policy becomes meaningful only if a reviewed network launches. Today there is no public testnet mining release and rig submissions are non-binding market research, not orders.</p>
-      <div class="actions">
-        <a class="btn solid big" href="/break-it.html">Inspect the security plan <span class="arw">&#8594;</span></a>
-        <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
+      <div class="status-block reveal">
+        <div><h3>Launch boundary</h3><p><strong>Status — July 15, 2026:</strong> development, local testing, and internal review are active. The public testnet package, supported public miner, transactional release wallet, independent review evidence, operational runbooks, and final whitepaper are not released. No release date is promised.</p></div>
+        <div class="status-seal"><span>PUBLIC RELEASE STATE</span><b>NOT LIVE</b><small>READINESS-GATED / NO DATE PROMISED</small></div>
       </div>
     </div>
+  </section>
 
-    <div class="crosslinks">
-      <a class="xl x-l" href="/l10n.html"><span class="dot3"></span><span class="xt"><span class="xk">L10N</span><span class="xs">the one to spend — private cash</span></span></a>
-      <a class="xl x-o" href="/open.html"><span class="dot3"></span><span class="xt"><span class="xk">OPEN</span><span class="xs">the one for machines — public</span></span></a>
+  <section class="module-section module-final" aria-labelledby="final-title">
+    <div class="protocol-shell module-final-grid">
+      <div class="module-final-copy reveal">
+        <p class="module-index">04 <span>/</span> NEXT ROUTE</p>
+        <h2 id="final-title">Inspect before <em>trust.</em></h2>
+        <p>Mining is the intended distribution path. The launch design has no premine, presale, or coin sale. That policy becomes meaningful only if a reviewed network launches. Today there is no public testnet mining release, and rig submissions are non-binding market research—not orders.</p>
+        <div class="protocol-actions"><a class="module-button primary" href="/break-it.html"><span>Inspect the security plan</span><span aria-hidden="true">&#8594;</span></a><a class="module-button" href="/mine.html"><span>Mining plans</span><span aria-hidden="true">&#8594;</span></a></div>
+      </div>
+      <nav class="family-routes reveal" aria-label="Other protocols">
+        <a class="family-route l10n" href="/l10n.html"><span class="route-node" aria-hidden="true"></span><span><b>L10N</b><small>PRIVATE CASH / THE ONE TO SPEND</small></span><span aria-hidden="true">&#8594;</span></a>
+        <a class="family-route open" href="/open.html"><span class="route-node" aria-hidden="true"></span><span><b>OPEN</b><small>PUBLIC RECEIPTS / THE ONE FOR MACHINES</small></span><span aria-hidden="true">&#8594;</span></a>
+      </nav>
     </div>
-  </div>
-
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
     <nav class="fnav" aria-label="Site">
-      <a href="/">daarx.money</a>
-      <a href="/daarx.html" aria-current="page">DAARX</a>
-      <a href="/l10n.html">L10N</a>
-      <a href="/open.html">OPEN</a>
-      <a href="/mine.html">mining plans</a>
-      <a href="/break-it.html">break it</a>
-      <a href="/faq.html">faq</a>
-      <a href="/privacy.html">privacy</a>
+      <a href="/">daarx.money</a><a href="/daarx.html" aria-current="page">DAARX</a><a href="/l10n.html">L10N</a><a href="/open.html">OPEN</a><a href="/mine.html">mining plans</a><a href="/break-it.html">security</a><a href="/faq.html">faq</a><a href="/privacy.html">privacy</a>
     </nav>
     <p class="fine">no coins for sale · nothing here is financial advice</p>
   </div>
 </footer>
-<script>
-(function(){
-  var d=document, root=d.documentElement;
-  root.classList.add('js');
-  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var SEL='.reveal,.stagger,.flow>*';
-  var els=[].slice.call(d.querySelectorAll(SEL));
-  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
-  else{
-    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{rootMargin:'0px 0px -10% 0px',threshold:.1});
-    els.forEach(function(e){ if(e.getBoundingClientRect().top < innerHeight*0.94){e.classList.add('in');} else {io.observe(e);} });
-  }
-  var nav=d.getElementById('nav');
-  if(nav){var on=function(){nav.classList.toggle('scrolled',(window.scrollY||0)>24)};on();addEventListener('scroll',on,{passive:true});}
-  var nd=d.querySelector('.nd');
-  if(nd){d.addEventListener('click',function(e){if(nd.open&&!nd.contains(e.target))nd.open=false;});}
-})();
-</script>
+<script src="/protocol-modules.js" defer></script>
 </body>
 </html>

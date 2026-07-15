@@ -10,6 +10,8 @@
 <meta name="description" content="How Desiderata Labs LLC handles DAARX site and hardware-interest data, including providers, retention, and deletion requests. No advertising trackers or analytics.">
 <link rel="canonical" href="https://daarx.money/privacy.html">
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/inner-shell.css">
+<link rel="stylesheet" href="/utility-modules.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%234df19a' stroke-width='2'/></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%234df19a' stroke-width='9'/></svg>">
 <meta property="og:type" content="website">
@@ -25,7 +27,7 @@
 <meta name="twitter:description" content="How Desiderata Labs LLC handles DAARX site and hardware-interest data, including providers, retention, and deletion requests.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 </head>
-<body class="p-open calm">
+<body class="p-open calm module-page module-privacy">
 <a class="skip" href="#main">Skip to content</a>
 <div class="grid" aria-hidden="true"></div>
 
@@ -52,42 +54,33 @@
 </nav>
 
 <main class="wrap" id="main">
-  <header class="coinhero">
-    <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
-    <div class="heroband">
-      <figure class="hero-figure coinorb hero-in" aria-hidden="true">
-        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <defs>
-    <linearGradient id="vaultp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171d17"/><stop offset="1" stop-color="#0d110d"/></linearGradient>
-    <radialGradient id="vaulth" cx="50%" cy="46%" r="52%"><stop offset="0" stop-color="var(--accent)" stop-opacity=".26"/><stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/></radialGradient>
-    <radialGradient id="vaultg" cx="40%" cy="34%" r="72%"><stop offset="0" stop-color="#eef0ea"/><stop offset="44%" stop-color="var(--accent)"/><stop offset="100%" stop-color="rgba(var(--accent-rgb),.6)"/></radialGradient>
-  </defs>
-  <circle cx="120" cy="120" r="116" fill="url(#vaulth)" class="crowd"/>
-  <rect x="51" y="70" width="138" height="92" rx="14" fill="url(#vaultp)" stroke="rgba(var(--accent-rgb),.28)" stroke-width="1.5"/>
-  <path d="M64 72 L176 72 L120 125 Z" fill="rgba(var(--accent-rgb),.055)"/>
-  <path d="M64 72 L120 125 L176 72" fill="none" stroke="rgba(var(--accent-rgb),.34)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M66 73 H174" stroke="#eef0ea" stroke-width="1" opacity=".05" stroke-linecap="round"/>
-  <circle cx="120" cy="138" r="34" fill="url(#vaulth)" opacity=".5" class="vault-shimmer"/>
-  <g class="vault-shackle">
-    <path d="M108 122 V110 a12 12 0 0 1 24 0 V122" fill="none" stroke="var(--accent)" stroke-opacity=".18" stroke-width="11" stroke-linecap="round"/>
-    <path d="M108 122 V110 a12 12 0 0 1 24 0 V122" fill="none" stroke="url(#vaultg)" stroke-width="6" stroke-linecap="round"/>
-  </g>
-  <rect x="98" y="118" width="44" height="42" rx="9" fill="url(#vaultp)" stroke="rgba(var(--accent-rgb),.42)" stroke-width="1.5"/>
-  <path d="M107 126 H133" stroke="#eef0ea" stroke-width="1.4" opacity=".12" stroke-linecap="round"/>
-  <circle cx="120" cy="139" r="10.5" fill="#0d110d" stroke="rgba(var(--accent-rgb),.5)" stroke-width="1"/>
-  <circle cx="120" cy="139" r="8" fill="url(#vaultg)"/>
-  <circle cx="120" cy="137" r="2.4" fill="#0d110d"/>
-  <path d="M118.4 138.5 L121.6 138.5 L120.8 143.6 L119.2 143.6 Z" fill="#0d110d"/>
-</svg>
-      </figure>
-      <div class="htxt">
-        <h1 class="hero-in">Privacy<span class="dot">.</span></h1>
+  <header class="module-hero" aria-labelledby="privacy-title">
+    <p class="crumb hero-in"><a href="/">← daarx.money / data boundary</a></p>
+    <div class="module-hero-grid">
+      <div class="module-hero-copy">
+        <p class="module-kicker hero-in">SITE DATA MAP / CURRENT PROCESSING</p>
+        <h1 class="hero-in" id="privacy-title">Privacy<span class="dot">.</span></h1>
         <p class="tag hero-in">What the site collects, who handles it, why, and when it is deleted.</p>
         <div class="actions hero-in">
-          <a class="btn solid" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
-          <a class="btn" href="/faq.html">The FAQ <span class="arw">&#8594;</span></a>
+          <a class="btn solid" href="#data-register">Inspect the boundary <span class="arw">&#8595;</span></a>
+          <a class="btn" href="mailto:daarxmoney@proton.me">Request deletion <span class="arw">&#8594;</span></a>
         </div>
       </div>
+
+      <section class="module-console boundary-console hero-in" aria-label="Current site data flow">
+        <div class="console-bar"><span>DAARX::DATA_BOUNDARY</span><span class="console-lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="console-readout">
+          <div class="console-line"><span>AD_TRACKERS</span><strong class="signal">NONE</strong></div>
+          <div class="boundary-map" aria-hidden="true">
+            <div class="boundary-node"><small>01 / SURFACE</small><strong>YOUR BROWSER</strong><span>OPTIONAL INPUT</span></div>
+            <div class="boundary-node is-muted"><small>02 / HOST</small><strong>GITHUB PAGES</strong><span>NETWORK METADATA</span></div>
+            <div class="boundary-node"><small>03 / RELAY</small><strong>WEB3FORMS</strong><span>FORM DELIVERY</span></div>
+            <div class="boundary-node"><small>04 / RECEIVER</small><strong>PROTON + LABS</strong><span>INTEREST RECORD</span></div>
+          </div>
+          <div class="boundary-legend"><span><b>NO FORM SUBMISSION</b> / no interest record sent</span><span><b>SUBMIT</b> / relay path used</span></div>
+          <div class="console-stamp">NO MARKETING COOKIES</div>
+        </div>
+      </section>
     </div>
   </header>
 
@@ -97,7 +90,7 @@
       <p class="cap">The public pages use <b>no advertising trackers, analytics scripts, accounts, or marketing cookies</b>. The hardware-interest form sends the information you enter; the hosting, form-relay, and email providers may also process ordinary network, device, delivery, security, and anti-abuse metadata.</p>
     </div>
 
-    <div class="cards">
+    <div class="cards" id="data-register">
       <div class="card"><div class="ck">controller and operator</div>
         <p><b>Desiderata Labs LLC</b> operates this DAARX-branded information site and its hardware-interest form. No store, checkout, hardware sale, account, or support service is live. The commercial operator is separate from the protocol workstreams described on this site.</p></div>
       <div class="card"><div class="ck">what the form sends</div>

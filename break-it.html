@@ -10,6 +10,8 @@
 <meta name="description" content="Draft design for a future DAARX public security program. The testnet, intake, official rules, funding, awards, credit board, and disclosure process are not live yet.">
 <link rel="canonical" href="https://daarx.money/break-it.html">
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/inner-shell.css">
+<link rel="stylesheet" href="/utility-modules.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%234df19a' stroke-width='2'/></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%234df19a' stroke-width='9'/></svg>">
 <meta property="og:type" content="website">
@@ -25,7 +27,7 @@
 <meta name="twitter:description" content="Future security-program design. No bounty, award, intake, or public testnet is currently open.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 </head>
-<body class="p-break">
+<body class="p-break module-page module-break">
 <a class="skip" href="#main">Skip to content</a>
 <div class="grid" aria-hidden="true"></div>
 
@@ -52,90 +54,78 @@
 </nav>
 
 <main class="wrap" id="main">
-  <header class="coinhero">
-    <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
-    <div class="heroband">
-      <figure class="hero-figure coinorb hero-in" aria-hidden="true">
-        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A shield probed by attack vectors, one crack forming">
-  <defs>
-    <linearGradient id="brk-panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171d17"/><stop offset="1" stop-color="#0d110d"/></linearGradient>
-    <radialGradient id="brk-halo" cx="50%" cy="46%" r="52%"><stop offset="0" stop-color="var(--accent)" stop-opacity=".28"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></radialGradient>
-    <radialGradient id="brk-gloss" cx="40%" cy="32%" r="72%"><stop offset="0" stop-color="#eef0ea"/><stop offset="46%" stop-color="var(--accent)"/><stop offset="1" stop-color="#0d110d"/></radialGradient>
-    <clipPath id="brk-sh"><path d="M80 54 H160 V102 C160 140 144 163 120 177 C96 163 80 140 80 102 Z"/></clipPath>
-  </defs>
-  <circle cx="120" cy="120" r="112" fill="url(#brk-halo)" class="brk-halo" opacity=".7"/>
-  <g stroke="rgba(var(--accent-rgb),.2)" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="1.5 4.5">
-    <path d="M66 26 L120 60"/>
-    <path d="M212 96 L159 102"/>
-    <path d="M48 172 L86 140"/>
-  </g>
-  <path d="M80 54 H160 V102 C160 140 144 163 120 177 C96 163 80 140 80 102 Z" fill="url(#brk-panel)" stroke="rgba(var(--accent-rgb),.42)" stroke-width="1.6"/>
-  <g clip-path="url(#brk-sh)" stroke="rgba(var(--accent-rgb),.13)" stroke-width="1.4">
-    <path d="M82 96h76"/><path d="M82 122h76"/>
-  </g>
-  <g class="brk-crack" opacity=".92" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M120 68 L112 94 L127 106 L116 134 L129 156" stroke="var(--accent)" stroke-width="6" opacity=".5"/>
-    <path d="M120 68 L112 94 L127 106 L116 134 L129 156" stroke="#eef0ea" stroke-width="2.1"/>
-  </g>
-  <g fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round">
-    <path class="brk-probe" d="M66 26 L120 60" stroke-dashoffset="-34"/>
-    <path class="brk-probe brk-p2" d="M212 96 L159 102" stroke-dashoffset="-34"/>
-    <path class="brk-probe brk-p3" d="M48 172 L86 140" stroke-dashoffset="-34"/>
-  </g>
-  <circle class="brk-spark brk-sb" cx="159" cy="102" r="3.2" fill="var(--accent)" opacity=".5"/>
-  <circle class="brk-spark brk-sc" cx="86" cy="140" r="3.2" fill="var(--accent)" opacity=".5"/>
-  <g class="brk-core" opacity=".92">
-    <circle cx="120" cy="63" r="14" fill="var(--accent)" opacity=".26"/>
-    <circle cx="120" cy="63" r="9" fill="none" stroke="var(--accent)" stroke-width="1.6" opacity=".7"/>
-    <circle cx="120" cy="63" r="6" fill="url(#brk-gloss)"/>
-  </g>
-  <g>
-    <ellipse cx="182" cy="180" rx="15" ry="4.6" fill="rgba(var(--accent-rgb),.3)"/>
-    <ellipse cx="182" cy="172" rx="15" ry="4.6" fill="rgba(var(--accent-rgb),.5)"/>
-    <ellipse cx="182" cy="164" rx="15" ry="5" fill="url(#brk-gloss)" stroke="rgba(var(--accent-rgb),.55)" stroke-width="1"/>
-    <path d="M182 158.5 V169.5 M186 161 q-4.5 -2.2 -7 .3 q-1.8 1.8 1.2 3 l3.6 1.2 q3 1 1.2 2.9 q-2.6 2.4 -7 .2" fill="none" stroke="#060706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-</svg>
-      </figure>
-      <div class="htxt">
-        <h1 class="hero-in">Break it<span class="dot">.</span></h1>
+  <header class="module-hero" aria-labelledby="security-title">
+    <p class="crumb hero-in"><a href="/">← daarx.money / security</a></p>
+    <div class="module-hero-grid">
+      <div class="module-hero-copy">
+        <p class="module-kicker hero-in">RED TEAM SURFACE / DRAFT</p>
+        <h1 class="hero-in" id="security-title">Break it<span class="dot">.</span></h1>
         <p class="tag hero-in">The privacy layer uses new cryptography. A future public program should invite adversarial testing and publish responsibly disclosed results; that program is not open yet.</p>
         <div class="actions hero-in">
-          <a class="btn solid" href="#more">How it works <span class="arw">&#8595;</span></a>
-          <a class="btn" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
+          <a class="btn solid" href="#more">Inspect the draft <span class="arw">&#8595;</span></a>
+          <a class="btn" href="/faq.html">Read the FAQ <span class="arw">&#8594;</span></a>
         </div>
       </div>
+
+      <section class="module-console security-console hero-in" aria-label="Security program status: draft only, no live intake">
+        <div class="console-bar"><span>DAARX::ADVERSARIAL_REVIEW</span><span class="console-lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="console-readout">
+          <div class="console-line"><span>PROGRAM_STATE</span><strong class="signal">DRAFT_ONLY</strong></div>
+          <div class="attack-surface" aria-hidden="true">
+            <span class="attack-surface-label a">SOUNDNESS</span>
+            <span class="attack-surface-label b">PRIVACY</span>
+            <span class="attack-surface-label c">CONSENSUS</span>
+            <svg viewBox="0 0 500 210" focusable="false">
+              <path class="probe" d="M10 28C110 28 124 92 219 101M490 54C402 54 368 88 281 101M16 180C118 180 139 132 219 111"/>
+              <path class="shield" d="M250 57L291 76V111C291 148 272 168 250 179C228 168 209 148 209 111V76Z"/>
+              <path class="probe" d="M233 107L246 121L269 92"/>
+              <circle class="node" cx="10" cy="28" r="3"/><circle class="node" cx="490" cy="54" r="3"/><circle class="node" cx="16" cy="180" r="3"/>
+            </svg>
+          </div>
+          <div class="console-line"><span>PUBLIC_TESTNET</span><strong>NOT LIVE</strong></div>
+          <div class="console-line"><span>PRIVATE_INTAKE</span><strong>NOT PUBLISHED</strong></div>
+          <div class="console-stamp">NO LIVE BOUNTY</div>
+        </div>
+      </section>
     </div>
   </header>
 
   <div class="flow">
-    <h2 class="eyebrow" id="more">the deal before launch</h2>
-    <p>The project plans to define what a meaningful break looks like before a public testnet and to make launch wait for verified fixes and retesting. <b>No public testnet, vulnerability intake, bounty, award, or publication promise is currently active.</b></p>
+    <section class="module-section" data-index="01" aria-labelledby="more">
+      <h2 class="eyebrow" id="more">the deal before launch</h2>
+      <p>The project plans to define what a meaningful break looks like before a public testnet and to make launch wait for verified fixes and retesting. <b>No public testnet, vulnerability intake, bounty, award, or publication promise is currently active.</b></p>
 
-    <div class="statement">
-      <div class="fig">$1,000<span class="u">proposed pool · not funded or offered</span></div>
-      <p class="cap">This is a draft program concept only. No one can currently earn money, credit, an invitation, or any other award. Official rules and confirmed funding must be published before submissions open.</p>
-    </div>
+      <div class="statement">
+        <div class="fig">$1,000<span class="u">proposed pool · not funded or offered</span></div>
+        <p class="cap">This is a draft program concept only. No one can currently earn money, credit, an invitation, or any other award. Official rules and confirmed funding must be published before submissions open.</p>
+      </div>
+    </section>
 
-    <h2 class="eyebrow">the test network — where you come in</h2>
-    <p>The future plan is to run public test networks with valueless test coins and explicit scopes for fuzzing, consensus, privacy, networking, wallet, and operational testing. Those networks and their safe-harbor/scope terms are not live.</p>
-    <div class="steps">
-      <div class="step"><span class="n">1</span><span class="b">Wait for a signed public release, testnet scope, faucet, node package, and disclosure instructions.</span></div>
-      <div class="step"><span class="n">2</span><span class="b">Try to break something real — soundness (make money from nothing, double-spend) or privacy (de-anonymize a payment).</span></div>
-      <div class="step"><span class="n">3</span><span class="b">Use the future private security intake and follow its disclosure rules. Do not send sensitive vulnerability details through the hardware-interest form.</span></div>
-    </div>
+    <section class="module-section" data-index="02" aria-labelledby="security-network">
+      <h2 class="eyebrow" id="security-network">the test network — where you come in</h2>
+      <p>The future plan is to run public test networks with valueless test coins and explicit scopes for fuzzing, consensus, privacy, networking, wallet, and operational testing. Those networks and their safe-harbor/scope terms are not live.</p>
+      <div class="steps">
+        <div class="step"><span class="n">01 / VERIFY RELEASE</span><span class="b">Wait for a signed public release, testnet scope, faucet, node package, and disclosure instructions.</span></div>
+        <div class="step"><span class="n">02 / TEST REAL PATHS</span><span class="b">Try to break something real — soundness (make money from nothing, double-spend) or privacy (de-anonymize a payment).</span></div>
+        <div class="step"><span class="n">03 / DISCLOSE SAFELY</span><span class="b">Use the future private security intake and follow its disclosure rules. Do not send sensitive vulnerability details through the hardware-interest form.</span></div>
+      </div>
+    </section>
 
-    <h2 class="eyebrow">proposed bounty + credit board</h2>
-    <p>A capped <b>$1,000 total pool</b> has been discussed, but it is not funded, governed by official rules, or offered to the public. Eligibility, jurisdictions, age, taxes, sanctions, severity, duplicates, root-cause grouping, fix requirements, safe harbor, disclosure timing, payout source, dispute process, and event terms all remain unresolved.</p>
-    <p>A public credit board is also a proposal. Publication requires the reporter&rsquo;s informed consent and a disclosure process that does not expose an unfixed vulnerability or personal information. Until those controls exist, this page creates no entitlement or promise.</p>
-    <p><b>No payment date exists.</b> If a program opens, its official rules—not this draft—will control any award, credit, or recognition.</p>
-    <div class="board">
-      <div class="hd"><span class="c1">testnet</span><span class="c2">finding · credited to</span></div>
-      <div class="empty">— not live; no submissions or awards accepted —</div>
-    </div>
+    <section class="module-section" data-index="03" aria-labelledby="security-bounty">
+      <h2 class="eyebrow" id="security-bounty">proposed bounty + credit board</h2>
+      <p>A capped <b>$1,000 total pool</b> has been discussed, but it is not funded, governed by official rules, or offered to the public. Eligibility, jurisdictions, age, taxes, sanctions, severity, duplicates, root-cause grouping, fix requirements, safe harbor, disclosure timing, payout source, dispute process, and event terms all remain unresolved.</p>
+      <p>A public credit board is also a proposal. Publication requires the reporter&rsquo;s informed consent and a disclosure process that does not expose an unfixed vulnerability or personal information. Until those controls exist, this page creates no entitlement or promise.</p>
+      <p><b>No payment date exists.</b> If a program opens, its official rules—not this draft—will control any award, credit, or recognition.</p>
+      <div class="board">
+        <div class="hd"><span class="c1">testnet</span><span class="c2">finding · credited to</span></div>
+        <div class="empty">— not live; no submissions or awards accepted —</div>
+      </div>
+    </section>
 
-    <h2 class="eyebrow">report something</h2>
-    <p>No vulnerability intake or PGP key is currently published. Do not send sensitive vulnerability details through the hardware-interest form or ordinary contact email. A dedicated private channel, public key, scope, acknowledgment target, and disclosure policy are launch prerequisites.</p>
+    <section class="module-section" data-index="04" aria-labelledby="security-report">
+      <h2 class="eyebrow" id="security-report">report something</h2>
+      <p>No vulnerability intake or PGP key is currently published. Do not send sensitive vulnerability details through the hardware-interest form or ordinary contact email. A dedicated private channel, public key, scope, acknowledgment target, and disclosure policy are launch prerequisites.</p>
+    </section>
 
     <div class="soon"><b>Status — July 15, 2026:</b> draft program only. Public testnet, official rules, funding proof, intake, PGP key, response targets, safe harbor, award process, and credit board are not live. No opening date is promised.</div>
 

@@ -4,14 +4,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OPEN — future protocol design</title>
+<title>OPEN — machine-accountability protocol dossier</title>
 <script>document.documentElement.classList.add('js')</script>
-<meta name="theme-color" content="#060706">
+<meta name="theme-color" content="#020507">
 <meta name="description" content="OPEN is a future machine-accountability protocol design. It is not a running public ledger, mineable network, or available product.">
 <link rel="canonical" href="https://daarx.money/open.html">
 <link rel="stylesheet" href="/style.css">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%234df19a' stroke-width='2'/></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%234df19a' stroke-width='9'/></svg>">
+<link rel="stylesheet" href="/inner-shell.css">
+<link rel="stylesheet" href="/protocol-modules.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%2365d9f3' stroke-width='2'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%2365d9f3' stroke-width='9'/></svg>">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX · L10N · OPEN">
 <meta property="og:title" content="OPEN — the one for machines">
@@ -25,173 +27,189 @@
 <meta name="twitter:description" content="OPEN is a future public-accounting protocol design, not a running network.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 </head>
-<body class="p-open">
+<body class="p-open protocol-page">
 <a class="skip" href="#main">Skip to content</a>
-<div class="grid" aria-hidden="true"></div>
+<div class="protocol-field" aria-hidden="true"></div>
 
 <nav class="nav" id="nav" aria-label="Primary">
-  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">·</span><span class="l">L10N</span><span class="amp">·</span><span class="o">OPEN</span></a>
+  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">/</span><span class="l">L10N</span><span class="amp">/</span><span class="o">OPEN</span></a>
   <div class="go">
-    <a class="lnk" href="/faq.html">faq</a>
-    <a class="lnk" href="/break-it.html">break it</a>
+    <a class="lnk" href="/open.html" aria-current="page">OPEN</a>
+    <a class="lnk" href="/#status">status</a>
+    <a class="lnk" href="/break-it.html">security</a>
     <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
     <details class="nd">
       <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
-      <div class="navmenu">
-        <a href="/">Home</a>
-        <a href="/daarx.html">DAARX</a>
-        <a href="/l10n.html">L10N</a>
-        <a href="/open.html" aria-current="page">OPEN</a>
-        <a href="/mine.html">Mining plans</a>
-        <a href="/break-it.html">Break it</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/privacy.html">Privacy</a>
-      </div>
+      <div class="navmenu"><a href="/">Home</a><a href="/daarx.html">DAARX</a><a href="/l10n.html">L10N</a><a href="/open.html" aria-current="page">OPEN</a><a href="/mine.html">Mining plans</a><a href="/break-it.html">Security</a><a href="/faq.html">FAQ</a><a href="/privacy.html">Privacy</a></div>
     </details>
   </div>
 </nav>
 
-<main class="wrap" id="main">
-  <header class="coinhero">
-    <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
-    <div class="heroband">
-      <figure class="hero-figure coinorb hero-in" aria-hidden="true">
-        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A transparent public ledger">
-  <defs>
-    <linearGradient id="glassBody" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="var(--accent)" stop-opacity=".16"/>
-      <stop offset="1" stop-color="var(--accent)" stop-opacity=".04"/>
-    </linearGradient>
-    <radialGradient id="glassHalo" cx="50%" cy="46%" r="55%">
-      <stop offset="0" stop-color="var(--accent)" stop-opacity=".26"/>
-      <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glassGloss" cx="40%" cy="32%" r="72%">
-      <stop offset="0" stop-color="#eef0ea"/>
-      <stop offset="45%" stop-color="var(--accent)"/>
-      <stop offset="100%" stop-color="#0d110d"/>
-    </radialGradient>
-  </defs>
-  <circle cx="120" cy="120" r="116" fill="url(#glassHalo)" class="crowd"/>
-  <rect x="73" y="45" width="120" height="124" rx="13" fill="rgba(var(--accent-rgb),.03)" stroke="var(--accent)" stroke-width="1.3" stroke-opacity=".24"/>
-  <path d="M61 60 74 47 M179 60 192 47 M179 180 192 167" stroke="var(--accent)" stroke-width="1.3" stroke-opacity=".26" stroke-linecap="round"/>
-  <rect x="60" y="58" width="120" height="124" rx="13" fill="url(#glassBody)" stroke="var(--accent)" stroke-width="1.6" stroke-opacity=".7"/>
-  <rect x="67" y="61" width="106" height="3" rx="1.5" fill="#eef0ea" opacity=".12"/>
-  <circle cx="76" cy="74" r="3" fill="var(--accent)"/>
-  <rect x="84" y="71.5" width="40" height="5" rx="2.5" fill="rgba(var(--accent-rgb),.55)"/>
-  <path d="M68 87 H172" stroke="var(--accent)" stroke-width="1" stroke-opacity=".26"/>
-  <g class="glass-row glass-r1" opacity=".82">
-    <circle cx="76" cy="100" r="3.2" fill="var(--accent)"/>
-    <rect x="88" y="97.25" width="64" height="5.5" rx="2.75" fill="rgba(var(--accent-rgb),.72)"/>
-    <path d="M161 98.5 164 101.9 170.5 93.9" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  <g class="glass-row glass-r2" opacity=".82">
-    <circle cx="76" cy="122" r="3.2" fill="var(--accent)"/>
-    <rect x="88" y="119.25" width="48" height="5.5" rx="2.75" fill="rgba(var(--accent-rgb),.72)"/>
-    <path d="M161 120.5 164 123.9 170.5 115.9" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  <g class="glass-row glass-r3" opacity=".82">
-    <circle cx="76" cy="144" r="3.2" fill="var(--accent)"/>
-    <rect x="88" y="141.25" width="70" height="5.5" rx="2.75" fill="rgba(var(--accent-rgb),.72)"/>
-    <path d="M161 142.5 164 145.9 170.5 137.9" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  <g class="glass-row glass-r4" opacity=".82">
-    <circle cx="76" cy="166" r="3.2" fill="var(--accent)"/>
-    <rect x="88" y="163.25" width="54" height="5.5" rx="2.75" fill="rgba(var(--accent-rgb),.72)"/>
-    <path d="M161 164.5 164 167.9 170.5 159.9" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  <g class="glass-scan" opacity=".9">
-    <rect x="66" y="93" width="108" height="14" rx="7" fill="rgba(var(--accent-rgb),.14)"/>
-    <rect x="66" y="99.2" width="108" height="1.6" rx=".8" fill="var(--accent)"/>
-    <circle cx="72" cy="100" r="5.5" fill="url(#glassGloss)"/>
-  </g>
-</svg>
+<main id="main">
+  <section class="protocol-hero" aria-labelledby="hero-title">
+    <div class="protocol-frame" aria-hidden="true"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+    <div class="protocol-coordinate top" aria-hidden="true">OPN::PUBLIC_RECEIPTS / DOSSIER 03</div>
+    <div class="protocol-coordinate bottom" aria-hidden="true">FUTURE DESIGN / NOT LEDGER TELEMETRY</div>
+
+    <div class="protocol-shell protocol-hero-layout">
+      <div class="protocol-hero-copy">
+        <p class="protocol-flag">FUTURE WORKSTREAM <span>/</span> DESIGN INCOMPLETE</p>
+        <h1 id="hero-title">OPEN</h1>
+        <span class="protocol-ordinal">PROTOCOL 03 / PUBLIC MACHINE ACCOUNTS</span>
+        <h2>Receipts for <em>machines.</em></h2>
+        <p class="protocol-lede">A future public-accounting protocol design for machine activity: accounts, payments, and maintenance funding meant to be inspectable by rule.</p>
+        <p class="protocol-truth"><strong>OPEN is not a running ledger, mineable network, or available product.</strong> It remains a future protocol workstream with no release date promised.</p>
+        <div class="protocol-actions">
+          <a class="module-button primary" href="#architecture"><span>Inspect the receipt path</span><span aria-hidden="true">&#8595;</span></a>
+          <a class="module-button" href="/#status"><span>System status</span><span aria-hidden="true">&#8594;</span></a>
+        </div>
+      </div>
+
+      <figure class="protocol-hero-visual" aria-labelledby="open-visual-caption">
+        <svg viewBox="0 0 760 700" fill="none" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="opn-glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#65d9f3" stop-opacity=".2"/><stop offset=".5" stop-color="#06141a" stop-opacity=".65"/><stop offset="1" stop-color="#65d9f3" stop-opacity=".04"/></linearGradient>
+            <radialGradient id="opn-core" cx="40%" cy="35%" r="70%"><stop stop-color="#e7fbff"/><stop offset=".35" stop-color="#65d9f3"/><stop offset="1" stop-color="#041117"/></radialGradient>
+            <filter id="opn-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <g class="visual-grid"><path d="M20 110H740M20 210H740M20 310H740M20 410H740M20 510H740M120 40V650M220 40V650M320 40V650M420 40V650M520 40V650M620 40V650"/></g>
+          <path class="visual-rail faint" d="M36 104C195 104 208 304 374 351S564 590 727 590"/>
+          <path class="visual-rail" d="M28 520C169 520 228 418 366 351S591 206 736 206"/>
+          <g transform="translate(392 344)">
+            <path d="M-182-200H130L180-150V190H-182Z" fill="#020608" stroke="#65d9f3" stroke-opacity=".13" transform="translate(42 -34)"/>
+            <path d="M-182-200H130L180-150V190H-182Z" fill="#030a0d" stroke="#65d9f3" stroke-opacity=".25" transform="translate(21 -17)"/>
+            <path d="M-182-200H130L180-150V190H-182Z" fill="url(#opn-glass)" stroke="#65d9f3" stroke-opacity=".62" stroke-width="2"/>
+            <path d="M130-200V-150H180" stroke="#65d9f3" stroke-opacity=".55" stroke-width="2"/>
+            <path d="M-150-137H145M-150-72H145M-150-7H145M-150 58H145M-150 123H145" stroke="#65d9f3" stroke-opacity=".16"/>
+            <g>
+              <circle class="visual-node" cx="-127" cy="-105" r="6"/><path d="M-105-105H54" stroke="#65d9f3" stroke-opacity=".7" stroke-width="4"/><path d="M76-111L87-100L110-124" stroke="#65d9f3" stroke-width="4" stroke-linecap="round"/>
+              <circle class="visual-node n2" cx="-127" cy="-40" r="6"/><path d="M-105-40H20" stroke="#65d9f3" stroke-opacity=".55" stroke-width="4"/><path d="M76-46L87-35L110-59" stroke="#65d9f3" stroke-width="4" stroke-linecap="round"/>
+              <circle class="visual-node n3" cx="-127" cy="25" r="6"/><path d="M-105 25H72" stroke="#65d9f3" stroke-opacity=".65" stroke-width="4"/><path d="M76 19L87 30L110 6" stroke="#65d9f3" stroke-width="4" stroke-linecap="round"/>
+              <circle class="visual-node" cx="-127" cy="90" r="6"/><path d="M-105 90H38" stroke="#65d9f3" stroke-opacity=".5" stroke-width="4"/><path d="M76 84L87 95L110 71" stroke="#65d9f3" stroke-width="4" stroke-linecap="round"/>
+            </g>
+            <rect class="visual-scan" x="-170" y="-177" width="329" height="42"/>
+          </g>
+          <g transform="translate(162 550)" filter="url(#opn-glow)"><path d="M0-57L50-29V29L0 57L-50 29V-29Z" fill="rgba(101,217,243,.08)" stroke="#65d9f3" stroke-opacity=".55"/><circle class="visual-core" r="33"/><circle r="18" fill="url(#opn-core)"/></g>
+          <g transform="translate(625 130)" filter="url(#opn-glow)"><path d="M0-46L40-23V23L0 46L-40 23V-23Z" fill="rgba(101,217,243,.08)" stroke="#65d9f3" stroke-opacity=".55"/><circle class="visual-core" r="26"/><circle r="14" fill="url(#opn-core)"/></g>
+          <g fill="#86aeb7" font-family="monospace" font-size="10" letter-spacing="1.2"><text x="96" y="635">MACHINE ACCOUNT</text><text x="532" y="80">PUBLIC RECEIPT</text><text x="285" y="579">AUDITABLE ROUTE</text></g>
+        </svg>
+        <div class="hero-readout-module">
+          <p><span>PROTOCOL STATE</span><span>2026.07.15</span></p>
+          <dl>
+            <div><dt>PUBLIC NETWORK</dt><dd class="not-live">NOT LIVE</dd></div>
+            <div><dt>ACCOUNT MODEL</dt><dd>DESIGN INCOMPLETE</dd></div>
+            <div><dt>LIVE ENDOWMENT</dt><dd>NONE</dd></div>
+          </dl>
+        </div>
+        <figcaption id="open-visual-caption">Conceptual public-receipt ledger. Not a running network or accounting service.</figcaption>
       </figure>
-      <div class="htxt">
-        <h1 class="accent hero-in">OPEN</h1>
-        <p class="tag hero-in">The one for <b>machines</b>. When software pays software, someone should be able to check the receipts.</p>
-        <div class="actions hero-in">
-          <a class="btn solid" href="#more">How it works <span class="arw">&#8595;</span></a>
-          <a class="btn" href="/#status">System status <span class="arw">&#8594;</span></a>
+    </div>
+  </section>
+
+  <section class="module-strip" aria-label="OPEN status summary">
+    <div class="module-strip-track">
+      <span class="warning"><i aria-hidden="true"></i><b>PUBLIC NETWORK</b> / NOT LIVE</span>
+      <span class="warning"><i aria-hidden="true"></i><b>WORKSTREAM</b> / FUTURE</span>
+      <span><i aria-hidden="true"></i><b>ACCOUNT TARGET</b> / PUBLIC</span>
+      <span><i aria-hidden="true"></i><b>LIVE FUND</b> / NONE</span>
+    </div>
+  </section>
+
+  <section class="module-section brief-section" id="architecture" aria-labelledby="brief-title">
+    <div class="protocol-shell brief-grid">
+      <header class="module-section-intro reveal">
+        <p class="module-index">01 <span>/</span> SYSTEM BRIEF</p>
+        <h2 id="brief-title">Privacy rule, <em>inverted.</em></h2>
+        <p>Private value for people. Public accounting for machines. OPEN explores that opposite trust boundary.</p>
+      </header>
+      <div class="brief-stack reveal">
+        <article class="brief-item"><p class="brief-number">01</p><div><p class="panel-code">THE INVERSION</p><h3>Public by protocol target.</h3><p>OPEN is designed as the inverse of its siblings: public accounts and auditable payments for machine activity. That is a future protocol design, not a description of a running ledger or a guarantee that every machine payment will be verifiable.</p></div></article>
+        <article class="brief-item"><p class="brief-number">02</p><div><p class="panel-code">THE RECEIPT</p><h3>Activity meant to be checked.</h3><p>The design target makes accounts, payments, and the maintenance fund public by protocol rule. It must still be implemented, reviewed, threat-modeled, and tested.</p></div></article>
+        <article class="brief-item"><p class="brief-number">03</p><div><p class="panel-code">THE RESTRAINT</p><h3>Keep machinery out at first.</h3><p>The current design would keep markets, arbitration, and other complex machinery out of an initial release. Any later feature would need explicit activation conditions, implementation, independent review, and public evidence.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="module-section inspection-section" aria-labelledby="inspection-title">
+    <div class="protocol-shell">
+      <header class="module-section-intro split reveal">
+        <div><p class="module-index">02 <span>/</span> ACCOUNTABILITY INSPECTION</p><h2 id="inspection-title">Account. Receipt. <em>Control.</em></h2></div>
+        <p>These layers describe the intended boundary. They are not a product demo, live fund display, or guarantee of machine accountability.</p>
+      </header>
+
+      <div class="inspection-console reveal" data-inspection>
+        <div class="inspection-bar"><span><i></i><i></i><i></i> OPN::RECEIPT_STACK</span><span>STATIC DESIGN INSPECTION</span></div>
+        <div class="inspection-tabs" role="tablist" aria-label="OPEN inspection layers">
+          <button id="opn-tab-account" type="button" role="tab" aria-selected="true" aria-controls="opn-panel-account" data-inspection-tab>01 / ACCOUNT</button>
+          <button id="opn-tab-receipt" type="button" role="tab" aria-selected="false" aria-controls="opn-panel-receipt" data-inspection-tab tabindex="-1">02 / RECEIPT</button>
+          <button id="opn-tab-control" type="button" role="tab" aria-selected="false" aria-controls="opn-panel-control" data-inspection-tab tabindex="-1">03 / CONTROL</button>
+        </div>
+        <p class="sr-only" aria-live="polite"></p>
+
+        <div class="inspection-panel is-active" id="opn-panel-account" role="tabpanel" aria-labelledby="opn-tab-account">
+          <div class="inspection-panel-copy"><p class="panel-code">LAYER 01 / PUBLIC ACCOUNT MODEL</p><h3>Attributed by design target.</h3><p>OPEN explores public accounts for machine activity so payments can be inspected, attributed, and reconciled. The account model is not a public release artifact and remains incomplete.</p><p class="limit">A public account does not automatically prove that the machine or actor behind it behaved correctly.</p></div>
+          <div class="inspection-schematic" aria-hidden="true"><svg viewBox="0 0 560 310"><g class="schematic-grid"><path d="M0 52H560M0 104H560M0 156H560M0 208H560M0 260H560M93 0V310M186 0V310M279 0V310M372 0V310M465 0V310"/></g><path class="schematic-route" d="M52 155H508"/><g><circle class="schematic-node" cx="74" cy="155" r="9"/><circle class="schematic-node" cx="205" cy="155" r="9"/><circle class="schematic-node" cx="355" cy="155" r="9"/><circle class="schematic-node" cx="486" cy="155" r="9"/></g><path class="schematic-muted" d="M74 155L142 74L205 155L280 238L355 155L422 74L486 155"/><text class="schematic-label" x="42" y="190">MACHINE</text><text class="schematic-label" x="175" y="190">ACCOUNT</text><text class="schematic-label" x="328" y="190">PAYMENT</text><text class="schematic-label" x="457" y="190">RECEIPT</text></svg></div>
+        </div>
+
+        <div class="inspection-panel" id="opn-panel-receipt" role="tabpanel" aria-labelledby="opn-tab-receipt">
+          <div class="inspection-panel-copy"><p class="panel-code">LAYER 02 / PUBLIC PAYMENT RECORD</p><h3>The ledger should show its work.</h3><p>The target makes accounts, payments, and maintenance funding public by protocol rule. OPEN is not a running ledger, and there is no guarantee today that any machine payment can be verified through it.</p><p class="limit">The implementation, registry, threat model, testnet, and final whitepaper are not public release artifacts.</p></div>
+          <div class="inspection-schematic" aria-hidden="true"><svg viewBox="0 0 560 310"><g class="schematic-grid"><path d="M0 52H560M0 104H560M0 156H560M0 208H560M0 260H560M93 0V310M186 0V310M279 0V310M372 0V310M465 0V310"/></g><rect x="86" y="46" width="388" height="218" class="schematic-shield"/><path d="M86 100H474M86 154H474M86 208H474" class="schematic-muted"/><g><circle class="schematic-node" cx="119" cy="74" r="6"/><circle class="schematic-node" cx="119" cy="127" r="6"/><circle class="schematic-node" cx="119" cy="181" r="6"/><circle class="schematic-node" cx="119" cy="235" r="6"/></g><path class="schematic-route" d="M147 74H424M147 127H376M147 181H438M147 235H392"/><path d="M430 67L440 77L458 58M430 120L440 130L458 111M430 174L440 184L458 165M430 228L440 238L458 219" fill="none" stroke="#65d9f3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+
+        <div class="inspection-panel" id="opn-panel-control" role="tabpanel" aria-labelledby="opn-tab-control">
+          <div class="inspection-panel-copy"><p class="panel-code">LAYER 03 / ENDOWMENT + GOVERNANCE</p><h3>Transparent does not mean settled.</h3><p>The current economic design starts at zero and assigns a protocol-limited share of emission to a transparent maintenance endowment. The allocation, controls, accounting, governance, and legal treatment are not final, and no live fund exists.</p><p class="limit">Markets, arbitration, and complex machinery remain outside the intended initial release.</p></div>
+          <div class="inspection-schematic" aria-hidden="true"><svg viewBox="0 0 560 310"><g class="schematic-grid"><path d="M0 52H560M0 104H560M0 156H560M0 208H560M0 260H560M93 0V310M186 0V310M279 0V310M372 0V310M465 0V310"/></g><circle cx="280" cy="155" r="90" class="schematic-shield"/><circle class="schematic-node" cx="280" cy="155" r="12"/><path class="schematic-route" d="M56 72L203 113M504 72L357 113M56 238L203 197M504 238L357 197"/><g><circle class="schematic-alert" cx="56" cy="72" r="7"/><circle class="schematic-alert" cx="504" cy="72" r="7"/><circle class="schematic-alert" cx="56" cy="238" r="7"/><circle class="schematic-alert" cx="504" cy="238" r="7"/></g><text class="schematic-label" x="25" y="50">ALLOCATION</text><text class="schematic-label" x="458" y="50">CONTROLS</text><text class="schematic-label" x="22" y="272">GOVERNANCE</text><text class="schematic-label" x="461" y="272">LEGAL</text><text class="schematic-label" x="239" y="190">NOT FINAL</text></svg></div>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <div class="flow">
-    <h2 class="eyebrow" id="more">the inversion</h2>
-    <p>OPEN is designed as the inverse of its siblings: public accounts and auditable payments for machine activity. That is a <b>future protocol design</b>, not a description of a running ledger or a guarantee that every machine payment will be verifiable.</p>
-
-    <div class="statement">
-      <div class="fig">Public by design.<span class="u">future protocol target</span></div>
-      <p class="cap">The design target makes accounts, payments, and the maintenance fund public by protocol rule. It must still be implemented, reviewed, threat-modeled, and tested.</p>
-    </div>
-
-    <h2 class="eyebrow">who pays for it</h2>
-    <p>The current economic design starts at zero and assigns a protocol-limited share of emission to a transparent maintenance endowment. The allocation, controls, accounting, governance, and legal treatment are not final and no live fund exists.</p>
-
-    <h2 class="eyebrow">the ground it stands on</h2>
-    <div class="facts">
-      <div class="f"><span class="k">block target</span><span class="v">27 seconds — provisional design parameter</span></div>
-      <div class="f"><span class="k">security target</span><span class="v">merged mining — not launch-integrated</span></div>
-      <div class="f"><span class="k">accounts</span><span class="v">public by design — implementation incomplete</span></div>
-      <div class="f"><span class="k">current status</span><span class="v">future protocol; no public network or mining</span></div>
-    </div>
-
-    <h2 class="eyebrow">the restraint</h2>
-    <p>The current design would keep markets, arbitration, and other complex machinery <b>out of an initial release</b>. Any later feature would need explicit activation conditions, implementation, independent review, and public evidence; none of those controls is a live system today.</p>
-
-    <div class="soon"><b>Status — July 15, 2026:</b> OPEN remains a future protocol workstream. Its account model, endowment, registry, threat model, implementation, testnet, and whitepaper are not public release artifacts, and no release date is promised.</div>
-
-    <div class="endcta">
-      <div class="h">A future merged-mining design.</div>
-      <p>The goal is to let a compatible DAARX miner contribute work to OPEN without a separate proof-of-work run. That path is not release-ready and no rig can mine a public OPEN network today.</p>
-      <div class="actions">
-        <a class="btn solid big" href="/#status">View system status <span class="arw">&#8594;</span></a>
-        <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
+  <section class="module-section spec-section" aria-labelledby="spec-title">
+    <div class="protocol-shell">
+      <header class="module-section-intro split reveal">
+        <div><p class="module-index">03 <span>/</span> SPECIFICATION + STATE</p><h2 id="spec-title">A design, not a <em>ledger.</em></h2></div>
+        <p>OPEN is materially earlier than DAARX and L10N. Its provisional parameters describe a workstream, not a launch-ready network.</p>
+      </header>
+      <div class="spec-console reveal">
+        <div class="spec-bar"><strong>OPN::FUTURE_DESIGN</strong><span>SNAPSHOT / 2026.07.15</span></div>
+        <dl class="spec-rows">
+          <div><dt>Block target</dt><dd>27 seconds — provisional design parameter</dd></div>
+          <div><dt>Security target</dt><dd>Merged mining — not launch-integrated</dd></div>
+          <div><dt>Accounts</dt><dd>Public by design — implementation incomplete</dd></div>
+          <div><dt>Endowment</dt><dd>Transparent maintenance design — allocation and controls not final</dd></div>
+          <div><dt>Initial restraint</dt><dd>Markets, arbitration, and complex machinery intended to remain out</dd></div>
+          <div><dt>Current status</dt><dd class="caution">Future protocol; no public network or mining</dd></div>
+        </dl>
+      </div>
+      <div class="status-block reveal">
+        <div><h3>Launch boundary</h3><p><strong>Status — July 15, 2026:</strong> OPEN remains a future protocol workstream. Its account model, endowment, registry, threat model, implementation, testnet, and whitepaper are not public release artifacts, and no release date is promised.</p></div>
+        <div class="status-seal"><span>PUBLIC RELEASE STATE</span><b>FUTURE WORK</b><small>NO PUBLIC NETWORK / NO DATE PROMISED</small></div>
       </div>
     </div>
+  </section>
 
-    <div class="crosslinks">
-      <a class="xl x-d" href="/daarx.html"><span class="dot3"></span><span class="xt"><span class="xk">DAARX</span><span class="xs">the one to keep — store of value</span></span></a>
-      <a class="xl x-l" href="/l10n.html"><span class="dot3"></span><span class="xt"><span class="xk">L10N</span><span class="xs">the one to spend — private cash</span></span></a>
+  <section class="module-section module-final" aria-labelledby="final-title">
+    <div class="protocol-shell module-final-grid">
+      <div class="module-final-copy reveal">
+        <p class="module-index">04 <span>/</span> NEXT ROUTE</p>
+        <h2 id="final-title">Public by rule, <em>if built.</em></h2>
+        <p>The goal is to let a compatible DAARX miner contribute work to OPEN without a separate proof-of-work run. That path is not release-ready, and no rig can mine a public OPEN network today.</p>
+        <div class="protocol-actions"><a class="module-button primary" href="/#status"><span>View system status</span><span aria-hidden="true">&#8594;</span></a><a class="module-button" href="/mine.html"><span>Mining plans</span><span aria-hidden="true">&#8594;</span></a></div>
+      </div>
+      <nav class="family-routes reveal" aria-label="Other protocols">
+        <a class="family-route" href="/daarx.html"><span class="route-node" aria-hidden="true"></span><span><b>DAARX</b><small>PRIVATE VALUE / THE ONE TO KEEP</small></span><span aria-hidden="true">&#8594;</span></a>
+        <a class="family-route l10n" href="/l10n.html"><span class="route-node" aria-hidden="true"></span><span><b>L10N</b><small>PRIVATE CASH / THE ONE TO SPEND</small></span><span aria-hidden="true">&#8594;</span></a>
+      </nav>
     </div>
-  </div>
-
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <nav class="fnav" aria-label="Site">
-      <a href="/">daarx.money</a>
-      <a href="/daarx.html">DAARX</a>
-      <a href="/l10n.html">L10N</a>
-      <a href="/open.html" aria-current="page">OPEN</a>
-      <a href="/mine.html">mining plans</a>
-      <a href="/break-it.html">break it</a>
-      <a href="/faq.html">faq</a>
-      <a href="/privacy.html">privacy</a>
-    </nav>
+    <nav class="fnav" aria-label="Site"><a href="/">daarx.money</a><a href="/daarx.html">DAARX</a><a href="/l10n.html">L10N</a><a href="/open.html" aria-current="page">OPEN</a><a href="/mine.html">mining plans</a><a href="/break-it.html">security</a><a href="/faq.html">faq</a><a href="/privacy.html">privacy</a></nav>
     <p class="fine">no coins for sale · nothing here is financial advice</p>
   </div>
 </footer>
-<script>
-(function(){
-  var d=document, root=d.documentElement;
-  root.classList.add('js');
-  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var SEL='.reveal,.stagger,.flow>*';
-  var els=[].slice.call(d.querySelectorAll(SEL));
-  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
-  else{
-    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{rootMargin:'0px 0px -10% 0px',threshold:.1});
-    els.forEach(function(e){ if(e.getBoundingClientRect().top < innerHeight*0.94){e.classList.add('in');} else {io.observe(e);} });
-  }
-  var nav=d.getElementById('nav');
-  if(nav){var on=function(){nav.classList.toggle('scrolled',(window.scrollY||0)>24)};on();addEventListener('scroll',on,{passive:true});}
-  var nd=d.querySelector('.nd');
-  if(nd){d.addEventListener('click',function(e){if(nd.open&&!nd.contains(e.target))nd.open=false;});}
-})();
-</script>
+<script src="/protocol-modules.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,285 @@
+/* Shared inner-route control-plane shell.
+   Page-specific modules load after this file and own their narrative layouts. */
+
+:root{
+  --shell-bg:#020504;
+  --shell-panel:#06100d;
+  --shell-panel-2:#091712;
+  --shell-ink:#f2f8f4;
+  --shell-dim:#b7c7bf;
+  --shell-faint:#81968b;
+  --shell-line:rgba(141,190,164,.2);
+  --shell-hot:rgba(var(--accent-rgb),.56);
+}
+
+body{
+  position:relative;
+  isolation:isolate;
+  min-height:100vh;
+  background:var(--shell-bg);
+  color:var(--shell-ink);
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 74% 12%,rgba(var(--accent-rgb),.09),transparent 31rem),
+    radial-gradient(circle at 9% 74%,rgba(var(--accent-rgb),.045),transparent 26rem),
+    linear-gradient(180deg,#020504,#030806 54%,#010302);
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  opacity:.24;
+  background-image:
+    linear-gradient(rgba(var(--accent-rgb),.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(var(--accent-rgb),.04) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 90%,transparent 100%);
+}
+
+.grid{
+  opacity:.45;
+  background:
+    linear-gradient(90deg,transparent 0,transparent calc(50% - 1px),rgba(var(--accent-rgb),.04) 50%,transparent calc(50% + 1px)),
+    radial-gradient(circle at 50% 0,rgba(var(--accent-rgb),.07),transparent 35rem);
+}
+
+.grid::before{opacity:.2}
+
+/* Signal-rail navigation shared with the homepage. */
+
+.nav{
+  padding:1.05rem clamp(1rem,3vw,2.75rem);
+  background:linear-gradient(180deg,rgba(2,5,4,.92),rgba(2,5,4,.18));
+  border-bottom:1px solid transparent;
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+}
+
+.nav.scrolled{
+  padding:.68rem clamp(1rem,3vw,2.75rem);
+  background:rgba(2,7,5,.93);
+  border-bottom-color:var(--shell-line);
+  backdrop-filter:blur(20px) saturate(1.15);
+  -webkit-backdrop-filter:blur(20px) saturate(1.15);
+  box-shadow:0 18px 48px rgba(0,0,0,.3);
+}
+
+.nav .mk{
+  align-items:center;
+  gap:.38rem;
+  font-size:.75rem;
+  letter-spacing:.12em;
+}
+
+.nav .mk::before{
+  content:"";
+  width:25px;
+  height:16px;
+  margin-right:.35rem;
+  background:
+    linear-gradient(var(--accent),var(--accent)) 0 1px/13px 1px no-repeat,
+    linear-gradient(var(--accent),var(--accent)) 5px 7px/20px 1px no-repeat,
+    linear-gradient(var(--accent),var(--accent)) 0 13px/13px 1px no-repeat;
+  filter:drop-shadow(0 0 5px rgba(var(--accent-rgb),.62));
+}
+
+.nav .go{gap:clamp(.65rem,1.6vw,1.45rem)}
+.nav .go .lnk{color:#a8bab1;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+.nav .go .lnk:hover,.nav .go .lnk:focus-visible{color:var(--accent)}
+.nav .btn{
+  min-height:40px;
+  border-radius:0;
+  border-color:rgba(var(--accent-rgb),.44);
+  color:var(--shell-ink);
+  background:linear-gradient(100deg,rgba(var(--accent-rgb),.11),rgba(var(--accent-rgb),.02));
+  box-shadow:none;
+  clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px));
+}
+
+.navmenu,.burger{border-radius:2px;background:rgba(4,13,9,.97);border-color:var(--shell-line)}
+.navmenu{box-shadow:0 30px 80px rgba(0,0,0,.5)}
+
+/* Wider systems canvas. Readable copy still uses its local measure. */
+
+main.wrap{width:min(100% - 3rem,78rem);max-width:none;padding:0}
+
+.coinhero{
+  position:relative;
+  min-height:min(52rem,88svh);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  margin:0;
+  padding:8rem clamp(1.2rem,3vw,2.4rem) 5rem;
+  border-left:1px solid rgba(var(--accent-rgb),.15);
+  border-right:1px solid rgba(var(--accent-rgb),.15);
+  overflow:hidden;
+}
+
+.coinhero::before{
+  content:"";
+  position:absolute;
+  inset:5.4rem 0 0;
+  z-index:-1;
+  pointer-events:none;
+  border-top:1px solid var(--shell-line);
+  border-bottom:1px solid var(--shell-line);
+  background:
+    linear-gradient(90deg,rgba(1,4,3,.96),rgba(2,8,5,.68) 58%,rgba(var(--accent-rgb),.035)),
+    repeating-linear-gradient(180deg,transparent 0,transparent 5px,rgba(0,0,0,.1) 6px);
+  clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px));
+}
+
+.coinhero::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:5.4rem;
+  width:36%;
+  height:1px;
+  background:var(--accent);
+  box-shadow:0 0 15px rgba(var(--accent-rgb),.62);
+}
+
+.coinhero .crumb{position:relative;z-index:2;margin:0 0 2.3rem;color:var(--shell-faint);font-size:.65rem;letter-spacing:.12em}
+.coinhero .crumb a{color:var(--shell-faint);text-decoration:none}
+.coinhero .crumb a:hover,.coinhero .crumb a:focus-visible{color:var(--accent)}
+
+.coinhero h1{
+  color:var(--shell-ink);
+  font-size:clamp(3.4rem,8vw,7.3rem);
+  line-height:.86;
+  letter-spacing:-.065em;
+  text-transform:uppercase;
+}
+
+.coinhero h1.accent{color:var(--accent);text-shadow:0 0 18px rgba(var(--accent-rgb),.34),0 0 50px rgba(var(--accent-rgb),.12)}
+.coinhero .tag{max-width:39rem;color:#c4d3cb;font-size:clamp(1rem,1.65vw,1.25rem);line-height:1.58}
+.coinhero .actions{margin-top:1.5rem}
+
+.coinhero .hero-figure,
+.coinhero .rig{
+  position:relative;
+  border:1px solid rgba(var(--accent-rgb),.22);
+  background:radial-gradient(circle,rgba(var(--accent-rgb),.1),transparent 68%);
+  clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));
+}
+
+.heroband,.storehero{position:relative;z-index:2}
+
+/* Angular interaction and panel language. */
+
+.btn,.quickcta,.honest,.facts,.soon,.statement,.endcta,.menu,.reserve,.spec,.board,.qa,.xl{
+  border-radius:2px;
+}
+
+.btn{
+  clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px));
+}
+
+.flow{
+  position:relative;
+  padding:clamp(5rem,8vw,8rem) clamp(1.2rem,3vw,2.4rem);
+  border-left:1px solid rgba(var(--accent-rgb),.12);
+  border-right:1px solid rgba(var(--accent-rgb),.12);
+}
+
+.flow::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:clamp(3rem,12vw,11rem);
+  height:1px;
+  background:var(--accent);
+  box-shadow:0 0 14px rgba(var(--accent-rgb),.52);
+}
+
+h2.eyebrow{
+  margin-top:4rem;
+  color:var(--accent);
+  font-size:.65rem;
+  font-weight:700;
+}
+
+h2.eyebrow::before{width:2.2rem}
+
+.facts,.soon,.statement,.endcta,.honest,.quickcta,.reserve,.board,.qa,.menu,.spec,.xl{
+  background:linear-gradient(145deg,rgba(var(--accent-rgb),.045),rgba(3,10,7,.88));
+  border-color:rgba(var(--accent-rgb),.22);
+  box-shadow:0 28px 80px rgba(0,0,0,.2),inset 0 1px rgba(255,255,255,.025);
+}
+
+.facts,.soon,.statement,.honest{border-left-color:var(--accent)}
+
+.statement .fig{
+  text-transform:uppercase;
+  letter-spacing:-.05em;
+}
+
+.endcta{position:relative;overflow:hidden}
+.endcta::after{content:"";position:absolute;right:-2rem;bottom:-4rem;width:13rem;height:13rem;border:1px solid rgba(var(--accent-rgb),.1);transform:rotate(45deg);pointer-events:none}
+
+footer{
+  position:relative;
+  width:min(100% - 3rem,78rem);
+  margin:0 auto;
+  padding:3.2rem clamp(1.2rem,3vw,2.4rem) 4rem;
+  border:1px solid rgba(var(--accent-rgb),.12);
+  border-top-color:var(--shell-line);
+  background:#010302;
+}
+
+footer .fnav a{color:#82978c;font-size:.65rem;letter-spacing:.09em;text-transform:uppercase}
+footer .fine{max-width:none;color:#788d82;font-size:.64rem}
+
+/* Existing reveal logic drops compositing hints after entrance. */
+
+.reveal.in,.stagger.in>*,.js .flow>.in{will-change:auto}
+
+@media (max-width:58rem){
+  .nav .go .lnk{display:none}
+  .burger{display:inline-flex}
+  main.wrap,footer{width:min(100% - 2rem,78rem)}
+  .coinhero{min-height:auto;padding-top:8.2rem;padding-bottom:4.6rem}
+  .flow{padding-top:5rem;padding-bottom:5rem}
+}
+
+@media (max-width:44rem){
+  .nav{padding:1rem}.nav.scrolled{padding:.65rem 1rem}
+  .nav .mk{font-size:.67rem;letter-spacing:.08em}
+  .nav .btn{display:none}
+  main.wrap,footer{width:100%}
+  .coinhero,.flow,footer{border-left:0;border-right:0;padding-left:1rem;padding-right:1rem}
+  .coinhero{padding-top:7.4rem}
+  .coinhero h1{font-size:clamp(3rem,16vw,5rem)}
+  .coinhero .tag{font-size:.98rem}
+  .flow{padding-top:4.5rem;padding-bottom:4.5rem}
+  footer{padding-bottom:3rem}
+}
+
+@media (max-width:24rem){
+  .nav .mk .l,.nav .mk .o,.nav .mk .amp{display:none}
+  .coinhero h1{font-size:2.8rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .coinhero::after{box-shadow:none}
+  .reveal,.stagger>*,.flow>*{transition:none!important}
+}
+
+@media (forced-colors:active){
+  body::before,body::after,.grid{display:none}
+  .coinhero::before{clip-path:none}
+  .btn,.nav .btn,.coinhero .hero-figure,.coinhero .rig{clip-path:none}
+}

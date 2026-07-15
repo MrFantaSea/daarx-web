@@ -4,14 +4,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>L10N — protocol design status</title>
+<title>L10N — private-cash protocol dossier</title>
 <script>document.documentElement.classList.add('js')</script>
-<meta name="theme-color" content="#060706">
+<meta name="theme-color" content="#060503">
 <meta name="description" content="L10N is an unlaunched private-cash protocol design. Merged mining, emissions, and offline transfer remain under implementation and test; no public testnet or offline product is live.">
 <link rel="canonical" href="https://daarx.money/l10n.html">
 <link rel="stylesheet" href="/style.css">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%234df19a' stroke-width='2'/></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%234df19a' stroke-width='9'/></svg>">
+<link rel="stylesheet" href="/inner-shell.css">
+<link rel="stylesheet" href="/protocol-modules.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%23efb64f' stroke-width='2'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%23efb64f' stroke-width='9'/></svg>">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX · L10N · OPEN">
 <meta property="og:title" content="L10N — the one to spend">
@@ -25,165 +27,194 @@
 <meta name="twitter:description" content="L10N is an unlaunched private-cash protocol. Offline transfer is not an available product.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 </head>
-<body class="p-l10n">
+<body class="p-l10n protocol-page">
 <a class="skip" href="#main">Skip to content</a>
-<div class="grid" aria-hidden="true"></div>
+<div class="protocol-field" aria-hidden="true"></div>
 
 <nav class="nav" id="nav" aria-label="Primary">
-  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">·</span><span class="l">L10N</span><span class="amp">·</span><span class="o">OPEN</span></a>
+  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">/</span><span class="l">L10N</span><span class="amp">/</span><span class="o">OPEN</span></a>
   <div class="go">
-    <a class="lnk" href="/faq.html">faq</a>
-    <a class="lnk" href="/break-it.html">break it</a>
+    <a class="lnk" href="/l10n.html" aria-current="page">L10N</a>
+    <a class="lnk" href="/#status">status</a>
+    <a class="lnk" href="/break-it.html">security</a>
     <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
     <details class="nd">
       <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
       <div class="navmenu">
-        <a href="/">Home</a>
-        <a href="/daarx.html">DAARX</a>
-        <a href="/l10n.html" aria-current="page">L10N</a>
-        <a href="/open.html">OPEN</a>
-        <a href="/mine.html">Mining plans</a>
-        <a href="/break-it.html">Break it</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/privacy.html">Privacy</a>
+        <a href="/">Home</a><a href="/daarx.html">DAARX</a><a href="/l10n.html" aria-current="page">L10N</a><a href="/open.html">OPEN</a><a href="/mine.html">Mining plans</a><a href="/break-it.html">Security</a><a href="/faq.html">FAQ</a><a href="/privacy.html">Privacy</a>
       </div>
     </details>
   </div>
 </nav>
 
-<main class="wrap" id="main">
-  <header class="coinhero">
-    <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
-    <div class="heroband">
-      <figure class="hero-figure coinorb hero-in" aria-hidden="true">
-        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Offline tap-to-pay: a coin passing between two phones with signal struck through">
-  <defs>
-    <linearGradient id="l10nChassis" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171d17"/><stop offset="1" stop-color="#0d110d"/></linearGradient>
-    <radialGradient id="l10nHalo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="var(--accent)" stop-opacity=".26"/><stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/></radialGradient>
-    <radialGradient id="l10nGloss" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="#eef0ea"/><stop offset="50%" stop-color="var(--accent)"/><stop offset="100%" stop-color="#0d110d"/></radialGradient>
-  </defs>
-  <circle cx="120" cy="120" r="112" fill="url(#l10nHalo)" class="crowd"/>
-  <g transform="rotate(-9 70 154)">
-    <rect x="40" y="98" width="60" height="112" rx="13" fill="url(#l10nChassis)" stroke="#3d453c" stroke-width="1.5"/>
-    <rect x="46" y="106" width="48" height="96" rx="8" fill="#060706" stroke="rgba(var(--accent-rgb),.18)" stroke-width="1"/>
-    <rect x="60" y="192" width="20" height="3" rx="1.5" fill="rgba(var(--accent-rgb),.35)"/>
-    <g class="l10n-emit" fill="none" stroke="var(--accent)" stroke-width="2.6" stroke-linecap="round" opacity=".8">
-      <path d="M58 136 A15 15 0 0 1 58 164"/>
-      <path d="M58 141 A10 10 0 0 1 58 159"/>
-      <path d="M58 146 A5 5 0 0 1 58 154"/>
-    </g>
-  </g>
-  <g transform="rotate(9 168 158)">
-    <rect x="142" y="112" width="52" height="92" rx="12" fill="url(#l10nChassis)" stroke="#3d453c" stroke-width="1.5"/>
-    <rect x="147" y="119" width="42" height="78" rx="7" fill="#060706" stroke="rgba(var(--accent-rgb),.18)" stroke-width="1"/>
-    <circle cx="168" cy="140" r="9" fill="none" stroke="var(--accent)" stroke-width="2" opacity=".65"/>
-    <rect x="158" y="189" width="20" height="2.6" rx="1.3" fill="rgba(var(--accent-rgb),.3)"/>
-  </g>
-  <g>
-    <rect x="156" y="64" width="6" height="8" rx="1.6" fill="rgba(var(--accent-rgb),.2)"/>
-    <rect x="165" y="58" width="6" height="14" rx="1.6" fill="rgba(var(--accent-rgb),.2)"/>
-    <rect x="174" y="51" width="6" height="21" rx="1.6" fill="rgba(var(--accent-rgb),.2)"/>
-    <rect x="183" y="44" width="6" height="28" rx="1.6" fill="rgba(var(--accent-rgb),.2)"/>
-    <path d="M150 71 L196 40" stroke="#060706" stroke-width="5" stroke-linecap="round" opacity=".65"/>
-    <path d="M150 71 L196 40" stroke="rgba(var(--accent-rgb),.6)" stroke-width="2.4" stroke-linecap="round"/>
-  </g>
-  <path d="M92 120 Q116 78 148 122" stroke="rgba(var(--accent-rgb),.3)" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.5 7"/>
-  <g class="l10n-tap">
-    <circle cx="116" cy="100" r="27" fill="url(#l10nHalo)"/>
-    <circle cx="116" cy="100" r="17" fill="url(#l10nGloss)" stroke="rgba(var(--accent-rgb),.55)" stroke-width="1"/>
-    <circle cx="116" cy="100" r="11.5" fill="none" stroke="#060706" stroke-width="1.3" opacity=".3"/>
-    <circle cx="116" cy="100" r="2.6" fill="#060706" opacity=".28"/>
-    <ellipse cx="109.5" cy="93" rx="6" ry="4" fill="#eef0ea" opacity=".5"/>
-    <circle cx="107.5" cy="92" r="1.9" fill="#fff" opacity=".7"/>
-  </g>
-</svg>
+<main id="main">
+  <section class="protocol-hero" aria-labelledby="hero-title">
+    <div class="protocol-frame" aria-hidden="true"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+    <div class="protocol-coordinate top" aria-hidden="true">L10::OFFLINE_SIGNAL / DOSSIER 02</div>
+    <div class="protocol-coordinate bottom" aria-hidden="true">RESEARCH TARGET / NOT PAYMENT TELEMETRY</div>
+
+    <div class="protocol-shell protocol-hero-layout">
+      <div class="protocol-hero-copy">
+        <p class="protocol-flag">PRE-TESTNET <span>/</span> CORE INTEGRATION ACTIVE</p>
+        <h1 id="hero-title">L10N</h1>
+        <span class="protocol-ordinal">PROTOCOL 02 / PRIVATE CASH</span>
+        <h2>The one designed to <em>spend.</em></h2>
+        <p class="protocol-lede">A private-cash protocol target with merged-mining and optional offline-transfer goals—built to move, not presented as an available payment product.</p>
+        <p class="protocol-truth"><strong>No public testnet, payment release, or offline release is live.</strong> Exact timing and monetary parameters remain provisional.</p>
+        <div class="protocol-actions">
+          <a class="module-button primary" href="#architecture"><span>Inspect the cash path</span><span aria-hidden="true">&#8595;</span></a>
+          <a class="module-button" href="/#status"><span>System status</span><span aria-hidden="true">&#8594;</span></a>
+        </div>
+      </div>
+
+      <figure class="protocol-hero-visual" aria-labelledby="l10n-visual-caption">
+        <svg viewBox="0 0 760 700" fill="none" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="l10-case" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2a200c"/><stop offset=".45" stop-color="#0b0905"/><stop offset="1" stop-color="#171006"/></linearGradient>
+            <radialGradient id="l10-core" cx="40%" cy="32%" r="72%"><stop stop-color="#fff3d6"/><stop offset=".35" stop-color="#efb64f"/><stop offset="1" stop-color="#241704"/></radialGradient>
+            <filter id="l10-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <g class="visual-grid"><path d="M20 110H740M20 210H740M20 310H740M20 410H740M20 510H740M120 40V650M220 40V650M320 40V650M420 40V650M520 40V650M620 40V650"/></g>
+          <path class="visual-rail faint" d="M28 210C165 210 185 321 310 350M450 350C579 379 594 490 735 490"/>
+          <path class="visual-rail" d="M204 342C265 342 276 352 333 352M427 352C487 352 499 343 558 343"/>
+          <g transform="translate(164 361) rotate(-6)">
+            <path d="M-80-177H61L83-155V170L61 192H-80L-102 170V-155Z" fill="url(#l10-case)" stroke="#efb64f" stroke-opacity=".45" stroke-width="2"/>
+            <rect x="-84" y="-153" width="150" height="307" fill="#030403" stroke="#efb64f" stroke-opacity=".2"/>
+            <g opacity=".55"><path d="M-61-90H41M-61-67H20M-61 71H40M-61 94H15" stroke="#efb64f" stroke-width="3"/><rect x="-61" y="-31" width="102" height="55" fill="rgba(239,182,79,.08)" stroke="#efb64f" stroke-opacity=".28"/></g>
+            <circle class="visual-node" cx="-10" cy="134" r="5"/>
+          </g>
+          <g transform="translate(598 349) rotate(6)">
+            <path d="M-61-161H70L90-141V154L70 174H-61L-81 154V-141Z" fill="url(#l10-case)" stroke="#efb64f" stroke-opacity=".45" stroke-width="2"/>
+            <rect x="-64" y="-139" width="137" height="275" fill="#030403" stroke="#efb64f" stroke-opacity=".2"/>
+            <g opacity=".55"><path d="M-43-78H44M-43-55H23M-43 64H45M-43 87H18" stroke="#efb64f" stroke-width="3"/><circle cx="5" cy="5" r="42" fill="rgba(239,182,79,.07)" stroke="#efb64f" stroke-opacity=".32"/></g>
+            <circle class="visual-node n2" cx="5" cy="116" r="5"/>
+          </g>
+          <g transform="translate(380 350)" filter="url(#l10-glow)">
+            <path d="M0-77L68-39V39L0 77L-68 39V-39Z" fill="rgba(239,182,79,.09)" stroke="#efb64f" stroke-opacity=".65" stroke-width="2"/>
+            <circle class="visual-core" r="45"/><circle r="26" fill="url(#l10-core)"/>
+            <path d="M-11-2A14 14 0 0 1-11 20M0-8A22 22 0 0 1 0 26M11-14A30 30 0 0 1 11 32" stroke="#1a1104" stroke-width="4" stroke-linecap="round"/>
+          </g>
+          <g transform="translate(375 160)" stroke="#efb64f" stroke-width="5" stroke-linecap="round" opacity=".72"><path d="M-44 34A65 65 0 0 1 44 34"/><path d="M-28 51A42 42 0 0 1 28 51"/><path d="M-10 67A15 15 0 0 1 10 67"/><path d="M-58 1L58 85" stroke="#050403" stroke-width="12"/><path d="M-58 1L58 85" stroke="#efb64f" stroke-width="4"/></g>
+          <g fill="#baa57c" font-family="monospace" font-size="10" letter-spacing="1.2"><text x="83" y="620">DEVICE A / LOCAL STATE</text><text x="527" y="606">DEVICE B / LOCAL STATE</text><text x="326" y="461">TRANSFER TARGET</text></g>
+          <rect class="visual-scan" x="58" y="94" width="642" height="38"/>
+        </svg>
+        <div class="hero-readout-module">
+          <p><span>PROTOCOL STATE</span><span>2026.07.15</span></p>
+          <dl>
+            <div><dt>PUBLIC NETWORK</dt><dd class="not-live">NOT LIVE</dd></div>
+            <div><dt>OFFLINE PRODUCT</dt><dd>NOT RELEASED</dd></div>
+            <div><dt>PARAMETERS</dt><dd>PROVISIONAL</dd></div>
+          </dl>
+        </div>
+        <figcaption id="l10n-visual-caption">Conceptual offline-transfer path. Not a working wallet or payment demonstration.</figcaption>
       </figure>
-      <div class="htxt">
-        <h1 class="accent hero-in">L10N</h1>
-        <p class="tag hero-in">The one designed to <b>spend</b>. Private-cash and offline-transfer goals, not a live network or available payment product.</p>
-        <div class="actions hero-in">
-          <a class="btn solid" href="#more">How it works <span class="arw">&#8595;</span></a>
-          <a class="btn" href="/#status">System status <span class="arw">&#8594;</span></a>
+    </div>
+  </section>
+
+  <section class="module-strip" aria-label="L10N status summary">
+    <div class="module-strip-track">
+      <span class="warning"><i aria-hidden="true"></i><b>PUBLIC TESTNET</b> / NOT LIVE</span>
+      <span><i aria-hidden="true"></i><b>CORE INTEGRATION</b> / ACTIVE</span>
+      <span class="warning"><i aria-hidden="true"></i><b>OFFLINE CASH</b> / RESEARCH</span>
+      <span><i aria-hidden="true"></i><b>COIN SALE</b> / NONE</span>
+    </div>
+  </section>
+
+  <section class="module-section brief-section" id="architecture" aria-labelledby="brief-title">
+    <div class="protocol-shell brief-grid">
+      <header class="module-section-intro reveal">
+        <p class="module-index">01 <span>/</span> SYSTEM BRIEF</p>
+        <h2 id="brief-title">Cash wants to <em>move.</em></h2>
+        <p>A spending design asks different economic and operational questions than a store-of-value design.</p>
+      </header>
+      <div class="brief-stack reveal">
+        <article class="brief-item"><p class="brief-number">01</p><div><p class="panel-code">WHY A SECOND PROTOCOL</p><h3>Different job. Different parameters.</h3><p>L10N is designed to move. Its shared-chain, provisional emission/genesis, and merged-mining acceptance paths are implemented and locally tested, while exact timing and monetary parameters remain provisional.</p></div></article>
+        <article class="brief-item"><p class="brief-number">02</p><div><p class="panel-code">THE CASH TARGET</p><h3>Private phone cash.</h3><p>The target is private phone cash with an optional offline layer. The current app work is not a production wallet, and offline transfer is <b>not approved for public use</b>.</p></div></article>
+        <article class="brief-item"><p class="brief-number">03</p><div><p class="panel-code">THE UNSOLVED EDGE</p><h3>No signal does not mean no risk.</h3><p>Devices, replay protection, fraud limits, recovery, settlement, and merchant risk all matter. An offline layer could be released only after protocol, device, fraud, recovery, and real-world tests.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="module-section inspection-section" aria-labelledby="inspection-title">
+    <div class="protocol-shell">
+      <header class="module-section-intro split reveal">
+        <div><p class="module-index">02 <span>/</span> CASH-PATH INSPECTION</p><h2 id="inspection-title">Chain. Hand-off. <em>Settlement.</em></h2></div>
+        <p>Inspect the three layers separately. The route is conceptual; it is not evidence of an available offline-transfer product.</p>
+      </header>
+
+      <div class="inspection-console reveal" data-inspection>
+        <div class="inspection-bar"><span><i></i><i></i><i></i> L10::TRANSFER_PATH</span><span>STATIC DESIGN INSPECTION</span></div>
+        <div class="inspection-tabs" role="tablist" aria-label="L10N inspection layers">
+          <button id="l10-tab-chain" type="button" role="tab" aria-selected="true" aria-controls="l10-panel-chain" data-inspection-tab>01 / SHARED CHAIN</button>
+          <button id="l10-tab-offline" type="button" role="tab" aria-selected="false" aria-controls="l10-panel-offline" data-inspection-tab tabindex="-1">02 / OFFLINE EDGE</button>
+          <button id="l10-tab-settlement" type="button" role="tab" aria-selected="false" aria-controls="l10-panel-settlement" data-inspection-tab tabindex="-1">03 / SETTLEMENT</button>
+        </div>
+        <p class="sr-only" aria-live="polite"></p>
+
+        <div class="inspection-panel is-active" id="l10-panel-chain" role="tabpanel" aria-labelledby="l10-tab-chain">
+          <div class="inspection-panel-copy"><p class="panel-code">LAYER 01 / SHARED SECURITY TARGET</p><h3>Work shared, not assumed.</h3><p>The security target is merged mining. The shared-chain and merged-mining acceptance paths are implemented and locally tested, but integration is not launch-complete.</p><p class="limit">A compatible release miner and public network do not exist today.</p></div>
+          <div class="inspection-schematic" aria-hidden="true"><svg viewBox="0 0 560 310"><g class="schematic-grid"><path d="M0 52H560M0 104H560M0 156H560M0 208H560M0 260H560M93 0V310M186 0V310M279 0V310M372 0V310M465 0V310"/></g><path class="schematic-route" d="M45 155H515"/><path class="schematic-muted" d="M130 75V235M280 75V235M430 75V235"/><g><circle class="schematic-node" cx="80" cy="155" r="9"/><circle class="schematic-node" cx="205" cy="155" r="9"/><circle class="schematic-node" cx="355" cy="155" r="9"/><circle class="schematic-node" cx="480" cy="155" r="9"/></g><path class="schematic-shield" d="M280 99L328 121V169C328 207 304 230 280 242C256 230 232 207 232 169V121Z"/><text class="schematic-label" x="213" y="276">MERGED-MINING ACCEPTANCE PATH</text></svg></div>
+        </div>
+
+        <div class="inspection-panel" id="l10-panel-offline" role="tabpanel" aria-labelledby="l10-tab-offline">
+          <div class="inspection-panel-copy"><p class="panel-code">LAYER 02 / DEVICE-TO-DEVICE TARGET</p><h3>Transfer without a live link.</h3><p>Early offline CTS-B consensus primitives exist, but the complete offline protocol and wallet/device layer are not released. The proposed name for L10N's smallest unit is a <b>tooth</b>.</p><p class="limit">Current app work is not a production wallet. Offline transfer is not approved for public use.</p></div>
+          <div class="inspection-schematic" aria-hidden="true"><svg viewBox="0 0 560 310"><g class="schematic-grid"><path d="M0 52H560M0 104H560M0 156H560M0 208H560M0 260H560M93 0V310M186 0V310M279 0V310M372 0V310M465 0V310"/></g><rect x="52" y="64" width="112" height="182" class="schematic-shield"/><rect x="396" y="64" width="112" height="182" class="schematic-shield"/><path class="schematic-route" d="M164 155C220 108 340 202 396 155"/><circle class="schematic-node" cx="280" cy="155" r="13"/><path d="M250 88A46 46 0 0 1 310 88M260 104A30 30 0 0 1 300 104M275 121A8 8 0 0 1 285 121" fill="none" stroke="#efb64f" stroke-width="4" stroke-linecap="round"/><path d="M241 68L319 130" stroke="#efb64f" stroke-width="4"/><text class="schematic-label" x="68" y="272">LOCAL DEVICE A</text><text class="schematic-label" x="410" y="272">LOCAL DEVICE B</text></svg></div>
+        </div>
+
+        <div class="inspection-panel" id="l10-panel-settlement" role="tabpanel" aria-labelledby="l10-tab-settlement">
+          <div class="inspection-panel-copy"><p class="panel-code">LAYER 03 / RISK + RECOVERY</p><h3>The hard part happens after the tap.</h3><p>Replay protection, fraud limits, device compromise, recovery, delayed settlement, and merchant risk must all be measured. No public test network currently exists to produce that evidence.</p><p class="limit">An offline layer has not earned a public-use claim.</p></div>
+          <div class="inspection-schematic" aria-hidden="true"><svg viewBox="0 0 560 310"><g class="schematic-grid"><path d="M0 52H560M0 104H560M0 156H560M0 208H560M0 260H560M93 0V310M186 0V310M279 0V310M372 0V310M465 0V310"/></g><path class="schematic-route" d="M58 155H502"/><g><circle class="schematic-node" cx="65" cy="155" r="9"/><circle class="schematic-node" cx="280" cy="155" r="11"/><circle class="schematic-node" cx="495" cy="155" r="9"/></g><path class="schematic-muted" d="M120 155L165 89L220 155M340 155L395 221L445 155"/><g><circle class="schematic-alert" cx="165" cy="89" r="8"/><circle class="schematic-alert" cx="395" cy="221" r="8"/></g><text class="schematic-label" x="126" y="65">REPLAY / FRAUD</text><text class="schematic-label" x="354" y="251">RECOVERY / RISK</text><text class="schematic-label" x="234" y="191">SETTLEMENT</text></svg></div>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <div class="flow">
-    <h2 class="eyebrow" id="more">why a second coin</h2>
-    <p>A store-of-value design and a spending design want different economics. L10N is <b>designed to move</b>. Its shared-chain, provisional emission/genesis, and merged-mining acceptance paths are implemented and locally tested, while exact timing and monetary parameters remain provisional.</p>
-
-    <h2 class="eyebrow">the cash part</h2>
-    <p>The target is private phone cash with an optional offline layer. Offline value is difficult: devices, replay protection, fraud limits, recovery, settlement, and merchant risk all matter. The current app work is not a production wallet and offline transfer is <b>not approved for public use</b>.</p>
-    <p class="note">The proposed name for L10N's smallest unit is a <b>tooth</b>. This page covers the L10N protocol only; L10N$HARE and Rally are separate products and will have a separate public property.</p>
-
-    <div class="statement">
-      <div class="fig">No signal?<span class="u">research and test target</span></div>
-      <p class="cap">An offline layer could be released only after it passes protocol, device, fraud, recovery, and real-world tests. Today it has not earned that claim.</p>
-    </div>
-
-    <h2 class="eyebrow">the ground it stands on</h2>
-    <div class="facts">
-      <div class="f"><span class="k">privacy target</span><span class="v">full-chain anonymity design inherited from DAARX</span></div>
-      <div class="f"><span class="k">security target</span><span class="v">merged mining — integration is not launch-complete</span></div>
-      <div class="f"><span class="k">blocks</span><span class="v">cadence remains subject to public measurement</span></div>
-      <div class="f"><span class="k">current status</span><span class="v">no public testnet, payment release, or offline release</span></div>
-    </div>
-
-    <h2 class="eyebrow">what's not settled</h2>
-    <p>The exact block cadence and emission numbers must be <b>measured, not guessed</b>. A future public test network is intended to produce evidence before parameters are frozen; no such public network exists today.</p>
-
-    <div class="soon"><b>Status — July 15, 2026:</b> L10N's core integration is active. Early offline CTS-B consensus primitives exist, but the complete offline protocol, wallet/device layer, public testnet, payment product, and final whitepaper are not released. No release date is promised.</div>
-
-    <div class="endcta">
-      <div class="h">Private cash designed to be mined.</div>
-      <p>The intended launch policy starts at zero with no premine, presale, or coin sale. Merged mining and the release wallet must be verified before anyone can actually earn or spend L10N.</p>
-      <div class="actions">
-        <a class="btn solid big" href="/faq.html">Read the hard questions <span class="arw">&#8594;</span></a>
-        <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
+  <section class="module-section spec-section" aria-labelledby="spec-title">
+    <div class="protocol-shell">
+      <header class="module-section-intro split reveal">
+        <div><p class="module-index">03 <span>/</span> SPECIFICATION + STATE</p><h2 id="spec-title">Measure before <em>freeze.</em></h2></div>
+        <p>The exact block cadence and emission numbers must be measured, not guessed. The current rows are targets and development states—not launch promises.</p>
+      </header>
+      <div class="spec-console reveal">
+        <div class="spec-bar"><strong>L10::CURRENT_DESIGN</strong><span>SNAPSHOT / 2026.07.15</span></div>
+        <dl class="spec-rows">
+          <div><dt>Privacy target</dt><dd>Full-chain anonymity design inherited from DAARX</dd></div>
+          <div><dt>Security target</dt><dd>Merged mining — integration is not launch-complete</dd></div>
+          <div><dt>Blocks</dt><dd>Cadence remains subject to public measurement</dd></div>
+          <div><dt>Economics</dt><dd>Provisional emission and genesis design</dd></div>
+          <div><dt>Launch policy</dt><dd>Intended to start at zero with no premine, presale, or coin sale</dd></div>
+          <div><dt>Current status</dt><dd class="caution">No public testnet, payment release, or offline release</dd></div>
+        </dl>
+      </div>
+      <div class="status-block reveal">
+        <div><h3>Launch boundary</h3><p><strong>Status — July 15, 2026:</strong> L10N's core integration is active. Early offline CTS-B consensus primitives exist, but the complete offline protocol, wallet/device layer, public testnet, payment product, and final whitepaper are not released. No release date is promised.</p></div>
+        <div class="status-seal"><span>PUBLIC RELEASE STATE</span><b>NOT LIVE</b><small>OFFLINE PRODUCT / NOT RELEASED</small></div>
       </div>
     </div>
+  </section>
 
-    <div class="crosslinks">
-      <a class="xl x-d" href="/daarx.html"><span class="dot3"></span><span class="xt"><span class="xk">DAARX</span><span class="xs">the one to keep — store of value</span></span></a>
-      <a class="xl x-o" href="/open.html"><span class="dot3"></span><span class="xt"><span class="xk">OPEN</span><span class="xs">the one for machines — public</span></span></a>
+  <section class="module-section module-final" aria-labelledby="final-title">
+    <div class="protocol-shell module-final-grid">
+      <div class="module-final-copy reveal">
+        <p class="module-index">04 <span>/</span> NEXT ROUTE</p>
+        <h2 id="final-title">Private cash, <em>if earned.</em></h2>
+        <p>The intended launch policy starts at zero with no premine, presale, or coin sale. Merged mining and the release wallet must be verified before anyone can actually earn or spend L10N. L10N$HARE and Rally are separate products and will have a separate public property.</p>
+        <div class="protocol-actions"><a class="module-button primary" href="/faq.html"><span>Read the hard questions</span><span aria-hidden="true">&#8594;</span></a><a class="module-button" href="/mine.html"><span>Mining plans</span><span aria-hidden="true">&#8594;</span></a></div>
+      </div>
+      <nav class="family-routes reveal" aria-label="Other protocols">
+        <a class="family-route" href="/daarx.html"><span class="route-node" aria-hidden="true"></span><span><b>DAARX</b><small>PRIVATE VALUE / THE ONE TO KEEP</small></span><span aria-hidden="true">&#8594;</span></a>
+        <a class="family-route open" href="/open.html"><span class="route-node" aria-hidden="true"></span><span><b>OPEN</b><small>PUBLIC RECEIPTS / THE ONE FOR MACHINES</small></span><span aria-hidden="true">&#8594;</span></a>
+      </nav>
     </div>
-  </div>
-
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <nav class="fnav" aria-label="Site">
-      <a href="/">daarx.money</a>
-      <a href="/daarx.html">DAARX</a>
-      <a href="/l10n.html" aria-current="page">L10N</a>
-      <a href="/open.html">OPEN</a>
-      <a href="/mine.html">mining plans</a>
-      <a href="/break-it.html">break it</a>
-      <a href="/faq.html">faq</a>
-      <a href="/privacy.html">privacy</a>
-    </nav>
+    <nav class="fnav" aria-label="Site"><a href="/">daarx.money</a><a href="/daarx.html">DAARX</a><a href="/l10n.html" aria-current="page">L10N</a><a href="/open.html">OPEN</a><a href="/mine.html">mining plans</a><a href="/break-it.html">security</a><a href="/faq.html">faq</a><a href="/privacy.html">privacy</a></nav>
     <p class="fine">no coins for sale · nothing here is financial advice</p>
   </div>
 </footer>
-<script>
-(function(){
-  var d=document, root=d.documentElement;
-  root.classList.add('js');
-  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var SEL='.reveal,.stagger,.flow>*';
-  var els=[].slice.call(d.querySelectorAll(SEL));
-  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
-  else{
-    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{rootMargin:'0px 0px -10% 0px',threshold:.1});
-    els.forEach(function(e){ if(e.getBoundingClientRect().top < innerHeight*0.94){e.classList.add('in');} else {io.observe(e);} });
-  }
-  var nav=d.getElementById('nav');
-  if(nav){var on=function(){nav.classList.toggle('scrolled',(window.scrollY||0)>24)};on();addEventListener('scroll',on,{passive:true});}
-  var nd=d.querySelector('.nd');
-  if(nd){d.addEventListener('click',function(e){if(nd.open&&!nd.contains(e.target))nd.open=false;});}
-})();
-</script>
+<script src="/protocol-modules.js" defer></script>
 </body>
 </html>

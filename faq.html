@@ -10,6 +10,8 @@
 <meta name="description" content="Plain answers about the unlaunched DAARX, L10N, and OPEN designs, the lack of a public testnet or supported miner release, and non-binding hardware interest.">
 <link rel="canonical" href="https://daarx.money/faq.html">
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/inner-shell.css">
+<link rel="stylesheet" href="/utility-modules.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%234df19a' stroke-width='2'/></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%234df19a' stroke-width='9'/></svg>">
 <meta property="og:type" content="website">
@@ -38,7 +40,7 @@
 ]}
 </script>
 </head>
-<body class="p-daarx calm">
+<body class="p-daarx calm module-page module-faq">
 <a class="skip" href="#main">Skip to content</a>
 <div class="grid" aria-hidden="true"></div>
 
@@ -65,59 +67,29 @@
 </nav>
 
 <main class="wrap" id="main">
-  <header class="coinhero">
-    <p class="crumb hero-in"><a href="/">← daarx.money</a></p>
-    <div class="heroband">
-      <figure class="hero-figure coinorb hero-in" aria-hidden="true">
-        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FAQ — plain answers">
-  <defs>
-    <linearGradient id="faqPanel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#171d17"/><stop offset="1" stop-color="#0d110d"/>
-    </linearGradient>
-    <radialGradient id="faqHalo" cx="50%" cy="46%" r="54%">
-      <stop offset="0" stop-color="rgba(var(--accent-rgb),.26)"/>
-      <stop offset="100%" stop-color="rgba(var(--accent-rgb),0)"/>
-    </radialGradient>
-    <radialGradient id="faqGloss" cx="40%" cy="33%" r="115%">
-      <stop offset="0" stop-color="#eef0ea"/>
-      <stop offset="14%" stop-color="rgba(var(--accent-rgb),1)"/>
-      <stop offset="72%" stop-color="rgba(var(--accent-rgb),1)"/>
-      <stop offset="100%" stop-color="rgba(6,7,6,.62)"/>
-    </radialGradient>
-  </defs>
-  <!-- ambient halo (reuses the site's .crowd breathe) -->
-  <circle class="crowd" cx="120" cy="120" r="116" fill="url(#faqHalo)"/>
-  <!-- crowd field: the many people asking, gathered around the answer -->
-  <g fill="var(--accent)">
-    <circle cx="46" cy="180" r="5" opacity=".52"/>
-    <circle cx="41" cy="150" r="4" opacity=".4"/>
-    <circle cx="46" cy="122" r="3.1" opacity=".28"/>
-    <circle cx="58" cy="98" r="2.5" opacity=".2"/>
-    <circle cx="196" cy="166" r="4.4" opacity=".38"/>
-    <circle cx="203" cy="136" r="3" opacity=".26"/>
-    <circle cx="192" cy="106" r="2.4" opacity=".18"/>
-  </g>
-  <!-- answer tile: paneled body + accent rim + top gloss edge -->
-  <rect x="62" y="56" width="116" height="128" rx="26" fill="url(#faqPanel)" stroke="rgba(var(--accent-rgb),.32)" stroke-width="1.5"/>
-  <path d="M84 58 H156" stroke="#eef0ea" stroke-opacity=".16" stroke-width="1.5" stroke-linecap="round"/>
-  <!-- the question: bright accent hook + glossy top highlight -->
-  <path d="M106 108 C98 98 98 82 108 74 C118 66 134 68 141 80 C148 92 143 104 130 108 C123 110 120 116 120 124" stroke="var(--accent)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M104 100 C100 90 101 80 109 74" stroke="#eef0ea" stroke-opacity=".5" stroke-width="3.2" stroke-linecap="round"/>
-  <!-- the answer: a glowing, glossy verified-check sphere as the mark's dot -->
-  <circle class="ask-pulse" cx="120" cy="150" r="22" fill="rgba(var(--accent-rgb),.5)"/>
-  <circle cx="120" cy="150" r="15" fill="url(#faqGloss)"/>
-  <ellipse cx="115" cy="144" rx="5.4" ry="3.6" fill="#eef0ea" opacity=".6"/>
-  <path d="M112 150.5 l5.4 5.6 l9.4 -11" stroke="#060706" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-      </figure>
-      <div class="htxt">
-        <h1 class="hero-in">FAQ<span class="dot">.</span></h1>
+  <header class="module-hero" aria-labelledby="faq-title">
+    <p class="crumb hero-in"><a href="/">← daarx.money / knowledge base</a></p>
+    <div class="module-hero-grid">
+      <div class="module-hero-copy">
+        <p class="module-kicker hero-in">PUBLIC QUERY TERMINAL / 09 RECORDS</p>
+        <h1 class="hero-in" id="faq-title">FAQ<span class="dot">.</span></h1>
         <p class="tag hero-in">Plain answers to the questions people actually ask — no hedging, no hype.</p>
         <div class="actions hero-in">
-          <a class="btn solid" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
+          <a class="btn solid" href="#questions">Query the records <span class="arw">&#8595;</span></a>
           <a class="btn" href="mailto:daarxmoney@proton.me">Email us <span class="arw">&#8594;</span></a>
         </div>
       </div>
+
+      <section class="module-console query-console hero-in" aria-label="Frequently asked questions query preview">
+        <div class="console-bar"><span>DAARX::PUBLIC_KNOWLEDGE</span><span class="console-lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="console-readout">
+          <p class="query-boot">INDEX MOUNTED .......... 09 RECORDS<br>CLAIM FILTER ........... STRICT<br>NETWORK STATE .......... PRE-LAUNCH</p>
+          <div class="query-prompt"><span class="prompt">&gt;</span><span class="command">CAN I MINE NOW?</span><span class="reply">NO SUPPORTED PUBLIC MINER OR RELEASE PACKAGE.</span></div>
+          <div class="query-prompt"><span class="prompt">&gt;</span><span class="command">ARE COINS FOR SALE?</span><span class="reply">NO COINS ARE SOLD HERE.</span></div>
+          <div class="query-prompt"><span class="prompt">&gt;</span><span class="command">QUERY_<span class="query-cursor" aria-hidden="true"></span></span></div>
+          <div class="console-stamp">PLAIN ANSWERS</div>
+        </div>
+      </section>
     </div>
   </header>
 
@@ -127,7 +99,12 @@
       <p class="cap">This site does not sell coins or offer a return. Future testnet coins would be valueless, mining has real costs, and any future hardware purchase would be separate from a protocol or coin. Legal classification depends on the facts and jurisdiction; nothing here is financial or legal advice.</p>
     </div>
 
-    <h2 class="eyebrow">the questions</h2>
+    <h2 class="eyebrow" id="questions">the questions</h2>
+    <div class="faq-query js-only">
+      <label for="faq-query">FILTER THE PUBLIC RECORD</label>
+      <div class="faq-query-field"><span aria-hidden="true">&gt;</span><input type="search" id="faq-query" autocomplete="off" placeholder="Type a word or question" aria-describedby="faq-results"></div>
+      <output id="faq-results" for="faq-query" aria-live="polite">09 records available</output>
+    </div>
     <div class="faqlist">
       <details class="qa" open><summary>Is this an investment? Will I make money?<span class="qmark" aria-hidden="true"></span></summary>
         <div class="ans"><p>This site does not sell coins, solicit an investment in a protocol, or promise a return. Any future testnet coins would have no monetary value; if a network launches, mining could cost more than it produces and there is no guaranteed income. A hardware-interest submission is not a purchase or investment. Legal classification depends on the actual facts and jurisdiction, so qualified counsel must review the final launch and commercial terms. Nothing here is financial or legal advice.</p></div></details>
@@ -202,6 +179,21 @@
   if(nav){var on=function(){nav.classList.toggle('scrolled',(window.scrollY||0)>24)};on();addEventListener('scroll',on,{passive:true});}
   var nd=d.querySelector('.nd');
   if(nd){d.addEventListener('click',function(e){if(nd.open&&!nd.contains(e.target))nd.open=false;});}
+  var query=d.getElementById('faq-query'), result=d.getElementById('faq-results');
+  if(query&&result){
+    var records=[].slice.call(d.querySelectorAll('.faqlist .qa'));
+    var filter=function(){
+      var term=query.value.trim().toLowerCase(), visible=0;
+      records.forEach(function(record){
+        var match=!term||record.textContent.toLowerCase().indexOf(term)>-1;
+        record.hidden=!match;
+        if(match)visible++;
+      });
+      result.textContent=String(visible).padStart(2,'0')+' '+(visible===1?'record':'records')+(term?' matched':' available');
+    };
+    query.addEventListener('input',filter);
+    query.addEventListener('keydown',function(e){if(e.key==='Escape'&&query.value){query.value='';filter();}});
+  }
 })();
 </script>
 </body>
