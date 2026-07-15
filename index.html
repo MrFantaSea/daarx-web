@@ -1,51 +1,57 @@
 <!DOCTYPE html>
-<!-- daarx.money — development status for the DAARX, L10N, and OPEN protocol workstreams. -->
+<!-- daarx.money — factual development status for DAARX, L10N, and OPEN. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DAARX · L10N · OPEN — development status</title>
+<title>DAARX · Private money protocol development</title>
 <script>document.documentElement.classList.add('js')</script>
-<meta name="theme-color" content="#060706">
-<meta name="description" content="Design and development status for DAARX and L10N, two planned mined networks, plus the future OPEN accountability protocol. No public testnet, coin sale, hardware sale, or confirmed launch date exists.">
+<meta name="theme-color" content="#020504">
+<meta name="description" content="DAARX and L10N are private-money protocols in development; OPEN is a future machine-accountability protocol. Public testnet is not live.">
 <link rel="canonical" href="https://daarx.money/">
+<link rel="preload" as="image" href="/assets/daarx-privacy-grid-v1.webp" type="image/webp">
 <link rel="stylesheet" href="/style.css">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23e0b458'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23e0b458'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
+<link rel="stylesheet" href="/network.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%234df19a' stroke-width='2'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%234df19a' stroke-width='9'/></svg>">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX · L10N · OPEN">
-<meta property="og:title" content="DAARX · L10N · OPEN — development status">
-<meta property="og:description" content="Two planned mined networks plus a future machine-accountability protocol. Public testnet and commercial hardware are not live yet.">
+<meta property="og:title" content="DAARX — money designed for privacy">
+<meta property="og:description" content="Private-money protocols in development. No public testnet, coin sale, or hardware sale is live.">
 <meta property="og:url" content="https://daarx.money/">
 <meta property="og:image" content="https://daarx.money/og.png">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="DAARX · L10N · OPEN — development status">
-<meta name="twitter:description" content="DAARX, L10N, and OPEN are in design and development. No public testnet or commercial launch is live yet.">
+<meta name="twitter:title" content="DAARX — money designed for privacy">
+<meta name="twitter:description" content="DAARX and L10N are in development. Public testnet is not live.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Desiderata Labs LLC","alternateName":"DAARX","url":"https://daarx.money/","description":"Operator of the daarx.money information and hardware-interest surfaces. DAARX, L10N, and OPEN are unlaunched protocol workstreams; the current launch design proposes no premine, presale, or coin sale.","email":"daarxmoney@proton.me"}
+{"@context":"https://schema.org","@type":"Organization","name":"Desiderata Labs LLC","alternateName":"DAARX","url":"https://daarx.money/","description":"Operator of the daarx.money development-status and hardware-interest surfaces. DAARX and L10N are unlaunched private-money protocol workstreams; OPEN is a future accountability-protocol workstream. No public testnet, coin sale, or hardware sale is live.","email":"daarxmoney@proton.me"}
 </script>
 </head>
-<body>
+<body class="network-home">
 <a class="skip" href="#main">Skip to content</a>
-<div class="grid" aria-hidden="true"></div>
+<div class="network-field" aria-hidden="true"><span></span><span></span><span></span></div>
 
-<nav class="nav" id="nav" aria-label="Primary">
-  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">·</span><span class="l">L10N</span><span class="amp">·</span><span class="o">OPEN</span></a>
+<nav class="nav network-nav" id="nav" aria-label="Primary">
+  <a class="mk" href="/" aria-current="page"><span class="mk-sigil" aria-hidden="true"></span><span class="d">DAARX</span><span class="amp">/</span><span class="l">L10N</span><span class="amp">/</span><span class="o">OPEN</span></a>
   <div class="go">
-    <a class="lnk" href="/faq.html">faq</a>
-    <a class="lnk" href="/break-it.html">break it</a>
-    <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
+    <a class="lnk" href="#protocols">protocols</a>
+    <a class="lnk" href="#status">status</a>
+    <a class="lnk" href="/break-it.html">security</a>
+    <a class="btn nav-cta" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
     <details class="nd">
       <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
       <div class="navmenu">
         <a href="/" aria-current="page">Home</a>
+        <a href="#protocols">Protocols</a>
+        <a href="#status">System status</a>
         <a href="/daarx.html">DAARX</a>
         <a href="/l10n.html">L10N</a>
         <a href="/open.html">OPEN</a>
         <a href="/mine.html">Mining plans</a>
-        <a href="/break-it.html">Break it</a>
+        <a href="/break-it.html">Security</a>
         <a href="/faq.html">FAQ</a>
         <a href="/privacy.html">Privacy</a>
       </div>
@@ -53,227 +59,274 @@
   </div>
 </nav>
 
-<main class="wrap wide" id="main">
+<main id="main">
+  <section class="network-hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-media" aria-hidden="true">
+      <img src="/assets/daarx-privacy-grid-v1.webp" width="1672" height="941" alt="" fetchpriority="high">
+      <div class="hero-scrim"></div>
+      <div class="hero-scan"></div>
+    </div>
+    <div class="hero-frame" aria-hidden="true"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span></div>
+    <div class="hero-coordinate hero-coordinate-a" aria-hidden="true">DAX::PRIVACY_GRID / 00</div>
+    <div class="hero-coordinate hero-coordinate-b" aria-hidden="true">BUILD STATE / PRE-TESTNET</div>
 
-  <!-- 1 · the line -->
-  <section class="beat" id="top">
-    <figure class="hero-figure hero-in" aria-hidden="true"><svg viewBox="0 0 640 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<defs>
-<radialGradient id="fam-crowdfade" cx="50%" cy="52%" r="62%"><stop offset="0" stop-color="#fff"/><stop offset="60%" stop-color="#fff" stop-opacity=".4"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
-<pattern id="fam-dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="6" cy="7" r="1.25" fill="#7f8a80"/><circle cx="19" cy="17" r="1.05" fill="#69726a"/></pattern>
-<mask id="fam-crowdmask"><rect width="640" height="240" fill="url(#fam-crowdfade)"/></mask>
-<radialGradient id="fam-gg" cx="40%" cy="33%" r="72%"><stop offset="0" stop-color="#d9ffe9"/><stop offset="46%" stop-color="#4ae08c"/><stop offset="100%" stop-color="#186b3f"/></radialGradient>
-<radialGradient id="fam-gy" cx="40%" cy="33%" r="72%"><stop offset="0" stop-color="#fff1cf"/><stop offset="46%" stop-color="#e0b458"/><stop offset="100%" stop-color="#7c5c1c"/></radialGradient>
-<radialGradient id="fam-gb" cx="40%" cy="33%" r="72%"><stop offset="0" stop-color="#dff4fb"/><stop offset="46%" stop-color="#63b9d6"/><stop offset="100%" stop-color="#265f76"/></radialGradient>
-<radialGradient id="fam-hg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4ae08c" stop-opacity=".32"/><stop offset="62%" stop-color="#4ae08c" stop-opacity=".16"/><stop offset="100%" stop-color="#4ae08c" stop-opacity="0"/></radialGradient>
-<radialGradient id="fam-hy" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#e0b458" stop-opacity=".32"/><stop offset="62%" stop-color="#e0b458" stop-opacity=".16"/><stop offset="100%" stop-color="#e0b458" stop-opacity="0"/></radialGradient>
-<radialGradient id="fam-hb" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#63b9d6" stop-opacity=".32"/><stop offset="62%" stop-color="#63b9d6" stop-opacity=".16"/><stop offset="100%" stop-color="#63b9d6" stop-opacity="0"/></radialGradient>
-<linearGradient id="fam-rail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4ae08c"/><stop offset=".17" stop-color="#4ae08c"/><stop offset=".5" stop-color="#e0b458"/><stop offset=".83" stop-color="#63b9d6"/><stop offset="1" stop-color="#63b9d6"/></linearGradient>
-</defs>
-<rect width="640" height="240" fill="url(#fam-dots)" mask="url(#fam-crowdmask)" opacity=".5" class="fam-crowd"/>
-<rect x="92" y="176" width="456" height="12" rx="6" fill="url(#fam-rail)" opacity=".16"/>
-<rect x="92" y="180" width="456" height="4" rx="2" fill="url(#fam-rail)" opacity=".9"/>
-<circle cx="170" cy="182" r="6" fill="#4ae08c" opacity=".22"/><circle cx="170" cy="182" r="3" fill="#4ae08c"/>
-<circle cx="320" cy="182" r="6" fill="#e0b458" opacity=".22"/><circle cx="320" cy="182" r="3" fill="#e0b458"/>
-<circle cx="470" cy="182" r="6" fill="#63b9d6" opacity=".22"/><circle cx="470" cy="182" r="3" fill="#63b9d6"/>
-<g class="fam-coin fam-a">
-<circle cx="170" cy="110" r="96" fill="url(#fam-hg)" class="fam-halo"/>
-<circle cx="170" cy="115" r="56" fill="#186b3f"/>
-<circle cx="170" cy="110" r="56" fill="url(#fam-gg)"/>
-<circle cx="170" cy="110" r="53" fill="none" stroke="#4ae08c" stroke-opacity=".5" stroke-width="1.6"/>
-<circle cx="170" cy="110" r="40" fill="none" stroke="#0d110d" stroke-opacity=".32" stroke-width="3"/>
-<circle cx="170" cy="103" r="7" fill="#0c3320"/>
-<path d="M165,108 L175,108 L178,126 L162,126 Z" fill="#0c3320"/>
-<circle cx="146" cy="110" r="2.4" fill="#0c3320" opacity=".8"/>
-<circle cx="194" cy="110" r="2.4" fill="#0c3320" opacity=".8"/>
-<ellipse cx="152" cy="90" rx="15" ry="9" fill="#fff" opacity=".32"/>
-<ellipse cx="149" cy="88" rx="6" ry="4" fill="#fff" opacity=".5"/>
-</g>
-<g class="fam-coin fam-b">
-<circle cx="320" cy="110" r="96" fill="url(#fam-hy)" class="fam-halo"/>
-<path d="M236,96 h32" stroke="#e0b458" stroke-opacity=".38" stroke-width="3" stroke-linecap="round"/>
-<path d="M224,110 h44" stroke="#e0b458" stroke-opacity=".6" stroke-width="3" stroke-linecap="round"/>
-<path d="M236,124 h32" stroke="#e0b458" stroke-opacity=".38" stroke-width="3" stroke-linecap="round"/>
-<circle cx="320" cy="115" r="56" fill="#7c5c1c"/>
-<circle cx="320" cy="110" r="56" fill="url(#fam-gy)"/>
-<circle cx="320" cy="110" r="53" fill="none" stroke="#e0b458" stroke-opacity=".5" stroke-width="1.6"/>
-<circle cx="320" cy="110" r="40" fill="none" stroke="#0d110d" stroke-opacity=".3" stroke-width="3"/>
-<path d="M310,99 L323,110 L310,121 M320,101 L331,110 L320,119" fill="none" stroke="#0d110d" stroke-opacity=".5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M310,99 L323,110 L310,121 M320,101 L331,110 L320,119" fill="none" stroke="#fff1cf" stroke-opacity=".28" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-<ellipse cx="302" cy="90" rx="15" ry="9" fill="#fff" opacity=".32"/>
-<ellipse cx="299" cy="88" rx="6" ry="4" fill="#fff" opacity=".5"/>
-</g>
-<g class="fam-coin fam-c">
-<circle cx="470" cy="110" r="96" fill="url(#fam-hb)" class="fam-halo"/>
-<circle cx="470" cy="115" r="56" fill="#265f76"/>
-<circle cx="470" cy="110" r="56" fill="url(#fam-gb)" fill-opacity=".66"/>
-<circle cx="470" cy="110" r="50" fill="#dff4fb" opacity=".05"/>
-<line x1="470" y1="84" x2="470" y2="136" stroke="#dff4fb" stroke-opacity=".22" stroke-width="1.4"/>
-<circle cx="470" cy="84" r="2.2" fill="#9fd8ea"/>
-<circle cx="470" cy="136" r="2.2" fill="#9fd8ea"/>
-<circle cx="470" cy="110" r="20" fill="none" stroke="#9fd8ea" stroke-opacity=".85" stroke-width="3.2" stroke-dasharray="5 7.6" class="fam-gear"/>
-<circle cx="470" cy="110" r="6" fill="url(#fam-gb)"/>
-<circle cx="470" cy="110" r="6" fill="none" stroke="#dff4fb" stroke-opacity=".4" stroke-width="1"/>
-<circle cx="470" cy="110" r="54" fill="none" stroke="#63b9d6" stroke-opacity=".7" stroke-width="1.8"/>
-<circle cx="470" cy="110" r="51" fill="none" stroke="#dff4fb" stroke-opacity=".2" stroke-width="1"/>
-<ellipse cx="452" cy="92" rx="17" ry="6" fill="#fff" opacity=".16" transform="rotate(-35 452 92)"/>
-<ellipse cx="452" cy="90" rx="13" ry="8" fill="#fff" opacity=".3"/>
-<ellipse cx="449" cy="88" rx="5" ry="3.5" fill="#fff" opacity=".5"/>
-</g>
-</svg></figure>
-    <h1 class="big hero-in"><span class="typed">Money designed for privacy.</span><span class="cursor">_</span></h1>
-    <p class="lede hero-in">Bitcoin payments remain public. DAARX and L10N are being designed to hide payment relationships; OPEN explores the opposite rule for machine accounts. <b>None is a live public product yet.</b></p>
-    <p class="hero-sub hero-in"><b>Private-money protocols in development.</b> DAARX and L10N are planned mined networks; OPEN is a separate future accountability protocol. No public testnet, miner release, or hardware sale is live yet.</p>
-    <div class="actions hero-in">
-      <a class="btn solid big" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
-      <a class="btn" href="#what">What it is <span class="arw">&#8595;</span></a>
+    <div class="network-shell hero-layout">
+      <div class="hero-copy">
+        <p class="system-flag"><span class="status-pulse" aria-hidden="true"></span> PRE-TESTNET <span>/</span> NO PUBLIC NETWORK</p>
+        <h1 id="hero-title"><span>Money </span><span>designed for </span><span class="signal-word">privacy.</span></h1>
+        <p class="hero-lede">DAARX and L10N are private-money protocols being built for people. OPEN explores the opposite boundary for machines: public accounts and auditable receipts.</p>
+        <p class="hero-truth"><strong>None is a live public network.</strong> No coin sale, supported miner release, or hardware sale exists today.</p>
+        <div class="hero-actions">
+          <a class="system-button primary" href="#protocols"><span>Inspect the systems</span><span aria-hidden="true">&#8595;</span></a>
+          <a class="system-button secondary" href="#status"><span>View system status</span><span aria-hidden="true">&#8594;</span></a>
+        </div>
+      </div>
+
+      <div class="hero-readout">
+        <p class="readout-title"><span>NETWORK STATE</span><span>2026.07.15</span></p>
+        <dl>
+          <div><dt>PUBLIC TESTNET</dt><dd class="state-off">NOT LIVE</dd></div>
+          <div><dt>PUBLIC MINER</dt><dd>NOT RELEASED</dd></div>
+          <div><dt>COIN SALE</dt><dd>NONE</dd></div>
+          <div><dt>PLANNING TARGET</dt><dd class="state-plan">2027.03.16*</dd></div>
+        </dl>
+        <p class="readout-note">* Readiness-gated. Not a promise.</p>
+      </div>
+    </div>
+
+    <a class="hero-scroll" href="#thesis"><span>ENTER</span><i aria-hidden="true"></i></a>
+  </section>
+
+  <section class="signal-strip" aria-labelledby="signal-strip-title">
+    <h2 class="sr-only" id="signal-strip-title">Important project status</h2>
+    <div class="signal-strip-track">
+      <span><b>PUBLIC NETWORK</b> / NOT LIVE</span>
+      <span><b>DEVELOPMENT</b> / ACTIVE</span>
+      <span><b>COINS FOR SALE</b> / NONE</span>
+      <span><b>HARDWARE FOR SALE</b> / NONE</span>
     </div>
   </section>
 
-  <hr class="rule">
+  <section class="network-section thesis-section" id="thesis" aria-labelledby="thesis-title">
+    <div class="network-shell">
+      <header class="section-intro reveal">
+        <p class="section-index">01 <span>/</span> THE TRUST BOUNDARY</p>
+        <h2 id="thesis-title">Privacy should be <em>infrastructure.</em></h2>
+        <p>A transparent base ledger can leave addresses, histories, and payment relationships open to analysis. DAARX and L10N target a different default: private value for people. OPEN explores public accounting for machines.</p>
+      </header>
 
-  <!-- 2 · the thesis -->
-  <section class="beat" id="what">
-    <h2 class="eyebrow reveal">what it is</h2>
-    <p class="mid reveal">Privacy for people. <span class="soft">Accountability for machines.</span></p>
-    <p class="lede reveal">Two planned coins and one future accountability protocol. DAARX and L10N target private payments; OPEN is designed to make machine accounts auditable. These are design goals, not live-network claims.</p>
-  </section>
+      <div class="ledger-comparison reveal" data-ledger-view="public">
+        <div class="comparison-controls js-only" role="group" aria-label="Compare ledger models">
+          <button type="button" class="comparison-button is-active" data-view="public" aria-pressed="true">PUBLIC LEDGER</button>
+          <button type="button" class="comparison-button" data-view="private" aria-pressed="false">PRIVACY TARGET</button>
+        </div>
 
-  <hr class="rule">
+        <div class="comparison-map" aria-hidden="true">
+          <svg viewBox="0 0 900 430" focusable="false">
+            <defs>
+              <filter id="node-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <g class="map-grid"><path d="M0 72H900M0 144H900M0 216H900M0 288H900M0 360H900M150 0V430M300 0V430M450 0V430M600 0V430M750 0V430"/></g>
+            <g class="public-links"><path d="M116 110L330 82L455 214L660 108L782 292M116 110L208 310L455 214L782 292M330 82L660 108M208 310L660 108"/></g>
+            <g class="private-links"><path d="M116 110C280 70 330 360 455 214S650 56 782 292"/><path d="M208 310C330 240 342 115 455 214S672 332 660 108"/></g>
+            <g class="map-nodes" filter="url(#node-glow)"><circle cx="116" cy="110" r="8"/><circle cx="330" cy="82" r="8"/><circle cx="455" cy="214" r="11"/><circle cx="660" cy="108" r="8"/><circle cx="782" cy="292" r="8"/><circle cx="208" cy="310" r="8"/></g>
+            <g class="privacy-shield"><path d="M455 151L507 175V224C507 268 481 294 455 307C429 294 403 268 403 224V175Z"/><path d="M433 226L449 242L480 207"/></g>
+          </svg>
+          <p class="map-caption public-caption">RELATIONSHIPS REMAIN LEGIBLE</p>
+          <p class="map-caption private-caption">RELATIONSHIPS ARE THE PRIVACY TARGET</p>
+        </div>
 
-  <!-- 3 · the three systems -->
-  <section class="beat">
-    <h2 class="eyebrow reveal">the three systems</h2>
-    <div class="pair stagger">
-      <div class="one c-d">
-        <div class="role">Keep</div>
-        <h3 class="nm d">DAARX</h3>
-        <p class="desc">Designed for a fixed emission and private amounts. The implementation remains under audit and has not launched publicly.</p>
-        <p class="more"><a href="/daarx.html">how DAARX works &#8594;</a></p>
-      </div>
-      <div class="one c-l">
-        <div class="role">Spend</div>
-        <h3 class="nm l">L10N</h3>
-        <p class="desc">Designed as private phone cash. Offline transfer is experimental and is not approved for public or production use.</p>
-        <p class="more"><a href="/l10n.html">how L10N works &#8594;</a></p>
-      </div>
-      <div class="one c-o">
-        <div class="role">Machines</div>
-        <h3 class="nm o">OPEN</h3>
-        <p class="desc">A future protocol design for public machine accounts and auditable receipts. OPEN is not currently a running public network.</p>
-        <p class="more"><a href="/open.html">how OPEN works &#8594;</a></p>
+        <div class="comparison-copy">
+          <article class="comparison-panel public-panel">
+            <p class="panel-code">MODEL / TRANSPARENT BASE LEDGER</p>
+            <h3>The ledger remembers.</h3>
+            <p>Public transaction histories can make relationships visible long after a payment. Pseudonyms alone are not the same thing as privacy.</p>
+          </article>
+          <article class="comparison-panel private-panel">
+            <p class="panel-code">MODEL / PRIVACY DESIGN TARGET</p>
+            <h3>The relationship is the secret.</h3>
+            <p>DAARX and L10N target hidden amounts and full-chain membership proofs. This is an anonymity-set design, not a guarantee of end-to-end anonymity.</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <hr class="rule">
+  <section class="network-section protocols-section" id="protocols" aria-labelledby="protocols-title">
+    <div class="network-shell">
+      <header class="section-intro section-intro-split reveal">
+        <div>
+          <p class="section-index">02 <span>/</span> PROTOCOL SWITCHYARD</p>
+          <h2 id="protocols-title">Three lanes. <em>Different rules.</em></h2>
+        </div>
+        <p>Select a route to inspect its purpose, current state, and limits. The visual is a map of the design—not live network telemetry.</p>
+      </header>
 
-  <!-- 4 · the wall -->
-  <section class="beat short">
-    <h2 class="eyebrow reveal">by design</h2>
-    <p class="mid reveal">Private for people. <span class="soft">Auditable for machines.</span></p>
-    <p class="lede reveal"><span class="d">DAARX</span> and <span class="l">L10N</span> are designed with <b>no central issuer</b>. Desiderata Labs LLC separately operates this site and may operate future hardware or support services; no hardware offer exists today, and any future hardware would be separate from coins and protocol control. <span class="o">OPEN</span> is a future public-accounting design, not a live ledger.</p>
-  </section>
+      <div class="switchyard reveal" data-active="daarx">
+        <figure class="switchyard-visual">
+          <img src="/assets/daarx-protocol-switchyard-v1.webp" width="1774" height="887" loading="lazy" decoding="async" alt="Three luminous signal conduits converge through a black-glass network switchyard.">
+          <div class="switchyard-shade" aria-hidden="true"></div>
+          <svg class="route-overlay" viewBox="0 0 1000 500" aria-hidden="true" focusable="false">
+            <path class="route route-daarx" d="M0 173C230 173 320 182 500 260"/>
+            <path class="route route-l10n" d="M1000 162C770 162 680 182 500 260"/>
+            <path class="route route-open" d="M500 500C500 390 500 324 500 260"/>
+            <circle class="route-core" cx="500" cy="260" r="10"/>
+          </svg>
+          <div class="switchyard-label switchyard-label-d"><span>01</span> DAARX / PRIVATE VALUE</div>
+          <div class="switchyard-label switchyard-label-l"><span>02</span> L10N / PRIVATE CASH</div>
+          <div class="switchyard-label switchyard-label-o"><span>03</span> OPEN / PUBLIC RECEIPTS</div>
+          <figcaption>Conceptual protocol switchyard. Not a live topology or network-status display.</figcaption>
+        </figure>
 
-  <hr class="rule">
+        <div class="protocol-console">
+          <div class="protocol-tabs" role="tablist" aria-label="Protocol channels">
+            <button id="tab-daarx" type="button" role="tab" aria-selected="true" aria-controls="panel-daarx" data-protocol="daarx"><span>01</span><b>DAARX</b><small>KEEP</small></button>
+            <button id="tab-l10n" type="button" role="tab" aria-selected="false" aria-controls="panel-l10n" data-protocol="l10n" tabindex="-1"><span>02</span><b>L10N</b><small>SPEND</small></button>
+            <button id="tab-open" type="button" role="tab" aria-selected="false" aria-controls="panel-open" data-protocol="open" tabindex="-1"><span>03</span><b>OPEN</b><small>ACCOUNT</small></button>
+          </div>
 
-  <!-- 5 · the hook -->
-  <section class="beat short">
-    <h2 class="eyebrow reveal">off the grid</h2>
-    <p class="mid reveal">One of them <span class="soft">aims to work when</span> nothing else does.</p>
-    <p class="lede reveal">Offline L10N is a research and test goal, not an available feature. It must pass protocol, fraud, replay, device, recovery, and real-world tests before it can be described as usable without a network.</p>
-  </section>
+          <p class="sr-only" id="protocol-live" aria-live="polite"></p>
 
-  <hr class="rule">
+          <div class="protocol-panel protocol-daarx is-active" id="panel-daarx" role="tabpanel" aria-labelledby="tab-daarx">
+            <div class="protocol-state"><span>PRIVATE VALUE</span><strong>IMPLEMENTED CORE / PRE-LAUNCH</strong></div>
+            <h3>DAARX <span>/ the one to keep</span></h3>
+            <p>Designed for a fixed emission and private payment relationships. Its current consensus implementation activates CTS full-chain membership proofs from genesis and exercises the prover and verifier in local tests.</p>
+            <dl class="protocol-facts">
+              <div><dt>SUPPLY DESIGN</dt><dd>&pi; &times; &phi; base units, reached exactly</dd></div>
+              <div><dt>BLOCK TARGET</dt><dd>111 seconds</dd></div>
+              <div><dt>BOUNDARY</dt><dd>No public network or transactional release wallet</dd></div>
+            </dl>
+            <p class="protocol-limit">DAARX's composition and consensus integration have not received an independent professional security audit.</p>
+            <a class="text-link" href="/daarx.html">Read the DAARX design <span aria-hidden="true">&#8594;</span></a>
+          </div>
 
-  <!-- 6 · the launch -->
-  <section class="beat">
-    <h2 class="eyebrow reveal">when</h2>
-    <p class="mid reveal">Ready is the date.</p>
-    <div class="when reveal">
-      <div class="row"><span class="t">public testnet</span><span class="v">not launched <span class="soft">— integrated mining, release wallets, packaging, operations, backups, and final go/no-go evidence remain</span></span></div>
-      <div class="row"><span class="t">planning target</span><span class="v">March 16, 2027 <span class="soft">— non-binding and subordinate to security review and a long public soak</span></span></div>
-      <div class="row"><span class="t">launch policy</span><span class="v">designed for no premine or presale <span class="soft">— final parameters and launch artifacts are not approved</span></span></div>
+          <div class="protocol-panel protocol-l10n" id="panel-l10n" role="tabpanel" aria-labelledby="tab-l10n">
+            <div class="protocol-state"><span>PRIVATE CASH</span><strong>CORE INTEGRATION / PRE-LAUNCH</strong></div>
+            <h3>L10N <span>/ the one to spend</span></h3>
+            <p>L10N's shared-chain, provisional emission/genesis, and merged-mining acceptance paths are implemented and locally tested. Exact timing and monetary parameters remain provisional.</p>
+            <dl class="protocol-facts">
+              <div><dt>SECURITY DESIGN</dt><dd>Merged mining with DAARX</dd></div>
+              <div><dt>OFFLINE WORK</dt><dd>Early CTS-B consensus primitives exist</dd></div>
+              <div><dt>BOUNDARY</dt><dd>No public testnet, wallet, or payment product</dd></div>
+            </dl>
+            <p class="protocol-limit">The complete offline protocol and wallet/device layer are not live. Offline transfer is not approved for public use.</p>
+            <a class="text-link" href="/l10n.html">Read the L10N design <span aria-hidden="true">&#8594;</span></a>
+          </div>
+
+          <div class="protocol-panel protocol-open" id="panel-open" role="tabpanel" aria-labelledby="tab-open">
+            <div class="protocol-state"><span>PUBLIC ACCOUNTING</span><strong>FUTURE PROTOCOL</strong></div>
+            <h3>OPEN <span>/ receipts for machines</span></h3>
+            <p>OPEN explores the inverse privacy rule: machine accounts that can be inspected, attributed, and reconciled through public receipts.</p>
+            <dl class="protocol-facts">
+              <div><dt>ACCOUNT MODEL</dt><dd>Public by design</dd></div>
+              <div><dt>PURPOSE</dt><dd>Machine-account accountability</dd></div>
+              <div><dt>BOUNDARY</dt><dd>No running public network</dd></div>
+            </dl>
+            <p class="protocol-limit">OPEN is a future protocol workstream, not a live ledger, available asset, or production accountability service.</p>
+            <a class="text-link" href="/open.html">Read the OPEN concept <span aria-hidden="true">&#8594;</span></a>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="lede reveal">A public security program is planned, but it is <b>not open yet</b>. No bounty, award, credit, or event invitation is currently offered; funding, official rules, eligibility, intake, disclosure, tax, and payout procedures must come first.</p>
-    <div class="actions reveal"><a class="btn" href="/break-it.html">Break it <span class="arw">&#8594;</span></a></div>
   </section>
 
-  <hr class="rule">
+  <section class="network-section architecture-section" aria-labelledby="architecture-title">
+    <div class="network-shell architecture-grid">
+      <header class="section-intro reveal">
+        <p class="section-index">03 <span>/</span> ARCHITECTURE, NOT AESTHETICS</p>
+        <h2 id="architecture-title">The glow is visual. <em>The limits are real.</em></h2>
+        <p>Privacy is an adversarial engineering problem. Protocol design can reduce what the ledger reveals; it cannot erase endpoint compromise, metadata, network observation, implementation defects, or future cryptanalysis.</p>
+      </header>
 
-  <!-- 7 · take part (merged: ground-floor + fair-launch) -->
-  <section class="beat">
-    <h2 class="eyebrow reveal">take part</h2>
-    <p class="mid reveal">Want in later? <span class="soft">Prepare to run a node and mine.</span></p>
-    <p class="lede reveal">No coins are sold here. The intended public release will let people run nodes and mine on ordinary computers, but the current audited branch does not support standalone testnet mining and there is no public release package yet. Any future supported computer would be a separate commercial product with its own terms.</p>
-    <div class="actions reveal">
-      <a class="btn solid big" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
-      <a class="btn" href="/faq.html">Questions? <span class="arw">&#8594;</span></a>
-    </div>
-
-    <div class="idblock reveal">
-      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="mk-d" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#d9ffe9"/><stop offset="45%" stop-color="#4ae08c"/><stop offset="100%" stop-color="#186b3f"/></radialGradient><radialGradient id="mk-l" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#fff1cf"/><stop offset="45%" stop-color="#e0b458"/><stop offset="100%" stop-color="#7c5c1c"/></radialGradient><radialGradient id="mk-o" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#dff4fb"/><stop offset="45%" stop-color="#63b9d6"/><stop offset="100%" stop-color="#265f76"/></radialGradient></defs><circle cx="8" cy="20" r="6" fill="url(#mk-d)"/><circle cx="20" cy="20" r="6" fill="url(#mk-l)"/><circle cx="32" cy="20" r="6" fill="url(#mk-o)"/></svg>
-      <p class="say">Built in the open by one founder. The current launch design has <b>no premine, presale, or token sale</b>, but final launch parameters and artifacts remain subject to review. Desiderata Labs LLC operates the commercial site and any future hardware services, not the protocol.</p>
+      <div class="architecture-stack reveal">
+        <article class="architecture-card">
+          <p class="architecture-number">01</p>
+          <div><p class="panel-code">ANONYMITY SET</p><h3>Full-chain membership</h3><p>Current DAARX consensus code uses CTS membership proofs from genesis and exercises the real proving and verification paths in local tests.</p></div>
+          <span class="architecture-state">IMPLEMENTED / LOCALLY TESTED</span>
+        </article>
+        <article class="architecture-card">
+          <p class="architecture-number">02</p>
+          <div><p class="panel-code">VALUE LAYER</p><h3>Hidden amounts</h3><p>The protocol targets private amounts and spent-tag checks while preserving deterministic consensus rules.</p></div>
+          <span class="architecture-state">DESIGN + IMPLEMENTATION TARGET</span>
+        </article>
+        <article class="architecture-card">
+          <p class="architecture-number">03</p>
+          <div><p class="panel-code">ASSURANCE</p><h3>Tested, not declared safe</h3><p>No DAARX-specific independent professional security audit or long public soak has been completed. The public security program is planned, not open.</p></div>
+          <span class="architecture-state state-warning">LAUNCH GATE OPEN</span>
+        </article>
+      </div>
     </div>
   </section>
 
+  <section class="network-section status-section" id="status" aria-labelledby="status-title">
+    <div class="network-shell">
+      <header class="section-intro section-intro-split reveal">
+        <div>
+          <p class="section-index">04 <span>/</span> READINESS MATRIX</p>
+          <h2 id="status-title">Reality, rendered <em>without the hype.</em></h2>
+        </div>
+        <p>This is a dated status snapshot, not simulated telemetry and not a promise of availability.</p>
+      </header>
+
+      <div class="status-console reveal">
+        <div class="console-bar"><span><i></i><i></i><i></i> DAX::READINESS_MATRIX</span><time datetime="2026-07-15">SNAPSHOT / 2026.07.15</time></div>
+        <dl class="status-rows">
+          <div><dt>PUBLIC NETWORK</dt><dd><span class="status-mark off"></span>NOT LIVE</dd></div>
+          <div><dt>NODE</dt><dd><span class="status-mark plan"></span>TESTNET-CAPABLE <b>/ NO PUBLIC ENDPOINT</b></dd></div>
+          <div><dt>MINING</dt><dd><span class="status-mark plan"></span>REGTEST DEVELOPMENT ONLY</dd></div>
+          <div><dt>WALLET</dt><dd><span class="status-mark plan"></span>DEVELOPMENT CORE <b>/ NO TRANSACTIONAL RELEASE</b></dd></div>
+          <div><dt>PRIVACY</dt><dd><span class="status-mark plan"></span>CTS IMPLEMENTED <b>/ LOCALLY TESTED / NOT PROFESSIONALLY AUDITED</b></dd></div>
+          <div><dt>L10N</dt><dd><span class="status-mark plan"></span>CORE INTEGRATION ACTIVE <b>/ OFFLINE PRODUCT NOT LIVE</b></dd></div>
+          <div><dt>TARGET</dt><dd><span class="status-mark target"></span>2027.03.16 <b>/ READINESS-GATED / NOT A PROMISE</b></dd></div>
+        </dl>
+      </div>
+
+      <ol class="launch-gates reveal">
+        <li class="launch-gate is-active"><p>GATE 01</p><h3>Core build</h3><span>ACTIVE</span><small>Protocol components are implemented and under local testing and internal review.</small></li>
+        <li class="launch-gate"><p>GATE 02</p><h3>Release surface</h3><span>LOCKED</span><small>Reproducible public node, miner, wallet, signatures, and runbooks are not released.</small></li>
+        <li class="launch-gate"><p>GATE 03</p><h3>Public testnet</h3><span>NOT LIVE</span><small>Testnet-safe mining, packaging, operations, backups, and go/no-go evidence remain.</small></li>
+        <li class="launch-gate"><p>GATE 04</p><h3>Review + soak</h3><span>PENDING</span><small>An independent review record and long public soak have not been completed.</small></li>
+        <li class="launch-gate launch-gate-target"><p>TARGET</p><h3>Genesis</h3><span>2027.03.16*</span><small>* Planning target only. Security and readiness decide whether anything launches.</small></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="network-section final-section" aria-labelledby="final-title">
+    <div class="network-shell final-grid reveal">
+      <div>
+        <p class="section-index">05 <span>/</span> VERIFY BEFORE BELIEF</p>
+        <h2 id="final-title">Don't trust a date. <em>Trust the gates.</em></h2>
+      </div>
+      <div class="final-copy">
+        <p>Developed by one founder. Public source and reproducible node, miner, wallet, and release artifacts are planned before public participation opens; they are not available today.</p>
+        <p>The intended launch policy has no premine, presale, or token sale. Final launch artifacts remain subject to review.</p>
+        <div class="hero-actions">
+          <a class="system-button primary" href="/break-it.html"><span>Inspect the security plan</span><span aria-hidden="true">&#8594;</span></a>
+          <a class="system-button secondary" href="/faq.html"><span>Read the hard questions</span><span aria-hidden="true">&#8594;</span></a>
+        </div>
+        <p class="hardware-secondary">Interested in future supported hardware? <a href="/mine.html">Review the non-binding mining plans</a>. Nothing is offered for sale.</p>
+      </div>
+    </div>
+  </section>
 </main>
 
-<hr class="rule">
-
-<footer>
-  <div class="wrap wide">
-    <p class="follow">Want to follow the work? <a href="/mine.html">Review the mining plans or record non-binding hardware interest</a> — no order, priority, or payment is created — or reach a human at <a href="mailto:daarxmoney@proton.me">daarxmoney@proton.me</a>.</p>
+<footer class="network-footer">
+  <div class="network-shell footer-grid">
+    <div class="footer-mark"><span class="mk-sigil" aria-hidden="true"></span><p><b>DAARX / L10N / OPEN</b><br>Protocol development status.</p></div>
     <nav class="fnav" aria-label="Site">
       <a href="/" aria-current="page">daarx.money</a>
       <a href="/daarx.html">DAARX</a>
       <a href="/l10n.html">L10N</a>
       <a href="/open.html">OPEN</a>
       <a href="/mine.html">mining plans</a>
-      <a href="/break-it.html">break it</a>
+      <a href="/break-it.html">security</a>
       <a href="/faq.html">faq</a>
       <a href="/privacy.html">privacy</a>
     </nav>
-    <p class="fine">development status · no public testnet · March 16, 2027 is a non-binding planning target · no coin or hardware sale<br>
-    protocol descriptions are design targets until verified in a public release · nothing here is financial advice</p>
+    <p class="fine">No public testnet · no coin or hardware sale · March 16, 2027 is a readiness-gated planning target<br>Protocol descriptions remain development claims until verified in a public release · nothing here is financial advice</p>
   </div>
 </footer>
 
-<script>
-(function(){
-  var d=document, root=d.documentElement;
-  root.classList.add('js');
-  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var els=d.querySelectorAll('.reveal,.stagger');
-  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
-  else{
-    var io=new IntersectionObserver(function(en){
-      en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});
-    },{rootMargin:'0px 0px -10% 0px',threshold:.1});
-    els.forEach(function(e){io.observe(e)});
-  }
-  var nav=d.getElementById('nav');
-  if(nav){var on=function(){nav.classList.toggle('scrolled',(window.scrollY||0)>24)};on();addEventListener('scroll',on,{passive:true});}
-  var nd=d.querySelector('.nd');
-  if(nd){d.addEventListener('click',function(e){if(nd.open&&!nd.contains(e.target))nd.open=false;});}
-
-  // typewriter headline — revolutionary lines cycle; static first line under reduced-motion / no-JS
-  var tw=d.querySelector('.big .typed');
-  if(tw&&!reduce){
-    var lines=['Money designed for privacy.','Private-money research.','Public receipts for machines.','Tested before it matters.'];
-    var li=0,ci=lines[0].length,del=true;
-    var tick=function(){
-      var full=lines[li];
-      if(!del){ci++;tw.textContent=full.slice(0,ci);
-        if(ci>=full.length){del=true;return setTimeout(tick,2200);}
-        return setTimeout(tick,52+Math.random()*46);}
-      ci--;tw.textContent=full.slice(0,ci);
-      if(ci<=0){del=false;li=(li+1)%lines.length;return setTimeout(tick,340);}
-      return setTimeout(tick,28+Math.random()*24);
-    };
-    tw.textContent=lines[0];setTimeout(tick,2200);
-  }
-})();
-</script>
+<script src="/network.js" defer></script>
 </body>
 </html>

@@ -51,8 +51,8 @@
   --fs-note:.92rem;                     /* notes, descriptions, secondary copy */
 
   /* ── shape — two radii, one decision ─────────────────── */
-  --r:12px;                             /* cards, panels, forms, buttons */
-  --r-sm:4px;                           /* chips, badges, tiny */
+  --r:4px;                              /* engineered panels, controls */
+  --r-sm:2px;                           /* chips, badges, tiny */
 
   /* ── elevation — real depth, not glow ────────────────── */
   --edge:inset 0 1px 0 rgba(255,255,255,.055);          /* top inner highlight */
@@ -478,6 +478,7 @@ h1.accent,h1 .dot{text-shadow:0 0 10px rgba(var(--accent-rgb),.85),0 0 26px rgba
 .js .reveal{opacity:0;transform:translateY(16px);
   transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);will-change:opacity,transform}
 .reveal.in{opacity:1;transform:none}
+.reveal.in{will-change:auto}
 .js .stagger>*{opacity:0;transform:translateY(16px);
   transition:opacity .55s cubic-bezier(.4,0,.2,1),transform .55s cubic-bezier(.4,0,.2,1)}
 .stagger.in>*{opacity:1;transform:none}
@@ -505,6 +506,7 @@ h1.accent,h1 .dot{text-shadow:0 0 10px rgba(var(--accent-rgb),.85),0 0 26px rgba
   transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);
   will-change:opacity,transform}
 .js .flow>.in{opacity:1;transform:none}
+.js .flow>.in{will-change:auto}
 
 /* ── PAGE HERO — the signature orb as a real focal object, set
    beside the wordmark; a load entrance, not a scroll-gate.       */

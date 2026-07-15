@@ -7,22 +7,22 @@
 <title>DAARX — protocol design status</title>
 <script>document.documentElement.classList.add('js')</script>
 <meta name="theme-color" content="#060706">
-<meta name="description" content="DAARX is an unlaunched protocol design targeting fixed integer emission, private amounts, and full-chain anonymity. Its implementation remains under audit; there is no public testnet release.">
+<meta name="description" content="DAARX is an unlaunched protocol design targeting fixed integer emission, private amounts, and full-chain membership proofs. It is under development, local testing, and internal review; there is no public testnet release.">
 <link rel="canonical" href="https://daarx.money/daarx.html">
 <link rel="stylesheet" href="/style.css">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060706'/><circle cx='8' cy='16' r='3.4' fill='%234ae08c'/><circle cx='16' cy='16' r='3.4' fill='%23e0b458'/><circle cx='24' cy='16' r='3.4' fill='%2363b9d6'/></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='34' fill='%23060706'/><circle cx='52' cy='90' r='19' fill='%234ae08c'/><circle cx='90' cy='90' r='19' fill='%23e0b458'/><circle cx='128' cy='90' r='19' fill='%2363b9d6'/></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%234df19a' stroke-width='2'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%234df19a' stroke-width='9'/></svg>">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX · L10N · OPEN">
 <meta property="og:title" content="DAARX — the one to keep">
-<meta property="og:description" content="An unlaunched private-money protocol under active implementation and audit. No public testnet release is live.">
+<meta property="og:description" content="An unlaunched private-money protocol under development, local testing, and internal review. No public testnet release is live.">
 <meta property="og:url" content="https://daarx.money/daarx.html">
 <meta property="og:image" content="https://daarx.money/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DAARX — the one to keep">
-<meta name="twitter:description" content="DAARX is an unlaunched private-money protocol under active implementation and audit.">
+<meta name="twitter:description" content="DAARX is an unlaunched private-money protocol under development, local testing, and internal review.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 </head>
 <body class="p-daarx">
@@ -141,8 +141,8 @@
         <h1 class="accent hero-in">DAARX</h1>
         <p class="tag hero-in">The one designed to <b>keep</b>. A private-money protocol target, not a live network or available asset.</p>
         <div class="actions hero-in">
-          <a class="btn solid" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
-          <a class="btn" href="#more">How it works <span class="arw">&#8595;</span></a>
+          <a class="btn solid" href="#more">How it works <span class="arw">&#8595;</span></a>
+          <a class="btn" href="/#status">System status <span class="arw">&#8594;</span></a>
         </div>
       </div>
     </div>
@@ -158,7 +158,8 @@
     </div>
 
     <h2 class="eyebrow">the privacy</h2>
-    <p>DAARX targets a <b>full-chain anonymity set</b> rather than a small ring and uses hidden amounts with spent-tag checks. That is the cryptographic design and implementation target, not a guarantee of anonymity: metadata, endpoint compromise, implementation flaws, network observation, and novel cryptanalysis remain threats that require public testing.</p>
+    <p>DAARX's current consensus implementation activates <b>CTS full-chain membership proofs</b> from genesis and exercises the real prover and verifier in local tests. This is an anonymity-set design, not a guarantee of end-to-end anonymity: metadata, endpoint compromise, implementation flaws, network observation, and novel cryptanalysis remain threats that require public testing.</p>
+    <p>Some upstream FCMP components have published review artifacts; DAARX's composition, adapters, and consensus integration have not received an independent professional security audit.</p>
     <p>Fees are designed to use a short public ladder to reduce fee fingerprinting. The ingress policy and end-to-end miner path still require launch-level integration evidence.</p>
 
     <h2 class="eyebrow">the ground it stands on</h2>
@@ -172,14 +173,14 @@
     <h2 class="eyebrow">the limits</h2>
     <p>The privacy layer is new cryptography built on reviewed dependencies. It is <b>tested, not proven</b>, and the project has not completed the independent review and long public soak required for a launch claim. A security program is planned but no bounty is currently open.</p>
 
-    <div class="soon"><b>Status — July 14, 2026:</b> implementation and audit work are active. The public testnet package, integrated testnet miner, release wallet, independent review evidence, operational runbooks, and final whitepaper are not released. No release date is promised.</div>
+    <div class="soon"><b>Status — July 15, 2026:</b> development, local testing, and internal review are active. The public testnet package, supported public miner, transactional release wallet, independent review evidence, operational runbooks, and final whitepaper are not released. No release date is promised.</div>
 
     <div class="endcta">
       <div class="h">Mining is the intended distribution path.</div>
       <p>The launch design has no premine, presale, or coin sale. That policy becomes meaningful only if a reviewed network launches. Today there is no public testnet mining release and rig submissions are non-binding market research, not orders.</p>
       <div class="actions">
-        <a class="btn solid big" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
-        <a class="btn" href="/break-it.html">Break it <span class="arw">&#8594;</span></a>
+        <a class="btn solid big" href="/break-it.html">Inspect the security plan <span class="arw">&#8594;</span></a>
+        <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
       </div>
     </div>
 
