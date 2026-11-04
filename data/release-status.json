@@ -1,0 +1,67 @@
+{
+  "as_of": "2026-11-04",
+  "stage": "Public Testnet preparation",
+  "public_participation_open": false,
+  "native_coin_count": 4,
+  "coins": [
+    {
+      "name": "DAARX",
+      "unit": "DAARX",
+      "role": "Private capital",
+      "working_identity": false
+    },
+    {
+      "name": "L10N",
+      "unit": "L10N",
+      "role": "Private cash",
+      "working_identity": false
+    },
+    {
+      "name": "OPEN",
+      "unit": "OPEN",
+      "role": "Accountable authority",
+      "working_identity": false
+    },
+    {
+      "name": "Nexus / NXXXS",
+      "unit": "NXXXS",
+      "role": "Bonded assurance",
+      "working_identity": true
+    }
+  ],
+  "work": [
+    {
+      "area": "Protocol and wallet foundations",
+      "state": "Private evidence",
+      "description": "Consensus, transactions, native wallets, authenticated history and recovery have implementation and private testing evidence. Those results remain scoped to the configurations that were exercised."
+    },
+    {
+      "area": "Current correctness and integration",
+      "state": "In qualification",
+      "description": "The current source needs its own proof, transaction, consensus and composed four-chain checks. Earlier passing runs do not replace current release qualification."
+    },
+    {
+      "area": "Exact public network configuration",
+      "state": "Open work",
+      "description": "Public source, network identities, genesis/configuration and OPEN authority/activation must agree with the release that participants actually run."
+    },
+    {
+      "area": "Public builds and release verification",
+      "state": "Preparing",
+      "description": "Public builds and supported platforms are being prepared. Reproducibility, release signatures, installation and recovery instructions still need to be checked for the public release."
+    },
+    {
+      "area": "Four-coin network campaign",
+      "state": "Open work",
+      "description": "The full current system still needs public-facing composition, mining, transaction, restart, fault and recovery evidence at the intended launch configuration."
+    },
+    {
+      "area": "Public participation",
+      "state": "Not open",
+      "description": "Bootstrap peers, supported downloads, test-coin access, observation tools, reporting and incident/reset rules must be published before people are invited in."
+    }
+  ],
+  "independent_professional_audit_complete": false,
+  "hardware_sales_open": false,
+  "test_coins_have_monetary_value": false
+}

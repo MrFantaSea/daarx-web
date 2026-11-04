@@ -1,200 +1,237 @@
 <!DOCTYPE html>
-<!-- daarx.money/faq — the plain answers to the questions people actually ask. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FAQ — DAARX · L10N · OPEN</title>
-<script>document.documentElement.classList.add('js')</script>
-<meta name="theme-color" content="#060706">
-<meta name="description" content="Plain answers about the unlaunched DAARX, L10N, and OPEN designs, the lack of a public testnet or supported miner release, and non-binding hardware interest.">
+<meta name="theme-color" content="#08090b">
+<title>Questions and answers — DAARX four-coin system</title>
+<meta name="description" content="Direct answers about DAARX, L10N, OPEN, Nexus / NXXXS, public Testnet preparation, wallets, mining, privacy and hardware interest.">
 <link rel="canonical" href="https://daarx.money/faq.html">
-<link rel="stylesheet" href="/style.css">
-<link rel="stylesheet" href="/inner-shell.css">
-<link rel="stylesheet" href="/utility-modules.css">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%234df19a' stroke-width='2'/></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%234df19a' stroke-width='9'/></svg>">
+<link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/type.css">
+<link rel="stylesheet" href="/site.css">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="DAARX · L10N · OPEN">
-<meta property="og:title" content="FAQ — DAARX · L10N · OPEN">
-<meta property="og:description" content="The networks, supported miner, hardware store, and security program are not live. Hardware submissions are non-binding interest only.">
+<meta property="og:site_name" content="DAARX">
+<meta property="og:title" content="Questions and answers — DAARX four-coin system">
+<meta property="og:description" content="Direct answers about DAARX, L10N, OPEN, Nexus / NXXXS, public Testnet preparation, wallets, mining, privacy and hardware interest.">
 <meta property="og:url" content="https://daarx.money/faq.html">
 <meta property="og:image" content="https://daarx.money/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="FAQ — DAARX · L10N · OPEN">
-<meta name="twitter:description" content="No public network, supported miner, hardware sale, or security program is live yet.">
+<meta name="twitter:title" content="Questions and answers — DAARX four-coin system">
+<meta name="twitter:description" content="Direct answers about DAARX, L10N, OPEN, Nexus / NXXXS, public Testnet preparation, wallets, mining, privacy and hardware interest.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is this an investment? Will I make money?","acceptedAnswer":{"@type":"Answer","text":"This site does not sell coins or promise a return. Any future testnet coins would have no monetary value, mining may cost more than it produces, and legal classification depends on the actual facts and jurisdiction. A hardware-interest submission is not a purchase or investment. Nothing here is financial or legal advice."}},
-{"@type":"Question","name":"Are the coins for sale?","acceptedAnswer":{"@type":"Answer","text":"No coins are sold here. The current launch design has no premine, presale, or token sale, but no public network or final launch artifact exists."}},
-{"@type":"Question","name":"Can I mine now?","acceptedAnswer":{"@type":"Answer","text":"No supported public testnet miner or release package is available. Current mining work is development-only and limited to local regtest testing; testnet and mainnet mining remain launch-gated."}},
-{"@type":"Question","name":"Is the software free?","acceptedAnswer":{"@type":"Answer","text":"The core protocol repository is currently private. Public source and reproducible node, miner, wallet, and release artifacts are planned before public participation opens; they are not available today."}},
-{"@type":"Question","name":"When does hardware ship?","acceptedAnswer":{"@type":"Answer","text":"There is no store, accepted order, shipping date, or supported hardware release. The listed prices and specifications are planning estimates; form submissions are non-binding interest only."}},
-{"@type":"Question","name":"Is March 16, 2027 guaranteed?","acceptedAnswer":{"@type":"Answer","text":"No. It is a non-binding planning target subordinate to security, integration, public-soak, legal, and operational readiness. It may move."}},
-{"@type":"Question","name":"Can I buy or reserve a rig?","acceptedAnswer":{"@type":"Answer","text":"No order or priority reservation is accepted. You may record non-binding interest, which creates no inventory hold, quote, price, priority, financing application, or delivery promise."}},
-{"@type":"Question","name":"Is there a node-only concept?","acceptedAnswer":{"@type":"Answer","text":"Yes. A roughly $299 Node Box is a planning concept, not a current offer. Final specifications, price, power, noise, software, support, and availability are unverified."}},
-{"@type":"Question","name":"What happens to my information?","acceptedAnswer":{"@type":"Answer","text":"Desiderata Labs LLC receives submitted interest details; Web3Forms relays the form and Proton receives the message, as described in the privacy notice. The form does not create an order or account."}}
-]}
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are the four coins?", "acceptedAnswer": {"@type": "Answer", "text": "DAARX is for private capital. L10N is for private spending. OPEN handles accountable authority and public receipts for people, institutions and agents. Nexus / NXXXS is the fourth line, for proof, coordination and bonded assurance. Its final public name and ticker are still unsettled."}}, {"@type": "Question", "name": "How far along is the system?", "acceptedAnswer": {"@type": "Answer", "text": "Protocol, transaction, wallet, history, packaging and recovery components have substantial private implementation and testing evidence. Work is now focused on the exact public release, current four-chain qualification and the operations needed for public participation. That is more than a set of designs; it is not a released public network."}}, {"@type": "Question", "name": "Can I join the public Testnet today?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. Public Testnet preparation is the current stage. The participation page will change when the supported release, network configuration, verification instructions and public endpoints are available."}}, {"@type": "Question", "name": "Is there a launch date?", "acceptedAnswer": {"@type": "Answer", "text": "There is no committed public Testnet date on this site. The next release depends on current qualification and an explicit cutover decision. The old calendar target is not a substitute for that work."}}, {"@type": "Question", "name": "Where are the wallet and miner downloads?", "acceptedAnswer": {"@type": "Answer", "text": "There is no supported public participant package to download here yet. Private wallet and mining work exists. The public release needs exact source and configuration, reproducible builds, release signatures, installation instructions and recovery guidance."}}, {"@type": "Question", "name": "Does shared mining make this one coin?", "acceptedAnswer": {"@type": "Answer", "text": "No. The four coins have independent native state and rules. The architecture shares parent mining work with child-chain commitments; it does not merge balances, wrap the coins into a single asset or make a transfer on one chain a transfer on all four."}}, {"@type": "Question", "name": "Does every transfer need Nexus / NXXXS?", "acceptedAnswer": {"@type": "Answer", "text": "No. Ordinary native DAARX, L10N and OPEN validity and fees do not depend on NXXXS. The fourth line adds explicit assurance and coordination functions; it is not an automatic toll on the other three."}}, {"@type": "Question", "name": "Does OPEN only serve AI agents?", "acceptedAnswer": {"@type": "Answer", "text": "No. OPEN covers human, institutional and agent authority, mandates, backing, receipts and restitution. Its public accounts are meant to make authority and obligations inspectable."}}, {"@type": "Question", "name": "Will the first Testnet include offline payments and mobile games?", "acceptedAnswer": {"@type": "Answer", "text": "Only features that have their own supported release and qualification. A valueless online Testnet can open without a finished offline-cash product, app-store release, hardware store, funded rewards or external payment providers. Those features have separate release work."}}, {"@type": "Question", "name": "Is privacy guaranteed?", "acceptedAnswer": {"@type": "Answer", "text": "No. Hidden amounts and membership proofs target ledger privacy. Devices, network observation, software defects, operational mistakes and future cryptanalysis still matter. The integrated system has not completed an independent professional security audit."}}, {"@type": "Question", "name": "Are coins for sale? Will Testnet coins have value?", "acceptedAnswer": {"@type": "Answer", "text": "No coins are sold on this site. Public Testnet coins will be for testing and have no monetary value. A test balance is not a claim on mainnet coins. Nothing here promises earnings, appreciation or a return."}}, {"@type": "Question", "name": "Should I buy a miner now?", "acceptedAnswer": {"@type": "Answer", "text": "The site does not offer a supported public mining release or hardware sale. Hardware figures are unverified research estimates. An interest submission is not an order, financing application, reservation or priority claim."}}, {"@type": "Question", "name": "Is a public bounty open?", "acceptedAnswer": {"@type": "Answer", "text": "No. A public program needs a published scope, reporting channel, safe-harbor terms, response expectations, award rules and confirmed funding. The security page describes the work ahead; it is not an invitation to attack systems."}}, {"@type": "Question", "name": "What happens to my hardware-interest details?", "acceptedAnswer": {"@type": "Answer", "text": "Desiderata Labs LLC receives the information you choose to submit. Web3Forms relays it and Proton receives the message. The privacy notice covers the purpose, retention and how to request access, correction or deletion. No order or account is created."}}]}</script>
+<script src="/site.js" defer>
 </script>
 </head>
-<body class="p-daarx calm module-page module-faq">
+<body class="">
 <a class="skip" href="#main">Skip to content</a>
-<div class="grid" aria-hidden="true"></div>
-
-<nav class="nav" id="nav" aria-label="Primary">
-  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">·</span><span class="l">L10N</span><span class="amp">·</span><span class="o">OPEN</span></a>
-  <div class="go">
-    <a class="lnk" href="/faq.html" aria-current="page">faq</a>
-    <a class="lnk" href="/break-it.html">break it</a>
-    <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
-    <details class="nd">
-      <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
-      <div class="navmenu">
-        <a href="/">Home</a>
-        <a href="/daarx.html">DAARX</a>
-        <a href="/l10n.html">L10N</a>
-        <a href="/open.html">OPEN</a>
-        <a href="/mine.html">Mining plans</a>
-        <a href="/break-it.html">Break it</a>
-        <a href="/faq.html" aria-current="page">FAQ</a>
-        <a href="/privacy.html">Privacy</a>
-      </div>
-    </details>
-  </div>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="/" aria-label="DAARX home">
+<svg viewBox="0 0 36 36" aria-hidden="true">
+<path d="M4 8h11l6 6h11M4 18h28M4 28h11l6-6h11"/>
+</svg>
+<span>DAARX<span class="brand-dot">.</span>
+</span>
+</a>
+<nav class="desktop-nav" aria-label="Primary">
+<a href="/#ecosystem">Four coins</a>
+<a href="/testnet.html">Testnet</a>
+<a href="/status.html">Progress</a>
+<a href="/break-it.html">Security</a>
 </nav>
-
-<main class="wrap" id="main">
-  <header class="module-hero" aria-labelledby="faq-title">
-    <p class="crumb hero-in"><a href="/">← daarx.money / knowledge base</a></p>
-    <div class="module-hero-grid">
-      <div class="module-hero-copy">
-        <p class="module-kicker hero-in">PUBLIC QUERY TERMINAL / 09 RECORDS</p>
-        <h1 class="hero-in" id="faq-title">FAQ<span class="dot">.</span></h1>
-        <p class="tag hero-in">Plain answers to the questions people actually ask — no hedging, no hype.</p>
-        <div class="actions hero-in">
-          <a class="btn solid" href="#questions">Query the records <span class="arw">&#8595;</span></a>
-          <a class="btn" href="mailto:daarxmoney@proton.me">Email us <span class="arw">&#8594;</span></a>
-        </div>
-      </div>
-
-      <section class="module-console query-console hero-in" aria-label="Frequently asked questions query preview">
-        <div class="console-bar"><span>DAARX::PUBLIC_KNOWLEDGE</span><span class="console-lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
-        <div class="console-readout">
-          <p class="query-boot">INDEX MOUNTED .......... 09 RECORDS<br>CLAIM FILTER ........... STRICT<br>NETWORK STATE .......... PRE-LAUNCH</p>
-          <div class="query-prompt"><span class="prompt">&gt;</span><span class="command">CAN I MINE NOW?</span><span class="reply">NO SUPPORTED PUBLIC MINER OR RELEASE PACKAGE.</span></div>
-          <div class="query-prompt"><span class="prompt">&gt;</span><span class="command">ARE COINS FOR SALE?</span><span class="reply">NO COINS ARE SOLD HERE.</span></div>
-          <div class="query-prompt"><span class="prompt">&gt;</span><span class="command">QUERY_<span class="query-cursor" aria-hidden="true"></span></span></div>
-          <div class="console-stamp">PLAIN ANSWERS</div>
-        </div>
-      </section>
-    </div>
-  </header>
-
-  <div class="flow">
-    <div class="statement">
-      <div class="fig">Not sold.<span class="u">no coins, no promised return</span></div>
-      <p class="cap">This site does not sell coins or offer a return. Future testnet coins would be valueless, mining has real costs, and any future hardware purchase would be separate from a protocol or coin. Legal classification depends on the facts and jurisdiction; nothing here is financial or legal advice.</p>
-    </div>
-
-    <h2 class="eyebrow" id="questions">the questions</h2>
-    <div class="faq-query js-only">
-      <label for="faq-query">FILTER THE PUBLIC RECORD</label>
-      <div class="faq-query-field"><span aria-hidden="true">&gt;</span><input type="search" id="faq-query" autocomplete="off" placeholder="Type a word or question" aria-describedby="faq-results"></div>
-      <output id="faq-results" for="faq-query" aria-live="polite">09 records available</output>
-    </div>
-    <div class="faqlist">
-      <details class="qa" open><summary>Is this an investment? Will I make money?<span class="qmark" aria-hidden="true"></span></summary>
-        <div class="ans"><p>This site does not sell coins, solicit an investment in a protocol, or promise a return. Any future testnet coins would have no monetary value; if a network launches, mining could cost more than it produces and there is no guaranteed income. A hardware-interest submission is not a purchase or investment. Legal classification depends on the actual facts and jurisdiction, so qualified counsel must review the final launch and commercial terms. Nothing here is financial or legal advice.</p></div></details>
-
-      <details class="qa"><summary>Are the coins for sale?<span class="qmark" aria-hidden="true"></span></summary>
-        <div class="ans"><p>No coins are sold here. The current launch design has no premine, presale, or token sale, but no public network or final launch artifact exists.</p></div></details>
-
-      <details class="qa"><summary>Can I mine now?<span class="qmark" aria-hidden="true"></span></summary>
-        <div class="ans"><p>No supported public testnet miner or release package is available. Current mining work is development-only and limited to local regtest testing; testnet and mainnet mining remain launch-gated. Do not buy hardware based on an expectation of first-block mining.</p></div></details>
-
-      <details class="qa"><summary>Is the software really free?<span class="qmark" aria-hidden="true"></span></summary>
-        <div class="ans"><p>The core protocol repository is currently private. Public source and reproducible node, miner, wallet, and release artifacts are planned before public participation opens; they are not available today.</p></div></details>
-
-      <details class="qa"><summary>When does it ship? When can I mine?<span class="qmark" aria-hidden="true"></span></summary>
-        <div class="ans"><p>There is no store, accepted order, shipping date, or supported public miner release. March 16, 2027 is a non-binding protocol planning target, not a hardware or delivery promise.</p></div></details>
-
-      <details class="qa"><summary>What's the catch?<span class="qmark" aria-hidden="true"></span></summary>
-        <div class="ans"><p>This is unfinished, high-risk protocol and product work. Privacy can fail, software can contain defects, schedules can slip, mining can lose money, hardware estimates can change, and the network may never launch. Nothing here promises profit or availability.</p></div></details>
-
-      <details class="qa"><summary>Can I buy or reserve a rig?<span class="qmark" aria-hidden="true"></span></summary>
-        <div class="ans"><p>No order or priority reservation is accepted. You may record non-binding interest, which creates no inventory hold, quote, price, priority, financing application, or delivery promise.</p></div></details>
-
-      <details class="qa"><summary>Is there a node-only option?<span class="qmark" aria-hidden="true"></span></summary>
-        <div class="ans"><p>A roughly $299 Node Box is a planning concept, not a current offer. Final specifications, price, power, noise, software, support, and availability are unverified.</p></div></details>
-
-      <details class="qa"><summary>What happens to my hardware-interest information?<span class="qmark" aria-hidden="true"></span></summary>
-        <div class="ans"><p>Desiderata Labs LLC receives the details you choose to submit; Web3Forms relays the submission and Proton receives the message. We use it to manage and follow up on non-binding interest, do not sell it, and handle access or deletion requests under the <a href="/privacy.html">privacy notice</a>.</p></div></details>
-    </div>
-
-    <div class="soon">Still have a question? Email a human at <a href="mailto:daarxmoney@proton.me">daarxmoney@proton.me</a>.</div>
-
-    <div class="endcta">
-      <div class="h">Want to follow development?</div>
-      <p>Read the current status and, if useful, submit non-binding hardware interest. There is no public mining release, hardware order, priority reservation, or launch guarantee.</p>
-      <div class="actions">
-        <a class="btn solid big" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
-        <a class="btn" href="/break-it.html">Break it <span class="arw">&#8594;</span></a>
-      </div>
-    </div>
-  </div>
-
+<details class="site-menu">
+<summary>Menu <span aria-hidden="true">＋</span>
+</summary>
+<nav aria-label="All pages">
+<a href="/daarx.html">DAARX</a>
+<a href="/l10n.html">L10N</a>
+<a href="/open.html">OPEN</a>
+<a href="/nexus.html">Nexus / NXXXS</a>
+<a href="/testnet.html">Testnet</a>
+<a href="/status.html">Progress</a>
+<a href="/break-it.html">Security</a>
+<a href="/mine.html">Hardware research</a>
+<a href="/faq.html" aria-current="page">FAQ</a>
+<a href="/privacy.html">Privacy</a>
+</nav>
+</details>
+</div>
+</header>
+<main id="main">
+<section class="page-hero green">
+<div class="container">
+<a class="back-link" href="/">DAARX / Questions &amp; answers</a>
+<div class="page-hero-grid">
+<div>
+<p class="eyebrow">Questions &amp; answers</p>
+<h1>Fair questions.<br>
+<em>Straight answers.</em>
+</h1>
+<p class="hero-copy">The four coins, the current release work, what you can use today, and what still has to happen.</p>
+</div>
+<div class="hero-aside">
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="questions">
+<div class="container faq-layout">
+<div class="faq-sidebar">
+<label for="faq-query">Find an answer</label>
+<input type="search" id="faq-query" placeholder="Try “wallet”, “four coins” or “mining”" autocomplete="off" aria-describedby="faq-results">
+<output id="faq-results" for="faq-query" aria-live="polite">14 answers</output>
+<p>Still wondering?</p>
+<a class="text-link" href="mailto:daarxmoney@proton.me">Email a person <span aria-hidden="true">↗</span>
+</a>
+</div>
+<div class="faq-list">
+<details class="qa" open>
+<summary>What are the four coins?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>DAARX is for private capital. L10N is for private spending. OPEN handles accountable authority and public receipts for people, institutions and agents. Nexus / NXXXS is the fourth line, for proof, coordination and bonded assurance. Its final public name and ticker are still unsettled.</p>
+</div>
+</details>
+<details class="qa">
+<summary>How far along is the system?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>Protocol, transaction, wallet, history, packaging and recovery components have substantial private implementation and testing evidence. Work is now focused on the exact public release, current four-chain qualification and the operations needed for public participation. That is more than a set of designs; it is not a released public network.</p>
+</div>
+</details>
+<details class="qa">
+<summary>Can I join the public Testnet today?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>Not yet. Public Testnet preparation is the current stage. The participation page will change when the supported release, network configuration, verification instructions and public endpoints are available.</p>
+</div>
+</details>
+<details class="qa">
+<summary>Is there a launch date?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>There is no committed public Testnet date on this site. The next release depends on current qualification and an explicit cutover decision. The old calendar target is not a substitute for that work.</p>
+</div>
+</details>
+<details class="qa">
+<summary>Where are the wallet and miner downloads?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>There is no supported public participant package to download here yet. Private wallet and mining work exists. The public release needs exact source and configuration, reproducible builds, release signatures, installation instructions and recovery guidance.</p>
+</div>
+</details>
+<details class="qa">
+<summary>Does shared mining make this one coin?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>No. The four coins have independent native state and rules. The architecture shares parent mining work with child-chain commitments; it does not merge balances, wrap the coins into a single asset or make a transfer on one chain a transfer on all four.</p>
+</div>
+</details>
+<details class="qa">
+<summary>Does every transfer need Nexus / NXXXS?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>No. Ordinary native DAARX, L10N and OPEN validity and fees do not depend on NXXXS. The fourth line adds explicit assurance and coordination functions; it is not an automatic toll on the other three.</p>
+</div>
+</details>
+<details class="qa">
+<summary>Does OPEN only serve AI agents?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>No. OPEN covers human, institutional and agent authority, mandates, backing, receipts and restitution. Its public accounts are meant to make authority and obligations inspectable.</p>
+</div>
+</details>
+<details class="qa">
+<summary>Will the first Testnet include offline payments and mobile games?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>Only features that have their own supported release and qualification. A valueless online Testnet can open without a finished offline-cash product, app-store release, hardware store, funded rewards or external payment providers. Those features have separate release work.</p>
+</div>
+</details>
+<details class="qa">
+<summary>Is privacy guaranteed?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>No. Hidden amounts and membership proofs target ledger privacy. Devices, network observation, software defects, operational mistakes and future cryptanalysis still matter. The integrated system has not completed an independent professional security audit.</p>
+</div>
+</details>
+<details class="qa">
+<summary>Are coins for sale? Will Testnet coins have value?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>No coins are sold on this site. Public Testnet coins will be for testing and have no monetary value. A test balance is not a claim on mainnet coins. Nothing here promises earnings, appreciation or a return.</p>
+</div>
+</details>
+<details class="qa">
+<summary>Should I buy a miner now?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>The site does not offer a supported public mining release or hardware sale. Hardware figures are unverified research estimates. An interest submission is not an order, financing application, reservation or priority claim.</p>
+</div>
+</details>
+<details class="qa">
+<summary>Is a public bounty open?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>No. A public program needs a published scope, reporting channel, safe-harbor terms, response expectations, award rules and confirmed funding. The security page describes the work ahead; it is not an invitation to attack systems.</p>
+</div>
+</details>
+<details class="qa">
+<summary>What happens to my hardware-interest details?<span aria-hidden="true">＋</span>
+</summary>
+<div>
+<p>Desiderata Labs LLC receives the information you choose to submit. Web3Forms relays it and Proton receives the message. The privacy notice covers the purpose, retention and how to request access, correction or deletion. No order or account is created.</p>
+</div>
+</details>
+<p class="no-results" hidden>No matching answers. Try a shorter word, or clear the search.</p>
+</div>
+</div>
+</section>
 </main>
-
-<footer>
-  <div class="wrap">
-    <nav class="fnav" aria-label="Site">
-      <a href="/">daarx.money</a>
-      <a href="/daarx.html">DAARX</a>
-      <a href="/l10n.html">L10N</a>
-      <a href="/open.html">OPEN</a>
-      <a href="/mine.html">mining plans</a>
-      <a href="/break-it.html">break it</a>
-      <a href="/faq.html" aria-current="page">faq</a>
-      <a href="/privacy.html">privacy</a>
-    </nav>
-    <p class="fine">no coins for sale · nothing here is financial advice</p>
-  </div>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-top">
+<a class="brand" href="/">
+<svg viewBox="0 0 36 36" aria-hidden="true">
+<path d="M4 8h11l6 6h11M4 18h28M4 28h11l6-6h11"/>
+</svg>
+<span>DAARX<span class="brand-dot">.</span>
+</span>
+</a>
+<p>Four coins.<br>Built for different jobs.</p>
+<button class="motion-toggle" type="button" data-motion aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span>
+</button>
+</div>
+<div class="footer-links">
+<nav aria-label="Coins">
+<a href="/daarx.html">DAARX</a>
+<a href="/l10n.html">L10N</a>
+<a href="/open.html">OPEN</a>
+<a href="/nexus.html">Nexus / NXXXS</a>
+</nav>
+<nav aria-label="Project">
+<a href="/testnet.html">Testnet</a>
+<a href="/status.html">Development progress</a>
+<a href="/break-it.html">Security</a>
+<a href="/faq.html">FAQ</a>
+</nav>
+<nav aria-label="Site">
+<a href="/mine.html">Hardware research</a>
+<a href="/flyer.html">Print flyer</a>
+<a href="/privacy.html">Privacy</a>
+<a href="mailto:daarxmoney@proton.me">Contact</a>
+</nav>
+</div>
+<div class="footer-bottom">
+<p>Public Testnet preparation · reviewed November 4, 2026</p>
+<p>No coin sale. No public participation yet. Testnet coins will have no monetary value.</p>
+<p>Site operator: Desiderata Labs LLC. DAARX is its registered alternate name. Protocol governance and commercial services are separate.</p>
+</div>
+</div>
 </footer>
-<script>
-(function(){
-  var d=document, root=d.documentElement;
-  root.classList.add('js');
-  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var SEL='.reveal,.stagger,.flow>*';
-  var els=[].slice.call(d.querySelectorAll(SEL));
-  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
-  else{
-    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{rootMargin:'0px 0px -10% 0px',threshold:.1});
-    els.forEach(function(e){ if(e.getBoundingClientRect().top < innerHeight*0.94){e.classList.add('in');} else {io.observe(e);} });
-  }
-  var nav=d.getElementById('nav');
-  if(nav){var on=function(){nav.classList.toggle('scrolled',(window.scrollY||0)>24)};on();addEventListener('scroll',on,{passive:true});}
-  var nd=d.querySelector('.nd');
-  if(nd){d.addEventListener('click',function(e){if(nd.open&&!nd.contains(e.target))nd.open=false;});}
-  var query=d.getElementById('faq-query'), result=d.getElementById('faq-results');
-  if(query&&result){
-    var records=[].slice.call(d.querySelectorAll('.faqlist .qa'));
-    var filter=function(){
-      var term=query.value.trim().toLowerCase(), visible=0;
-      records.forEach(function(record){
-        var match=!term||record.textContent.toLowerCase().indexOf(term)>-1;
-        record.hidden=!match;
-        if(match)visible++;
-      });
-      result.textContent=String(visible).padStart(2,'0')+' '+(visible===1?'record':'records')+(term?' matched':' available');
-    };
-    query.addEventListener('input',filter);
-    query.addEventListener('keydown',function(e){if(e.key==='Escape'&&query.value){query.value='';filter();}});
-  }
-})();
-</script>
 </body>
 </html>
