@@ -99,13 +99,13 @@
         const result = await response.json();
         if (!response.ok || !result.success) throw new Error('Submission was not accepted');
         form.hidden = true;
-        status.textContent = 'Your hardware interest was recorded. No order, payment, priority or Testnet signup was created. We’ll contact you only if a relevant compliant offer or material update becomes available.';
+        status.textContent = 'Thanks. Your hardware enquiry is in. We’ll follow up by email.';
         status.focus();
       } catch (_) {
         submit.disabled = false;
         submit.innerHTML = original;
         status.classList.add('error');
-        status.textContent = 'That didn’t send. Your entries are still here. Please try again later.';
+        status.textContent = 'That didn’t send. Your entries are still here. Try again later.';
         status.focus();
       }
     });
@@ -129,27 +129,27 @@
     const size = Math.min(width, height);
     const centerX = width * .5 + pointerX * 9;
     const centerY = height * .5 + pointerY * 7;
-    const radius = size * .267;
+    const radius = size * .294;
     const t = time * .000085;
     ctx.globalCompositeOperation = 'lighter';
-    for (let band = 0; band < 86; band += 1) {
-      const b = band / 86 * Math.PI * 2;
-      const color = colors[Math.floor(band / 21.5)];
-      const alpha = .20 + Math.pow(Math.sin(b * 1.4 + t), 2) * .32;
+    for (let band = 0; band < 108; band += 1) {
+      const b = band / 108 * Math.PI * 2;
+      const color = colors[Math.floor(band / 27)];
+      const alpha = .16 + Math.pow(Math.sin(b * 1.4 + t), 2) * .42;
       ctx.strokeStyle = 'rgba(' + color + ',' + alpha.toFixed(3) + ')';
       ctx.lineWidth = band % 5 === 0 ? 1.15 : .65;
       ctx.shadowColor = 'rgba(' + color + ',.48)';
-      ctx.shadowBlur = band % 7 === 0 ? 14 : 0;
+      ctx.shadowBlur = band % 9 === 0 ? 19 : 0;
       ctx.beginPath();
       for (let step = 0; step <= 170; step += 1) {
         const a = step / 170 * Math.PI * 2;
-        const swell = Math.cos(b * 3 + a * 2 + t * 2) * .065;
-        const tube = radius * (.26 + swell);
-        const ring = radius + tube * Math.cos(b + a * .6 + t);
+        const swell = Math.cos(b * 3 + a * 2 + t * 2) * .082;
+        const tube = radius * (.30 + swell);
+        const ring = radius + tube * Math.cos(b + a * .75 + t);
         const x = Math.cos(a) * ring;
         const y = Math.sin(a) * ring;
-        const z = tube * Math.sin(b + a * .6 + t);
-        const warp = Math.sin(a * 4 - b * 2 + t * .7) * size * .012;
+        const z = tube * Math.sin(b + a * .75 + t);
+        const warp = Math.sin(a * 4 - b * 2 + t * .7) * size * .016;
         const dx = x * .88 - y * .36;
         const dy = x * .27 + y * .60 + z * .9 + warp;
         const px = centerX + dx;

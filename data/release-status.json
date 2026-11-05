@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-04",
+  "as_of": "2026-11-05",
   "stage": "Public Testnet preparation",
   "public_participation_open": false,
   "native_coin_count": 4,
@@ -8,57 +8,56 @@
       "name": "DAARX",
       "unit": "DAARX",
       "role": "Private capital",
-      "working_identity": false
+      "working_identity": false,
+      "economic_thesis": "Private capital + finite issuance"
     },
     {
       "name": "L10N",
       "unit": "L10N",
       "role": "Private cash",
-      "working_identity": false
+      "working_identity": false,
+      "economic_thesis": "Payments + settlement"
     },
     {
       "name": "OPEN",
       "unit": "OPEN",
       "role": "Accountable authority",
-      "working_identity": false
+      "working_identity": false,
+      "economic_thesis": "Transactions + accountable activity"
     },
     {
       "name": "Nexus / NXXXS",
       "unit": "NXXXS",
       "role": "Bonded assurance",
-      "working_identity": true
+      "working_identity": true,
+      "economic_thesis": "Service fees + operating balances + collateral"
     }
   ],
   "work": [
     {
-      "area": "Protocol and wallet foundations",
-      "state": "Private evidence",
-      "description": "Consensus, transactions, native wallets, authenticated history and recovery have implementation and private testing evidence. Those results remain scoped to the configurations that were exercised."
+      "area": "Proofs, transactions and consensus",
+      "state": "Exercised privately",
+      "description": "The accepted private source has completed its current proof, wire and consensus cases. Wallet, history and recovery evidence sits alongside that work."
     },
     {
-      "area": "Current correctness and integration",
-      "state": "In qualification",
-      "description": "The current source needs its own proof, transaction, consensus and composed four-chain checks. Earlier passing runs do not replace current release qualification."
+      "area": "Current build and integration work",
+      "state": "Active",
+      "description": "The current components are moving through build checks and four-chain integration, with the release configuration taking shape."
     },
     {
-      "area": "Exact public network configuration",
-      "state": "Open work",
-      "description": "Public source, network identities, genesis/configuration and OPEN authority/activation must agree with the release that participants actually run."
+      "area": "Public source and network setup",
+      "state": "In preparation",
+      "description": "The public source, network identities and authority configuration are being brought together for the participant release."
     },
     {
-      "area": "Public builds and release verification",
-      "state": "Preparing",
-      "description": "Public builds and supported platforms are being prepared. Reproducibility, release signatures, installation and recovery instructions still need to be checked for the public release."
+      "area": "Reproducible packages and recovery",
+      "state": "In preparation",
+      "description": "The release work covers reproducible public builds, signatures, supported installation and a way back after interruption."
     },
     {
-      "area": "Four-coin network campaign",
-      "state": "Open work",
-      "description": "The full current system still needs public-facing composition, mining, transaction, restart, fault and recovery evidence at the intended launch configuration."
-    },
-    {
-      "area": "Public participation",
-      "state": "Not open",
-      "description": "Bootstrap peers, supported downloads, test-coin access, observation tools, reporting and incident/reset rules must be published before people are invited in."
+      "area": "The participant toolkit",
+      "state": "Next",
+      "description": "Network coordinates, test-coin access, observation tools and starter instructions will accompany public entry."
     }
   ],
   "independent_professional_audit_complete": false,

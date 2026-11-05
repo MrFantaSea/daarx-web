@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#08090b">
 <title>DAARX — Private capital | DAARX</title>
-<meta name="description" content="Private value for the long run. Deterministic issuance, hidden amounts and full-chain membership privacy.">
+<meta name="description" content="Private savings. Fixed issuance. Eventually, zero new coins.">
 <link rel="canonical" href="https://daarx.money/daarx.html">
 <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/type.css">
@@ -13,20 +13,20 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX">
 <meta property="og:title" content="DAARX — Private capital | DAARX">
-<meta property="og:description" content="Private value for the long run. Deterministic issuance, hidden amounts and full-chain membership privacy.">
+<meta property="og:description" content="Private savings. Fixed issuance. Eventually, zero new coins.">
 <meta property="og:url" content="https://daarx.money/daarx.html">
 <meta property="og:image" content="https://daarx.money/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DAARX — Private capital | DAARX">
-<meta name="twitter:description" content="Private value for the long run. Deterministic issuance, hidden amounts and full-chain membership privacy.">
+<meta name="twitter:description" content="Private savings. Fixed issuance. Eventually, zero new coins.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "DAARX", "url": "https://daarx.money", "description": "The four-coin DAARX system: DAARX, L10N, OPEN and Nexus / NXXXS. Public Testnet preparation."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "DAARX", "url": "https://daarx.money", "description": "Four native coins. Private capital, private cash, accountable authority and bonded assurance."}</script>
 <script src="/site.js" defer>
 </script>
 </head>
-<body class="green">
+<body class="mystique green">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
 <div class="header-inner">
@@ -38,24 +38,24 @@
 </span>
 </a>
 <nav class="desktop-nav" aria-label="Primary">
+<a href="/#thesis">Economics</a>
 <a href="/#ecosystem">Four coins</a>
+<a href="/status.html">Development</a>
 <a href="/testnet.html">Testnet</a>
-<a href="/status.html">Progress</a>
-<a href="/break-it.html">Security</a>
 </nav>
 <details class="site-menu">
-<summary>Menu <span aria-hidden="true">＋</span>
+<summary>Explore <span aria-hidden="true">＋</span>
 </summary>
 <nav aria-label="All pages">
 <a href="/daarx.html" aria-current="page">DAARX</a>
 <a href="/l10n.html">L10N</a>
 <a href="/open.html">OPEN</a>
 <a href="/nexus.html">Nexus / NXXXS</a>
-<a href="/testnet.html">Testnet</a>
-<a href="/status.html">Progress</a>
+<a href="/status.html">Development</a>
+<a href="/testnet.html">Public Testnet</a>
 <a href="/break-it.html">Security</a>
-<a href="/mine.html">Hardware research</a>
-<a href="/faq.html">FAQ</a>
+<a href="/mine.html">Hardware</a>
+<a href="/faq.html">Questions</a>
 <a href="/privacy.html">Privacy</a>
 </nav>
 </details>
@@ -69,7 +69,7 @@
 <div>
 <p class="eyebrow">Private capital</p>
 <h1>DAARX</h1>
-<p class="hero-copy">Private value for the long run. Deterministic issuance, hidden amounts and full-chain membership privacy.</p>
+<p class="hero-copy">DAARX is the one to keep. It combines private ownership with a supply defined by a fixed emission schedule. That schedule eventually ends.</p>
 </div>
 <div class="hero-aside">
 <div class="coin-hero-symbol green">
@@ -87,107 +87,101 @@
 </div>
 </div>
 </section>
-<div class="container">
-<div class="page-signal">
-<div class="signal ">
-<span>DEVELOPMENT</span>
-<strong>Implemented · private qualification</strong>
+<section class="section" id="economics">
+<div class="container two-column">
+<div>
+<p class="eyebrow">ECONOMICS</p>
+<h2>Why hold DAARX?</h2>
 </div>
-<div class="signal ">
-<span>PUBLIC NETWORK</span>
-<strong>Not open</strong>
-</div>
+<div>
+<p class="large-paragraph">The holder’s bet is demand for private capital. The supply follows a known schedule and eventually stops growing. People have a reason to hold it if they want those properties in money.</p>
 </div>
 </div>
-<section class="section" id="architecture">
+</section>
+<section class="section dim-section" id="architecture">
 <div class="container">
 <div class="section-heading">
 <p class="index">01</p>
 <div>
-<h2>The one to keep.</h2>
-<p class="lede">DAARX is the private-capital side of the system. Its consensus work includes an integer emission schedule, amount commitments, full-chain membership proofs and a short public fee ladder.</p>
+<h2>How it works.</h2>
 </div>
 </div>
 <div class="inspection" data-tabs>
 <div class="inspection-tabs" role="tablist" aria-label="DAARX inspection">
 <button type="button" role="tab" id="inspect-daarx-0" aria-controls="inspect-panel-daarx-0" aria-selected="true">
-<span>01</span>Mechanism</button>
+<span>01</span>Supply</button>
 <button type="button" role="tab" id="inspect-daarx-1" aria-controls="inspect-panel-daarx-1" aria-selected="false">
-<span>02</span>Implementation</button>
+<span>02</span>Privacy</button>
 <button type="button" role="tab" id="inspect-daarx-2" aria-controls="inspect-panel-daarx-2" aria-selected="false">
-<span>03</span>Limits</button>
+<span>03</span>Mining</button>
 </div>
 <div class="inspection-panels">
 <div role="tabpanel" id="inspect-panel-daarx-0" aria-labelledby="inspect-daarx-0">
-<h3>Membership without a public trail.</h3>
-<p>The target is to prove a spend belongs to the valid chain without exposing which earlier output is being spent. Amount commitments and spent-tag checks preserve the rules without publishing a conventional payment graph.</p>
+<h3>The supply follows the code.</h3>
+<p>DAARX has an integer emission schedule that eventually reaches zero. The schedule defines how new coins enter circulation.</p>
 </div>
 <div role="tabpanel" id="inspect-panel-daarx-1" aria-labelledby="inspect-daarx-1">
-<h3>Real proving and verification paths.</h3>
-<p>Proof, transaction, consensus and wallet components exist and have private testing evidence. Current correctness and integration qualification are still part of the public-release work.</p>
+<h3>A spend can be checked without publishing its history.</h3>
+<p>Full-chain membership proofs target membership in the valid chain without identifying the earlier output being spent. Amount commitments keep the arithmetic verifiable while hiding the amount.</p>
 </div>
 <div role="tabpanel" id="inspect-panel-daarx-2" aria-labelledby="inspect-daarx-2">
-<h3>Privacy reaches beyond the ledger.</h3>
-<p>A compromised device, network metadata, operational mistakes or a cryptographic flaw can still expose someone. DAARX has not completed an independent professional audit or a public network campaign.</p>
+<h3>New coins come from mining.</h3>
+<p>DAARX uses RandomX parent work. The shared architecture also carries child commitments for L10N, OPEN and NXXXS.</p>
 </div>
 </div>
 </div>
-</div>
-</section>
-<section class="section dim-section">
-<div class="container two-column">
-<div>
-<p class="eyebrow">02 / CURRENT DESIGN</p>
-<h2>The details<br>that matter.</h2>
-<p>These describe the current work. Exact public parameters and release configuration still need to be qualified and published.</p>
-</div>
-<dl class="register">
-<div>
-<dt>Purpose</dt>
-<dd>Private capital and long-duration savings</dd>
-</div>
-<div>
-<dt>Issuance</dt>
-<dd>Deterministic integer schedule</dd>
-</div>
-<div>
-<dt>Privacy</dt>
-<dd>Hidden amounts and full-chain membership</dd>
-</div>
-<div>
-<dt>Block target</dt>
-<dd>111 seconds · current design</dd>
-</div>
-<div>
-<dt>Proof of work</dt>
-<dd>RandomX · shared parent-work architecture</dd>
-</div>
-</dl>
 </div>
 </section>
 <section class="section">
 <div class="container two-column">
 <div>
-<p class="eyebrow">03 / WALLET &amp; RELEASE</p>
-<h2>Built privately.<br>Public work remains.</h2>
+<p class="eyebrow">DETAILS</p>
+<h2>DAARX</h2>
+</div>
+<dl class="register">
+<div>
+<dt>Native coin</dt>
+<dd>DAARX</dd>
 </div>
 <div>
-<h3>What exists</h3>
-<p>Private wallet work includes create/unlock/receive, reviewed sending, encrypted backup and restore, and recovery after an uncertain submission result.</p>
-<h3>What it does not prove</h3>
-<p>The integrated design still needs current public-release qualification and independent professional review. A working proof system is not a blanket anonymity guarantee.</p>
-<div class="actions">
-<a class="button" href="/status.html">Current progress <span aria-hidden="true">↗</span>
-</a>
-<a class="button" href="/break-it.html">Security <span aria-hidden="true">↗</span>
-</a>
+<dt>Economic role</dt>
+<dd>Private capital and long-duration savings</dd>
 </div>
+<div>
+<dt>Supply design</dt>
+<dd>Deterministic integer issuance; eventual zero emission</dd>
+</div>
+<div>
+<dt>Privacy design</dt>
+<dd>Hidden amounts and full-chain membership</dd>
+</div>
+<div>
+<dt>Current block target</dt>
+<dd>111 seconds</dd>
+</div>
+<div>
+<dt>Mining architecture</dt>
+<dd>RandomX parent work</dd>
+</div>
+</dl>
+</div>
+</section>
+<section class="section dim-section">
+<div class="container two-column">
+<div>
+<p class="eyebrow">WALLET</p>
+<h2>Transactions<br>and recovery.</h2>
+</div>
+<div>
+<p class="large-paragraph">Private wallet builds have exercised creation, reviewed transfers, encrypted backups, restoration and recovery after an interrupted send.</p>
+<a class="button" href="/status.html">Development <span aria-hidden="true">↗</span>
+</a>
 </div>
 </div>
 </section>
 <section class="sibling-section">
 <div class="container">
-<p class="eyebrow">THE OTHER THREE</p>
+<p class="eyebrow">THE OTHER COINS</p>
 <div class="sibling-grid">
 <a class="sibling-link gold" href="/l10n.html">
 <span>Private cash</span>
@@ -218,7 +212,7 @@
 <span>DAARX<span class="brand-dot">.</span>
 </span>
 </a>
-<p>Four coins.<br>Built for different jobs.</p>
+<p>DAARX · L10N · OPEN · NXXXS</p>
 <button class="motion-toggle" type="button" data-motion aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span>
 </button>
 </div>
@@ -230,22 +224,24 @@
 <a href="/nexus.html">Nexus / NXXXS</a>
 </nav>
 <nav aria-label="Project">
-<a href="/testnet.html">Testnet</a>
-<a href="/status.html">Development progress</a>
+<a href="/#thesis">Economics</a>
+<a href="/status.html">Development</a>
+<a href="/testnet.html">Public Testnet</a>
 <a href="/break-it.html">Security</a>
-<a href="/faq.html">FAQ</a>
 </nav>
 <nav aria-label="Site">
-<a href="/mine.html">Hardware research</a>
-<a href="/flyer.html">Print flyer</a>
+<a href="/mine.html">Hardware</a>
+<a href="/faq.html">Questions</a>
+<a href="/flyer.html">Print</a>
 <a href="/privacy.html">Privacy</a>
 <a href="mailto:daarxmoney@proton.me">Contact</a>
 </nav>
 </div>
 <div class="footer-bottom">
-<p>Public Testnet preparation · reviewed November 4, 2026</p>
-<p>No coin sale. No public participation yet. Testnet coins will have no monetary value.</p>
-<p>Site operator: Desiderata Labs LLC. DAARX is its registered alternate name. Protocol governance and commercial services are separate.</p>
+<p>
+<a href="/status.html">Development / Public Testnet</a>
+<span>DAARX · Desiderata Labs LLC</span>
+</p>
 </div>
 </div>
 </footer>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#08090b">
 <title>L10N — Private cash | DAARX</title>
-<meta name="description" content="Private spending for everyday exchange. Shared mining work, its own monetary rules, and an offline-cash layer in development.">
+<meta name="description" content="Private cash for payments between people and businesses.">
 <link rel="canonical" href="https://daarx.money/l10n.html">
 <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/type.css">
@@ -13,20 +13,20 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX">
 <meta property="og:title" content="L10N — Private cash | DAARX">
-<meta property="og:description" content="Private spending for everyday exchange. Shared mining work, its own monetary rules, and an offline-cash layer in development.">
+<meta property="og:description" content="Private cash for payments between people and businesses.">
 <meta property="og:url" content="https://daarx.money/l10n.html">
 <meta property="og:image" content="https://daarx.money/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="L10N — Private cash | DAARX">
-<meta name="twitter:description" content="Private spending for everyday exchange. Shared mining work, its own monetary rules, and an offline-cash layer in development.">
+<meta name="twitter:description" content="Private cash for payments between people and businesses.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "DAARX", "url": "https://daarx.money", "description": "The four-coin DAARX system: DAARX, L10N, OPEN and Nexus / NXXXS. Public Testnet preparation."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "DAARX", "url": "https://daarx.money", "description": "Four native coins. Private capital, private cash, accountable authority and bonded assurance."}</script>
 <script src="/site.js" defer>
 </script>
 </head>
-<body class="gold">
+<body class="mystique gold">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
 <div class="header-inner">
@@ -38,24 +38,24 @@
 </span>
 </a>
 <nav class="desktop-nav" aria-label="Primary">
+<a href="/#thesis">Economics</a>
 <a href="/#ecosystem">Four coins</a>
+<a href="/status.html">Development</a>
 <a href="/testnet.html">Testnet</a>
-<a href="/status.html">Progress</a>
-<a href="/break-it.html">Security</a>
 </nav>
 <details class="site-menu">
-<summary>Menu <span aria-hidden="true">＋</span>
+<summary>Explore <span aria-hidden="true">＋</span>
 </summary>
 <nav aria-label="All pages">
 <a href="/daarx.html">DAARX</a>
 <a href="/l10n.html" aria-current="page">L10N</a>
 <a href="/open.html">OPEN</a>
 <a href="/nexus.html">Nexus / NXXXS</a>
-<a href="/testnet.html">Testnet</a>
-<a href="/status.html">Progress</a>
+<a href="/status.html">Development</a>
+<a href="/testnet.html">Public Testnet</a>
 <a href="/break-it.html">Security</a>
-<a href="/mine.html">Hardware research</a>
-<a href="/faq.html">FAQ</a>
+<a href="/mine.html">Hardware</a>
+<a href="/faq.html">Questions</a>
 <a href="/privacy.html">Privacy</a>
 </nav>
 </details>
@@ -69,7 +69,7 @@
 <div>
 <p class="eyebrow">Private cash</p>
 <h1>L10N</h1>
-<p class="hero-copy">Private spending for everyday exchange. Shared mining work, its own monetary rules, and an offline-cash layer in development.</p>
+<p class="hero-copy">L10N is the one to spend. Private digital cash for payments between people and businesses, with an offline-payment layer in development.</p>
 </div>
 <div class="hero-aside">
 <div class="coin-hero-symbol gold">
@@ -87,107 +87,101 @@
 </div>
 </div>
 </section>
-<div class="container">
-<div class="page-signal">
-<div class="signal ">
-<span>DEVELOPMENT</span>
-<strong>Implemented · offline work separate</strong>
+<section class="section" id="economics">
+<div class="container two-column">
+<div>
+<p class="eyebrow">ECONOMICS</p>
+<h2>Why would people need L10N?</h2>
 </div>
-<div class="signal ">
-<span>PUBLIC NETWORK</span>
-<strong>Not open</strong>
-</div>
+<div>
+<p class="large-paragraph">To pay someone. A spending coin gets demand from people who acquire it to use it, businesses that accept it, and payments that settle in it. L10N is designed for that role.</p>
 </div>
 </div>
-<section class="section" id="architecture">
+</section>
+<section class="section dim-section" id="architecture">
 <div class="container">
 <div class="section-heading">
 <p class="index">01</p>
 <div>
-<h2>The one to spend.</h2>
-<p class="lede">L10N takes the privacy work into spending. It has its own state and monetary rules while participating in the shared mining architecture. Offline cash is a separate, unfinished part of the work.</p>
+<h2>How it works.</h2>
 </div>
 </div>
 <div class="inspection" data-tabs>
 <div class="inspection-tabs" role="tablist" aria-label="L10N inspection">
 <button type="button" role="tab" id="inspect-l10n-0" aria-controls="inspect-panel-l10n-0" aria-selected="true">
-<span>01</span>Shared chain</button>
+<span>01</span>Payments</button>
 <button type="button" role="tab" id="inspect-l10n-1" aria-controls="inspect-panel-l10n-1" aria-selected="false">
-<span>02</span>Offline cash</button>
+<span>02</span>Offline</button>
 <button type="button" role="tab" id="inspect-l10n-2" aria-controls="inspect-panel-l10n-2" aria-selected="false">
-<span>03</span>Recovery</button>
+<span>03</span>Wallet</button>
 </div>
 <div class="inspection-panels">
 <div role="tabpanel" id="inspect-panel-l10n-0" aria-labelledby="inspect-l10n-0">
-<h3>Shared work. Separate rules.</h3>
-<p>L10N has native state and transaction validity. Shared mining work does not turn it into a DAARX balance, wrapped token or automatic entitlement to another chain’s funds.</p>
+<h3>Private digital cash.</h3>
+<p>L10N is designed for spending, with native balances and transaction rules. Its purpose is payment activity between people and businesses.</p>
 </div>
 <div role="tabpanel" id="inspect-panel-l10n-1" aria-labelledby="inspect-l10n-1">
-<h3>A payment cannot end at the tap.</h3>
-<p>Offline work must cover how value is loaded, exchanged, settled and recovered. Replay resistance, fraud limits and the behavior of real devices all matter. The complete public offline product is not available.</p>
+<h3>The offline-payment work.</h3>
+<p>The offline layer is being developed around the entire payment: loading, in-person exchange, later settlement and recovery.</p>
 </div>
 <div role="tabpanel" id="inspect-panel-l10n-2" aria-labelledby="inspect-l10n-2">
-<h3>The unfinished part is not the whole story.</h3>
-<p>Protected custody, pending-transaction journals, native transaction paths and off-host recovery have private implementation evidence. Pouch-state recovery exists at its tested scope; that does not prove the entire offline payment cycle.</p>
+<h3>The wallet remembers an interrupted payment.</h3>
+<p>Pending journals and protected custody retain the information needed to reconcile a transaction. Native transfer and recovery paths have been exercised in private builds.</p>
 </div>
 </div>
 </div>
-</div>
-</section>
-<section class="section dim-section">
-<div class="container two-column">
-<div>
-<p class="eyebrow">02 / CURRENT DESIGN</p>
-<h2>The details<br>that matter.</h2>
-<p>These describe the current work. Exact public parameters and release configuration still need to be qualified and published.</p>
-</div>
-<dl class="register">
-<div>
-<dt>Purpose</dt>
-<dd>Private spending and everyday exchange</dd>
-</div>
-<div>
-<dt>Native unit</dt>
-<dd>L10N</dd>
-</div>
-<div>
-<dt>Security architecture</dt>
-<dd>Shared parent work; independent chain rules</dd>
-</div>
-<div>
-<dt>Wallet work</dt>
-<dd>Native transactions, protected custody and recovery</dd>
-</div>
-<div>
-<dt>Offline cash</dt>
-<dd>In development · not released</dd>
-</div>
-</dl>
 </div>
 </section>
 <section class="section">
 <div class="container two-column">
 <div>
-<p class="eyebrow">03 / WALLET &amp; RELEASE</p>
-<h2>Built privately.<br>Public work remains.</h2>
+<p class="eyebrow">DETAILS</p>
+<h2>L10N</h2>
+</div>
+<dl class="register">
+<div>
+<dt>Native coin</dt>
+<dd>L10N</dd>
 </div>
 <div>
-<h3>What exists</h3>
-<p>Native transaction paths, protected custody, pending journals and off-host recovery exist. The complete funded offline workflow and radio/device delivery remain separate work.</p>
-<h3>What it does not prove</h3>
-<p>An online Testnet release does not mean offline spending is available. Funded offline loading, exchange, settlement, reclamation and real-device delivery require their own qualification.</p>
-<div class="actions">
-<a class="button" href="/status.html">Current progress <span aria-hidden="true">↗</span>
-</a>
-<a class="button" href="/break-it.html">Security <span aria-hidden="true">↗</span>
-</a>
+<dt>Economic role</dt>
+<dd>Private spending and everyday settlement</dd>
 </div>
+<div>
+<dt>Privacy lineage</dt>
+<dd>Shared full-chain privacy work</dd>
+</div>
+<div>
+<dt>Mining architecture</dt>
+<dd>Shared parent work; independent chain rules</dd>
+</div>
+<div>
+<dt>Wallet foundation</dt>
+<dd>Native transfers, custody, journals and recovery</dd>
+</div>
+<div>
+<dt>Offline cash</dt>
+<dd>A separate layer in development</dd>
+</div>
+</dl>
+</div>
+</section>
+<section class="section dim-section">
+<div class="container two-column">
+<div>
+<p class="eyebrow">WALLET</p>
+<h2>Transactions<br>and recovery.</h2>
+</div>
+<div>
+<p class="large-paragraph">Native-transfer paths, protected custody, pending-transaction journals and off-host recovery have private implementation and testing behind them.</p>
+<a class="button" href="/status.html">Development <span aria-hidden="true">↗</span>
+</a>
 </div>
 </div>
 </section>
 <section class="sibling-section">
 <div class="container">
-<p class="eyebrow">THE OTHER THREE</p>
+<p class="eyebrow">THE OTHER COINS</p>
 <div class="sibling-grid">
 <a class="sibling-link green" href="/daarx.html">
 <span>Private capital</span>
@@ -218,7 +212,7 @@
 <span>DAARX<span class="brand-dot">.</span>
 </span>
 </a>
-<p>Four coins.<br>Built for different jobs.</p>
+<p>DAARX · L10N · OPEN · NXXXS</p>
 <button class="motion-toggle" type="button" data-motion aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span>
 </button>
 </div>
@@ -230,22 +224,24 @@
 <a href="/nexus.html">Nexus / NXXXS</a>
 </nav>
 <nav aria-label="Project">
-<a href="/testnet.html">Testnet</a>
-<a href="/status.html">Development progress</a>
+<a href="/#thesis">Economics</a>
+<a href="/status.html">Development</a>
+<a href="/testnet.html">Public Testnet</a>
 <a href="/break-it.html">Security</a>
-<a href="/faq.html">FAQ</a>
 </nav>
 <nav aria-label="Site">
-<a href="/mine.html">Hardware research</a>
-<a href="/flyer.html">Print flyer</a>
+<a href="/mine.html">Hardware</a>
+<a href="/faq.html">Questions</a>
+<a href="/flyer.html">Print</a>
 <a href="/privacy.html">Privacy</a>
 <a href="mailto:daarxmoney@proton.me">Contact</a>
 </nav>
 </div>
 <div class="footer-bottom">
-<p>Public Testnet preparation · reviewed November 4, 2026</p>
-<p>No coin sale. No public participation yet. Testnet coins will have no monetary value.</p>
-<p>Site operator: Desiderata Labs LLC. DAARX is its registered alternate name. Protocol governance and commercial services are separate.</p>
+<p>
+<a href="/status.html">Development / Public Testnet</a>
+<span>DAARX · Desiderata Labs LLC</span>
+</p>
 </div>
 </div>
 </footer>

@@ -4,29 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#08090b">
-<title>Security and review — DAARX</title>
-<meta name="description" content="DAARX security boundaries, private test evidence, independent review and the planned public security program. No public bounty is open.">
+<title>Security — DAARX</title>
+<meta name="description" content="Cryptography, network, wallet and release-security work for the DAARX system.">
 <link rel="canonical" href="https://daarx.money/break-it.html">
 <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/type.css">
 <link rel="stylesheet" href="/site.css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX">
-<meta property="og:title" content="Security and review — DAARX">
-<meta property="og:description" content="DAARX security boundaries, private test evidence, independent review and the planned public security program. No public bounty is open.">
+<meta property="og:title" content="Security — DAARX">
+<meta property="og:description" content="Cryptography, network, wallet and release-security work for the DAARX system.">
 <meta property="og:url" content="https://daarx.money/break-it.html">
 <meta property="og:image" content="https://daarx.money/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Security and review — DAARX">
-<meta name="twitter:description" content="DAARX security boundaries, private test evidence, independent review and the planned public security program. No public bounty is open.">
+<meta name="twitter:title" content="Security — DAARX">
+<meta name="twitter:description" content="Cryptography, network, wallet and release-security work for the DAARX system.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "DAARX", "url": "https://daarx.money", "description": "The four-coin DAARX system: DAARX, L10N, OPEN and Nexus / NXXXS. Public Testnet preparation."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "DAARX", "url": "https://daarx.money", "description": "Four native coins. Private capital, private cash, accountable authority and bonded assurance."}</script>
 <script src="/site.js" defer>
 </script>
 </head>
-<body class="">
+<body class="mystique ">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
 <div class="header-inner">
@@ -38,24 +38,24 @@
 </span>
 </a>
 <nav class="desktop-nav" aria-label="Primary">
+<a href="/#thesis">Economics</a>
 <a href="/#ecosystem">Four coins</a>
+<a href="/status.html">Development</a>
 <a href="/testnet.html">Testnet</a>
-<a href="/status.html">Progress</a>
-<a href="/break-it.html" aria-current="page">Security</a>
 </nav>
 <details class="site-menu">
-<summary>Menu <span aria-hidden="true">＋</span>
+<summary>Explore <span aria-hidden="true">＋</span>
 </summary>
 <nav aria-label="All pages">
 <a href="/daarx.html">DAARX</a>
 <a href="/l10n.html">L10N</a>
 <a href="/open.html">OPEN</a>
 <a href="/nexus.html">Nexus / NXXXS</a>
-<a href="/testnet.html">Testnet</a>
-<a href="/status.html">Progress</a>
+<a href="/status.html">Development</a>
+<a href="/testnet.html">Public Testnet</a>
 <a href="/break-it.html" aria-current="page">Security</a>
-<a href="/mine.html">Hardware research</a>
-<a href="/faq.html">FAQ</a>
+<a href="/mine.html">Hardware</a>
+<a href="/faq.html">Questions</a>
 <a href="/privacy.html">Privacy</a>
 </nav>
 </details>
@@ -68,45 +68,28 @@
 <div class="page-hero-grid">
 <div>
 <p class="eyebrow">Security</p>
-<h1>Check the claims.<br>
-<em>Then check the code.</em>
-</h1>
-<p class="hero-copy">Private tests are useful evidence. They do not replace independent review, a public network campaign or scrutiny of the system as a whole.</p>
+<h1>Security</h1>
+<p class="hero-copy">The work covers the cryptography, consensus, software, wallets and the behavior of the system across machines.</p>
 </div>
 <div class="hero-aside">
-<div class="signal ">
-<span>PROFESSIONAL AUDIT</span>
-<strong>Not complete</strong>
-</div>
-<div class="signal ">
-<span>PUBLIC BOUNTY</span>
-<strong>Not open</strong>
-</div>
 </div>
 </div>
 </div>
 </section>
 <section class="section" id="more">
 <div class="container">
-<div class="section-heading">
-<p class="index">01</p>
-<div>
-<h2>The review has to reach<br>the whole system.</h2>
-<p class="lede">Reviewed dependencies do not automatically make their composition safe.</p>
-</div>
-</div>
 <div class="product-columns">
 <article>
 <h3>Cryptography.</h3>
-<p>Proof systems, amount commitments, signatures and their dependencies need scrutiny of assumptions, implementation and integration.</p>
+<p>Membership proofs, amount commitments and signatures, including their assumptions and integration.</p>
 </article>
 <article>
-<h3>Consensus and the network.</h3>
-<p>Transaction rules, mining commitments, history, forks, cross-chain boundaries and fault behavior must agree in the actual release.</p>
+<h3>Network.</h3>
+<p>Consensus, mining commitments, transaction rules, history, forks and recovery.</p>
 </article>
 <article>
-<h3>The person holding the key.</h3>
-<p>Wallet creation, signing, backups, interrupted sends, recovery and device behavior are part of the security boundary.</p>
+<h3>Wallets.</h3>
+<p>Key creation, protected signing, reviewed sends, interrupted submissions, backups and restoration.</p>
 </article>
 </div>
 </div>
@@ -114,13 +97,11 @@
 <section class="section dim-section" id="security-network">
 <div class="container two-column">
 <div>
-<p class="eyebrow">02 / PUBLIC TESTING</p>
-<h2>A network campaign<br>has a different job.</h2>
+<h2>Builds and review.</h2>
 </div>
 <div>
-<p>The public Testnet is intended to exercise software and operations beyond controlled private tests. Supported participation, reset rules, report scope and recovery instructions will be published with the release.</p>
-<p>Public entry is not open yet. This page does not authorize testing third-party services, commercial infrastructure or systems outside a published scope.</p>
-<a class="button" href="/testnet.html">About public participation <span aria-hidden="true">↗</span>
+<p>Reproducible packages and current integration checks connect the source to what people install. Public Testnet adds independent machines and observations.</p>
+<a class="button" href="/status.html">Development details <span aria-hidden="true">↗</span>
 </a>
 </div>
 </div>
@@ -128,24 +109,27 @@
 <section class="section" id="security-bounty">
 <div class="container two-column">
 <div>
-<p class="eyebrow">03 / SECURITY PROGRAM</p>
-<h2>The public program<br>hasn’t opened.</h2>
+<h2>Research enquiries.</h2>
+<p>
+<a href="mailto:daarxmoney@proton.me">daarxmoney@proton.me</a>
+</p>
 </div>
-<div>
-<p>A public program needs confirmed funding, official rules, clear scope, a reporting channel, safe-harbor terms, response expectations and an award process. Those are not published as an active offer today.</p>
-<p>No amount, reward, credit or invitation is promised by this page. A hardware-interest submission does not enter a security program.</p>
-</div>
-</div>
-</section>
-<section class="section dim-section" id="security-report">
-<div class="container two-column">
-<div>
-<p class="eyebrow">04 / CONTACT</p>
-<h2>Questions are welcome.</h2>
-</div>
-<div>
-<p>For general project questions, contact <a href="mailto:daarxmoney@proton.me">daarxmoney@proton.me</a>. A dedicated vulnerability intake and its encryption instructions must be published before a public security program opens.</p>
-<p>Do not email wallet seeds, private keys, credentials or someone else’s personal data.</p>
+<div class="notes-list" id="security-report">
+<details>
+<summary>Review status <span aria-hidden="true">↗</span>
+</summary>
+<p>Internal testing and release qualification are active. Independent professional audit remains a separate step.</p>
+</details>
+<details>
+<summary>Public research programme <span aria-hidden="true">↗</span>
+</summary>
+<p>Scope, reporting instructions, safe-harbor terms, response expectations and confirmed award funding will be published when the programme opens.</p>
+</details>
+<details>
+<summary>Contact details <span aria-hidden="true">↗</span>
+</summary>
+<p>The address is for general enquiries. A dedicated vulnerability intake and encryption instructions will be published with the programme. Keep seeds, keys and credentials out of messages.</p>
+</details>
 </div>
 </div>
 </section>
@@ -160,7 +144,7 @@
 <span>DAARX<span class="brand-dot">.</span>
 </span>
 </a>
-<p>Four coins.<br>Built for different jobs.</p>
+<p>DAARX · L10N · OPEN · NXXXS</p>
 <button class="motion-toggle" type="button" data-motion aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span>
 </button>
 </div>
@@ -172,22 +156,24 @@
 <a href="/nexus.html">Nexus / NXXXS</a>
 </nav>
 <nav aria-label="Project">
-<a href="/testnet.html">Testnet</a>
-<a href="/status.html">Development progress</a>
+<a href="/#thesis">Economics</a>
+<a href="/status.html">Development</a>
+<a href="/testnet.html">Public Testnet</a>
 <a href="/break-it.html">Security</a>
-<a href="/faq.html">FAQ</a>
 </nav>
 <nav aria-label="Site">
-<a href="/mine.html">Hardware research</a>
-<a href="/flyer.html">Print flyer</a>
+<a href="/mine.html">Hardware</a>
+<a href="/faq.html">Questions</a>
+<a href="/flyer.html">Print</a>
 <a href="/privacy.html">Privacy</a>
 <a href="mailto:daarxmoney@proton.me">Contact</a>
 </nav>
 </div>
 <div class="footer-bottom">
-<p>Public Testnet preparation · reviewed November 4, 2026</p>
-<p>No coin sale. No public participation yet. Testnet coins will have no monetary value.</p>
-<p>Site operator: Desiderata Labs LLC. DAARX is its registered alternate name. Protocol governance and commercial services are separate.</p>
+<p>
+<a href="/status.html">Development / Public Testnet</a>
+<span>DAARX · Desiderata Labs LLC</span>
+</p>
 </div>
 </div>
 </footer>
