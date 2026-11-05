@@ -111,100 +111,18 @@
     });
   }
 
-  /* A procedural spectral torus, not network data. No requests or storage. */
-  const canvas = doc.querySelector('[data-spectrum]');
-  const ctx = canvas && canvas.getContext('2d');
-  let width = 0;
-  let height = 0;
-  let frame = 0;
-  let visible = true;
-  let pointerX = 0;
-  let pointerY = 0;
-  let last = 0;
-  const colors = ['134,243,177', '232,199,109', '131,217,228', '182,154,245'];
-
-  function draw(time) {
-    if (!ctx || !width) return;
-    ctx.clearRect(0, 0, width, height);
-    const size = Math.min(width, height);
-    const centerX = width * .5 + pointerX * 9;
-    const centerY = height * .5 + pointerY * 7;
-    const radius = size * .294;
-    const t = time * .000085;
-    ctx.globalCompositeOperation = 'lighter';
-    for (let band = 0; band < 108; band += 1) {
-      const b = band / 108 * Math.PI * 2;
-      const color = colors[Math.floor(band / 27)];
-      const alpha = .16 + Math.pow(Math.sin(b * 1.4 + t), 2) * .42;
-      ctx.strokeStyle = 'rgba(' + color + ',' + alpha.toFixed(3) + ')';
-      ctx.lineWidth = band % 5 === 0 ? 1.15 : .65;
-      ctx.shadowColor = 'rgba(' + color + ',.48)';
-      ctx.shadowBlur = band % 9 === 0 ? 19 : 0;
-      ctx.beginPath();
-      for (let step = 0; step <= 170; step += 1) {
-        const a = step / 170 * Math.PI * 2;
-        const swell = Math.cos(b * 3 + a * 2 + t * 2) * .082;
-        const tube = radius * (.30 + swell);
-        const ring = radius + tube * Math.cos(b + a * .75 + t);
-        const x = Math.cos(a) * ring;
-        const y = Math.sin(a) * ring;
-        const z = tube * Math.sin(b + a * .75 + t);
-        const warp = Math.sin(a * 4 - b * 2 + t * .7) * size * .016;
-        const dx = x * .88 - y * .36;
-        const dy = x * .27 + y * .60 + z * .9 + warp;
-        const px = centerX + dx;
-        const py = centerY + dy;
-        if (!step) ctx.moveTo(px, py); else ctx.lineTo(px, py);
-      }
-      ctx.closePath();
-      ctx.stroke();
-    }
-    ctx.shadowBlur = 0;
-    ctx.globalCompositeOperation = 'source-over';
-  }
-  function resize() {
-    if (!ctx) return;
-    const box = canvas.getBoundingClientRect();
-    const ratio = Math.min(window.devicePixelRatio || 1, 1.75);
-    width = box.width;
-    height = box.height;
-    canvas.width = Math.round(width * ratio);
-    canvas.height = Math.round(height * ratio);
-    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-    draw(3500);
-  }
-  function tick(time) {
-    frame = 0;
-    if (paused || !visible || doc.hidden || !ctx) return;
-    if (time - last > 42) { draw(time); last = time; }
-    frame = window.requestAnimationFrame(tick);
-  }
-  function start() { if (!frame && ctx && !paused && visible && !doc.hidden) frame = window.requestAnimationFrame(tick); }
-  function stop() { if (frame) window.cancelAnimationFrame(frame); frame = 0; }
   function applyMotion() {
     doc.body.classList.toggle('motion-paused', paused);
+    doc.documentElement.classList.toggle('motion-paused', paused);
     doc.querySelectorAll('[data-motion]').forEach(function (button) {
       button.setAttribute('aria-pressed', String(paused));
       button.textContent = paused ? 'Resume motion ▷' : 'Pause motion Ⅱ';
     });
-    if (paused) { stop(); draw(3500); } else start();
+    doc.dispatchEvent(new CustomEvent('daarx:motion', { detail: { paused } }));
   }
-  doc.querySelectorAll('[data-motion]').forEach(function (button) { button.addEventListener('click', function () { paused = !paused; applyMotion(); }); });
+  doc.querySelectorAll('[data-motion]').forEach(function (button) {
+    button.addEventListener('click', function () { paused = !paused; applyMotion(); });
+  });
   if (reduced.addEventListener) reduced.addEventListener('change', function (event) { paused = event.matches; applyMotion(); });
-  if (ctx) {
-    resize();
-    if ('ResizeObserver' in window) new ResizeObserver(resize).observe(canvas);
-    else window.addEventListener('resize', resize, { passive: true });
-    const lens = canvas.parentElement;
-    lens.addEventListener('pointermove', function (event) {
-      if (paused || event.pointerType === 'touch') return;
-      const box = lens.getBoundingClientRect();
-      pointerX = (event.clientX - box.left) / box.width - .5;
-      pointerY = (event.clientY - box.top) / box.height - .5;
-    }, { passive: true });
-    lens.addEventListener('pointerleave', function () { pointerX = 0; pointerY = 0; }, { passive: true });
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (entries) { visible = entries[0].isIntersecting; if (visible) start(); else stop(); }).observe(lens);
-    doc.addEventListener('visibilitychange', function () { if (doc.hidden) stop(); else start(); });
-  }
   applyMotion();
 }());

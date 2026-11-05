@@ -5,28 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#08090b">
 <title>DAARX — Private capital | DAARX</title>
-<meta name="description" content="Private savings. Fixed issuance. Eventually, zero new coins.">
+<meta name="description" content="Keep your balance to yourself. Let the rules speak for the supply.">
 <link rel="canonical" href="https://daarx.money/daarx.html">
 <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/type.css">
-<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/dream.css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX">
 <meta property="og:title" content="DAARX — Private capital | DAARX">
-<meta property="og:description" content="Private savings. Fixed issuance. Eventually, zero new coins.">
+<meta property="og:description" content="Keep your balance to yourself. Let the rules speak for the supply.">
 <meta property="og:url" content="https://daarx.money/daarx.html">
 <meta property="og:image" content="https://daarx.money/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DAARX — Private capital | DAARX">
-<meta name="twitter:description" content="Private savings. Fixed issuance. Eventually, zero new coins.">
+<meta name="twitter:description" content="Keep your balance to yourself. Let the rules speak for the supply.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "DAARX", "url": "https://daarx.money", "description": "Four native coins. Private capital, private cash, accountable authority and bonded assurance."}</script>
 <script src="/site.js" defer>
 </script>
+<script src="/dream.js" defer>
+</script>
 </head>
-<body class="mystique green">
+<body class="mystique green coin-page daarx-page dream">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
 <div class="header-inner">
@@ -38,11 +40,12 @@
 </span>
 </a>
 <nav class="desktop-nav" aria-label="Primary">
-<a href="/#thesis">Economics</a>
-<a href="/#ecosystem">Four coins</a>
+<a href="/#ecosystem">The four coins</a>
+<a href="/#thesis">Issuance</a>
 <a href="/status.html">Development</a>
-<a href="/testnet.html">Testnet</a>
 </nav>
+<div class="header-controls">
+<button class="motion-toggle header-motion" type="button" data-motion aria-pressed="false" title="Pause or resume visual motion">Pause motion Ⅱ</button>
 <details class="site-menu">
 <summary>Explore <span aria-hidden="true">＋</span>
 </summary>
@@ -60,128 +63,162 @@
 </nav>
 </details>
 </div>
+</div>
 </header>
 <main id="main">
 <section class="page-hero green">
+<div class="dream-art inner-art" aria-hidden="true">
+<picture>
+<source media="(max-width: 600px)" srcset="/assets/dream-gateway-mobile-v1.webp">
+<img src="/assets/dream-gateway-v1.webp" width="1672" height="941" alt="" fetchpriority="high">
+</picture>
+<canvas data-dream-canvas>
+</canvas>
+<div class="art-vignette">
+</div>
+</div>
 <div class="container">
-<a class="back-link" href="/">DAARX / Private capital</a>
+<a class="back-link" href="/">DAARX / PRIVATE CAPITAL</a>
 <div class="page-hero-grid">
 <div>
-<p class="eyebrow">Private capital</p>
+<p class="eyebrow">PRIVATE CAPITAL</p>
 <h1>DAARX</h1>
-<p class="hero-copy">DAARX is the one to keep. It combines private ownership with a supply defined by a fixed emission schedule. That schedule eventually ends.</p>
+<p class="hero-copy">Keep your balance to yourself. Let the rules speak for the supply.</p>
 </div>
 <div class="hero-aside">
-<div class="coin-hero-symbol green">
-<div class="coin-glyph daarx" aria-hidden="true">
-<i>
-</i>
-<i>
-</i>
+<div class="coin-hero-symbol">
+<div class="dream-object daarx" data-art-object aria-hidden="true">
+<img src="/assets/dream-daarx-v1.webp" width="640" height="640" alt="" loading="lazy" decoding="async">
 <i>
 </i>
 </div>
-<span>DAARX</span>
 </div>
 </div>
 </div>
+</div>
+<div class="horizon-line" aria-hidden="true">
 </div>
 </section>
-<section class="section" id="economics">
+<section class="section coin-thesis" id="economics">
 <div class="container two-column">
 <div>
-<p class="eyebrow">ECONOMICS</p>
-<h2>Why hold DAARX?</h2>
+<p class="eyebrow">WHY THIS MONEY EXISTS</p>
+<h2>Private money.<br>Long horizons.</h2>
 </div>
 <div>
-<p class="large-paragraph">The holder’s bet is demand for private capital. The supply follows a known schedule and eventually stops growing. People have a reason to hold it if they want those properties in money.</p>
+<p class="large-paragraph">DAARX is private capital with a fixed issuance path. New issuance rises toward year 7.77, then declines through a finite schedule. Most of the supply is still ahead at the peak.</p>
+<p>Hidden ordinary transfer amounts. Full-chain membership proofs. A public fee ladder that avoids charging a percentage of a hidden payment.</p>
 </div>
 </div>
 </section>
-<section class="section dim-section" id="architecture">
+<section class="section coin-issuance green" id="issuance">
+<div class="container">
+<div class="policy-title">
+<p class="eyebrow">ISSUANCE + ALLOCATION</p>
+<h2>A later peak. A finite supply.</h2>
+</div>
+<div class="policy-numbers">
+<div>
+<strong>7.77</strong>
+<span>target years to peak</span>
+</div>
+<div>
+<strong>111s</strong>
+<span>target block spacing</span>
+</div>
+<div>
+<strong>~100</strong>
+<span>target years of issuance</span>
+</div>
+</div>
+<div class="policy-copy">
+<p>The literal ceiling is 5.083 trillion DIAM, with 12 decimal places. The frozen integer table defines issuance. Per-block rounding leaves a tiny amount below that ceiling. After the finite schedule, miner income comes from transaction fees.</p>
+<p>No premine. No presale. No founder reward. Miners receive the block subsidy and transaction fees.</p>
+</div>
+<a class="button" href="/#thesis">Compare the four curves <span aria-hidden="true">↗</span>
+</a>
+</div>
+</section>
+<section class="section protocol-study green">
+<div class="container">
+<div class="study-opening">
+<p class="eyebrow">PROTOCOL STUDY</p>
+<h2>A valid spend, without opening the balance sheet.</h2>
+<p>Hidden ordinary transfer amounts. Full-chain membership proofs. A public fee ladder that avoids charging a percentage of a hidden payment.</p>
+</div>
+<div class="proof-scene" data-proof-scene>
+<div class="proof-orbit" aria-hidden="true">
+<div class="dream-object daarx" data-art-object aria-hidden="true">
+<img src="/assets/dream-daarx-v1.webp" width="640" height="640" alt="" loading="lazy" decoding="async">
+<i>
+</i>
+</div>
+</div>
+<div class="proof-nodes">
+<div>
+<span>01</span>
+<strong>One-time destination</strong>
+<p data-proof-description hidden>A recipient-specific output key.</p>
+</div>
+<div>
+<span>02</span>
+<strong>Hidden amount</strong>
+<p data-proof-description hidden>Commitments keep the transfer arithmetic checkable.</p>
+</div>
+<div>
+<span>03</span>
+<strong>Membership proof</strong>
+<p data-proof-description hidden>Prove valid membership without identifying the earlier output.</p>
+</div>
+<div>
+<span>04</span>
+<strong>Valid spend</strong>
+<p data-proof-description hidden>Authorization and spent tags check spending rights and reject reuse.</p>
+</div>
+</div>
+<button type="button" class="button" data-inspect aria-pressed="false">Inspect the structure <span aria-hidden="true">＋</span>
+</button>
+<p class="proof-caption">Illustration: payment amounts stay sealed; validity is checked.</p>
+</div>
+</div>
+</section>
+<section class="section dim-section">
 <div class="container">
 <div class="section-heading">
-<p class="index">01</p>
+<p class="index">03 / DETAILS</p>
 <div>
-<h2>How it works.</h2>
+<h2>Look closer.</h2>
 </div>
 </div>
 <div class="inspection" data-tabs>
 <div class="inspection-tabs" role="tablist" aria-label="DAARX inspection">
 <button type="button" role="tab" id="inspect-daarx-0" aria-controls="inspect-panel-daarx-0" aria-selected="true">
-<span>01</span>Supply</button>
+<span>01</span>Money</button>
 <button type="button" role="tab" id="inspect-daarx-1" aria-controls="inspect-panel-daarx-1" aria-selected="false">
-<span>02</span>Privacy</button>
+<span>02</span>Rules</button>
 <button type="button" role="tab" id="inspect-daarx-2" aria-controls="inspect-panel-daarx-2" aria-selected="false">
-<span>03</span>Mining</button>
+<span>03</span>Wallet</button>
 </div>
 <div class="inspection-panels">
 <div role="tabpanel" id="inspect-panel-daarx-0" aria-labelledby="inspect-daarx-0">
-<h3>The supply follows the code.</h3>
-<p>DAARX has an integer emission schedule that eventually reaches zero. The schedule defines how new coins enter circulation.</p>
+<h3>A later peak. A finite supply.</h3>
+<p>The literal ceiling is 5.083 trillion DIAM, with 12 decimal places. The frozen integer table defines issuance. Per-block rounding leaves a tiny amount below that ceiling. After the finite schedule, miner income comes from transaction fees.</p>
 </div>
 <div role="tabpanel" id="inspect-panel-daarx-1" aria-labelledby="inspect-daarx-1">
-<h3>A spend can be checked without publishing its history.</h3>
-<p>Full-chain membership proofs target membership in the valid chain without identifying the earlier output being spent. Amount commitments keep the arithmetic verifiable while hiding the amount.</p>
+<h3>A valid spend, without opening the balance sheet.</h3>
+<p>Hidden ordinary transfer amounts. Full-chain membership proofs. A public fee ladder that avoids charging a percentage of a hidden payment.</p>
 </div>
 <div role="tabpanel" id="inspect-panel-daarx-2" aria-labelledby="inspect-daarx-2">
-<h3>New coins come from mining.</h3>
-<p>DAARX uses RandomX parent work. The shared architecture also carries child commitments for L10N, OPEN and NXXXS.</p>
+<h3>Transactions and recovery.</h3>
+<p>Private wallet builds have exercised creation, reviewed transfers, encrypted backups, restoration and recovery after an interrupted send.</p>
 </div>
 </div>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="container two-column">
-<div>
-<p class="eyebrow">DETAILS</p>
-<h2>DAARX</h2>
-</div>
-<dl class="register">
-<div>
-<dt>Native coin</dt>
-<dd>DAARX</dd>
-</div>
-<div>
-<dt>Economic role</dt>
-<dd>Private capital and long-duration savings</dd>
-</div>
-<div>
-<dt>Supply design</dt>
-<dd>Deterministic integer issuance; eventual zero emission</dd>
-</div>
-<div>
-<dt>Privacy design</dt>
-<dd>Hidden amounts and full-chain membership</dd>
-</div>
-<div>
-<dt>Current block target</dt>
-<dd>111 seconds</dd>
-</div>
-<div>
-<dt>Mining architecture</dt>
-<dd>RandomX parent work</dd>
-</div>
-</dl>
-</div>
-</section>
-<section class="section dim-section">
-<div class="container two-column">
-<div>
-<p class="eyebrow">WALLET</p>
-<h2>Transactions<br>and recovery.</h2>
-</div>
-<div>
-<p class="large-paragraph">Private wallet builds have exercised creation, reviewed transfers, encrypted backups, restoration and recovery after an interrupted send.</p>
-<a class="button" href="/status.html">Development <span aria-hidden="true">↗</span>
-</a>
 </div>
 </div>
 </section>
 <section class="sibling-section">
 <div class="container">
-<p class="eyebrow">THE OTHER COINS</p>
+<p class="eyebrow">FOLLOW ANOTHER CURRENT</p>
 <div class="sibling-grid">
 <a class="sibling-link gold" href="/l10n.html">
 <span>Private cash</span>
@@ -195,7 +232,7 @@
 </a>
 <a class="sibling-link violet" href="/nexus.html">
 <span>Bonded assurance</span>
-<strong>Nexus / NXXXS</strong>
+<strong>NXXXS</strong>
 <span aria-hidden="true">↗</span>
 </a>
 </div>
