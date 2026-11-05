@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import html
+import hashlib
 import json
 import re
 
@@ -422,8 +423,9 @@ def coin_page(c):
     return shell(c['path'],c['name']+' — '+c['role']+' | DAARX',c['description'],b,cls=c['color']+' coin-page '+c['id']+'-page')
 
 def shell(path,title,description,body,schema=None,cls=''):
+    def asset(name): return '/'+name+'?v='+hashlib.sha256((ROOT/name).read_bytes()).hexdigest()[:12]
     schema=schema or {'@context':'https://schema.org','@type':'WebSite','name':'DAARX','url':ORIGIN,'description':'Four native coins. Private capital, private cash, accountable authority and bonded assurance.'}
-    head='<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f0f5ed"><title>'+esc(title)+'</title><meta name="description" content="'+esc(description)+'"><link rel="canonical" href="'+ORIGIN+path+'"><link rel="icon" href="/assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/type.css"><link rel="stylesheet" href="/dream.css"><meta property="og:type" content="website"><meta property="og:site_name" content="DAARX"><meta property="og:title" content="'+esc(title)+'"><meta property="og:description" content="'+esc(description)+'"><meta property="og:url" content="'+ORIGIN+path+'"><meta property="og:image" content="'+ORIGIN+'/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+esc(title)+'"><meta name="twitter:description" content="'+esc(description)+'"><meta name="twitter:image" content="'+ORIGIN+'/og.png"><script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('</',r'<\/')+'</script><script src="/site.js" defer></script><script src="/dream.js" defer></script></head>'
+    head='<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f0f5ed"><title>'+esc(title)+'</title><meta name="description" content="'+esc(description)+'"><link rel="canonical" href="'+ORIGIN+path+'"><link rel="icon" href="/assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/type.css"><link rel="stylesheet" href="'+asset('dream.css')+'"><meta property="og:type" content="website"><meta property="og:site_name" content="DAARX"><meta property="og:title" content="'+esc(title)+'"><meta property="og:description" content="'+esc(description)+'"><meta property="og:url" content="'+ORIGIN+path+'"><meta property="og:image" content="'+ORIGIN+'/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+esc(title)+'"><meta name="twitter:description" content="'+esc(description)+'"><meta name="twitter:image" content="'+ORIGIN+'/og.png"><script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('</',r'<\/')+'</script><script src="'+asset('site.js')+'" defer></script><script src="'+asset('dream.js')+'" defer></script></head>'
     return head+'<body class="mystique '+cls+' dream">'+header(path)+'<main id="main">'+body+'</main>'+footer()+'</body></html>'
 
 def build():
