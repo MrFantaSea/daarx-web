@@ -8,6 +8,12 @@
   doc.querySelectorAll('[data-tabs]').forEach(function (group) {
     const tabs = Array.from(group.querySelectorAll('[role="tab"]'));
     const panels = Array.from(group.querySelectorAll('[role="tabpanel"]'));
+    const list=group.querySelector('[role="tablist"]');
+    if(list && list.classList.contains('coin-rail')){
+      const orientation=window.matchMedia('(max-width:650px)');
+      const orient=()=>list.setAttribute('aria-orientation',orientation.matches?'horizontal':'vertical');
+      orient();orientation.addEventListener('change',orient);
+    }
     function activate(tab, focus) {
       tabs.forEach(function (item) {
         const active = item === tab;
@@ -17,7 +23,10 @@
       panels.forEach(function (panel) { panel.hidden = panel.id !== tab.getAttribute('aria-controls'); });
       if (focus) tab.focus();
       const coin = tab.id.replace('coin-tab-', '');
-      if (tab.id.startsWith('coin-tab-')) doc.documentElement.dataset.coin = coin;
+      if (tab.id.startsWith('coin-tab-')) {
+        doc.documentElement.dataset.coin = coin;
+        doc.dispatchEvent(new CustomEvent('daarx:coin',{detail:{id:coin}}));
+      }
     }
     tabs.forEach(function (tab, index) {
       tab.addEventListener('click', function () { activate(tab, false); });

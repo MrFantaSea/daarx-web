@@ -35,31 +35,26 @@
   doc.querySelectorAll('[data-realm-choice]').forEach(button => {
     button.addEventListener('click', () => {
       const tab = doc.getElementById('coin-tab-' + button.dataset.realmChoice);
-      if (tab) tab.click();
-      choose(button.dataset.realmChoice);
+      if (tab) tab.click(); else choose(button.dataset.realmChoice);
     });
   });
-  doc.querySelectorAll('.coin-row[role="tab"]').forEach(tab => {
-    tab.addEventListener('click', () => choose(tab.id.replace('coin-tab-', '')));
-  });
-  // Keyboard-driven tab activation also changes the surrounding material.
-  new MutationObserver(() => {
-    if (doc.documentElement.dataset.coin) choose(doc.documentElement.dataset.coin);
-  }).observe(doc.documentElement, { attributes: true, attributeFilter: ['data-coin'] });
+  doc.addEventListener('daarx:coin', event => choose(event.detail.id));
   choose(names[realm]);
 
   const emission = doc.querySelector('[data-emission]');
   if (emission) {
-    const data = JSON.parse(doc.getElementById('emission-data').textContent);
     const range = doc.getElementById('time-range');
     const display = doc.getElementById('time-output');
     const cursor = emission.querySelector('.time-cursor');
+    const announcement = emission.querySelector('[data-schedule-announcement]');
+    let data = null, loading = null, announcementTimer = 0;
     function update() {
+      if (!data) return;
       const year = Number(range.value);
-      const index = Math.max(0, Math.min(2500, Math.round(year * 100)));
+      const index = Math.max(0, Math.min(data.coins.daarx.rewards.length-1, Math.round(year / data.step_years)));
       display.value = year.toFixed(2);
       range.setAttribute('aria-valuetext', year.toFixed(2) + ' target years');
-      const x = 56 + year / 25 * 1088;
+      const x = 56 + year / data.years * 1088;
       cursor.setAttribute('x1', x.toFixed(3));
       cursor.setAttribute('x2', x.toFixed(3));
       names.forEach(id => {
@@ -68,15 +63,40 @@
       });
       emission.dataset.year = year.toFixed(2);
     }
-    range.addEventListener('input', update);
-    const chart = emission.querySelector('.emission-chart');
-    chart.addEventListener('pointerdown', event => {
-      const box = chart.getBoundingClientRect();
-      const ratio = ((event.clientX - box.left) / box.width * 1200 - 56) / 1088;
-      range.value = Math.max(.01, Math.min(25, ratio * 25)).toFixed(2);
-      update();
+    function announce() {
+      clearTimeout(announcementTimer);
+      announcementTimer = setTimeout(() => {
+        const words=names.map(id => {
+          const value=emission.querySelector('[data-reward="'+id+'"]').value;
+          return (id==='nexus'?'NXXXS':id.toUpperCase())+' '+value+' '+(id==='daarx'?'DIAM':id==='nexus'?'NXXXS':id.toUpperCase())+' per block';
+        });
+        announcement.textContent='At '+Number(range.value).toFixed(2)+' target years: '+words.join('; ')+'.';
+      },220);
+    }
+    function loadStudy() {
+      if (loading) return loading;
+      loading=fetch(emission.dataset.src,{credentials:'same-origin',cache:'force-cache'}).then(response => {
+        if (!response.ok) throw new Error('Study data unavailable');
+        return response.json();
+      }).then(value => {
+        data=value; range.disabled=false; emission.dataset.state='interactive';update();
+      }).catch(() => { emission.dataset.state='snapshot'; });
+      return loading;
+    }
+    range.addEventListener('input',update);
+    range.addEventListener('change',announce);
+    emission.addEventListener('focusin',loadStudy,{once:true});
+    const chart=emission.querySelector('.emission-chart');
+    chart.addEventListener('pointerdown', async event => {
+      await loadStudy();if (!data) return;
+      const box=chart.getBoundingClientRect();
+      const ratio=((event.clientX-box.left)/box.width*1200-56)/1088;
+      range.value=Math.max(.01,Math.min(data.years,ratio*data.years)).toFixed(2);update();announce();
     });
-    update();
+    if ('IntersectionObserver' in window) {
+      const observer=new IntersectionObserver(entries => { if(entries.some(entry=>entry.isIntersecting)){loadStudy();observer.disconnect();} },{rootMargin:'600px 0px'});
+      observer.observe(emission);
+    } else loadStudy();
   }
 
   const work = doc.querySelector('[data-work-study]');
@@ -91,11 +111,13 @@
     pulseTimer = window.setTimeout(() => { work.classList.remove('pulse-active'); pulse.setAttribute('aria-pressed', 'false'); }, 2700);
   });
   doc.querySelectorAll('[data-inspect]').forEach(button => {
+    button.closest('[data-proof-scene]').querySelectorAll('[data-proof-description]').forEach(detail => { detail.hidden=true; });
     button.addEventListener('click', () => {
       const scene = button.closest('[data-proof-scene]');
       const active = scene.classList.toggle('inspected');
       scene.querySelectorAll('[data-proof-description]').forEach(detail => { detail.hidden = !active; });
       button.setAttribute('aria-pressed', String(active));
+      button.setAttribute('aria-expanded', String(active));
       button.innerHTML = active ? 'Close inspection <span aria-hidden="true">−</span>' : 'Inspect the structure <span aria-hidden="true">＋</span>';
     });
   });
@@ -147,7 +169,8 @@
       vec2 q=clamp(uv+offset,vec2(.002),vec2(.998));
       vec3 color=vec3(texture2D(u_image,q+vec2(split,0.)).r,texture2D(u_image,q).g,texture2D(u_image,q-vec2(split,0.)).b);
       vec3 tint=u_realm<.5?vec3(.88,1.0,.90):u_realm<1.5?vec3(1.0,.92,.72):u_realm<2.5?vec3(.72,1.0,1.0):vec3(.88,.74,1.0);
-      color=mix(color,color*tint,0.24);
+      color=mix(color,color*tint,0.12);
+      color=pow(color,vec3(.84))*1.04;
       gl_FragColor=vec4(color,1.0);
     }`;
 
@@ -221,7 +244,12 @@
     }
     if (img.complete) initialize(); else img.addEventListener('load', initialize, { once: true });
     art.dataset.renderer = art.dataset.renderer || 'image';
-    canvas.addEventListener('webglcontextlost', event => { event.preventDefault(); stop(); stopped = true; art.classList.remove('canvas-ready'); art.dataset.renderer = 'image'; });
+    canvas.addEventListener('webglcontextlost', event => {
+      event.preventDefault();stop();stopped=true;ready=false;art.classList.remove('canvas-ready');art.dataset.renderer='image';
+    });
+    canvas.addEventListener('webglcontextrestored', () => {
+      stopped=false;ready=false;program=null;uniforms=null;initialize();
+    });
     if ('ResizeObserver' in window) new ResizeObserver(resize).observe(art);
     else window.addEventListener('resize', resize, { passive: true });
     if ('IntersectionObserver' in window) new IntersectionObserver(entries => { visible=entries[0].isIntersecting; if (visible) start(); else stop(); }).observe(section);

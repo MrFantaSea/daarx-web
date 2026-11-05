@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#08090b">
+<meta name="theme-color" content="#f0f5ed">
 <title>OPEN — Accountable authority | DAARX</title>
 <meta name="description" content="Public accounts and bounded authority for people, institutions and agents.">
 <link rel="canonical" href="https://daarx.money/open.html">
@@ -43,6 +43,7 @@
 <a href="/#ecosystem">The four coins</a>
 <a href="/#thesis">Issuance</a>
 <a href="/status.html">Development</a>
+<a href="/testnet.html">Testnet</a>
 </nav>
 <div class="header-controls">
 <button class="motion-toggle header-motion" type="button" data-motion aria-pressed="false" title="Pause or resume visual motion">Pause motion Ⅱ</button>
@@ -67,16 +68,6 @@
 </header>
 <main id="main">
 <section class="page-hero cyan">
-<div class="dream-art inner-art" aria-hidden="true">
-<picture>
-<source media="(max-width: 600px)" srcset="/assets/dream-gateway-mobile-v1.webp">
-<img src="/assets/dream-gateway-v1.webp" width="1672" height="941" alt="" fetchpriority="high">
-</picture>
-<canvas data-dream-canvas>
-</canvas>
-<div class="art-vignette">
-</div>
-</div>
 <div class="container">
 <a class="back-link" href="/">DAARX / ACCOUNTABLE AUTHORITY</a>
 <div class="page-hero-grid">
@@ -107,7 +98,6 @@
 </div>
 <div>
 <p class="large-paragraph">OPEN gives delegated activity its own economic structure. Principals fund agents, mandates limit what they can spend, and HALO puts capital behind Agent value acts.</p>
-<p>Per-transaction, per-epoch and lifetime caps apply through the mandate ancestry. Delegating a mandate does not multiply its budget.</p>
 </div>
 </div>
 </section>
@@ -144,7 +134,7 @@
 <div class="study-opening">
 <p class="eyebrow">PROTOCOL STUDY</p>
 <h2>Inspect the authority behind the action.</h2>
-<p>Per-transaction, per-epoch and lifetime caps apply through the mandate ancestry. Delegating a mandate does not multiply its budget.</p>
+<p>Follow a principal’s authority through a mandate to an Agent’s backed action.</p>
 </div>
 <div class="proof-scene" data-proof-scene>
 <div class="proof-orbit" aria-hidden="true">
@@ -154,71 +144,54 @@
 </i>
 </div>
 </div>
-<div class="proof-nodes">
+<div class="proof-nodes" id="proof-details-open">
 <div>
 <span>01</span>
 <strong>Principal</strong>
-<p data-proof-description hidden>The principal authorizes the root mandate.</p>
+<p data-proof-description>The principal authorizes the root mandate.</p>
 </div>
 <div>
 <span>02</span>
 <strong>Mandate + limits</strong>
-<p data-proof-description hidden>Per-transaction, epoch and lifetime caps bound the debit.</p>
+<p data-proof-description>Per-transaction, epoch and lifetime caps bound the debit.</p>
 </div>
 <div>
 <span>03</span>
 <strong>Agent + HALO</strong>
-<p data-proof-description hidden>Native HALO backs admitted Agent value acts.</p>
+<p data-proof-description>Native HALO backs admitted Agent value acts.</p>
 </div>
 <div>
 <span>04</span>
 <strong>Receipt</strong>
-<p data-proof-description hidden>A committed record makes the action inspectable.</p>
+<p data-proof-description>A committed record makes the action inspectable.</p>
 </div>
 </div>
-<button type="button" class="button" data-inspect aria-pressed="false">Inspect the structure <span aria-hidden="true">＋</span>
+<button type="button" class="button" data-inspect aria-pressed="false" aria-expanded="false" aria-controls="proof-details-open">Inspect the structure <span aria-hidden="true">＋</span>
 </button>
 <p class="proof-caption">Illustration of authority and limits.</p>
 </div>
 </div>
 </section>
-<section class="section dim-section">
-<div class="container">
-<div class="section-heading">
-<p class="index">03 / DETAILS</p>
+<section class="section dim-section" id="wallet">
+<div class="container two-column">
 <div>
-<h2>Look closer.</h2>
+<p class="eyebrow">USING OPEN</p>
+<h2>Wallet and<br>recovery.</h2>
 </div>
-</div>
-<div class="inspection" data-tabs>
-<div class="inspection-tabs" role="tablist" aria-label="OPEN inspection">
-<button type="button" role="tab" id="inspect-open-0" aria-controls="inspect-panel-open-0" aria-selected="true">
-<span>01</span>Money</button>
-<button type="button" role="tab" id="inspect-open-1" aria-controls="inspect-panel-open-1" aria-selected="false">
-<span>02</span>Rules</button>
-<button type="button" role="tab" id="inspect-open-2" aria-controls="inspect-panel-open-2" aria-selected="false">
-<span>03</span>Wallet</button>
-</div>
-<div class="inspection-panels">
-<div role="tabpanel" id="inspect-panel-open-0" aria-labelledby="inspect-open-0">
-<h3>A visible allocation.</h3>
-<p>OPEN starts at its highest issuance rate and declines. Its ceiling is 2,718,281,828,459 OPEN, with actual minted supply remaining below it. Base transaction fees burn; priority fees go to miners. Dividend activation is a separate protocol change.</p>
-</div>
-<div role="tabpanel" id="inspect-panel-open-1" aria-labelledby="inspect-open-1">
-<h3>Inspect the authority behind the action.</h3>
-<p>Per-transaction, per-epoch and lifetime caps apply through the mandate ancestry. Delegating a mandate does not multiply its budget.</p>
-</div>
-<div role="tabpanel" id="inspect-panel-open-2" aria-labelledby="inspect-open-2">
-<h3>Transactions and recovery.</h3>
-<p>Private work includes protected signing, supported transfers, a durable outbox and encrypted recovery, together with agent and mandate components.</p>
-</div>
+<div>
+<p class="large-paragraph">Private work includes protected signing, supported transfers, a durable outbox and encrypted recovery, together with agent and mandate components.</p>
+<div class="actions">
+<a class="button primary" href="/testnet.html">Public Testnet <span aria-hidden="true">↗</span>
+</a>
+<a class="button" href="/status.html">Development <span aria-hidden="true">↗</span>
+</a>
 </div>
 </div>
 </div>
 </section>
 <section class="sibling-section">
 <div class="container">
-<p class="eyebrow">FOLLOW ANOTHER CURRENT</p>
+<p class="eyebrow">THE OTHER COINS</p>
 <div class="sibling-grid">
 <a class="sibling-link green" href="/daarx.html">
 <span>Private capital</span>

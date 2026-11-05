@@ -1,20 +1,17 @@
-"""Static editorial and experience layer for daarx.money. Standard library only."""
+"""Canonical static authoring module for daarx.money. Standard library only."""
+
 from pathlib import Path
 import html
 import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-ORIGIN = 'https://daarx.money'
-DATE = 'November 5, 2026'
-ISO_DATE = '2026-11-05'
 
-def esc(x): return html.escape(str(x), quote=True)
-def arrow(): return '<span aria-hidden="true">↗</span>'
-def eye(x): return f'<p class="eyebrow">{x}</p>'
-def btn(label, href, primary=False): return f'<a class="button{" primary" if primary else ""}" href="{href}">{label} {arrow()}</a>'
-def reg(rows): return '<dl class="register">'+''.join(f'<div><dt>{a}</dt><dd>{b}</dd></div>' for a,b in rows)+'</dl>'
-def heading(num,title,intro=''): return '<div class="section-heading"><p class="index">'+num+'</p><div><h2>'+title+'</h2>'+('<p class="lede">'+intro+'</p>' if intro else '')+'</div></div>'
+ORIGIN = 'https://daarx.money'
+
+DATE = 'November 5, 2026'
+
+ISO_DATE = '2026-11-05'
 
 COINS = [{'id': 'daarx',
   'name': 'DAARX',
@@ -225,58 +222,29 @@ STATUS=[('01','Proofs, transactions and consensus','Exercised privately','tested
 
 MARK='<svg viewBox="0 0 36 36" aria-hidden="true"><path d="M4 8h11l6 6h11M4 18h28M4 28h11l6-6h11"/></svg>'
 
-def header(current):
-    nav=[('/#thesis','Economics'),('/#ecosystem','Four coins'),('/status.html','Development'),('/testnet.html','Testnet')]
-    def item(path,label): return f'<a href="{path}"'+(' aria-current="page"' if path==current else '')+'>'+label+'</a>'
-    return '<a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="DAARX home">'+MARK+'<span>DAARX<span class="brand-dot">.</span></span></a><nav class="desktop-nav" aria-label="Primary">'+''.join(item(*x) for x in nav)+'</nav><details class="site-menu"><summary>Explore <span aria-hidden="true">＋</span></summary><nav aria-label="All pages">'+''.join(item(c['path'],c['name']) for c in COINS)+''.join(item(*x) for x in [('/status.html','Development'),('/testnet.html','Public Testnet'),('/break-it.html','Security'),('/mine.html','Hardware'),('/faq.html','Questions'),('/privacy.html','Privacy')])+'</nav></details></div></header>'
+HARDWARE=[('node','Node Box','299','Node-only concept','Validation'),('compact','Mini Miner','699','Compact miner / node','6–8 kH/s estimate'),('compact','Beefy Mini','1,399','16-core compact concept','16–20 kH/s estimate'),('rig','Standard','1,899','Ryzen 9 5900XT concept','20 kH/s estimate'),('rig','Pro','2,499','Ryzen 9 9950X concept','27 kH/s estimate'),('rig','Pro ACE','2,899','Ryzen 9 9950X3D concept','27 kH/s estimate'),('rig','Pro ACE II','3,299','Dual-CCD 3D-cache study','27 kH/s estimate'),('scale','BIG_DOG','7,499','32-core Threadripper concept','40 kH/s estimate'),('scale','BIG_DOG MAX','10,999','64-core Threadripper concept','84 kH/s estimate')]
+
+def esc(x): return html.escape(str(x), quote=True)
+
+def arrow(): return '<span aria-hidden="true">↗</span>'
+
+def eye(x): return f'<p class="eyebrow">{x}</p>'
+
+def btn(label, href, primary=False): return f'<a class="button{" primary" if primary else ""}" href="{href}">{label} {arrow()}</a>'
+
+def reg(rows): return '<dl class="register">'+''.join(f'<div><dt>{a}</dt><dd>{b}</dd></div>' for a,b in rows)+'</dl>'
+
+def heading(num,title,intro=''): return '<div class="section-heading"><p class="index">'+num+'</p><div><h2>'+title+'</h2>'+('<p class="lede">'+intro+'</p>' if intro else '')+'</div></div>'
 
 def footer():
     return '<footer class="site-footer"><div class="container"><div class="footer-top"><a class="brand" href="/">'+MARK+'<span>DAARX<span class="brand-dot">.</span></span></a><p>DAARX · L10N · OPEN · NXXXS</p><button class="motion-toggle" type="button" data-motion aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button></div><div class="footer-links"><nav aria-label="Coins">'+''.join(f'<a href="{c["path"]}">{c["name"]}</a>' for c in COINS)+'</nav><nav aria-label="Project"><a href="/#thesis">Economics</a><a href="/status.html">Development</a><a href="/testnet.html">Public Testnet</a><a href="/break-it.html">Security</a></nav><nav aria-label="Site"><a href="/mine.html">Hardware</a><a href="/faq.html">Questions</a><a href="/flyer.html">Print</a><a href="/privacy.html">Privacy</a><a href="mailto:daarxmoney@proton.me">Contact</a></nav></div><div class="footer-bottom"><p><a href="/status.html">Development / Public Testnet</a><span>DAARX · Desiderata Labs LLC</span></p></div></div></footer>'
 
-def shell(path,title,description,body,schema=None,cls=''):
-    schema=schema or {'@context':'https://schema.org','@type':'WebSite','name':'DAARX','url':ORIGIN,'description':'Four native coins. Private capital, private cash, accountable authority and bonded assurance.'}
-    head='<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#08090b"><title>'+esc(title)+'</title><meta name="description" content="'+esc(description)+'"><link rel="canonical" href="'+ORIGIN+path+'"><link rel="icon" href="/assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/type.css"><link rel="stylesheet" href="/site.css"><meta property="og:type" content="website"><meta property="og:site_name" content="DAARX"><meta property="og:title" content="'+esc(title)+'"><meta property="og:description" content="'+esc(description)+'"><meta property="og:url" content="'+ORIGIN+path+'"><meta property="og:image" content="'+ORIGIN+'/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+esc(title)+'"><meta name="twitter:description" content="'+esc(description)+'"><meta name="twitter:image" content="'+ORIGIN+'/og.png"><script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('</',r'<\/')+'</script><script src="/site.js" defer></script></head>'
-    return head+'<body class="mystique '+cls+'">'+header(path)+'<main id="main">'+body+'</main>'+footer()+'</body></html>'
-
-def glyph(c): return f'<div class="coin-glyph {c["id"]}" aria-hidden="true"><i></i><i></i><i></i></div>'
-def intro(kicker,title,text,c='green',aside=''):
-    return f'<section class="page-hero {c}"><div class="container"><a class="back-link" href="/">DAARX / {kicker}</a><div class="page-hero-grid"><div>{eye(kicker)}<h1>{title}</h1><p class="hero-copy">{text}</p></div><div class="hero-aside">{aside}</div></div></div></section>'
 def finish(title='There’s more<br><em>under the surface.</em>',text='The architecture, the economics, the work behind it. Follow the thread.',label='Inside the build',url='/status.html'):
     return '<section class="endnote"><div class="container"><h2>'+title+'</h2><div><p>'+text+'</p>'+btn(label,url,True)+'</div></div></section>'
 
-def lens():
-    return '<div class="spectrum-lens" data-lens="system"><canvas data-spectrum aria-hidden="true"></canvas><div class="lens-rings" aria-hidden="true"><i></i><i></i><i></i></div><div class="lens-center" aria-hidden="true"><span>◈</span><small>DAARX</small></div>'+''.join(f'<a class="orbit-label orbit-{x}" href="{c["path"]}">{c["unit"]}</a>' for x,c in zip('abcd',COINS))+'</div>'
-
-def home():
-    b='<section class="home-hero" id="top"><div class="container hero-grid"><div class="hero-word">'+eye('DAARX / L10N / OPEN / NXXXS')+'<h1>Money that minds<br><em>its own business.</em></h1><p class="hero-copy">Four coins. Private savings, private spending, public accounts and paid work backed by collateral.</p><div class="actions">'+btn('The four coins','#ecosystem',True)+btn('How the economics work','#thesis')+'</div></div>'+lens()+'</div><div class="hero-coda container"><span>DAARX · L10N · OPEN · NEXUS / NXXXS</span><a href="#ecosystem">The system <span aria-hidden="true">↓</span></a></div></section>'
-    b+='<section class="section thesis-section" id="thesis"><div class="container"><div class="thesis-opening">'+eye('THE ECONOMICS')+'<h2>What would make<br><em>these coins valuable?</em></h2></div><div class="thesis-body"><p>People using them.</p><p>DAARX gives people a reason to hold private capital. L10N is for money changing hands. OPEN handles activity that needs public accounts and defined authority. NXXXS lets people charge for services and put collateral behind the work.</p><p>Mining rewards and paid services are ways to earn coins in the design. The holder’s bet is that enough people will want to own or use them.</p></div><div class="demand-grid">'+''.join(f'<a class="demand-item {c["color"]}" href="{c["path"]}#economics"><span>{c["unit"]}</span><strong>{c["role"]}</strong><p>{c["demand"]}</p>{arrow()}</a>' for c in COINS)+'</div></div></section>'
-    b+='<section class="section ecosystem" id="ecosystem"><div class="container"><span id="protocols" class="anchor-alias"></span>'+heading('01','The four coins.')+'<div class="coin-explorer" data-tabs><div class="coin-rail" role="tablist" aria-label="Explore the four coins">'
-    for i,c in enumerate(COINS):b+=f'<button class="coin-row {c["color"]}" id="coin-tab-{c["id"]}" type="button" role="tab" aria-selected="{"true" if i==0 else "false"}" aria-controls="coin-panel-{c["id"]}"><span class="coin-number">0{i+1}</span><span><strong>{c["name"]}</strong><small>{c["role"]}</small></span><span class="row-arrow" aria-hidden="true">↗</span></button>'
-    b+='</div><div class="coin-panels">'
-    for c in COINS:b+=f'<div class="coin-panel {c["color"]}" id="coin-panel-{c["id"]}" role="tabpanel" aria-labelledby="coin-tab-{c["id"]}">{glyph(c)}{eye(c["name"])}<h3>{c["short"]}</h3><p>{c["teaser"]}</p><p class="small-copy">{c["story"]}</p>{btn("About "+c["name"],c["path"])}</div>'
-    b+='</div></div></div></section>'
-    b+='<section class="section architecture"><div class="container">'+heading('02','Shared mining.<br>Separate native coins.')+'<div class="architecture-grid"><div class="chain-diagram" role="img" aria-label="RandomX parent work satisfies the DAARX target and carries L10N, OPEN and NXXXS child commitments."><div class="parent-work"><span>PARENT WORK</span><strong>RandomX</strong><small>DAARX target + three child commitments</small></div><div class="chain-branches">'+''.join(f'<div class="{c["color"]}"><span class="chain-dot" aria-hidden="true"></span><strong>{c["unit"]}</strong><small>Native state + rules</small></div>' for c in COINS)+'</div></div><div class="architecture-copy"><h3>Each coin keeps its own rules.</h3><p>Mining work connects the four chains. Their balances, transaction rules and monetary roles stay distinct.</p><p>NXXXS adds service payments, proofs and bonded commitments. Service providers get paid for work customers use. NXXXS supplies the payment and collateral mechanisms.</p>'+btn('NXXXS services','/nexus.html')+'</div></div></div></section>'
-    b+='<section class="section participation-section"><div class="container">'+heading('03','Where people fit.')+'<div class="product-columns"><article><span class="small-index">MINING</span><h3>Earn newly issued coins.</h3><p>The block-reward rules define mining rewards. Shared work connects participation across the four-chain architecture.</p></article><article><span class="small-index">SERVICES</span><h3>Charge for useful work.</h3><p>Relaying, proofs, settlement coordination and accountable execution are service roles in the design. Providers can charge fees and commit collateral.</p></article><article><span class="small-index">OWNERSHIP</span><h3>Choose what you want to hold.</h3><p>The reasons differ by coin: private capital, spending balances, accountable activity or the operating needs of a service network.</p></article></div></div></section>'
-    b+='<section class="section launch-section" id="status"><div class="container launch-grid"><div>'+eye('DEVELOPMENT')+'<h2>Public Testnet<br><em>is next.</em></h2><p>Private builds have exercised transactions, proofs, wallets, encrypted backups and recovery. The release work now brings the source, network configuration and participant packages together.</p>'+btn('Development details','/status.html',True)+'</div><div class="chapter-art" aria-hidden="true"><span>Ⅰ</span><i></i><i></i><small>DAARX / L10N / OPEN / NXXXS</small></div></div></section>'
-    return shell('/','DAARX — Money that minds its own business.','DAARX, L10N, OPEN and NXXXS. Four native coins for private savings, private payments, public accounts and services backed by collateral.',b,cls='home')
-
-def coin_page(c):
-    aside=f'<div class="coin-hero-symbol {c["color"]}">{glyph(c)}<span>{c["unit"]}</span></div>'
-    b=intro(c['role'],c['title'],c['intro'],c['color'],aside)
-    b+='<section class="section" id="economics"><div class="container two-column"><div>'+eye('ECONOMICS')+'<h2>'+c['economic_title']+'</h2></div><div><p class="large-paragraph">'+c['economic']+'</p></div></div></section>'
-    b+='<section class="section dim-section" id="architecture"><div class="container">'+heading('01','How it works.')+'<div class="inspection" data-tabs><div class="inspection-tabs" role="tablist" aria-label="'+esc(c['name'])+' inspection">'
-    for i,(name,title,text) in enumerate(c['tabs']):b+=f'<button type="button" role="tab" id="inspect-{c["id"]}-{i}" aria-controls="inspect-panel-{c["id"]}-{i}" aria-selected="{"true" if i==0 else "false"}"><span>0{i+1}</span>{name}</button>'
-    b+='</div><div class="inspection-panels">'
-    for i,(name,title,text) in enumerate(c['tabs']):b+=f'<div role="tabpanel" id="inspect-panel-{c["id"]}-{i}" aria-labelledby="inspect-{c["id"]}-{i}"><h3>{title}</h3><p>{text}</p></div>'
-    b+='</div></div></div></section>'
-    b+='<section class="section"><div class="container two-column"><div>'+eye('DETAILS')+'<h2>'+c['unit']+'</h2></div>'+reg(c['facts'])+'</div></section>'
-    b+='<section class="section dim-section"><div class="container two-column"><div>'+eye('WALLET')+'<h2>Transactions<br>and recovery.</h2></div><div><p class="large-paragraph">'+c['wallet']+'</p>'+btn('Development','/status.html')+'</div></div></section>'
-    b+='<section class="sibling-section"><div class="container">'+eye('THE OTHER COINS')+'<div class="sibling-grid">'+''.join(f'<a class="sibling-link {x["color"]}" href="{x["path"]}"><span>{x["role"]}</span><strong>{x["name"]}</strong>{arrow()}</a>' for x in COINS if x['id']!=c['id'])+'</div></div></section>'
-    return shell(c['path'],c['name']+' — '+c['role']+' | DAARX',c['teaser'],b,cls=c['color'])
-
 def status_page():
     b=intro('Development','Development','Protocols, native wallets, transaction history and recovery have been exercised in private builds. Public Testnet is the next network milestone.',aside='<p class="aside-statement">'+DATE+'</p>')
-    b+='<section class="section"><div class="container"><div class="readiness-register">'
+    b+='<section class="section"><div class="container"><h2 class="sr-only">Release work</h2><div class="readiness-register">'
     for num,title,state,cls,text in STATUS:b+=f'<article class="readiness-row"><span class="index">{num}</span><div><h3>{title}</h3><p>{text}</p></div><span class="step-state {cls}">{state}</span></article>'
     b+='</div></div></section>'
     b+='<section class="section dim-section"><div class="container">'+heading('01','Applications.')+'<div class="product-columns"><article><h3>Wallets.</h3><p>Creation, protected signing, reviewed transfers, pending journals, encrypted backup and restoration.</p></article><article><h3>Games and accounts.</h3><p>Shared accounts, Rally, Sunhop, Color Pop, collectibles and Pride Pot components. Game balances are separate from native coins.</p></article><article><h3>Offline payments.</h3><p>L10N’s separate offline track covers loading, exchange, later settlement and recovery.</p></article></div></div></section>'
@@ -291,7 +259,7 @@ def testnet_page():
 
 def security_page():
     b=intro('Security','Security','The work covers the cryptography, consensus, software, wallets and the behavior of the system across machines.')
-    b+='<section class="section" id="more"><div class="container"><div class="product-columns"><article><h3>Cryptography.</h3><p>Membership proofs, amount commitments and signatures, including their assumptions and integration.</p></article><article><h3>Network.</h3><p>Consensus, mining commitments, transaction rules, history, forks and recovery.</p></article><article><h3>Wallets.</h3><p>Key creation, protected signing, reviewed sends, interrupted submissions, backups and restoration.</p></article></div></div></section>'
+    b+='<section class="section" id="more"><div class="container"><h2 class="sr-only">Security work</h2><div class="product-columns"><article><h3>Cryptography.</h3><p>Membership proofs, amount commitments and signatures, including their assumptions and integration.</p></article><article><h3>Network.</h3><p>Consensus, mining commitments, transaction rules, history, forks and recovery.</p></article><article><h3>Wallets.</h3><p>Key creation, protected signing, reviewed sends, interrupted submissions, backups and restoration.</p></article></div></div></section>'
     b+='<section class="section dim-section" id="security-network"><div class="container two-column"><div><h2>Builds and review.</h2></div><div><p>Reproducible packages and current integration checks connect the source to what people install. Public Testnet adds independent machines and observations.</p>'+btn('Development details','/status.html')+'</div></div></section>'
     b+='<section class="section" id="security-bounty"><div class="container two-column"><div><h2>Research enquiries.</h2><p><a href="mailto:daarxmoney@proton.me">daarxmoney@proton.me</a></p></div><div class="notes-list" id="security-report"><details><summary>Review status '+arrow()+'</summary><p>Internal testing and release qualification are active. Independent professional audit remains a separate step.</p></details><details><summary>Public research programme '+arrow()+'</summary><p>Scope, reporting instructions, safe-harbor terms, response expectations and confirmed award funding will be published when the programme opens.</p></details><details><summary>Contact details '+arrow()+'</summary><p>The address is for general enquiries. A dedicated vulnerability intake and encryption instructions will be published with the programme. Keep seeds, keys and credentials out of messages.</p></details></div></div></section>'
     return shell('/break-it.html','Security — DAARX','Cryptography, network, wallet and release-security work for the DAARX system.',b)
@@ -309,8 +277,6 @@ def privacy_page():
     rows=[('Who operates the site','Desiderata Labs LLC operates the DAARX information site and hardware-interest form. DAARX is its registered alternate name. Protocol governance and commercial services are separate.'),('Browsing','Pages, fonts and visual effects are served with the site. There are no advertising trackers, analytics scripts, site accounts or marketing cookies. The motion control changes only the current page. GitHub Pages may process ordinary network, device, delivery, security and server-log metadata.'),('Your enquiry','The hardware form sends an email address; optional name; hardware, access-model, membership, accessory and merchandise choices; optional notes; privacy acknowledgment; and delivery metadata. Web3Forms relays the submission and Proton receives the message for Desiderata Labs LLC.'),('Purpose','We use enquiries to understand interest, answer questions, prevent abuse and follow up about a relevant offer or material update. We do not sell personal information or make automated eligibility decisions. A hardware enquiry records interest rather than creating an order or account.'),('Retention','An active interest record is kept only as long as needed, up to 24 months after your last interaction unless a shorter period applies. Provider logs, backups and copies follow provider retention. We delete records we control within 30 days of a verified request unless legal preservation is required.'),('Your choices','Enquiries are optional and free. Ask to access, correct or delete a record, or withdraw from follow-up, at daarxmoney@proton.me. We may verify control of the email address first.'),('Care with information','The form is for adults. Keep payment data, identity documents, wallet seeds and credentials out of the notes. Access is limited to the people and providers needed to operate the enquiry and follow up. Internet transmission and email have ordinary security limits.'),('Changes','This notice covers the current static site and enquiry relay. New account, commerce, support or analytics features require an updated notice before that processing begins.')]
     b+='<section class="section" id="data-register"><div class="container privacy-register">'+''.join(f'<article><h2>{x}</h2><p>{y}</p></article>' for x,y in rows)+btn('Ask about your data','mailto:daarxmoney@proton.me')+'</div></section>'
     return shell('/privacy.html','Privacy — DAARX','How the DAARX site and optional hardware enquiry handle information. Operator, providers, purpose, retention and your choices.',b)
-
-HARDWARE=[('node','Node Box','299','Node-only concept','Validation'),('compact','Mini Miner','699','Compact miner / node','6–8 kH/s estimate'),('compact','Beefy Mini','1,399','16-core compact concept','16–20 kH/s estimate'),('rig','Standard','1,899','Ryzen 9 5900XT concept','20 kH/s estimate'),('rig','Pro','2,499','Ryzen 9 9950X concept','27 kH/s estimate'),('rig','Pro ACE','2,899','Ryzen 9 9950X3D concept','27 kH/s estimate'),('rig','Pro ACE II','3,299','Dual-CCD 3D-cache study','27 kH/s estimate'),('scale','BIG_DOG','7,499','32-core Threadripper concept','40 kH/s estimate'),('scale','BIG_DOG MAX','10,999','64-core Threadripper concept','84 kH/s estimate')]
 
 def hardware_page(form):
     b=intro('Hardware research','Hardware','Node and mining-system concepts, from compact machines to larger CPU systems.',aside='<div class="hardware-sculpture" aria-hidden="true"><i></i><i></i><i></i></div>')
@@ -337,6 +303,129 @@ def write_page(name,source):
     source=re.sub(r'&(?![A-Za-z][A-Za-z0-9]+;|#[0-9]+;|#x[0-9A-Fa-f]+;)', '&amp;', source)
     (ROOT/name).write_text(source.replace('><','>\n<')+'\n')
 
+ART = '/assets/dream-gateway-v1.webp'
+
+POLICY = {
+ 'daarx': dict(line='Private money.<br>Long horizons.', description='Keep your balance to yourself. Let the rules speak for the supply.',
+   rule='Peak issuance · year 7.77', material='PRIVATE CAPITAL', word='Own',
+   emission='A later peak. A finite supply.',
+   economics='DAARX is private capital with a fixed issuance path. New issuance rises toward year 7.77, then declines through a finite schedule. Most of the supply is still ahead at the peak.',
+   allocation='No premine. No presale. No founder reward. Miners receive the block subsidy and transaction fees.',
+   numbers=[('7.77','target years to peak'),('111s','target block spacing'),('~100','target years of issuance')],
+   monetary='The literal ceiling is 5.083 trillion DIAM, with 12 decimal places. The frozen integer table defines issuance. Per-block rounding leaves a tiny amount below that ceiling. After the finite schedule, miner income comes from transaction fees.',
+   detail='Hidden ordinary transfer amounts. Full-chain membership proofs. A public fee ladder that avoids charging a percentage of a hidden payment.',
+   study='A valid spend, without opening the balance sheet.', nodes=['One-time destination','Hidden amount','Membership proof','Valid spend']),
+ 'l10n': dict(line='Money moves.<br>The details don’t.', description='Private cash for the everyday exchange between people.',
+   rule='Permanent miner funding', material='PRIVATE CASH', word='Move',
+   emission='Security keeps getting paid.',
+   economics='L10N is money for circulation. Its monetary design keeps a permanent positive mining reward, with fees also going to miners. A continuing security budget is part of the money itself.',
+   allocation='All mined. No premine, presale or founder reward. Transaction fees stay with miners; the design does not burn them.',
+   numbers=[('∞','positive tail design'),('12','candidate decimal places'),('CTS','shared privacy lineage')],
+   monetary='The structure is a declining reward followed by a fixed, nonzero tail. The current reference curve uses 50 L10N per block, declining to 1. Those numeric parameters and the exact blocktime remain candidates while the economic model is reconciled.',
+   detail='Spending patterns deserve privacy. The offline-cash work adds receipts, a separate anti-fraud bond and later settlement to the online money.',
+   study='Private spending. Verifiable obligations.', nodes=['Private payer','Sealed amount','Payment proof','Private payee']),
+ 'open': dict(line='Give permission.<br>Keep the limits.', description='Public accounts and bounded authority for people, institutions and agents.',
+   rule='Mandates · HALO · receipts', material='ACCOUNTABLE AUTHORITY', word='Authorize',
+   emission='A visible allocation.',
+   economics='OPEN gives delegated activity its own economic structure. Principals fund agents, mandates limit what they can spend, and HALO puts capital behind Agent value acts.',
+   allocation='The current subsidy sends 11% to the endowment and the remainder to miners. The designed dividend is disarmed; its share currently goes to miners.',
+   numbers=[('7','maximum mandate depth'),('11%','endowment subsidy share'),('HALO','native Agent backing')],
+   monetary='OPEN starts at its highest issuance rate and declines. Its ceiling is 2,718,281,828,459 OPEN, with actual minted supply remaining below it. Base transaction fees burn; priority fees go to miners. Dividend activation is a separate protocol change.',
+   detail='Per-transaction, per-epoch and lifetime caps apply through the mandate ancestry. Delegating a mandate does not multiply its budget.',
+   study='Inspect the authority behind the action.', nodes=['Principal','Mandate + limits','Agent + HALO','Receipt']),
+ 'nexus': dict(line='Useful work.<br>Something behind it.', description='Proof, relay and settlement services with native collateral behind the commitment.',
+   rule='Services · evidence · bonds', material='BONDED ASSURANCE', word='Prove',
+   emission='A ramp. A tail. Paid work.',
+   economics='NXXXS gives service providers operating balances and collateral, and gives customers a way to pay for useful work. Relayers, proof providers, solvers and venues have distinct roles.',
+   allocation='The reference candidate assigns 2% of subsidy to a finite founder stream during roughly seven target years. The stream ends before peak issuance. Miners receive the remaining subsidy.',
+   numbers=[('7.77','target years to peak'),('0.1','candidate tail / block'),('2%','finite founder share')],
+   monetary='The candidate ramps toward 10 NXXXS per block around year 7.77, then declines to a permanent 0.1 reward. Base fees and rent burn. Priority fees go to miners; service payments go to the chosen provider. Final public identity and parameters remain part of release preparation.',
+   detail='A bond is committed capital. A service fee is payment to a provider. A burn removes supply. The protocol accounts for those effects separately.',
+   study='A request, evidence and a paid provider.', nodes=['Request','Bonded provider','Work + evidence','Service payment']),
+}
+
+for coin in COINS:
+    coin.update(POLICY[coin['id']])
+    coin['economic']=coin['economics']
+    coin['intro']=coin['description']
+    coin['story']=coin['detail']
+
+FAQ = FAQ[:4] + [('What does peak issuance mean?', 'The highest scheduled rate at which new coins enter circulation. DAARX and the NXXXS reference candidate peak near 7.77 target years. OPEN begins at its highest rate. L10N’s current provisional curve declines from its initial reward into a permanent tail.'),('Who receives newly issued coins?', 'DAARX and L10N have no premine, presale or founder reward in the retained monetary policy. OPEN currently allocates 11% to an endowment and the rest to miners, with its dividend disarmed. NXXXS’s reference candidate has a finite 2% founder stream ending before peak; miners receive the remaining subsidy.')] + FAQ[4:]
+
+def art(cls='', decorative=True):
+    return '<div class="dream-art '+cls+'" aria-hidden="true"><picture><source media="(max-width: 600px)" srcset="/assets/dream-gateway-mobile-v1.webp"><img src="'+ART+'" width="1672" height="941" alt="" fetchpriority="high"></picture><canvas data-dream-canvas></canvas><div class="art-vignette"></div></div>'
+
+def symbol(c):
+    return '<div class="dream-object '+c['id']+'" data-art-object aria-hidden="true"><img src="/assets/dream-'+c['id']+'-v1.webp" width="640" height="640" alt="" loading="lazy" decoding="async"><i></i></div>'
+
+def header(current):
+    nav=[('/#ecosystem','The four coins'),('/#thesis','Issuance'),('/status.html','Development'),('/testnet.html','Testnet')]
+    def link(p,n): return '<a href="'+p+'"'+(' aria-current="page"' if p==current else '')+'>'+n+'</a>'
+    return '<a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="DAARX home">'+MARK+'<span>DAARX<span class="brand-dot">.</span></span></a><nav class="desktop-nav" aria-label="Primary">'+''.join(link(*x) for x in nav)+'</nav><div class="header-controls"><button class="motion-toggle header-motion" type="button" data-motion aria-pressed="false" title="Pause or resume visual motion">Pause motion Ⅱ</button><details class="site-menu"><summary>Explore <span aria-hidden="true">＋</span></summary><nav aria-label="All pages">'+''.join(link(c['path'],c['name']) for c in COINS)+''.join(link(*x) for x in [('/status.html','Development'),('/testnet.html','Public Testnet'),('/break-it.html','Security'),('/mine.html','Hardware'),('/faq.html','Questions'),('/privacy.html','Privacy')])+'</nav></details></div></div></header>'
+
+def intro(kicker,title,text,c='green',aside=''):
+    return '<section class="page-hero '+c+'"><div class="container"><a class="back-link" href="/">DAARX / '+kicker+'</a><div class="page-hero-grid"><div>'+eye(kicker)+'<h1>'+title+'</h1><p class="hero-copy">'+text+'</p></div><div class="hero-aside">'+aside+'</div></div></div><div class="horizon-line" aria-hidden="true"></div></section>'
+
+def issuance_study():
+    data=json.loads((ROOT/'data/emission-study.json').read_text())
+    colors=['#176747','#805713','#126372','#6941a7']
+    patterns=['','8 5','2 5','12 4 2 4']
+    paths=[]
+    for idx,c in enumerate(COINS):
+        values=data['coins'][c['id']]['rewards'][::10];peak=data['coins'][c['id']]['peak']
+        pts=' '.join(f'{56+i/(len(values)-1)*1088:.2f},{304-float(v)/peak*246:.2f}' for i,v in enumerate(values))
+        paths.append('<polyline data-curve="'+c['id']+'" points="'+pts+'" stroke="'+colors[idx]+'" stroke-dasharray="'+patterns[idx]+'"/>')
+    grid=''.join('<line x1="56" y1="'+str(y)+'" x2="1144" y2="'+str(y)+'"/>' for y in [58,181,304])+''.join('<line x1="'+str(56+x/25*1088)+'" y1="40" x2="'+str(56+x/25*1088)+'" y2="304"/>' for x in [0,5,10,15,20,25])
+    x=56+7.77/25*1088
+    chart='<div class="chart-frame"><svg class="emission-chart" viewBox="0 0 1200 340" preserveAspectRatio="none" role="img" aria-label="Block rewards over 25 target years, each normalized to its own peak. DAARX and NXXXS rise then fall; L10N and OPEN decline from the start."><g class="chart-grid">'+grid+'</g><g class="chart-curves">'+''.join(paths)+'</g><line class="time-cursor" x1="'+str(x)+'" y1="38" x2="'+str(x)+'" y2="305"/></svg><div class="chart-y" aria-hidden="true"><span>100%</span><span>0</span></div><div class="chart-ticks" aria-hidden="true">'+''.join('<span style="left:'+str((56+y/25*1088)/12)+'%">'+str(y)+'</span>' for y in [0,5,10,15,20,25])+'</div></div>'
+    readouts=[]
+    for i,c in enumerate(COINS):
+        value=float(data['coins'][c['id']]['rewards'][777]);digits=6 if value<1 else 3
+        default=f'{value:,.{digits}f}'.rstrip('0').rstrip('.') if value%1 else f'{value:,.0f}'
+        unit='DIAM' if c['id']=='daarx' else c['unit']
+        ident=c['id']
+        readouts.append('<div class="'+c['color']+'"><a class="reward-link" id="reward-name-'+ident+'" href="'+c['path']+'#issuance" aria-label="'+c['unit']+' monetary rules"><svg viewBox="0 0 30 8" aria-hidden="true"><path d="M0 4H30" stroke="currentColor" stroke-width="2" stroke-dasharray="'+patterns[i]+'"/></svg>'+c['unit']+' ↗</a><output for="time-range" aria-live="off" aria-labelledby="reward-name-'+ident+' reward-unit-'+ident+'" data-reward="'+ident+'">'+default+'</output><small id="reward-unit-'+ident+'">'+unit+' / block</small></div>')
+    return '<section class="section issuance-section" id="thesis"><div class="container"><div class="emission-heading"><div>'+eye('THE MONETARY DESIGN')+'<h2>Time changes<br><em>the distribution.</em></h2></div><p>Two delayed peaks. Two curves that begin high.<br>Four different ways to bring money into the world.</p></div><div class="emission-instrument" data-emission data-src="/data/emission-study.json"><div class="instrument-top"><span>ISSUANCE / 01</span><span>BLOCK REWARD · SHARE OF EACH COIN’S OWN PEAK</span></div>'+chart+'<div class="time-control"><div class="time-label"><label for="time-range">Explore a target year</label><output id="time-output" for="time-range" aria-live="off">7.77</output></div><input id="time-range" type="range" min="0.01" max="25" value="7.77" step="0.01" aria-valuetext="7.77 target years" disabled><span>25 years →</span></div><div class="reward-readouts">'+''.join(readouts)+'</div><p class="sr-only" data-schedule-announcement role="status" aria-live="polite" aria-atomic="true"></p><p class="instrument-note">Height-based schedule study. Each curve has its own scale. L10N and NXXXS use reference candidate parameters. Choose a coin above to read its monetary rules.</p><noscript><p class="instrument-note">Showing the year 7.77 snapshot.</p></noscript></div></div></section>'
+
+def mining_scene():
+    return '<section class="section mining-section"><div class="container"><div class="mining-copy">'+eye('ONE WORK RESULT / FOUR NATIVE CHAINS')+'<h2>Same work.<br><em>Different worlds.</em></h2><p>RandomX parent work carries the child commitments. Each chain checks its own target and rules.</p><button type="button" class="button primary" data-work-pulse>Trace the work <span aria-hidden="true">↗</span></button></div><div class="work-study" data-work-study><div class="work-source"><span>RandomX</span><small>PARENT WORK</small></div><svg viewBox="0 0 700 430" aria-hidden="true"><defs><linearGradient id="work-spectrum"><stop stop-color="#176747"/><stop offset=".5" stop-color="#126372"/><stop offset="1" stop-color="#6941a7"/></linearGradient></defs><g class="work-lines">'+''.join('<path d="M350 50 C350 180 '+str(x)+' 200 '+str(x)+' 335"/>' for x in [75,258,441,624])+'</g><g class="work-pulses">'+''.join('<circle r="5" cx="'+str(x)+'" cy="335"/>' for x in [75,258,441,624])+'</g></svg><div class="work-chains">'+''.join('<a class="'+c['color']+'" href="'+c['path']+'"><i aria-hidden="true"></i><strong>'+c['unit']+'</strong><span>Own state. Own rules.</span></a>' for c in COINS)+'</div><p data-work-message aria-live="polite">Independent money. Shared mining architecture.</p></div></div></section>'
+
+def home():
+    b='<section class="home-hero" id="top">'+art('hero-art')+'<div class="hero-grain" aria-hidden="true"></div><div class="container hero-grid"><div class="hero-word">'+eye('DAARX / L10N / OPEN / NXXXS')+'<h1>Money that<br>minds its own<br><em>business.</em></h1><p class="hero-copy">Private capital. Private cash.<br>Accountable authority. Paid services.</p><div class="actions">'+btn('Four coins','#ecosystem',True)+btn('Issuance','#thesis')+'</div></div><div class="portal-object" aria-hidden="true"><div class="dream-object daarx" data-art-object><img data-portal-art src="/assets/dream-daarx-v1.webp" width="627" height="580" alt="" decoding="async"></div></div><div class="portal-caption"><span class="portal-coordinate">04 / NATIVE COINS</span><span class="portal-word" data-realm-word>Own</span><p data-realm-caption aria-live="polite">Private capital · Peak issuance near year 7.77</p></div></div><div class="hero-coda container"><div class="realm-choices" role="group" aria-label="Choose a coin">'+''.join('<button type="button" class="'+c['color']+'" data-realm-choice="'+c['id']+'" aria-pressed="'+('true' if i==0 else 'false')+'"><i aria-hidden="true"></i>'+c['unit']+'</button>' for i,c in enumerate(COINS))+'</div><a href="#ecosystem">Scroll to explore <span aria-hidden="true">↓</span></a></div></section>'
+    b+='<section class="section ecosystem" id="ecosystem"><div class="container"><span id="protocols" class="anchor-alias"></span><div class="section-heading"><p class="index">01 / THE FAMILY</p><h2>Four kinds<br><em>of money.</em></h2><p>Different rules. Different reasons to exist.<br>Choose one. Follow it through.</p></div><div class="coin-explorer" data-tabs><div class="coin-rail" role="tablist" aria-orientation="vertical" aria-label="Explore the four coins">'
+    for i,c in enumerate(COINS):
+        b+='<button class="coin-row '+c['color']+'" id="coin-tab-'+c['id']+'" type="button" role="tab" aria-selected="'+('true' if i==0 else 'false')+'" aria-controls="coin-panel-'+c['id']+'"><span class="coin-number">0'+str(i+1)+'</span><span><strong>'+c['unit']+'</strong><small>'+c['role']+'</small></span><span class="row-arrow" aria-hidden="true">↗</span></button>'
+    b+='</div><div class="coin-panels">'
+    for c in COINS:
+        b+='<div class="coin-panel '+c['color']+'" id="coin-panel-'+c['id']+'" role="tabpanel" aria-labelledby="coin-tab-'+c['id']+'"><div class="realm-object">'+symbol(c)+'</div><div class="realm-description">'+eye(c['material'])+'<h3>'+c['line']+'</h3><p>'+c['description']+'</p><p class="realm-rule">'+c['rule']+'</p>'+btn('Inside '+c['unit'],c['path'])+'</div></div>'
+    b+='</div></div></div></section>'
+    b+=issuance_study()+mining_scene()
+    b+='<section class="section ways-section"><div class="container"><div class="ways-opening">'+eye('PARTICIPATION')+'<h2>The ways in.</h2><p>Mining rewards. Customer payments. Useful work.</p></div><div class="ways-list">'+''.join('<a href="'+href+'"><span>0'+str(i+1)+'</span><div><h3>'+title+'</h3><p>'+copy+'</p></div><span aria-hidden="true">↗</span></a>' for i,(title,copy,href) in enumerate([('Mine.','Explore mining participation in the coming Testnet. Hardware research has its own catalog.','/testnet.html'),('Build and operate.','Relay, prove, coordinate settlement. Get paid for a service someone uses.','/nexus.html'),('Hold and use.','Choose private capital, spending money or balances for accountable activity.','/daarx.html')]))+'</div></div></section>'
+    b+='<section class="section launch-section" id="status"><div class="container launch-grid"><div>'+eye('THE NEXT NETWORK MILESTONE')+'<h2>Public Testnet.<br><em>Getting closer.</em></h2><p>Transactions, proofs, wallets and recovery have private implementation behind them. The next release brings the four-coin system to independent participants.</p>'+btn('Inside development','/status.html',True)+'</div><div class="launch-emblem" aria-hidden="true">'+symbol(COINS[3])+'</div></div></section>'
+    return shell('/','DAARX — Money that minds its own business.','Four native coins. Private capital, private cash, accountable authority and paid work backed by collateral.',b,cls='home')
+
+def protocol_study(c):
+    descriptions={
+      'daarx':['A recipient-specific output key.','Commitments keep the transfer arithmetic checkable.','Prove valid membership without identifying the earlier output.','Authorization and spent tags check spending rights and reject reuse.'],
+      'l10n':['Ownership is proved without publishing a sender account.','Ordinary transfer amounts remain hidden.','Native transaction rules validate the spend.','Recipient keys recover the output.'],
+      'open':['The principal authorizes the root mandate.','Per-transaction, epoch and lifetime caps bound the debit.','Native HALO backs admitted Agent value acts.','A committed record makes the action inspectable.'],
+      'nexus':['The customer specifies a supported service.','The provider commits native capital and capacity.','Evidence is evaluated under the selected client rules.','Service fees go to the selected provider.'],
+    }
+    return '<section class="section protocol-study '+c['color']+'"><div class="container"><div class="study-opening">'+eye('PROTOCOL STUDY')+'<h2>'+c['study']+'</h2><p>'+{'daarx':'Open the layers of a private spend. Each part has a specific job.', 'l10n':'Follow the online payment path, one layer at a time.', 'open':'Follow a principal’s authority through a mandate to an Agent’s backed action.', 'nexus':'Follow a service request from committed capital to evidence and payment.'}[c['id']]+'</p></div><div class="proof-scene" data-proof-scene><div class="proof-orbit" aria-hidden="true">'+symbol(c)+'</div><div class="proof-nodes" id="proof-details-'+c['id']+'">'+''.join('<div><span>0'+str(i+1)+'</span><strong>'+n+'</strong><p data-proof-description>'+descriptions[c['id']][i]+'</p></div>' for i,n in enumerate(c['nodes']))+'</div><button type="button" class="button" data-inspect aria-pressed="false" aria-expanded="false" aria-controls="proof-details-'+c['id']+'">Inspect the structure <span aria-hidden="true">＋</span></button><p class="proof-caption">'+('Illustration of authority and limits.' if c['id']=='open' else 'Illustration of a service flow; payments go to the provider.' if c['id']=='nexus' else 'Illustration: payment amounts stay sealed; validity is checked.')+'</p></div></div></section>'
+
+def coin_page(c):
+    b=intro(c['material'],c['unit'],c['description'],c['color'],'<div class="coin-hero-symbol">'+symbol(c)+'</div>')
+    b+='<section class="section coin-thesis" id="economics"><div class="container two-column"><div>'+eye('WHY THIS MONEY EXISTS')+'<h2>'+c['line']+'</h2></div><div><p class="large-paragraph">'+c['economics']+'</p></div></div></section>'
+    b+='<section class="section coin-issuance '+c['color']+'" id="issuance"><div class="container"><div class="policy-title">'+eye('ISSUANCE + ALLOCATION')+'<h2>'+c['emission']+'</h2></div><div class="policy-numbers">'+''.join('<div><strong>'+x+'</strong><span>'+y+'</span></div>' for x,y in c['numbers'])+'</div><div class="policy-copy"><p>'+c['monetary']+'</p><p>'+c['allocation']+'</p></div>'+btn('Compare the four curves','/#thesis')+'</div></section>'
+    b+=protocol_study(c)
+    b+='<section class="section dim-section" id="wallet"><div class="container two-column"><div>'+eye('USING '+c['unit'])+'<h2>Wallet and<br>recovery.</h2></div><div><p class="large-paragraph">'+c['wallet']+'</p><div class="actions">'+btn('Public Testnet','/testnet.html',True)+btn('Development','/status.html')+'</div></div></div></section><section class="sibling-section"><div class="container">'+eye('THE OTHER COINS')+'<div class="sibling-grid">'+''.join('<a class="sibling-link '+x['color']+'" href="'+x['path']+'"><span>'+x['role']+'</span><strong>'+x['unit']+'</strong>'+arrow()+'</a>' for x in COINS if x['id']!=c['id'])+'</div></div></section>'
+    return shell(c['path'],c['name']+' — '+c['role']+' | DAARX',c['description'],b,cls=c['color']+' coin-page '+c['id']+'-page')
+
+def shell(path,title,description,body,schema=None,cls=''):
+    schema=schema or {'@context':'https://schema.org','@type':'WebSite','name':'DAARX','url':ORIGIN,'description':'Four native coins. Private capital, private cash, accountable authority and bonded assurance.'}
+    head='<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f0f5ed"><title>'+esc(title)+'</title><meta name="description" content="'+esc(description)+'"><link rel="canonical" href="'+ORIGIN+path+'"><link rel="icon" href="/assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/type.css"><link rel="stylesheet" href="/dream.css"><meta property="og:type" content="website"><meta property="og:site_name" content="DAARX"><meta property="og:title" content="'+esc(title)+'"><meta property="og:description" content="'+esc(description)+'"><meta property="og:url" content="'+ORIGIN+path+'"><meta property="og:image" content="'+ORIGIN+'/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+esc(title)+'"><meta name="twitter:description" content="'+esc(description)+'"><meta name="twitter:image" content="'+ORIGIN+'/og.png"><script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('</',r'<\/')+'</script><script src="/site.js" defer></script><script src="/dream.js" defer></script></head>'
+    return head+'<body class="mystique '+cls+' dream">'+header(path)+'<main id="main">'+body+'</main>'+footer()+'</body></html>'
+
 def build():
     form=re.search(r'<form\b[^>]*class="pre"[\s\S]*?</form>',(ROOT/'mine.html').read_text())
     qr=re.search(r'<svg[^>]*class="segno"[\s\S]*?</svg>',(ROOT/'flyer.html').read_text())
@@ -344,6 +433,7 @@ def build():
     form_html=form.group(0)
     form_html=re.sub(r'I understand that this is non-binding interest,[\s\S]*?privacy notice</a>\s*\.', 'I’ve read the <a href="/privacy.html">privacy notice</a> and agree to be contacted about this hardware enquiry.', form_html)
     form_html=form_html.replace('Which estimated concept interests you?', 'Which build interests you?').replace('Which possible access model interests you? (optional)', 'Access model (optional)').replace('Interest in a possible membership? (optional)', 'Services (optional)').replace('Interest in possible accessories or merch? (optional)', 'Accessories and merch (optional)')
+    form_html=re.sub(r'(<label\b[^>]*>\s*<input\b[^>]*name="privacy_notice_acknowledged"[^>]*>)([\s\S]*?)(</label>)',lambda m:m[1]+(m[2] if m[2].lstrip().startswith('<span>') else '<span>'+m[2].strip()+'</span>')+m[3],form_html)
     pages={'index.html':home(),'status.html':status_page(),'testnet.html':testnet_page(),'break-it.html':security_page(),'faq.html':faq_page(),'privacy.html':privacy_page(),'mine.html':hardware_page(form_html),'flyer.html':flyer_page(qr.group(0))}
     for c in COINS:pages[c['path'][1:]]=coin_page(c)
     for name,body in pages.items():write_page(name,body)
@@ -352,3 +442,15 @@ def build():
     data={'as_of':ISO_DATE,'stage':'Public Testnet preparation','public_participation_open':False,'native_coin_count':4,'coins':[{'name':c['name'],'unit':c['unit'],'role':c['role'],'working_identity':c['id']=='nexus','economic_thesis':c['demand']} for c in COINS],'work':[{'area':t,'state':s,'description':text} for n,t,s,cl,text in STATUS],'independent_professional_audit_complete':False,'hardware_sales_open':False,'test_coins_have_monetary_value':False}
     (ROOT/'data/release-status.json').write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
     print(f'Generated {len(pages)} pages, {len(FAQ)} questions and {len(urls)} sitemap entries; existing form retained.')
+
+# Questions remain a fixed collection, composed once rather than inserted at build time.
+FAQ_UPDATES={
+ 'How can people make money with it?':'Miners earn scheduled block rewards and the applicable transaction fees. Service operators can charge for supported relay, proof, execution and settlement work. NXXXS service fees go to the selected provider; OPEN supplies bounded authority for Agent activity.',
+ 'What could make the coins valuable?':'Useful balances and paid activity. DAARX is private capital with finite issuance. L10N is private spending money with a continuing mining reward. OPEN funds accountable payments and HALO backing. NXXXS pays for services and supplies provider working balances, resource fees and collateral.',
+ 'Why four separate coins?':'They follow different monetary and accountability rules. DAARX has finite issuance; L10N keeps funding miners through a permanent tail; OPEN supports visible authority and backing; NXXXS coordinates paid services and evidence. Shared mining connects the chains while their supplies and native rules stay distinct.',
+ 'Why would I hold DAARX?':'For private ownership and a distribution that unfolds over time. DAARX’s issuance peaks around year 7.77, when roughly 22.19% of the literal cap is scheduled to have been issued. The retained monetary policy has no premine, presale or founder reward.'
+}
+FAQ=[(question,FAQ_UPDATES.get(question,answer)) for question,answer in FAQ]
+
+if __name__ == '__main__':
+    build()

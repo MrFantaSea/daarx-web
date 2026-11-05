@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#08090b">
+<meta name="theme-color" content="#f0f5ed">
 <title>Nexus / NXXXS — Bonded assurance | DAARX</title>
 <meta name="description" content="Proof, relay and settlement services with native collateral behind the commitment.">
 <link rel="canonical" href="https://daarx.money/nexus.html">
@@ -43,6 +43,7 @@
 <a href="/#ecosystem">The four coins</a>
 <a href="/#thesis">Issuance</a>
 <a href="/status.html">Development</a>
+<a href="/testnet.html">Testnet</a>
 </nav>
 <div class="header-controls">
 <button class="motion-toggle header-motion" type="button" data-motion aria-pressed="false" title="Pause or resume visual motion">Pause motion Ⅱ</button>
@@ -67,16 +68,6 @@
 </header>
 <main id="main">
 <section class="page-hero violet">
-<div class="dream-art inner-art" aria-hidden="true">
-<picture>
-<source media="(max-width: 600px)" srcset="/assets/dream-gateway-mobile-v1.webp">
-<img src="/assets/dream-gateway-v1.webp" width="1672" height="941" alt="" fetchpriority="high">
-</picture>
-<canvas data-dream-canvas>
-</canvas>
-<div class="art-vignette">
-</div>
-</div>
 <div class="container">
 <a class="back-link" href="/">DAARX / BONDED ASSURANCE</a>
 <div class="page-hero-grid">
@@ -107,7 +98,6 @@
 </div>
 <div>
 <p class="large-paragraph">NXXXS gives service providers operating balances and collateral, and gives customers a way to pay for useful work. Relayers, proof providers, solvers and venues have distinct roles.</p>
-<p>A bond is committed capital. A service fee is payment to a provider. A burn removes supply. The protocol accounts for those effects separately.</p>
 </div>
 </div>
 </section>
@@ -144,7 +134,7 @@
 <div class="study-opening">
 <p class="eyebrow">PROTOCOL STUDY</p>
 <h2>A request, evidence and a paid provider.</h2>
-<p>A bond is committed capital. A service fee is payment to a provider. A burn removes supply. The protocol accounts for those effects separately.</p>
+<p>Follow a service request from committed capital to evidence and payment.</p>
 </div>
 <div class="proof-scene" data-proof-scene>
 <div class="proof-orbit" aria-hidden="true">
@@ -154,71 +144,54 @@
 </i>
 </div>
 </div>
-<div class="proof-nodes">
+<div class="proof-nodes" id="proof-details-nexus">
 <div>
 <span>01</span>
 <strong>Request</strong>
-<p data-proof-description hidden>The customer specifies a supported service.</p>
+<p data-proof-description>The customer specifies a supported service.</p>
 </div>
 <div>
 <span>02</span>
 <strong>Bonded provider</strong>
-<p data-proof-description hidden>The provider commits native capital and capacity.</p>
+<p data-proof-description>The provider commits native capital and capacity.</p>
 </div>
 <div>
 <span>03</span>
 <strong>Work + evidence</strong>
-<p data-proof-description hidden>Evidence is evaluated under the selected client rules.</p>
+<p data-proof-description>Evidence is evaluated under the selected client rules.</p>
 </div>
 <div>
 <span>04</span>
 <strong>Service payment</strong>
-<p data-proof-description hidden>Service fees go to the selected provider.</p>
+<p data-proof-description>Service fees go to the selected provider.</p>
 </div>
 </div>
-<button type="button" class="button" data-inspect aria-pressed="false">Inspect the structure <span aria-hidden="true">＋</span>
+<button type="button" class="button" data-inspect aria-pressed="false" aria-expanded="false" aria-controls="proof-details-nexus">Inspect the structure <span aria-hidden="true">＋</span>
 </button>
 <p class="proof-caption">Illustration of a service flow; payments go to the provider.</p>
 </div>
 </div>
 </section>
-<section class="section dim-section">
-<div class="container">
-<div class="section-heading">
-<p class="index">03 / DETAILS</p>
+<section class="section dim-section" id="wallet">
+<div class="container two-column">
 <div>
-<h2>Look closer.</h2>
+<p class="eyebrow">USING NXXXS</p>
+<h2>Wallet and<br>recovery.</h2>
 </div>
-</div>
-<div class="inspection" data-tabs>
-<div class="inspection-tabs" role="tablist" aria-label="Nexus / NXXXS inspection">
-<button type="button" role="tab" id="inspect-nexus-0" aria-controls="inspect-panel-nexus-0" aria-selected="true">
-<span>01</span>Money</button>
-<button type="button" role="tab" id="inspect-nexus-1" aria-controls="inspect-panel-nexus-1" aria-selected="false">
-<span>02</span>Rules</button>
-<button type="button" role="tab" id="inspect-nexus-2" aria-controls="inspect-panel-nexus-2" aria-selected="false">
-<span>03</span>Wallet</button>
-</div>
-<div class="inspection-panels">
-<div role="tabpanel" id="inspect-panel-nexus-0" aria-labelledby="inspect-nexus-0">
-<h3>A ramp. A tail. Paid work.</h3>
-<p>The candidate ramps toward 10 NXXXS per block around year 7.77, then declines to a permanent 0.1 reward. Base fees and rent burn. Priority fees go to miners; service payments go to the chosen provider. Final public identity and parameters remain part of release preparation.</p>
-</div>
-<div role="tabpanel" id="inspect-panel-nexus-1" aria-labelledby="inspect-nexus-1">
-<h3>A request, evidence and a paid provider.</h3>
-<p>A bond is committed capital. A service fee is payment to a provider. A burn removes supply. The protocol accounts for those effects separately.</p>
-</div>
-<div role="tabpanel" id="inspect-panel-nexus-2" aria-labelledby="inspect-nexus-2">
-<h3>Transactions and recovery.</h3>
-<p>Private work includes vaults, reviewed transfers, durable journal recovery and selected operator and service components.</p>
-</div>
+<div>
+<p class="large-paragraph">Private work includes vaults, reviewed transfers, durable journal recovery and selected operator and service components.</p>
+<div class="actions">
+<a class="button primary" href="/testnet.html">Public Testnet <span aria-hidden="true">↗</span>
+</a>
+<a class="button" href="/status.html">Development <span aria-hidden="true">↗</span>
+</a>
 </div>
 </div>
 </div>
 </section>
 <section class="sibling-section">
 <div class="container">
-<p class="eyebrow">FOLLOW ANOTHER CURRENT</p>
+<p class="eyebrow">THE OTHER COINS</p>
 <div class="sibling-grid">
 <a class="sibling-link green" href="/daarx.html">
 <span>Private capital</span>
