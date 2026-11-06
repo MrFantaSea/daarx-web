@@ -1,0 +1,27 @@
+<svg aria-hidden="true" fill="none" focusable="false" viewbox="0 0 760 700">
+<defs>
+<lineargradient id="opn-glass" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#65d9f3" stop-opacity=".2"></stop><stop offset=".5" stop-color="#06141a" stop-opacity=".65"></stop><stop offset="1" stop-color="#65d9f3" stop-opacity=".04"></stop></lineargradient>
+<radialgradient cx="40%" cy="35%" id="opn-core" r="70%"><stop stop-color="#e7fbff"></stop><stop offset=".35" stop-color="#65d9f3"></stop><stop offset="1" stop-color="#041117"></stop></radialgradient>
+<filter height="300%" id="opn-glow" width="300%" x="-100%" y="-100%"><fegaussianblur result="blur" stddeviation="8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<g class="visual-grid"><path d="M20 110H740M20 210H740M20 310H740M20 410H740M20 510H740M120 40V650M220 40V650M320 40V650M420 40V650M520 40V650M620 40V650"></path></g>
+<path class="visual-rail faint" d="M36 104C195 104 208 304 374 351S564 590 727 590"></path>
+<path class="visual-rail" d="M28 520C169 520 228 418 366 351S591 206 736 206"></path>
+<g transform="translate(392 344)">
+<path d="M-182-200H130L180-150V190H-182Z" fill="#020608" stroke="#65d9f3" stroke-opacity=".13" transform="translate(42 -34)"></path>
+<path d="M-182-200H130L180-150V190H-182Z" fill="#030a0d" stroke="#65d9f3" stroke-opacity=".25" transform="translate(21 -17)"></path>
+<path d="M-182-200H130L180-150V190H-182Z" fill="url(#opn-glass)" stroke="#65d9f3" stroke-opacity=".62" stroke-width="2"></path>
+<path d="M130-200V-150H180" stroke="#65d9f3" stroke-opacity=".55" stroke-width="2"></path>
+<path d="M-150-137H145M-150-72H145M-150-7H145M-150 58H145M-150 123H145" stroke="#65d9f3" stroke-opacity=".16"></path>
+<g>
+<circle class="visual-node" cx="-127" cy="-105" r="6"></circle><path d="M-105-105H54" stroke="#65d9f3" stroke-opacity=".7" stroke-width="4"></path><path d="M76-111L87-100L110-124" stroke="#65d9f3" stroke-linecap="round" stroke-width="4"></path>
+<circle class="visual-node n2" cx="-127" cy="-40" r="6"></circle><path d="M-105-40H20" stroke="#65d9f3" stroke-opacity=".55" stroke-width="4"></path><path d="M76-46L87-35L110-59" stroke="#65d9f3" stroke-linecap="round" stroke-width="4"></path>
+<circle class="visual-node n3" cx="-127" cy="25" r="6"></circle><path d="M-105 25H72" stroke="#65d9f3" stroke-opacity=".65" stroke-width="4"></path><path d="M76 19L87 30L110 6" stroke="#65d9f3" stroke-linecap="round" stroke-width="4"></path>
+<circle class="visual-node" cx="-127" cy="90" r="6"></circle><path d="M-105 90H38" stroke="#65d9f3" stroke-opacity=".5" stroke-width="4"></path><path d="M76 84L87 95L110 71" stroke="#65d9f3" stroke-linecap="round" stroke-width="4"></path>
+</g>
+<rect class="visual-scan" height="42" width="329" x="-170" y="-177"></rect>
+</g>
+<g filter="url(#opn-glow)" transform="translate(162 550)"><path d="M0-57L50-29V29L0 57L-50 29V-29Z" fill="rgba(101,217,243,.08)" stroke="#65d9f3" stroke-opacity=".55"></path><circle class="visual-core" r="33"></circle><circle fill="url(#opn-core)" r="18"></circle></g>
+<g filter="url(#opn-glow)" transform="translate(625 130)"><path d="M0-46L40-23V23L0 46L-40 23V-23Z" fill="rgba(101,217,243,.08)" stroke="#65d9f3" stroke-opacity=".55"></path><circle class="visual-core" r="26"></circle><circle fill="url(#opn-core)" r="14"></circle></g>
+<g fill="#86aeb7" font-family="monospace" font-size="10" letter-spacing="1.2"><text x="96" y="635">MACHINE ACCOUNT</text><text x="532" y="80">PUBLIC RECEIPT</text><text x="285" y="579">AUDITABLE ROUTE</text></g>
+</svg>

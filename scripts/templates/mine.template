@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!-- daarx.money/mine — unverified mining and hardware concepts; no product or public miner is available. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mining &amp; hardware concepts — DAARX</title>
+<script>document.documentElement.classList.add('js')</script>
+<meta name="theme-color" content="#020504">
+<meta name="description" content="Pre-launch mining and hardware concepts for DAARX. Prices, hashrates, specifications, financing, rental, hosting, shipping, support, and release images are estimates or plans; no order or payment is accepted.">
+<link rel="canonical" href="https://daarx.money/mine.html">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/inner-shell.css">
+<link rel="stylesheet" href="/mine-control.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%234df19a' stroke-width='2'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%234df19a' stroke-width='9'/></svg>">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DAARX · L10N · OPEN">
+<meta property="og:title" content="Mining &amp; hardware concepts — DAARX">
+<meta property="og:description" content="Non-binding hardware concepts and estimated specifications. No public testnet miner, store, order, payment, financing, rental, or hosting service is live.">
+<meta property="og:url" content="https://daarx.money/mine.html">
+<meta property="og:image" content="https://daarx.money/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mining &amp; hardware concepts — DAARX">
+<meta name="twitter:description" content="Pre-launch concepts only. No public testnet miner, hardware sale, financing, rental, or hosting service is live.">
+<meta name="twitter:image" content="https://daarx.money/og.png">
+<script src="/mine-control.js" defer></script>
+</head>
+<body class="p-mine mine-control">
+<a class="skip" href="#main">Skip to content</a>
+<div class="grid" aria-hidden="true"></div>
+
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">/</span><span class="l">L10N</span><span class="amp">/</span><span class="o">OPEN</span></a>
+  <div class="go">
+    <a class="lnk" href="#concepts">configurations</a>
+    <a class="lnk" href="#self-build">self-build</a>
+    <a class="btn" href="#reserve">Record interest <span class="arw">&#8594;</span></a>
+    <details class="nd">
+      <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="navmenu">
+        <a href="/">Home</a>
+        <a href="/daarx.html">DAARX</a>
+        <a href="/l10n.html">L10N</a>
+        <a href="/open.html">OPEN</a>
+        <a href="/mine.html" aria-current="page">Mining plans</a>
+        <a href="/break-it.html">Security</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+    </details>
+  </div>
+</nav>
+
+<main id="main">
+  <header class="bay-hero" aria-labelledby="hero-title">
+    <div class="bay-scene" aria-hidden="true">
+      <div class="bay-scan"></div>
+      <svg class="bay-machine" viewBox="0 0 900 760" focusable="false">
+        <defs>
+          <linearGradient id="chassis" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102019"/><stop offset=".48" stop-color="#06100d"/><stop offset="1" stop-color="#020504"/></linearGradient>
+          <radialGradient id="core" cx="35%" cy="28%"><stop stop-color="#e3fff0"/><stop offset=".24" stop-color="#4df19a"/><stop offset="1" stop-color="#0c6238"/></radialGradient>
+          <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <g class="floor-grid"><path d="M70 670H830M135 620H765M190 575H710M238 537H662M70 670L365 444M225 670L407 444M380 670L447 444M535 670L489 444M690 670L531 444M830 670L571 444"/></g>
+        <g class="signal-bus" filter="url(#glow)"><path d="M18 271H246L292 317H600L650 270H882"/><path d="M18 296H229L281 348H618L671 296H882"/></g>
+        <g class="rack rack-back"><path d="M576 127H744L782 165V480H576Z" fill="url(#chassis)"/><path d="M576 127H744L782 165H614Z"/><path d="M744 127V165H782"/><path d="M604 205H748M604 229H748M604 253H748"/><circle cx="636" cy="362" r="57"/><circle class="fan" cx="636" cy="362" r="42"/><circle cx="636" cy="362" r="7" fill="url(#core)"/><path d="M704 330H749M704 349H738M704 368H749M704 387H730"/></g>
+        <g class="rack rack-main"><path d="M270 87H512L561 136V522H270Z" fill="url(#chassis)"/><path d="M270 87H512L561 136H319Z"/><path d="M512 87V136H561"/><path d="M309 166H520M309 191H520M309 216H520"/><circle cx="367" cy="348" r="77"/><circle class="fan fan-a" cx="367" cy="348" r="57"/><circle cx="367" cy="348" r="10" fill="url(#core)"/><circle cx="478" cy="348" r="50"/><circle class="fan fan-b" cx="478" cy="348" r="36"/><circle cx="478" cy="348" r="7" fill="url(#core)"/><path class="status-line" d="M309 461H515"/><path d="M309 483H440M454 483H515"/></g>
+        <g class="packets" filter="url(#glow)"><circle cx="112" cy="271" r="4"/><circle cx="211" cy="296" r="4"/><circle cx="696" cy="270" r="4"/><circle cx="816" cy="296" r="4"/></g>
+      </svg>
+      <span class="scene-label scene-label-a">BAY::01 / CONCEPT HARDWARE</span>
+      <span class="scene-label scene-label-b">VALIDATION STATE / UNVERIFIED</span>
+    </div>
+    <div class="hero-frame" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+    <div class="bay-shell hero-grid">
+      <div class="hero-copy">
+        <p class="system-flag"><i aria-hidden="true"></i> HARDWARE LAB <span>/</span> PRE-RELEASE</p>
+        <h1 id="hero-title"><span>Mining</span> <span class="signal-word">plans.</span></h1>
+        <p class="hero-lede">A working bay for proposed nodes, miners, and self-build paths—not a storefront.</p>
+        <p class="hero-truth">Explore non-binding hardware concepts and estimated launch configurations. No public testnet miner, store, financing, rental, or hosting service is live.</p>
+        <div class="hero-actions">
+          <a class="bay-button primary" href="#concepts">Inspect configurations <span aria-hidden="true">&#8595;</span></a>
+          <a class="bay-button secondary" href="#reserve">Record interest <span aria-hidden="true">&#8594;</span></a>
+        </div>
+      </div>
+      <aside class="hero-readout" aria-label="Current hardware program status">
+        <p class="readout-title"><span>BAY STATE</span><span>2026.07.15</span></p>
+        <dl>
+          <div><dt>PUBLIC MINER</dt><dd>NOT RELEASED</dd></div>
+          <div><dt>HARDWARE SALE</dt><dd>NONE</dd></div>
+          <div><dt>BENCHMARKS</dt><dd>UNVERIFIED</dd></div>
+          <div><dt>INTEREST FORM</dt><dd class="state-active">ACTIVE</dd></div>
+        </dl>
+        <p>No orders. No priority. No payment.</p>
+      </aside>
+    </div>
+    <a class="hero-scroll" href="#concepts"><span>ENTER BAY</span><i aria-hidden="true"></i></a>
+  </header>
+
+  <aside class="bay-strip" aria-label="Important project status">
+    <span><b>CATALOG</b> / CONCEPT ONLY</span><span><b>PUBLIC TESTNET</b> / NOT LIVE</span><span><b>CHECKOUT</b> / NONE</span><span><b>SELF-BUILD IMAGE</b> / PLANNED</span>
+  </aside>
+
+  <section class="bay-section concept-section" id="concepts" aria-labelledby="concept-title">
+    <div class="bay-shell">
+      <div class="truth-console reveal">
+        <span class="truth-code">NOTICE::NON_BINDING</span>
+        <p><strong>Concept catalog only.</strong> No supported public testnet miner or release package is available. Current mining work is development-only and limited to local regtest testing; testnet and mainnet mining remain launch-gated. No listed computer is offered for sale, and no parts, hashrate, power, noise, price, shipping, support, or delivery claim is final.</p>
+      </div>
+
+      <header class="section-intro reveal">
+        <p class="section-index">01 <span>/</span> CONFIGURATION BAY</p>
+        <h2 id="concept-title">Systems under <em>evaluation.</em></h2>
+        <p>Choose a scale to inspect the current engineering studies. Each figure is a planning envelope—not a tested benchmark, quote, product, or promise.</p>
+      </header>
+
+      <div class="bay-tabs js-only" role="tablist" aria-label="Hardware concept scale">
+        <button id="tab-node" type="button" role="tab" aria-selected="true" aria-controls="panel-node" data-bay-tab="node"><span>01</span> NODE</button>
+        <button id="tab-compact" type="button" role="tab" aria-selected="false" aria-controls="panel-compact" data-bay-tab="compact" tabindex="-1"><span>02</span> COMPACT</button>
+        <button id="tab-rig" type="button" role="tab" aria-selected="false" aria-controls="panel-rig" data-bay-tab="rig" tabindex="-1"><span>03</span> RIG</button>
+        <button id="tab-scale" type="button" role="tab" aria-selected="false" aria-controls="panel-scale" data-bay-tab="scale" tabindex="-1"><span>04</span> BIG_DOG</button>
+      </div>
+
+      <div class="config-stage reveal">
+        <section class="config-panel" id="panel-node" role="tabpanel" aria-labelledby="tab-node" data-bay-panel="node">
+          <div class="panel-head"><div><p>VALIDATION / NODE-ONLY</p><h3>Just run a node.</h3></div><span>NO MINING / NO EARNINGS</span></div>
+          <p class="panel-intro">If a public network launches, independently operated nodes are intended to validate its rules and relay data. This concept is for participation, not earnings; no supported node image or hardware offer exists today.</p>
+          <div class="concept-grid one-up">
+            <a class="concept-card" href="#reserve" data-sku="Node Box — est. $299">
+              <span class="card-code">NODE::BOX_01</span><span class="card-state">UNVERIFIED</span>
+              <span class="device-icon node-icon" aria-hidden="true"><i></i></span>
+              <span class="card-name">Node Box</span>
+              <span class="card-desc">Proposed compact, node-only computer. Intended use, ~10W target, acoustics, software, and network compatibility are unverified. <strong>No mining or earnings.</strong></span>
+              <span class="card-data"><span><small>PLANNING ENVELOPE</small>est. $299</span><span><small>ROLE</small>VALIDATE</span></span>
+              <span class="card-action">SELECT FOR INTEREST <b>&#8594;</b></span>
+            </a>
+          </div>
+        </section>
+
+        <section class="config-panel" id="panel-compact" role="tabpanel" aria-labelledby="tab-compact" data-bay-panel="compact">
+          <div class="panel-head"><div><p>VALIDATION / SMALL SYSTEMS</p><h3>Compact miner concepts.</h3></div><span>2 STUDIES</span></div>
+          <p class="panel-intro">Proposed small computers intended to mine and run a node if compatible public software launches. Operation will require setup, updates, security, power, cooling, and monitoring; performance, acoustics, integration, and availability are unverified.</p>
+          <div class="concept-grid">
+            <a class="concept-card" href="#reserve" data-sku="Mini Miner — est. $699">
+              <span class="card-code">COMPACT::MINI</span><span class="card-state">UNVERIFIED</span><span class="device-icon cube-icon" aria-hidden="true"><i></i></span>
+              <span class="card-name">Mini Miner</span><span class="card-desc">Compact miner/node concept. Chassis, CPU, performance, sound, power, thermals, setup, and unattended reliability are not validated.</span>
+              <span class="card-data"><span><small>PLANNING EST.</small>6–8 kH/s</span><span><small>ENVELOPE</small>est. $699</span></span><span class="load-line"><i style="--load:10%"></i></span><span class="card-action">SELECT FOR INTEREST <b>&#8594;</b></span>
+            </a>
+            <a class="concept-card" href="#reserve" data-sku="Beefy Mini — est. $1,399">
+              <span class="card-code">COMPACT::BEEFY</span><span class="card-state">UNVERIFIED</span><span class="device-icon cube-icon" aria-hidden="true"><i></i></span>
+              <span class="card-name">Beefy Mini</span><span class="card-desc">Possible 16-core compact build using a Ryzen 9 7945HX-class part. The exact system, two-liter target, benchmark, cooling, and acoustics are unverified.</span>
+              <span class="card-data"><span><small>PLANNING EST.</small>16–20 kH/s</span><span><small>ENVELOPE</small>est. $1,399</span></span><span class="load-line"><i style="--load:24%"></i></span><span class="card-action">SELECT FOR INTEREST <b>&#8594;</b></span>
+            </a>
+          </div>
+        </section>
+
+        <section class="config-panel" id="panel-rig" role="tabpanel" aria-labelledby="tab-rig" data-bay-panel="rig">
+          <div class="panel-head"><div><p>VALIDATION / DESKTOP SYSTEMS</p><h3>Primary rig studies.</h3></div><span>4 STUDIES</span></div>
+          <div class="concept-grid">
+            <a class="concept-card card-baseline" href="#reserve" data-sku="Standard — est. $1,899"><span class="card-code">RIG::STANDARD</span><span class="card-state">BASELINE CONCEPT</span><span class="device-icon tower-icon" aria-hidden="true"><i></i></span><span class="card-name">Standard</span><span class="card-desc">Possible 16-core Ryzen 9 5900XT build. Price/performance, bill of materials, benchmark, power, and suitability are unverified.</span><span class="card-data"><span><small>PLANNING EST.</small>20 kH/s</span><span><small>ENVELOPE</small>est. $1,899</span></span><span class="load-line"><i style="--load:24%"></i></span><span class="card-action">SELECT FOR INTEREST <b>&#8594;</b></span></a>
+            <a class="concept-card" href="#reserve" data-sku="Pro — est. $2,499"><span class="card-code">RIG::PRO</span><span class="card-state">UNVERIFIED</span><span class="device-icon tower-icon" aria-hidden="true"><i></i></span><span class="card-name">Pro</span><span class="card-desc">Possible 16-core Ryzen 9 9950X/AM5 build. Performance, platform longevity, component choices, and upgrade compatibility are unverified.</span><span class="card-data"><span><small>PLANNING EST.</small>27 kH/s</span><span><small>ENVELOPE</small>est. $2,499</span></span><span class="load-line"><i style="--load:32%"></i></span><span class="card-action">SELECT FOR INTEREST <b>&#8594;</b></span></a>
+            <a class="concept-card" href="#reserve" data-sku="Pro ACE — est. $2,899"><span class="card-code">RIG::PRO_ACE</span><span class="card-state">UNVERIFIED</span><span class="device-icon tower-icon" aria-hidden="true"><i></i></span><span class="card-name">Pro ACE</span><span class="card-desc">Possible Ryzen 9 9950X3D build for mixed mining, gaming, and creative use. Workload performance and the mining estimate are unverified.</span><span class="card-data"><span><small>PLANNING EST.</small>27 kH/s</span><span><small>ENVELOPE</small>est. $2,899</span></span><span class="load-line"><i style="--load:32%"></i></span><span class="card-action">SELECT FOR INTEREST <b>&#8594;</b></span></a>
+            <a class="concept-card" href="#reserve" data-sku="Pro ACE II — est. $3,299"><span class="card-code">RIG::PRO_ACE_II</span><span class="card-state">UNVERIFIED</span><span class="device-icon tower-icon" aria-hidden="true"><i></i></span><span class="card-name">Pro ACE II</span><span class="card-desc">Placeholder for a possible dual-CCD 3D-cache build. CPU model, availability, cache, system design, and performance are not verified.</span><span class="card-data"><span><small>PLANNING EST.</small>27 kH/s</span><span><small>ENVELOPE</small>est. $3,299</span></span><span class="load-line"><i style="--load:32%"></i></span><span class="card-action">SELECT FOR INTEREST <b>&#8594;</b></span></a>
+          </div>
+          <p class="panel-foot">Prestige concepts target roughly the Pro planning estimate. Any premium silicon or 3D cache would be for non-mining workloads; no comparative benchmark is verified.</p>
+        </section>
+
+        <section class="config-panel" id="panel-scale" role="tabpanel" aria-labelledby="tab-scale" data-bay-panel="scale">
+          <div class="panel-head"><div><p>VALIDATION / HIGH-CORE-COUNT</p><h3>BIG_DOG systems.</h3></div><span>MAXIMUM SCALE STUDY</span></div>
+          <p class="panel-intro">High-core-count Threadripper concepts for evaluating larger CPU-mining systems. Their performance, memory configuration, efficiency, thermals, power, and commercial viability are unverified.</p>
+          <div class="concept-grid">
+            <a class="concept-card" href="#reserve" data-sku="BIG_DOG (32-core) — est. $7,499"><span class="card-code">SCALE::32C</span><span class="card-state">UNVERIFIED</span><span class="device-icon twin-icon" aria-hidden="true"><i></i></span><span class="card-name">BIG_DOG</span><span class="card-desc">Possible 32-core Threadripper 7970X build. Relative throughput, efficiency, bill of materials, and benchmark are unverified.</span><span class="card-data"><span><small>PLANNING EST.</small>40 kH/s</span><span><small>ENVELOPE</small>est. $7,499</span></span><span class="load-line"><i style="--load:48%"></i></span><span class="card-action">SELECT FOR INTEREST <b>&#8594;</b></span></a>
+            <a class="concept-card card-baseline" href="#reserve" data-sku="BIG_DOG MAX (64-core) — est. $10,999"><span class="card-code">SCALE::64C</span><span class="card-state">LARGEST CONCEPT</span><span class="device-icon twin-icon" aria-hidden="true"><i></i></span><span class="card-name">BIG_DOG MAX</span><span class="card-desc">Possible 64-core Threadripper 7980X build. Throughput, efficiency, power, cooling, acoustics, and system configuration are unverified.</span><span class="card-data"><span><small>PLANNING EST.</small>84 kH/s</span><span><small>ENVELOPE</small>est. $10,999</span></span><span class="load-line"><i style="--load:100%"></i></span><span class="card-action">SELECT FOR INTEREST <b>&#8594;</b></span></a>
+          </div>
+        </section>
+      </div>
+
+      <div class="boundary-grid reveal">
+        <p><span>ESTIMATE BOUNDARY</span><strong>Every price, specification, and hashrate on this page is an unverified planning estimate and can change.</strong> Final bills of materials, benchmark methods, power, noise, thermals, wallet flow, availability, taxes, shipping, support, and acceptance tests must be published before orders open.</p>
+        <p><span>OPERATOR BOUNDARY</span><strong>Who is exploring the hardware:</strong> Desiderata Labs LLC operates this site and the hardware-interest form. No store, hardware sale, or support service is live. Every listed rig is a pre-launch plan; final seller identity, specifications, availability, warranty, returns, shipping, financing, hosting, and support terms would have to be posted before any offer opens. Any future hardware would be sold separately from coins and protocol control.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bay-section access-section" aria-labelledby="access-title">
+    <div class="bay-shell">
+      <header class="section-intro reveal"><p class="section-index">02 <span>/</span> ACCESS STUDIES</p><h2 id="access-title">Models being <em>considered.</em></h2><p>These are unresolved commercial and operational models, displayed as research lanes—not checkout options.</p></header>
+      <div class="access-grid reveal">
+        <article><span>LANE / 01</span><h3>Possible purchase</h3><p>A future sale could support upfront payment and, only if a regulated third-party provider approves it, separate financing. No financing or checkout is currently offered.</p><b>STATE / NOT AVAILABLE</b></article>
+        <article><span>LANE / 02</span><h3>Possible hosted ownership</h3><p>A hosted installment structure is only a concept. Custody, title, power, downtime, wallet control, default, tax, insurance, shipping, and consumer-credit terms are unresolved.</p><b>STATE / NOT AVAILABLE</b></article>
+        <article><span>LANE / 03</span><h3>Possible rental</h3><p>A dedicated-rig rental is also only a concept. No capacity, uptime, output, cancellation, custody, power, or payout terms currently exist.</p><b>STATE / NOT AVAILABLE</b></article>
+      </div>
+      <p class="legal-line reveal">None of these models is available or approved. Any future offer requires legal, tax, accounting, insurance, consumer-contract, custody, security, operational, and provider review.</p>
+    </div>
+  </section>
+
+  <section class="bay-section build-section" id="self-build" aria-labelledby="build-title">
+    <div class="bay-shell build-grid">
+      <div class="build-copy reveal">
+        <p class="section-index">03 <span>/</span> SELF-BUILD PATH</p>
+        <h2 id="build-title">The exit should stay <em>open.</em></h2>
+        <p>The project intends to publish a free release image and vetted parts list so no hardware purchase is required. Those signed artifacts, instructions, compatibility tests, update path, and support boundaries are <strong>not released yet</strong>.</p>
+        <div class="release-gates" role="group" aria-label="Self-build release gates"><span><i></i> SIGNED IMAGE <b>PENDING</b></span><span><i></i> VETTED PARTS <b>PENDING</b></span><span><i></i> COMPATIBILITY TESTS <b>PENDING</b></span><span><i></i> UPDATE PATH <b>PENDING</b></span></div>
+      </div>
+      <div class="bom-console reveal">
+        <div class="console-head"><span>PROPOSED STANDARD BUILD</span><b>PLANNING BOM</b></div>
+        <dl>
+          <div><dt>CPU CONCEPT</dt><dd><strong>Ryzen 9 5900XT</strong> — 16 cores; planning estimate ~20 kH/s on RandomX, not a verified release benchmark</dd></div>
+          <div><dt>BOARD</dt><dd>B550, ATX (AM4)</dd></div>
+          <div><dt>MEMORY</dt><dd>16 GB DDR4-3600, dual channel</dd></div>
+          <div><dt>PSU CONCEPT</dt><dd>650W 80+ Gold-class unit (this rating is not an expected wall-power figure)</dd></div>
+          <div><dt>GRAPHICS</dt><dd>Intel Arc A310 — display only</dd></div>
+          <div><dt>COOLING</dt><dd>air cooler, built for 24/7</dd></div>
+          <div><dt>STORAGE</dt><dd>NVMe SSD</dd></div>
+        </dl>
+        <p>This is a planning bill of materials, not a guaranteed SKU. Component validation, reproducible benchmarks, thermals, power, noise, firmware, secure imaging, burn-in, warranty, substitutions, and acceptance criteria remain open.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bay-section support-section" aria-labelledby="support-title">
+    <div class="bay-shell">
+      <header class="section-intro reveal"><p class="section-index">04 <span>/</span> OPTIONAL LAYERS</p><h2 id="support-title">Service and accessory <em>studies.</em></h2><p>Nothing in this section is currently sold, promised, or operational.</p></header>
+      <div class="support-grid reveal">
+        <article class="service-console">
+          <div class="console-head"><span>POSSIBLE MEMBERSHIPS</span><b>NOT OFFERED</b></div>
+          <ul>
+            <li><span><strong>Managed concept</strong><small>Possible monitoring, updates, tuning, and support; scope and service levels pending.</small></span><b>est. ~$25<small>/mo</small></b></li>
+            <li><span><strong>Hosting concept</strong><small>Possible space, power, cooling, and operations; capacity and service terms pending.</small></span><b>est. ~$75<small>/mo</small></b></li>
+            <li><span><strong>Community concept</strong><small>Possible member space and benefits; nothing is currently sold or promised.</small></span><b>est. ~$20<small>/mo</small></b></li>
+          </ul>
+          <p>These are demand-research concepts. Managed service, hosting, community benefits, any mining pool, fees, monitoring, custody, uptime, security, support, and cancellation terms are not final or available.</p>
+        </article>
+        <article class="accessory-console">
+          <div class="console-head"><span>ACCESSORY STUDIES</span><b>UNAVAILABLE</b></div>
+          <a href="#reserve" data-acc="acc_display"><span>STATUS DISPLAY</span><small>A possible screen for hashrate, uptime, and temperatures; integration is unverified.</small><b>est. $79 &#8594;</b></a>
+          <a href="#reserve" data-acc="acc_coldstorage"><span>BACKUP PLATE</span><small>A proposed metal backup accessory; wallet format, material, instructions, and recovery tests are pending.</small><b>est. $49 &#8594;</b></a>
+          <a href="#reserve" data-acc="acc_usb"><span>PRE-FLASHED USB</span><small>A possible signed release image on removable media; no release image is available yet.</small><b>est. $29 &#8594;</b></a>
+          <a href="#reserve" data-acc="acc_merch"><span>MERCH</span><small>Possible shirts, hoodies, and stickers; designs, suppliers, terms, and prices are pending.</small><b>est. from $28 &#8594;</b></a>
+        </article>
+      </div>
+
+      <div class="squish-module reveal">
+        <div class="squish-visual" aria-hidden="true"><i class="gel gel-g">D</i><i class="gel gel-a">O</i><i class="gel gel-c">L</i><span>LAB ANOMALY / 03</span></div>
+        <div><p class="section-index">PROOF-OF-SQUISH&trade;</p><h3>Three project colors. Three proposed squishes.</h3><p>A proposed soft desk-fidget three-pack in the project colors. It is a merchandise concept, not an available product or an investment.</p><a class="bay-button primary" href="#reserve" data-acc="acc_squish">Record 3-pack interest <span aria-hidden="true">&#8594;</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bay-section interest-section" id="reserve" aria-labelledby="interest-title">
+    <div class="bay-shell interest-grid">
+      <header class="section-intro reveal"><p class="section-index">05 <span>/</span> DEMAND SIGNAL</p><h2 id="interest-title">Record non-binding <em>interest.</em></h2><p>Not sure which? Submit non-binding interest so final engineering and demand can be measured. This does not hold inventory or priority.</p><div class="form-boundary"><span>THIS DOES</span><b>Measure interest</b><span>THIS DOES NOT</span><b>Create an order, quote, payment, or priority</b></div></header>
+      <div class="interest-console reveal">
+        <div class="console-head"><span>INTEREST FORM / WEB3FORMS</span><b>NO PAYMENT</b></div>
+        <p><strong>Tell us what you would consider — no order, priority, or payment.</strong></p>
+        <p>This form measures interest only. It does not reserve inventory, hold a place, create a quote, guarantee a price/specification/date, approve financing, or promise that a store or network will launch. We may contact you if a compliant offer is later ready.</p>
+        <form class="pre" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="e5de19a2-04af-471e-87ed-a054ddf7351c">
+          <input type="hidden" name="subject" value="New hardware interest — daarx.money">
+          <input type="hidden" name="from_name" value="daarx.money / hardware interest">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
+          <input type="hidden" name="redirect" value="https://daarx.money/mine.html">
+          <div class="row2"><div><label class="lbl" for="f-name">Name or handle (optional)</label><input id="f-name" type="text" name="name" autocomplete="name" maxlength="100" placeholder="Satoshi"></div><div><label class="lbl" for="f-email">Email</label><input id="f-email" type="email" name="email" autocomplete="email" maxlength="254" placeholder="you@email.com" required></div></div>
+          <div><label class="lbl" for="f-product">Which estimated concept interests you?</label><select id="f-product" name="product" required><option value="" disabled selected>— Choose your build —</option><option>Node Box — est. $299</option><option>Mini Miner — est. $699</option><option>Beefy Mini — est. $1,399</option><option>Standard — est. $1,899</option><option>Pro — est. $2,499</option><option>Pro ACE — est. $2,899</option><option>Pro ACE II — est. $3,299</option><option>BIG_DOG (32-core) — est. $7,499</option><option>BIG_DOG MAX (64-core) — est. $10,999</option><option>Planned free image — I'll build it myself</option><option>Not sure yet — just interested</option></select></div>
+          <fieldset><legend>Which possible access model interests you? (optional)</legend><div class="checks"><label><input type="checkbox" name="way_buy" value="yes">Possible purchase</label><label><input type="checkbox" name="way_ownovertime" value="yes">Possible hosted ownership</label><label><input type="checkbox" name="way_rent" value="yes">Possible rental</label></div></fieldset>
+          <fieldset><legend>Interest in a possible membership? (optional)</legend><div class="checks"><label><input type="checkbox" name="membership_managed" value="yes">Managed</label><label><input type="checkbox" name="membership_hosting" value="yes">Hosting</label><label><input type="checkbox" name="membership_community" value="yes">Community</label></div></fieldset>
+          <fieldset><legend>Interest in possible accessories or merch? (optional)</legend><div class="checks"><label><input type="checkbox" name="acc_display" value="yes">Status display</label><label><input type="checkbox" name="acc_coldstorage" value="yes">Cold-storage kit</label><label><input type="checkbox" name="acc_usb" value="yes">Pre-flashed USB</label><label><input type="checkbox" name="acc_merch" value="yes">Merch</label><label><input type="checkbox" name="acc_squish" value="yes">Proof-of-Squish 3-pack</label></div></fieldset>
+          <input type="hidden" name="shipping_status" value="No shipping offer; final terms pending">
+          <div><label class="lbl" for="f-notes">Anything else? (optional)</label><textarea id="f-notes" name="notes" rows="3" maxlength="2000" placeholder="Questions, a custom build, anything…"></textarea></div>
+          <div class="checks consent"><label><input type="checkbox" name="privacy_notice_acknowledged" value="yes" required>I understand that this is non-binding interest, not an order or priority reservation, and that Desiderata Labs LLC and its form/email providers will use the submission as described in the <a href="/privacy.html">privacy notice</a>.</label></div>
+          <button type="submit">TRANSMIT INTEREST SIGNAL <span aria-hidden="true">&#8594;</span></button>
+        </form>
+        <p class="form-status" role="status" aria-live="polite" tabindex="-1" id="f-status"></p>
+        <p class="fine">No payment, order, held inventory, priority, quote, or financing application. Desiderata Labs LLC is the commercial operator. See the <a href="/privacy.html">privacy notice</a>; final seller identity, specifications, taxes, shipping, warranty, returns, support, hosting, and financing terms must be published before any offer is accepted.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="bay-shell final-status"><strong>STATUS — JULY 15, 2026</strong><p>No store, checkout, hardware release, financing, rental, hosting service, public testnet miner, or shipping date is live. March 16, 2027 is a non-binding protocol planning target, not a store or delivery promise.</p></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav class="fnav" aria-label="Site"><a href="/">daarx.money</a><a href="/daarx.html">DAARX</a><a href="/l10n.html">L10N</a><a href="/open.html">OPEN</a><a href="/mine.html" aria-current="page">mining plans</a><a href="/break-it.html">security</a><a href="/faq.html">faq</a><a href="/privacy.html">privacy</a></nav>
+    <p class="fine">no coin or hardware sale is offered · any future hardware would be separate · participation, not profit · nothing here is financial advice</p>
+  </div>
+</footer>
+</body>
+</html>

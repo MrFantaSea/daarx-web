@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- daarx.money/break-it — draft concept for a future security program. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Break it — DAARX · L10N · OPEN</title>
+<script>document.documentElement.classList.add('js')</script>
+<meta name="theme-color" content="#060706">
+<meta name="description" content="Draft design for a future DAARX public security program. The testnet, intake, official rules, funding, awards, credit board, and disclosure process are not live yet.">
+<link rel="canonical" href="https://daarx.money/break-it.html">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/inner-shell.css">
+<link rel="stylesheet" href="/utility-modules.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%234df19a' stroke-width='2'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%234df19a' stroke-width='9'/></svg>">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DAARX · L10N · OPEN">
+<meta property="og:title" content="Break it — DAARX · L10N · OPEN">
+<meta property="og:description" content="Draft design for a future public security program. No bounty, award, intake, or public testnet is currently open.">
+<meta property="og:url" content="https://daarx.money/break-it.html">
+<meta property="og:image" content="https://daarx.money/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Break it — DAARX · L10N · OPEN">
+<meta name="twitter:description" content="Future security-program design. No bounty, award, intake, or public testnet is currently open.">
+<meta name="twitter:image" content="https://daarx.money/og.png">
+</head>
+<body class="p-break module-page module-break">
+<a class="skip" href="#main">Skip to content</a>
+<div class="grid" aria-hidden="true"></div>
+
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">·</span><span class="l">L10N</span><span class="amp">·</span><span class="o">OPEN</span></a>
+  <div class="go">
+    <a class="lnk" href="/faq.html">faq</a>
+    <a class="lnk" href="/break-it.html" aria-current="page">break it</a>
+    <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
+    <details class="nd">
+      <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="navmenu">
+        <a href="/">Home</a>
+        <a href="/daarx.html">DAARX</a>
+        <a href="/l10n.html">L10N</a>
+        <a href="/open.html">OPEN</a>
+        <a href="/mine.html">Mining plans</a>
+        <a href="/break-it.html" aria-current="page">Break it</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+    </details>
+  </div>
+</nav>
+
+<main class="wrap" id="main">
+  <header class="module-hero" aria-labelledby="security-title">
+    <p class="crumb hero-in"><a href="/">← daarx.money / security</a></p>
+    <div class="module-hero-grid">
+      <div class="module-hero-copy">
+        <p class="module-kicker hero-in">RED TEAM SURFACE / DRAFT</p>
+        <h1 class="hero-in" id="security-title">Break it<span class="dot">.</span></h1>
+        <p class="tag hero-in">The privacy layer uses new cryptography. A future public program should invite adversarial testing and publish responsibly disclosed results; that program is not open yet.</p>
+        <div class="actions hero-in">
+          <a class="btn solid" href="#more">Inspect the draft <span class="arw">&#8595;</span></a>
+          <a class="btn" href="/faq.html">Read the FAQ <span class="arw">&#8594;</span></a>
+        </div>
+      </div>
+
+      <section class="module-console security-console hero-in" aria-label="Security program status: draft only, no live intake">
+        <div class="console-bar"><span>DAARX::ADVERSARIAL_REVIEW</span><span class="console-lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="console-readout">
+          <div class="console-line"><span>PROGRAM_STATE</span><strong class="signal">DRAFT_ONLY</strong></div>
+          <div class="attack-surface" aria-hidden="true">
+            <span class="attack-surface-label a">SOUNDNESS</span>
+            <span class="attack-surface-label b">PRIVACY</span>
+            <span class="attack-surface-label c">CONSENSUS</span>
+            <svg viewBox="0 0 500 210" focusable="false">
+              <path class="probe" d="M10 28C110 28 124 92 219 101M490 54C402 54 368 88 281 101M16 180C118 180 139 132 219 111"/>
+              <path class="shield" d="M250 57L291 76V111C291 148 272 168 250 179C228 168 209 148 209 111V76Z"/>
+              <path class="probe" d="M233 107L246 121L269 92"/>
+              <circle class="node" cx="10" cy="28" r="3"/><circle class="node" cx="490" cy="54" r="3"/><circle class="node" cx="16" cy="180" r="3"/>
+            </svg>
+          </div>
+          <div class="console-line"><span>PUBLIC_TESTNET</span><strong>NOT LIVE</strong></div>
+          <div class="console-line"><span>PRIVATE_INTAKE</span><strong>NOT PUBLISHED</strong></div>
+          <div class="console-stamp">NO LIVE BOUNTY</div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <div class="flow">
+    <section class="module-section" data-index="01" aria-labelledby="more">
+      <h2 class="eyebrow" id="more">the deal before launch</h2>
+      <p>The project plans to define what a meaningful break looks like before a public testnet and to make launch wait for verified fixes and retesting. <b>No public testnet, vulnerability intake, bounty, award, or publication promise is currently active.</b></p>
+
+      <div class="statement">
+        <div class="fig">$1,000<span class="u">proposed pool · not funded or offered</span></div>
+        <p class="cap">This is a draft program concept only. No one can currently earn money, credit, an invitation, or any other award. Official rules and confirmed funding must be published before submissions open.</p>
+      </div>
+    </section>
+
+    <section class="module-section" data-index="02" aria-labelledby="security-network">
+      <h2 class="eyebrow" id="security-network">the test network — where you come in</h2>
+      <p>The future plan is to run public test networks with valueless test coins and explicit scopes for fuzzing, consensus, privacy, networking, wallet, and operational testing. Those networks and their safe-harbor/scope terms are not live.</p>
+      <div class="steps">
+        <div class="step"><span class="n">01 / VERIFY RELEASE</span><span class="b">Wait for a signed public release, testnet scope, faucet, node package, and disclosure instructions.</span></div>
+        <div class="step"><span class="n">02 / TEST REAL PATHS</span><span class="b">Try to break something real — soundness (make money from nothing, double-spend) or privacy (de-anonymize a payment).</span></div>
+        <div class="step"><span class="n">03 / DISCLOSE SAFELY</span><span class="b">Use the future private security intake and follow its disclosure rules. Do not send sensitive vulnerability details through the hardware-interest form.</span></div>
+      </div>
+    </section>
+
+    <section class="module-section" data-index="03" aria-labelledby="security-bounty">
+      <h2 class="eyebrow" id="security-bounty">proposed bounty + credit board</h2>
+      <p>A capped <b>$1,000 total pool</b> has been discussed, but it is not funded, governed by official rules, or offered to the public. Eligibility, jurisdictions, age, taxes, sanctions, severity, duplicates, root-cause grouping, fix requirements, safe harbor, disclosure timing, payout source, dispute process, and event terms all remain unresolved.</p>
+      <p>A public credit board is also a proposal. Publication requires the reporter&rsquo;s informed consent and a disclosure process that does not expose an unfixed vulnerability or personal information. Until those controls exist, this page creates no entitlement or promise.</p>
+      <p><b>No payment date exists.</b> If a program opens, its official rules—not this draft—will control any award, credit, or recognition.</p>
+      <div class="board">
+        <div class="hd"><span class="c1">testnet</span><span class="c2">finding · credited to</span></div>
+        <div class="empty">— not live; no submissions or awards accepted —</div>
+      </div>
+    </section>
+
+    <section class="module-section" data-index="04" aria-labelledby="security-report">
+      <h2 class="eyebrow" id="security-report">report something</h2>
+      <p>No vulnerability intake or PGP key is currently published. Do not send sensitive vulnerability details through the hardware-interest form or ordinary contact email. A dedicated private channel, public key, scope, acknowledgment target, and disclosure policy are launch prerequisites.</p>
+    </section>
+
+    <div class="soon"><b>Status — July 15, 2026:</b> draft program only. Public testnet, official rules, funding proof, intake, PGP key, response targets, safe harbor, award process, and credit board are not live. No opening date is promised.</div>
+
+    <div class="endcta">
+      <div class="h">Think you can break it?</div>
+      <p>The public invitation is not open yet. You can read the development status or submit non-binding hardware interest, but neither action enters a security program or guarantees first-block mining.</p>
+      <div class="actions">
+        <a class="btn solid big" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
+        <a class="btn" href="/faq.html">Read the FAQ <span class="arw">&#8594;</span></a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav class="fnav" aria-label="Site">
+      <a href="/">daarx.money</a>
+      <a href="/daarx.html">DAARX</a>
+      <a href="/l10n.html">L10N</a>
+      <a href="/open.html">OPEN</a>
+      <a href="/mine.html">mining plans</a>
+      <a href="/break-it.html" aria-current="page">break it</a>
+      <a href="/faq.html">faq</a>
+      <a href="/privacy.html">privacy</a>
+    </nav>
+    <p class="fine">test coins are worthless on purpose · nothing here is financial advice</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  root.classList.add('js');
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var SEL='.reveal,.stagger,.flow>*';
+  var els=[].slice.call(d.querySelectorAll(SEL));
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
+  else{
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{rootMargin:'0px 0px -10% 0px',threshold:.1});
+    els.forEach(function(e){ if(e.getBoundingClientRect().top < innerHeight*0.94){e.classList.add('in');} else {io.observe(e);} });
+  }
+  var nav=d.getElementById('nav');
+  if(nav){var on=function(){nav.classList.toggle('scrolled',(window.scrollY||0)>24)};on();addEventListener('scroll',on,{passive:true});}
+  var nd=d.querySelector('.nd');
+  if(nd){d.addEventListener('click',function(e){if(nd.open&&!nd.contains(e.target))nd.open=false;});}
+})();
+</script>
+</body>
+</html>

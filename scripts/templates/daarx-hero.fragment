@@ -1,0 +1,25 @@
+<svg aria-hidden="true" fill="none" focusable="false" viewbox="0 0 760 700">
+<defs>
+<radialgradient cx="50%" cy="45%" id="dax-core" r="55%"><stop offset="0" stop-color="#dffff0"></stop><stop offset=".25" stop-color="#4ae08c"></stop><stop offset="1" stop-color="#07110b"></stop></radialgradient>
+<lineargradient id="dax-shell" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#4ae08c" stop-opacity=".32"></stop><stop offset=".5" stop-color="#10251a" stop-opacity=".12"></stop><stop offset="1" stop-color="#4ae08c" stop-opacity=".05"></stop></lineargradient>
+<filter height="300%" id="dax-glow" width="300%" x="-100%" y="-100%"><fegaussianblur result="blur" stddeviation="9"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<g class="visual-grid"><path d="M20 110H740M20 210H740M20 310H740M20 410H740M20 510H740M120 40V650M220 40V650M320 40V650M420 40V650M520 40V650M620 40V650"></path></g>
+<path d="M70 354L182 150L438 92L665 226L690 470L484 620L216 574Z" fill="url(#dax-shell)" stroke="#4ae08c" stroke-opacity=".15"></path>
+<path d="M129 358L222 196L432 148L611 252L632 448L469 564L255 526Z" fill="#020705" stroke="#4ae08c" stroke-opacity=".31"></path>
+<path class="visual-rail faint" d="M24 122C192 122 216 248 372 350S598 521 748 521"></path>
+<path class="visual-rail" d="M18 558C168 558 227 472 360 355S584 184 742 184"></path>
+<g opacity=".32">
+<circle cx="124" cy="248" fill="#4ae08c" r="3"></circle><circle cx="165" cy="435" fill="#4ae08c" r="3"></circle><circle cx="230" cy="141" fill="#4ae08c" r="3"></circle><circle cx="269" cy="560" fill="#4ae08c" r="3"></circle><circle cx="350" cy="116" fill="#4ae08c" r="3"></circle><circle cx="457" cy="588" fill="#4ae08c" r="3"></circle><circle cx="535" cy="161" fill="#4ae08c" r="3"></circle><circle cx="650" cy="350" fill="#4ae08c" r="3"></circle><circle cx="579" cy="515" fill="#4ae08c" r="3"></circle>
+</g>
+<g filter="url(#dax-glow)" transform="translate(380 350)">
+<path d="M0-142L123-71V71L0 142L-123 71V-71Z" fill="rgba(74,224,140,.04)" stroke="#4ae08c" stroke-opacity=".45" stroke-width="2"></path>
+<path d="M0-103L89-52V52L0 103L-89 52V-52Z" fill="#020705" stroke="#4ae08c" stroke-opacity=".72" stroke-width="2"></path>
+<circle class="visual-core" cx="0" cy="0" r="58"></circle>
+<circle cx="0" cy="0" fill="url(#dax-core)" r="33"></circle>
+<path d="M-16 3L-5 14L19-15" stroke="#061009" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"></path>
+<circle class="visual-node" cx="0" cy="-103" r="5"></circle><circle class="visual-node n2" cx="89" cy="52" r="5"></circle><circle class="visual-node n3" cx="-89" cy="52" r="5"></circle>
+</g>
+<g fill="#8fa79a" font-family="monospace" font-size="10" letter-spacing="1.2"><text x="65" y="342">MEMBERSHIP SET</text><text x="518" y="249">SPENT TAG</text><text x="507" y="544">HIDDEN AMOUNT</text></g>
+<rect class="visual-scan" height="38" width="592" x="86" y="98"></rect>
+</svg>

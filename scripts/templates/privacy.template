@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- daarx.money/privacy — site and hardware-interest privacy notice. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — DAARX · L10N · OPEN</title>
+<script>document.documentElement.classList.add('js')</script>
+<meta name="theme-color" content="#060706">
+<meta name="description" content="How Desiderata Labs LLC handles DAARX site and hardware-interest data, including providers, retention, and deletion requests. No advertising trackers or analytics.">
+<link rel="canonical" href="https://daarx.money/privacy.html">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/inner-shell.css">
+<link rel="stylesheet" href="/utility-modules.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23020504'/><path d='M5 8h10l4 4h8M5 16h22M5 24h10l4-4h8' fill='none' stroke='%234df19a' stroke-width='2'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='24' fill='%23020504'/><path d='M28 48h55l25 25h44M28 90h124M28 132h55l25-25h44' fill='none' stroke='%234df19a' stroke-width='9'/></svg>">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DAARX · L10N · OPEN">
+<meta property="og:title" content="Privacy — DAARX · L10N · OPEN">
+<meta property="og:description" content="How Desiderata Labs LLC handles DAARX site and hardware-interest data, including providers, retention, and deletion requests.">
+<meta property="og:url" content="https://daarx.money/privacy.html">
+<meta property="og:image" content="https://daarx.money/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy — DAARX · L10N · OPEN">
+<meta name="twitter:description" content="How Desiderata Labs LLC handles DAARX site and hardware-interest data, including providers, retention, and deletion requests.">
+<meta name="twitter:image" content="https://daarx.money/og.png">
+</head>
+<body class="p-open calm module-page module-privacy">
+<a class="skip" href="#main">Skip to content</a>
+<div class="grid" aria-hidden="true"></div>
+
+<nav class="nav" id="nav" aria-label="Primary">
+  <a class="mk" href="/"><span class="d">DAARX</span><span class="amp">·</span><span class="l">L10N</span><span class="amp">·</span><span class="o">OPEN</span></a>
+  <div class="go">
+    <a class="lnk" href="/faq.html">faq</a>
+    <a class="lnk" href="/break-it.html">break it</a>
+    <a class="btn" href="/mine.html">Mining plans <span class="arw">&#8594;</span></a>
+    <details class="nd">
+      <summary class="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="navmenu">
+        <a href="/">Home</a>
+        <a href="/daarx.html">DAARX</a>
+        <a href="/l10n.html">L10N</a>
+        <a href="/open.html">OPEN</a>
+        <a href="/mine.html">Mining plans</a>
+        <a href="/break-it.html">Break it</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/privacy.html" aria-current="page">Privacy</a>
+      </div>
+    </details>
+  </div>
+</nav>
+
+<main class="wrap" id="main">
+  <header class="module-hero" aria-labelledby="privacy-title">
+    <p class="crumb hero-in"><a href="/">← daarx.money / data boundary</a></p>
+    <div class="module-hero-grid">
+      <div class="module-hero-copy">
+        <p class="module-kicker hero-in">SITE DATA MAP / CURRENT PROCESSING</p>
+        <h1 class="hero-in" id="privacy-title">Privacy<span class="dot">.</span></h1>
+        <p class="tag hero-in">What the site collects, who handles it, why, and when it is deleted.</p>
+        <div class="actions hero-in">
+          <a class="btn solid" href="#data-register">Inspect the boundary <span class="arw">&#8595;</span></a>
+          <a class="btn" href="mailto:daarxmoney@proton.me">Request deletion <span class="arw">&#8594;</span></a>
+        </div>
+      </div>
+
+      <section class="module-console boundary-console hero-in" aria-label="Current site data flow">
+        <div class="console-bar"><span>DAARX::DATA_BOUNDARY</span><span class="console-lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="console-readout">
+          <div class="console-line"><span>AD_TRACKERS</span><strong class="signal">NONE</strong></div>
+          <div class="boundary-map" aria-hidden="true">
+            <div class="boundary-node"><small>01 / SURFACE</small><strong>YOUR BROWSER</strong><span>OPTIONAL INPUT</span></div>
+            <div class="boundary-node is-muted"><small>02 / HOST</small><strong>GITHUB PAGES</strong><span>NETWORK METADATA</span></div>
+            <div class="boundary-node"><small>03 / RELAY</small><strong>WEB3FORMS</strong><span>FORM DELIVERY</span></div>
+            <div class="boundary-node"><small>04 / RECEIVER</small><strong>PROTON + LABS</strong><span>INTEREST RECORD</span></div>
+          </div>
+          <div class="boundary-legend"><span><b>NO FORM SUBMISSION</b> / no interest record sent</span><span><b>SUBMIT</b> / relay path used</span></div>
+          <div class="console-stamp">NO MARKETING COOKIES</div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <div class="flow">
+    <div class="statement">
+      <div class="fig">Your choice.<span class="u">clear purpose · clear exit</span></div>
+      <p class="cap">The public pages use <b>no advertising trackers, analytics scripts, accounts, or marketing cookies</b>. The hardware-interest form sends the information you enter; the hosting, form-relay, and email providers may also process ordinary network, device, delivery, security, and anti-abuse metadata.</p>
+    </div>
+
+    <div class="cards" id="data-register">
+      <div class="card"><div class="ck">controller and operator</div>
+        <p><b>Desiderata Labs LLC</b> operates this DAARX-branded information site and its hardware-interest form. No store, checkout, hardware sale, account, or support service is live. The commercial operator is separate from the protocol workstreams described on this site.</p></div>
+      <div class="card"><div class="ck">what the form sends</div>
+        <p>Your <b>email address</b>; optional name or handle; selected hardware concept, access-model, membership, hosting, accessory, and merchandise interests; optional notes; your privacy-notice acknowledgment; and form-delivery status or timing. Do not put secrets, payment-card data, identity documents, wallet keys, or recovery phrases in the notes.</p></div>
+      <div class="card"><div class="ck">why we use it</div>
+        <p>To record and manage non-binding hardware interest, answer questions, prevent abuse, and contact you if a relevant compliant offer or material update is later available. It is not used to create an order or protocol account, sell coins, or make automated eligibility decisions.</p></div>
+      <div class="card"><div class="ck">providers and disclosures</div>
+        <p><b>GitHub Pages</b> hosts the site, <b>Web3Forms</b> processes and relays the form, and <b>Proton</b> receives the message. Those independent providers may process ordinary network, device, delivery, anti-abuse, and server-log metadata under their own notices and terms. We disclose information only to operate the site and form, respond to you, protect the service, or comply with law; we do <b>not sell personal information</b>.</p></div>
+      <div class="card"><div class="ck">retention</div>
+        <p>We keep an active hardware-interest record only as long as needed to manage the pre-launch list and follow up, and no longer than <b>24 months after your last interaction</b> unless a shorter legal or operational period applies. Provider copies, backups, and logs follow provider retention and may not be immediately removable by us. We complete deletion from records we control within 30 days unless preservation is legally required.</p></div>
+      <div class="card"><div class="ck">your control</div>
+        <p>Submitting interest is <b>optional, non-binding, and free</b>. Ask to access, correct, or delete the record we control, or withdraw from follow-up, at <a href="mailto:daarxmoney@proton.me">daarxmoney@proton.me</a>. We may ask you to verify control of the email address before changing or deleting a record.</p></div>
+      <div class="card"><div class="ck">children and security</div>
+        <p>The form is not directed to children, and minors should not submit it. Internet transmission and email cannot be guaranteed perfectly secure; access is limited to the people and providers needed to operate the form and follow up, and no payment data is requested.</p></div>
+    </div>
+
+    <div class="soon"><b>Last updated July 14, 2026.</b> A future store, checkout, account, support, or analytics feature will require this notice to be updated before that processing begins. This notice describes the current static site and hardware-interest relay only.</div>
+
+    <div class="endcta">
+      <div class="h">Hardware interest costs nothing.</div>
+      <p>Submitting it is non-binding and does not create a purchase, financing agreement, coin allocation, inventory hold, priority, or guaranteed place in a future sale. You can ask us to access, correct, or delete the record we control.</p>
+      <div class="actions">
+        <a class="btn solid big" href="/mine.html">Hardware interest <span class="arw">&#8594;</span></a>
+        <a class="btn" href="mailto:daarxmoney@proton.me">Ask to be deleted <span class="arw">&#8594;</span></a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav class="fnav" aria-label="Site">
+      <a href="/">daarx.money</a>
+      <a href="/daarx.html">DAARX</a>
+      <a href="/l10n.html">L10N</a>
+      <a href="/open.html">OPEN</a>
+      <a href="/mine.html">mining plans</a>
+      <a href="/break-it.html">break it</a>
+      <a href="/faq.html">faq</a>
+      <a href="/privacy.html" aria-current="page">privacy</a>
+    </nav>
+    <p class="fine">no coins for sale · nothing here is financial advice</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  root.classList.add('js');
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var SEL='.reveal,.stagger,.flow>*';
+  var els=[].slice.call(d.querySelectorAll(SEL));
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
+  else{
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{rootMargin:'0px 0px -10% 0px',threshold:.1});
+    els.forEach(function(e){ if(e.getBoundingClientRect().top < innerHeight*0.94){e.classList.add('in');} else {io.observe(e);} });
+  }
+  var nav=d.getElementById('nav');
+  if(nav){var on=function(){nav.classList.toggle('scrolled',(window.scrollY||0)>24)};on();addEventListener('scroll',on,{passive:true});}
+  var nd=d.querySelector('.nd');
+  if(nd){d.addEventListener('click',function(e){if(nd.open&&!nd.contains(e.target))nd.open=false;});}
+})();
+</script>
+</body>
+</html>

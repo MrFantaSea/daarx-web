@@ -429,21 +429,9 @@ def shell(path,title,description,body,schema=None,cls=''):
     return head+'<body class="mystique '+cls+' dream">'+header(path)+'<main id="main">'+body+'</main>'+footer()+'</body></html>'
 
 def build():
-    form=re.search(r'<form\b[^>]*class="pre"[\s\S]*?</form>',(ROOT/'mine.html').read_text())
-    qr=re.search(r'<svg[^>]*class="segno"[\s\S]*?</svg>',(ROOT/'flyer.html').read_text())
-    if not form or not qr:raise ValueError('Retained form or QR is missing')
-    form_html=form.group(0)
-    form_html=re.sub(r'I understand that this is non-binding interest,[\s\S]*?privacy notice</a>\s*\.', 'I’ve read the <a href="/privacy.html">privacy notice</a> and agree to be contacted about this hardware enquiry.', form_html)
-    form_html=form_html.replace('Which estimated concept interests you?', 'Which build interests you?').replace('Which possible access model interests you? (optional)', 'Access model (optional)').replace('Interest in a possible membership? (optional)', 'Services (optional)').replace('Interest in possible accessories or merch? (optional)', 'Accessories and merch (optional)')
-    form_html=re.sub(r'(<label\b[^>]*>\s*<input\b[^>]*name="privacy_notice_acknowledged"[^>]*>)([\s\S]*?)(</label>)',lambda m:m[1]+(m[2] if m[2].lstrip().startswith('<span>') else '<span>'+m[2].strip()+'</span>')+m[3],form_html)
-    pages={'index.html':home(),'status.html':status_page(),'testnet.html':testnet_page(),'break-it.html':security_page(),'faq.html':faq_page(),'privacy.html':privacy_page(),'mine.html':hardware_page(form_html),'flyer.html':flyer_page(qr.group(0))}
-    for c in COINS:pages[c['path'][1:]]=coin_page(c)
-    for name,body in pages.items():write_page(name,body)
-    urls=['/']+['/'+p for p in pages if p not in ['index.html','flyer.html']]
-    (ROOT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'<url><loc>{ORIGIN}{u}</loc><lastmod>{ISO_DATE}</lastmod></url>\n' for u in urls)+'</urlset>\n')
-    data={'as_of':ISO_DATE,'stage':'Public Testnet preparation','public_participation_open':False,'native_coin_count':4,'coins':[{'name':c['name'],'unit':c['unit'],'role':c['role'],'working_identity':c['id']=='nexus','economic_thesis':c['demand']} for c in COINS],'work':[{'area':t,'state':s,'description':text} for n,t,s,cl,text in STATUS],'independent_professional_audit_complete':False,'hardware_sales_open':False,'test_coins_have_monetary_value':False}
-    (ROOT/'data/release-status.json').write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
-    print(f'Generated {len(pages)} pages, {len(FAQ)} questions and {len(urls)} sitemap entries; existing form retained.')
+    """Compatibility: all page output now belongs to the original-theme showcase."""
+    from showcase import build as build_showcase
+    build_showcase()
 
 # Questions remain a fixed collection, composed once rather than inserted at build time.
 FAQ_UPDATES={

@@ -1,0 +1,30 @@
+<svg aria-hidden="true" fill="none" focusable="false" viewbox="0 0 760 700">
+<defs>
+<lineargradient id="l10-case" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#2a200c"></stop><stop offset=".45" stop-color="#0b0905"></stop><stop offset="1" stop-color="#171006"></stop></lineargradient>
+<radialgradient cx="40%" cy="32%" id="l10-core" r="72%"><stop stop-color="#fff3d6"></stop><stop offset=".35" stop-color="#efb64f"></stop><stop offset="1" stop-color="#241704"></stop></radialgradient>
+<filter height="300%" id="l10-glow" width="300%" x="-100%" y="-100%"><fegaussianblur result="blur" stddeviation="8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<g class="visual-grid"><path d="M20 110H740M20 210H740M20 310H740M20 410H740M20 510H740M120 40V650M220 40V650M320 40V650M420 40V650M520 40V650M620 40V650"></path></g>
+<path class="visual-rail faint" d="M28 210C165 210 185 321 310 350M450 350C579 379 594 490 735 490"></path>
+<path class="visual-rail" d="M204 342C265 342 276 352 333 352M427 352C487 352 499 343 558 343"></path>
+<g transform="translate(164 361) rotate(-6)">
+<path d="M-80-177H61L83-155V170L61 192H-80L-102 170V-155Z" fill="url(#l10-case)" stroke="#efb64f" stroke-opacity=".45" stroke-width="2"></path>
+<rect fill="#030403" height="307" stroke="#efb64f" stroke-opacity=".2" width="150" x="-84" y="-153"></rect>
+<g opacity=".55"><path d="M-61-90H41M-61-67H20M-61 71H40M-61 94H15" stroke="#efb64f" stroke-width="3"></path><rect fill="rgba(239,182,79,.08)" height="55" stroke="#efb64f" stroke-opacity=".28" width="102" x="-61" y="-31"></rect></g>
+<circle class="visual-node" cx="-10" cy="134" r="5"></circle>
+</g>
+<g transform="translate(598 349) rotate(6)">
+<path d="M-61-161H70L90-141V154L70 174H-61L-81 154V-141Z" fill="url(#l10-case)" stroke="#efb64f" stroke-opacity=".45" stroke-width="2"></path>
+<rect fill="#030403" height="275" stroke="#efb64f" stroke-opacity=".2" width="137" x="-64" y="-139"></rect>
+<g opacity=".55"><path d="M-43-78H44M-43-55H23M-43 64H45M-43 87H18" stroke="#efb64f" stroke-width="3"></path><circle cx="5" cy="5" fill="rgba(239,182,79,.07)" r="42" stroke="#efb64f" stroke-opacity=".32"></circle></g>
+<circle class="visual-node n2" cx="5" cy="116" r="5"></circle>
+</g>
+<g filter="url(#l10-glow)" transform="translate(380 350)">
+<path d="M0-77L68-39V39L0 77L-68 39V-39Z" fill="rgba(239,182,79,.09)" stroke="#efb64f" stroke-opacity=".65" stroke-width="2"></path>
+<circle class="visual-core" r="45"></circle><circle fill="url(#l10-core)" r="26"></circle>
+<path d="M-11-2A14 14 0 0 1-11 20M0-8A22 22 0 0 1 0 26M11-14A30 30 0 0 1 11 32" stroke="#1a1104" stroke-linecap="round" stroke-width="4"></path>
+</g>
+<g opacity=".72" stroke="#efb64f" stroke-linecap="round" stroke-width="5" transform="translate(375 160)"><path d="M-44 34A65 65 0 0 1 44 34"></path><path d="M-28 51A42 42 0 0 1 28 51"></path><path d="M-10 67A15 15 0 0 1 10 67"></path><path d="M-58 1L58 85" stroke="#050403" stroke-width="12"></path><path d="M-58 1L58 85" stroke="#efb64f" stroke-width="4"></path></g>
+<g fill="#baa57c" font-family="monospace" font-size="10" letter-spacing="1.2"><text x="83" y="620">DEVICE A / LOCAL STATE</text><text x="527" y="606">DEVICE B / LOCAL STATE</text><text x="326" y="461">TRANSFER TARGET</text></g>
+<rect class="visual-scan" height="38" width="642" x="58" y="94"></rect>
+</svg>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#020504">
+<title>DAARX &amp; L10N — flyer (print)</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--ink:#07100c;--green:#137c49;--gold:#8d6814;--paper:#fbfcf9}
+  html,body{background:#020504}
+  body{padding-top:3.6rem;font-family:Arial,'Helvetica Neue',sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  .page{
+    width:8.5in;height:11in;margin:2rem auto;padding:.46in .56in .48in;
+    display:flex;flex-direction:column;overflow:hidden;position:relative;
+    color:var(--ink);background-color:var(--paper);
+    background-image:linear-gradient(rgba(7,16,12,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(7,16,12,.035) 1px,transparent 1px);
+    background-size:.34in .34in;box-shadow:0 35px 100px rgba(0,0,0,.72);
+  }
+  .page::before{content:"";position:absolute;inset:0 auto 0 0;width:.11in;background:linear-gradient(180deg,var(--green) 0 56%,var(--gold) 56% 78%,var(--ink) 78%)}
+  .page::after{content:"";position:absolute;right:.18in;top:.18in;width:.1in;height:.1in;border-top:2px solid var(--green);border-right:2px solid var(--green)}
+  body.a4 .page{width:210mm;height:297mm;padding:12mm 14mm 12mm}
+
+  @page{margin:0}
+  @media print{
+    html,body{background:#fff}
+    body{padding-top:0}
+    .page{margin:0;box-shadow:none;page-break-after:avoid}
+    .toolbar{display:none!important}
+  }
+
+  .toolbar{
+    position:fixed;inset:0 0 auto;z-index:20;min-height:3.6rem;padding:.65rem 1rem;
+    display:flex;flex-wrap:wrap;gap:.55rem 1.25rem;align-items:center;
+    border-bottom:1px solid rgba(77,241,154,.25);background:rgba(2,7,5,.96);color:#b5c7bb;
+    font:600 .75rem/1.3 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.04em;
+    box-shadow:0 14px 34px rgba(0,0,0,.45);
+  }
+  .toolbar b{color:#4df19a;font-size:.69rem;letter-spacing:.16em}
+  .toolbar button{min-height:2rem;padding:.32rem .7rem;border:1px solid #294437;border-radius:0;background:#07100c;color:#d8e9de;font:inherit;cursor:pointer}
+  .toolbar button:hover,.toolbar button:focus-visible{border-color:#4df19a;outline:none}
+  .toolbar button.on{border-color:#4df19a;background:#4df19a;color:#020504;font-weight:800}
+  .toolbar .hint{color:#73867a;font-size:.66rem}
+
+  .signal-head{display:flex;align-items:center;justify-content:space-between;gap:.2in;border-bottom:1px solid rgba(7,16,12,.25);padding-bottom:.07in;color:var(--ink);font:700 8.5pt/1.2 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.16em;text-transform:uppercase}
+  .signal-head span:last-child{color:var(--green);text-align:right}
+  .signal-rail{height:.24in;position:relative;margin:.09in 0 .17in;background:linear-gradient(90deg,var(--green) 0 48%,transparent 48% 51%,var(--gold) 51% 79%,transparent 79%);background-position:center;background-size:100% 2px;background-repeat:no-repeat}
+  .signal-rail::before,.signal-rail::after{content:"";position:absolute;top:50%;width:.12in;height:.12in;transform:translateY(-50%) rotate(45deg);background:var(--paper);border:2px solid var(--green)}
+  .signal-rail::before{left:47%}.signal-rail::after{left:78%;border-color:var(--gold)}
+
+  .headline{max-width:7.15in;color:var(--ink);font:900 77pt/.88 Arial,'Helvetica Neue',sans-serif;letter-spacing:-.065em;text-transform:uppercase}
+  body.a4 .headline{font-size:70pt}
+  .headline .accent{color:var(--green);border-bottom:.075in solid var(--green)}
+  body.variant-b .headline{font-size:55pt;line-height:.94}
+  body.a4.variant-b .headline{font-size:50pt}
+  .h-a,.h-b{display:none}
+  body.variant-a .h-a{display:block}
+  body.variant-b .h-b{display:block}
+
+  .subhead{max-width:6.9in;margin-top:.17in;padding-left:.16in;border-left:3px solid var(--green);font-size:15.5pt;line-height:1.38}
+  .subhead b{font-weight:800}
+
+  .coins{display:flex;gap:.16in;margin:.2in 0 0}
+  .coin{position:relative;flex:1;min-height:1.52in;padding:.16in .18in;border:1.8px solid var(--ink);background:rgba(251,252,249,.78)}
+  .coin::after{content:"";position:absolute;right:-1px;top:-1px;width:.19in;height:.19in;border-top:4px solid currentColor;border-right:4px solid currentColor}
+  .coin .role{margin-bottom:.05in;font:800 8.6pt/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.16em;text-transform:uppercase}
+  .coin .name{margin-bottom:.07in;font:900 28pt/.95 Arial,'Helvetica Neue',sans-serif;letter-spacing:-.045em}
+  .coin p{font-size:11.4pt;line-height:1.36}
+  .coin.d{color:var(--green);border-color:var(--green)}
+  .coin.l{color:var(--gold);border-color:var(--gold)}
+  .coin p{color:var(--ink)}
+
+  .who{max-width:7.05in;margin-top:.17in;font-size:12.8pt;line-height:1.42}
+  .who b{font-weight:800}
+  .rule{height:.04in;margin:.15in 0;border:0;background:linear-gradient(90deg,var(--green) 0 66%,var(--gold) 66% 84%,var(--ink) 84%)}
+  .creed{font:800 11.2pt/1.3 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.025em}
+  .creed span{white-space:nowrap}.creed .dot{padding:0 .08in;color:var(--green)}
+  .status{max-width:7.1in;margin-top:.08in;color:#26342c;font-size:9.4pt;line-height:1.38}
+
+  .bottom{margin-top:auto;display:flex;align-items:flex-end;gap:.24in;padding-top:.16in;border-top:1px solid rgba(7,16,12,.25)}
+  .qr{width:1.72in;height:1.72in;flex:0 0 auto;padding:.08in;display:flex;align-items:center;justify-content:center;border:2px solid var(--ink);background:#fff;box-shadow:.07in .07in 0 var(--green)}
+  .qr svg{width:100%;height:100%;display:block}
+  .domainblock{flex:1;min-width:0}
+  .domain{font:900 28pt/1 Arial,'Helvetica Neue',sans-serif;letter-spacing:-.045em;word-break:break-all}
+  .domain::before{content:"ROUTE / ";color:var(--green);font:800 8pt/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.13em}
+  .domain-caption{max-width:4.7in;margin-top:.07in;color:#33423a;font-size:10.2pt;line-height:1.35}
+
+  @media screen and (max-width:940px){
+    body{padding-top:8rem}
+    .page{transform-origin:top left;transform:scale(.44);margin-left:max(0px,calc((100vw - 359.04px)/2));margin-bottom:-58%}
+  }
+  @media screen and (max-width:374px){.page{transform:scale(.415);margin-left:max(0px,calc((100vw - 338.64px)/2))}}
+  @media screen and (max-width:340px){.page{transform:scale(.39);margin-left:max(0px,calc((100vw - 318.24px)/2))}}
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body class="letter variant-a">
+
+<header class="toolbar">
+  <b>FLYER PREVIEW</b>
+  <span>Paper:
+    <button type="button" id="btn-letter" class="on" aria-pressed="true" onclick="setPaper('letter')">US Letter</button>
+    <button type="button" id="btn-a4" aria-pressed="false" onclick="setPaper('a4')">A4</button>
+  </span>
+  <span>Headline:
+    <button type="button" id="btn-a" class="on" aria-pressed="true" onclick="setVariant('a')">&ldquo;Bitcoin isn&rsquo;t private.&rdquo;</button>
+    <button type="button" id="btn-b" aria-pressed="false" onclick="setVariant('b')">&ldquo;Your money doesn&rsquo;t have to be public.&rdquo;</button>
+  </span>
+  <button type="button" onclick="window.print()">Print&hellip;</button>
+  <span class="hint">Print at 100% scale · margins: None · this bar doesn&rsquo;t print</span>
+</header>
+
+<main class="page">
+
+  <div class="signal-head"><span>DAARX / L10N</span><span>PRIVATE-MONEY RESEARCH // PRE-LAUNCH</span></div>
+  <div class="signal-rail" aria-hidden="true"></div>
+
+  <h1 class="headline h-a">Bitcoin<br>isn&rsquo;t <span class="accent">private.</span></h1>
+  <h1 class="headline h-b">Your money doesn&rsquo;t have to be <span class="accent">public.</span></h1>
+
+  <p class="subhead">Bitcoin&rsquo;s base ledger exposes payment history.
+  We&rsquo;re researching two private-money protocols designed together.
+  <b>Neither has launched publicly.</b></p>
+
+  <div class="coins">
+    <div class="coin d">
+      <div class="role">Savings coin</div>
+      <div class="name">DAARX</div>
+      <p>Targets hidden amounts and an exact integer emission schedule
+      that eventually ends. <b>Unlaunched; under development and internal review.</b></p>
+    </div>
+    <div class="coin l">
+      <div class="role">Spending coin</div>
+      <div class="name">L10N</div>
+      <p>Targets private phone cash and a possible offline layer.
+      <b>No public wallet, payment network, or offline release exists.</b></p>
+    </div>
+  </div>
+
+  <p class="who"><b>Research for people who believe financial privacy
+  matters.</b> Privacy can fail through software, metadata, endpoints, or
+  new cryptanalysis. These unfinished protocols are not usable payment
+  alternatives today and may never launch.</p>
+
+  <hr class="rule">
+
+  <p class="creed"><span>PUBLIC SOURCE PLANNED</span><span class="dot">·</span><span>NO
+  COIN SALE</span><span class="dot">·</span><span>NO LIVE NETWORK</span></p>
+
+  <p class="status">In development · no public testnet or supported miner release · March 2027 is a non-binding planning target · not independently audited.
+  Nothing is for sale: no token sale, hardware sale, presale, or ICO.
+  Protocol behavior remains a design claim until verified in a public release.</p>
+
+  <div class="bottom">
+    <div class="qr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" class="segno" role="img" aria-label="QR code — daarx.money" preserveAspectRatio="xMidYMid meet"><path class="qrline" stroke="#111" d="M3 3.5h7m1 0h1m1 0h2m1 0h2m3 0h7m-25 1h1m5 0h1m1 0h1m3 0h1m1 0h1m3 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m3 0h2m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m4 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m5 0h1m3 0h1m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-15 1h2m2 0h3m-16 1h1m4 0h4m2 0h2m3 0h1m5 0h2m-25 1h4m1 0h1m3 0h3m1 0h3m3 0h5m-24 1h1m1 0h2m1 0h3m1 0h1m1 0h6m1 0h1m2 0h1m1 0h2m-24 1h1m1 0h1m1 0h1m1 0h3m1 0h2m1 0h1m1 0h4m1 0h1m2 0h1m-24 1h1m1 0h2m1 0h3m1 0h1m1 0h3m1 0h1m1 0h2m4 0h1m-25 1h4m1 0h1m2 0h2m1 0h1m3 0h2m2 0h1m3 0h1m-24 1h1m1 0h1m1 0h1m1 0h2m1 0h2m1 0h4m2 0h4m1 0h2m-25 1h1m2 0h1m4 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h2m1 0h1m-25 1h1m2 0h2m1 0h1m2 0h1m1 0h1m1 0h2m1 0h5m1 0h1m-15 1h1m1 0h2m4 0h1m3 0h1m-21 1h7m1 0h1m3 0h3m1 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m3 0h2m4 0h1m3 0h1m3 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m4 0h7m1 0h3m-25 1h1m1 0h3m1 0h1m4 0h1m1 0h2m1 0h3m4 0h2m-25 1h1m1 0h3m1 0h1m2 0h2m1 0h6m3 0h2m1 0h1m-25 1h1m5 0h1m1 0h2m2 0h2m1 0h2m1 0h3m3 0h1m-25 1h7m5 0h1m3 0h2m3 0h1m2 0h1"/></svg></div>
+    <div class="domainblock">
+      <div class="domain">daarx.money</div>
+      <div class="domain-caption">Current development status, limitations,
+      protocol goals, and non-binding hardware research.</div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  // Paper-size + headline toggles. @page size is injected dynamically
+  // because CSS can't switch @page rules from a body class.
+  var pageStyle = document.createElement('style');
+  document.head.appendChild(pageStyle);
+  function setPaper(p){
+    document.body.classList.remove('letter','a4');
+    document.body.classList.add(p);
+    pageStyle.textContent = '@page{size:' + (p==='a4'?'A4':'letter') + ';margin:0}';
+    tag('btn-letter', p==='letter'); tag('btn-a4', p==='a4');
+  }
+  function setVariant(v){
+    document.body.classList.remove('variant-a','variant-b');
+    document.body.classList.add('variant-'+v);
+    tag('btn-a', v==='a'); tag('btn-b', v==='b');
+  }
+  function tag(id,on){
+    var button=document.getElementById(id);
+    button.classList.toggle('on',on);
+    button.setAttribute('aria-pressed',String(on));
+  }
+  setPaper('letter');
+  setVariant('a');
+</script>
+
+</body>
+</html>

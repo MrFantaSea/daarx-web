@@ -1,0 +1,85 @@
+<form class="pre" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="e5de19a2-04af-471e-87ed-a054ddf7351c">
+          <input type="hidden" name="subject" value="New hardware interest — daarx.money">
+          <input type="hidden" name="from_name" value="daarx.money / hardware interest">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
+          <input type="hidden" name="redirect" value="https://daarx.money/mine.html">
+          <div class="row2">
+<div>
+<label class="lbl" for="f-name">Name or handle (optional)</label>
+<input id="f-name" type="text" name="name" autocomplete="name" maxlength="100" placeholder="Your name or handle">
+</div>
+<div>
+<label class="lbl" for="f-email">Email</label>
+<input id="f-email" type="email" name="email" autocomplete="email" maxlength="254" placeholder="you@email.com" required>
+</div>
+</div>
+          <div>
+<label class="lbl" for="f-product">Which build interests you?</label>
+<select id="f-product" name="product" required>
+<option value="" disabled selected>— Choose your build —</option>
+<option>Node Box — est. $299</option>
+<option>Mini Miner — est. $699</option>
+<option>Beefy Mini — est. $1,399</option>
+<option>Standard — est. $1,899</option>
+<option>Pro — est. $2,499</option>
+<option>Pro ACE — est. $2,899</option>
+<option>Pro ACE II — est. $3,299</option>
+<option>BIG_DOG (32-core) — est. $7,499</option>
+<option>BIG_DOG MAX (64-core) — est. $10,999</option>
+<option>Planned free image — I'll build it myself</option>
+<option>Not sure yet — just interested</option>
+</select>
+</div>
+          <fieldset>
+<legend>Access model (optional)</legend>
+<div class="checks">
+<label>
+<input type="checkbox" name="way_buy" value="yes">Possible purchase</label>
+<label>
+<input type="checkbox" name="way_ownovertime" value="yes">Possible hosted ownership</label>
+<label>
+<input type="checkbox" name="way_rent" value="yes">Possible rental</label>
+</div>
+</fieldset>
+          <fieldset>
+<legend>Services (optional)</legend>
+<div class="checks">
+<label>
+<input type="checkbox" name="membership_managed" value="yes">Managed</label>
+<label>
+<input type="checkbox" name="membership_hosting" value="yes">Hosting</label>
+<label>
+<input type="checkbox" name="membership_community" value="yes">Community</label>
+</div>
+</fieldset>
+          <fieldset>
+<legend>Accessories and merch (optional)</legend>
+<div class="checks">
+<label>
+<input type="checkbox" name="acc_display" value="yes">Status display</label>
+<label>
+<input type="checkbox" name="acc_coldstorage" value="yes">Cold-storage kit</label>
+<label>
+<input type="checkbox" name="acc_usb" value="yes">Pre-flashed USB</label>
+<label>
+<input type="checkbox" name="acc_merch" value="yes">Merch</label>
+<label>
+<input type="checkbox" name="acc_squish" value="yes">Proof-of-Squish 3-pack</label>
+</div>
+</fieldset>
+          <input type="hidden" name="shipping_status" value="No shipping offer; final terms pending">
+          <div>
+<label class="lbl" for="f-notes">Anything else? (optional)</label>
+<textarea id="f-notes" name="notes" rows="3" maxlength="2000" placeholder="Questions, a custom build, anything…">
+</textarea>
+</div>
+          <div class="checks consent">
+<label>
+<input type="checkbox" name="privacy_notice_acknowledged" value="yes" required>
+<span>I’ve read the <a href="/privacy.html">privacy notice</a> and agree to be contacted about this hardware enquiry.</span>
+</label>
+</div>
+          <button type="submit">Send hardware interest <span aria-hidden="true">&#8594;</span>
+</button>
+        </form>

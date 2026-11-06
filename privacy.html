@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f0f5ed">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#060b09">
 <title>Privacy — DAARX</title>
 <meta name="description" content="How the DAARX site and optional hardware enquiry handle information. Operator, providers, purpose, retention and your choices.">
 <link rel="canonical" href="https://daarx.money/privacy.html">
 <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/type.css">
-<link rel="stylesheet" href="/dream.css?v=5ea92cdba154">
+<link rel="stylesheet" href="/style.css?v=ade7840646ef">
+<link rel="stylesheet" href="/inner-shell.css?v=5ac8c542479d">
+<link rel="stylesheet" href="/protocol-modules.css?v=7e66cdc65301">
+<link rel="stylesheet" href="/utility-modules.css?v=a1f1c2a58529">
+<link rel="stylesheet" href="/showcase.css?v=283c359d4fcd">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DAARX">
 <meta property="og:title" content="Privacy — DAARX">
@@ -22,55 +25,60 @@
 <meta name="twitter:title" content="Privacy — DAARX">
 <meta name="twitter:description" content="How the DAARX site and optional hardware enquiry handle information. Operator, providers, purpose, retention and your choices.">
 <meta name="twitter:image" content="https://daarx.money/og.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "DAARX", "url": "https://daarx.money", "description": "Four native coins. Private capital, private cash, accountable authority and bonded assurance."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "DAARX", "url": "https://daarx.money", "description": "How the DAARX site and optional hardware enquiry handle information. Operator, providers, purpose, retention and your choices."}</script>
 <script src="/site.js?v=3cbd2974d428" defer>
 </script>
-<script src="/dream.js?v=b90c1e791ad7" defer>
+<script src="/showcase.js?v=fdc597582169" defer>
+</script>
+<script src="/protocol-modules.js?v=db6375aefce2" defer>
 </script>
 </head>
-<body class="mystique  dream">
+<body class="showcase-utility p-daarx showcase">
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-<div class="header-inner">
-<a class="brand" href="/" aria-label="DAARX home">
-<svg viewBox="0 0 36 36" aria-hidden="true">
-<path d="M4 8h11l6 6h11M4 18h28M4 28h11l6-6h11"/>
-</svg>
-<span>DAARX<span class="brand-dot">.</span>
+<nav class="nav network-nav" id="nav" aria-label="Primary">
+<a class="mk" href="/" aria-label="DAARX family home">
+<span class="mk-sigil" aria-hidden="true">
 </span>
+<span class="d">DAARX</span>
+<span class="amp">/</span>
+<span class="l">L10N</span>
+<span class="amp">/</span>
+<span class="o">OPEN</span>
+<span class="amp">/</span>
+<span class="n">NXXXS</span>
 </a>
-<nav class="desktop-nav" aria-label="Primary">
-<a href="/#ecosystem">The four coins</a>
-<a href="/#thesis">Issuance</a>
-<a href="/status.html">Development</a>
-<a href="/testnet.html">Testnet</a>
-</nav>
-<div class="header-controls">
-<button class="motion-toggle header-motion" type="button" data-motion aria-pressed="false" title="Pause or resume visual motion">Pause motion Ⅱ</button>
-<details class="site-menu">
-<summary>Explore <span aria-hidden="true">＋</span>
+<div class="go">
+<a class="lnk" href="/#protocols">the family</a>
+<a class="lnk" href="/#supply">the supply</a>
+<a class="lnk" href="/status.html">the build</a>
+<button class="motion-control" data-showcase-motion type="button" aria-pressed="false" aria-label="Pause visual motion">Ⅱ</button>
+<details class="nd">
+<summary class="burger" aria-label="Explore all pages">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+<path d="M4 7h16M4 12h16M4 17h16"/>
+</svg>
 </summary>
-<nav aria-label="All pages">
+<div class="navmenu">
+<a href="/">Home</a>
 <a href="/daarx.html">DAARX</a>
 <a href="/l10n.html">L10N</a>
 <a href="/open.html">OPEN</a>
-<a href="/nexus.html">Nexus / NXXXS</a>
+<a href="/nexus.html">NXXXS</a>
 <a href="/status.html">Development</a>
-<a href="/testnet.html">Public Testnet</a>
-<a href="/break-it.html">Security</a>
+<a href="/testnet.html">Testnet</a>
 <a href="/mine.html">Hardware</a>
+<a href="/break-it.html">Security</a>
 <a href="/faq.html">Questions</a>
 <a href="/privacy.html" aria-current="page">Privacy</a>
-</nav>
+</div>
 </details>
 </div>
-</div>
-</header>
+</nav>
 <main id="main">
-<section class="page-hero green">
+<section class="utility-hero green">
 <div class="container">
 <a class="back-link" href="/">DAARX / Privacy</a>
-<div class="page-hero-grid">
+<div class="utility-hero-grid">
 <div>
 <p class="eyebrow">Privacy</p>
 <h1>Privacy</h1>
@@ -122,47 +130,24 @@
 </div>
 </section>
 </main>
-<footer class="site-footer">
-<div class="container">
-<div class="footer-top">
-<a class="brand" href="/">
-<svg viewBox="0 0 36 36" aria-hidden="true">
-<path d="M4 8h11l6 6h11M4 18h28M4 28h11l6-6h11"/>
-</svg>
-<span>DAARX<span class="brand-dot">.</span>
-</span>
-</a>
-<p>DAARX · L10N · OPEN · NXXXS</p>
-<button class="motion-toggle" type="button" data-motion aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span>
-</button>
-</div>
-<div class="footer-links">
-<nav aria-label="Coins">
+<footer>
+<div class="wrap wide">
+<p class="follow">Private money for people. Accountable systems around it.</p>
+<nav class="fnav" aria-label="Site">
 <a href="/daarx.html">DAARX</a>
 <a href="/l10n.html">L10N</a>
 <a href="/open.html">OPEN</a>
-<a href="/nexus.html">Nexus / NXXXS</a>
-</nav>
-<nav aria-label="Project">
-<a href="/#thesis">Economics</a>
+<a href="/nexus.html">NXXXS</a>
 <a href="/status.html">Development</a>
-<a href="/testnet.html">Public Testnet</a>
-<a href="/break-it.html">Security</a>
-</nav>
-<nav aria-label="Site">
+<a href="/testnet.html">Testnet</a>
 <a href="/mine.html">Hardware</a>
+<a href="/break-it.html">Security</a>
 <a href="/faq.html">Questions</a>
 <a href="/flyer.html">Print</a>
 <a href="/privacy.html">Privacy</a>
 <a href="mailto:daarxmoney@proton.me">Contact</a>
 </nav>
-</div>
-<div class="footer-bottom">
-<p>
-<a href="/status.html">Development / Public Testnet</a>
-<span>DAARX · Desiderata Labs LLC</span>
-</p>
-</div>
+<p class="fine">DAARX / L10N / OPEN / NXXXS · November 5, 2026</p>
 </div>
 </footer>
 </body>
