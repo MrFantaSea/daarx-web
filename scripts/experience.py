@@ -10,9 +10,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 ORIGIN = 'https://daarx.money'
 
-DATE = 'November 5, 2026'
+DATE = 'November 6, 2026'
 
-ISO_DATE = '2026-11-05'
+ISO_DATE = '2026-11-06'
 
 COINS = [{'id': 'daarx',
   'name': 'DAARX',
@@ -368,25 +368,9 @@ def intro(kicker,title,text,c='green',aside=''):
     return '<section class="page-hero '+c+'"><div class="container"><a class="back-link" href="/">DAARX / '+kicker+'</a><div class="page-hero-grid"><div>'+eye(kicker)+'<h1>'+title+'</h1><p class="hero-copy">'+text+'</p></div><div class="hero-aside">'+aside+'</div></div></div><div class="horizon-line" aria-hidden="true"></div></section>'
 
 def issuance_study():
-    data=json.loads((ROOT/'data/emission-study.json').read_text())
-    colors=['#176747','#805713','#126372','#6941a7']
-    patterns=['','8 5','2 5','12 4 2 4']
-    paths=[]
-    for idx,c in enumerate(COINS):
-        values=data['coins'][c['id']]['rewards'][::10];peak=data['coins'][c['id']]['peak']
-        pts=' '.join(f'{56+i/(len(values)-1)*1088:.2f},{304-float(v)/peak*246:.2f}' for i,v in enumerate(values))
-        paths.append('<polyline data-curve="'+c['id']+'" points="'+pts+'" stroke="'+colors[idx]+'" stroke-dasharray="'+patterns[idx]+'"/>')
-    grid=''.join('<line x1="56" y1="'+str(y)+'" x2="1144" y2="'+str(y)+'"/>' for y in [58,181,304])+''.join('<line x1="'+str(56+x/25*1088)+'" y1="40" x2="'+str(56+x/25*1088)+'" y2="304"/>' for x in [0,5,10,15,20,25])
-    x=56+7.77/25*1088
-    chart='<div class="chart-frame"><svg class="emission-chart" viewBox="0 0 1200 340" preserveAspectRatio="none" role="img" aria-label="Block rewards over 25 target years, each normalized to its own peak. DAARX and NXXXS rise then fall; L10N and OPEN decline from the start."><g class="chart-grid">'+grid+'</g><g class="chart-curves">'+''.join(paths)+'</g><line class="time-cursor" x1="'+str(x)+'" y1="38" x2="'+str(x)+'" y2="305"/></svg><div class="chart-y" aria-hidden="true"><span>100%</span><span>0</span></div><div class="chart-ticks" aria-hidden="true">'+''.join('<span style="left:'+str((56+y/25*1088)/12)+'%">'+str(y)+'</span>' for y in [0,5,10,15,20,25])+'</div></div>'
-    readouts=[]
-    for i,c in enumerate(COINS):
-        value=float(data['coins'][c['id']]['rewards'][777]);digits=6 if value<1 else 3
-        default=f'{value:,.{digits}f}'.rstrip('0').rstrip('.') if value%1 else f'{value:,.0f}'
-        unit='DIAM' if c['id']=='daarx' else c['unit']
-        ident=c['id']
-        readouts.append('<div class="'+c['color']+'"><a class="reward-link" id="reward-name-'+ident+'" href="'+c['path']+'#issuance" aria-label="'+c['unit']+' monetary rules"><svg viewBox="0 0 30 8" aria-hidden="true"><path d="M0 4H30" stroke="currentColor" stroke-width="2" stroke-dasharray="'+patterns[i]+'"/></svg>'+c['unit']+' ↗</a><output for="time-range" aria-live="off" aria-labelledby="reward-name-'+ident+' reward-unit-'+ident+'" data-reward="'+ident+'">'+default+'</output><small id="reward-unit-'+ident+'">'+unit+' / block</small></div>')
-    return '<section class="section issuance-section" id="thesis"><div class="container"><div class="emission-heading"><div>'+eye('THE MONETARY DESIGN')+'<h2>Time changes<br><em>the distribution.</em></h2></div><p>Two delayed peaks. Two curves that begin high.<br>Four different ways to bring money into the world.</p></div><div class="emission-instrument" data-emission data-src="/data/emission-study.json"><div class="instrument-top"><span>ISSUANCE / 01</span><span>BLOCK REWARD · SHARE OF EACH COIN’S OWN PEAK</span></div>'+chart+'<div class="time-control"><div class="time-label"><label for="time-range">Explore a target year</label><output id="time-output" for="time-range" aria-live="off">7.77</output></div><input id="time-range" type="range" min="0.01" max="25" value="7.77" step="0.01" aria-valuetext="7.77 target years" disabled><span>25 years →</span></div><div class="reward-readouts">'+''.join(readouts)+'</div><p class="sr-only" data-schedule-announcement role="status" aria-live="polite" aria-atomic="true"></p><p class="instrument-note">Height-based schedule study. Each curve has its own scale. L10N and NXXXS use reference candidate parameters. Choose a coin above to read its monetary rules.</p><noscript><p class="instrument-note">Showing the year 7.77 snapshot.</p></noscript></div></div></section>'
+    """All chart entrypoints use the same exact-step native-unit renderer."""
+    from charts import issuance_study as render_issuance
+    return render_issuance(COINS,ROOT)
 
 def mining_scene():
     return '<section class="section mining-section"><div class="container"><div class="mining-copy">'+eye('ONE WORK RESULT / FOUR NATIVE CHAINS')+'<h2>Same work.<br><em>Different worlds.</em></h2><p>RandomX parent work carries the child commitments. Each chain checks its own target and rules.</p><button type="button" class="button primary" data-work-pulse>Trace the work <span aria-hidden="true">↗</span></button></div><div class="work-study" data-work-study><div class="work-source"><span>RandomX</span><small>PARENT WORK</small></div><svg viewBox="0 0 700 430" aria-hidden="true"><defs><linearGradient id="work-spectrum"><stop stop-color="#176747"/><stop offset=".5" stop-color="#126372"/><stop offset="1" stop-color="#6941a7"/></linearGradient></defs><g class="work-lines">'+''.join('<path d="M350 50 C350 180 '+str(x)+' 200 '+str(x)+' 335"/>' for x in [75,258,441,624])+'</g><g class="work-pulses">'+''.join('<circle r="5" cx="'+str(x)+'" cy="335"/>' for x in [75,258,441,624])+'</g></svg><div class="work-chains">'+''.join('<a class="'+c['color']+'" href="'+c['path']+'"><i aria-hidden="true"></i><strong>'+c['unit']+'</strong><span>Own state. Own rules.</span></a>' for c in COINS)+'</div><p data-work-message aria-live="polite">Independent money. Shared mining architecture.</p></div></div></section>'

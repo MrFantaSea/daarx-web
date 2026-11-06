@@ -4,10 +4,12 @@ Standard-library build. The retained templates and diagrams pin the original art
 from pathlib import Path
 import hashlib,html,json,re
 import experience as facts
+from prism_art import scene,svg,utility_diagram
+import charts
 R=Path(__file__).resolve().parents[1]
 T=R/'scripts/templates'
 COINS=facts.COINS
-DATE='November 5, 2026'
+DATE='November 6, 2026'
 def esc(s):return html.escape(str(s))
 def template(name):return (T/name).read_text()
 def fragment(source,cls):
@@ -31,8 +33,8 @@ def footer():
 def shell(path,title,description,body,cls='showcase-utility',schema=None):
     styles=['style.css','inner-shell.css','protocol-modules.css','utility-modules.css']
     if path=='/':styles+=['network.css']
-    styles+=['showcase.css']
-    scripts=['site.js','showcase.js']
+    styles+=['showcase.css','prism.css','spectrum.css']
+    scripts=['site.js','showcase.js','prism.js']
     if path=='/':scripts+=['network.js']
     else:scripts+=['protocol-modules.js']
     schema=schema or {'@context':'https://schema.org','@type':'WebSite','name':'DAARX','url':'https://daarx.money','description':description}
@@ -66,15 +68,21 @@ DETAILS={
 
 NEXUS_SVG='''<svg viewBox="0 0 760 610" fill="none" aria-hidden="true"><defs><radialGradient id="nxx-glow"><stop stop-color="#c298ff" stop-opacity=".35"/><stop offset="1" stop-color="#c298ff" stop-opacity="0"/></radialGradient><linearGradient id="nxx-line"><stop stop-color="#4ae08c"/><stop offset=".5" stop-color="#c298ff"/><stop offset="1" stop-color="#63b9d6"/></linearGradient></defs><circle cx="380" cy="290" r="280" fill="url(#nxx-glow)"/><g stroke="#c298ff" stroke-opacity=".2"><path d="M0 160H760M0 290H760M0 420H760M125 0V610M380 0V610M635 0V610"/><circle cx="380" cy="290" r="210"/><circle cx="380" cy="290" r="165"/></g><path d="M150 290L380 140L610 290L380 440Z" stroke="url(#nxx-line)" stroke-width="4"/><path d="M150 290H610M380 140V440" stroke="#c298ff" stroke-opacity=".35" stroke-dasharray="6 8"/><g fill="#121221" stroke="#d0aaff" stroke-width="2"><circle cx="150" cy="290" r="42"/><circle cx="380" cy="140" r="42"/><circle cx="610" cy="290" r="42"/><circle cx="380" cy="440" r="42"/></g><g fill="#eee4ff" font-family="monospace" font-size="12" text-anchor="middle"><text x="150" y="295">REQUEST</text><text x="380" y="145">BOND</text><text x="610" y="295">PROOF</text><text x="380" y="445">PAYMENT</text></g><circle cx="380" cy="290" r="65" fill="#201930" stroke="#c298ff" stroke-width="2"/><path d="M350 290l20 20 40-42" stroke="#d8baff" stroke-width="5"/><g fill="#b9a5ce" font-family="monospace" font-size="11" letter-spacing="1"><text x="270" y="565">COMMITTED CAPITAL / VERIFIED WORK</text></g></svg>'''
 
+def coin_curve(c):
+    return charts.coin_curve(c,R)
+
 def coin_page(c):
     ident=c['id'];i=next(i for i,x in enumerate(COINS) if x['id']==ident)
-    visual=template(ident+'-hero.fragment') if ident!='nexus' else NEXUS_SVG
+    original_visual=template(ident+'-hero.fragment') if ident!='nexus' else NEXUS_SVG
+    hero_diagram=re.sub(r'(id="|url\(#)([A-Za-z][A-Za-z0-9_-]*)',lambda m:m[1]+'hero-'+m[2],original_visual)
+    visual=scene(ident).replace('<canvas data-prism-canvas aria-hidden="true"></canvas>','<canvas data-prism-canvas aria-hidden="true"></canvas><div class="prism-original" aria-hidden="true">'+hero_diagram+'</div>')
     heading={'daarx':'The one to <em>keep.</em>','l10n':'The one to <em>spend.</em>','open':'Authority with <em>limits.</em>','nexus':'Work with <em>proof.</em>'}[ident]
     rows=DETAILS[ident]
-    hero='<section class="protocol-hero" aria-labelledby="hero-title"><div class="protocol-frame" aria-hidden="true"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div><div class="protocol-shell protocol-hero-layout"><div class="protocol-hero-copy"><p class="protocol-flag">THE FOUR-COIN FAMILY</p><h1 id="hero-title">'+c['unit']+'</h1><span class="protocol-ordinal">0'+str(i+1)+' / '+c['material']+'</span><h2>'+heading+'</h2><p class="protocol-lede">'+c['description']+'</p><div class="protocol-actions">'+btn('The idea','#architecture',True)+btn('The monetary rules','#issuance')+'</div></div><figure class="protocol-hero-visual">'+visual+'<figcaption>'+c['material']+' / DESIGN STUDY</figcaption></figure></div></section>'
+    hero='<section class="protocol-hero" aria-labelledby="hero-title"><div class="protocol-frame" aria-hidden="true"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div><div class="protocol-shell protocol-hero-layout"><div class="protocol-hero-copy"><p class="protocol-flag">THE FOUR-COIN FAMILY</p><h1 id="hero-title">'+c['unit']+'</h1><span class="protocol-ordinal">0'+str(i+1)+' / '+c['material']+'</span><h2>'+heading+'</h2><p class="protocol-lede">'+c['description']+'</p><div class="protocol-actions">'+btn('The idea','#architecture',True)+btn('The monetary rules','#issuance')+'</div></div><div class="protocol-hero-visual">'+visual+'</div></div></section>'
     brief='<section class="module-section brief-section" id="architecture"><div class="protocol-shell brief-grid"><header class="module-section-intro"><p class="module-index">01 / PURPOSE + PRINCIPLES</p><h2>'+c['line']+'</h2><p>'+c['economics']+'</p></header><div class="brief-stack">'+''.join('<article class="brief-item"><p class="brief-number">0'+str(n+1)+'</p><div><p class="panel-code">'+code+'</p><h3>'+title+'</h3><p>'+text+'</p></div></article>' for n,(code,title,text) in enumerate(BRIEFS[ident]))+'</div></div></section>'
-    supply='<section class="module-section spec-section" id="issuance"><div class="protocol-shell"><header class="module-section-intro split"><div><p class="module-index">02 / ISSUANCE + ALLOCATION</p><h2>'+c['emission']+'</h2></div><p>'+c['allocation']+'</p></header><div class="spec-console"><div class="spec-bar"><strong>'+c['unit']+'::MONETARY_RULES</strong><span>'+('REFERENCE CANDIDATE' if ident in ['l10n','nexus'] else 'RETAINED DESIGN')+'</span></div><dl class="spec-rows">'+''.join('<div><dt>'+a+'</dt><dd>'+b+'</dd></div>' for a,b in rows)+'</dl></div><p class="monetary-detail">'+c['monetary']+'</p><div class="protocol-actions">'+btn('Compare the four curves','/#supply')+'</div></div></section>'
+    supply='<section class="module-section spec-section" id="issuance"><div class="protocol-shell"><header class="module-section-intro split"><div><p class="module-index">02 / ISSUANCE + ALLOCATION</p><h2>'+c['emission']+'</h2></div><p>'+c['allocation']+'</p></header>'+coin_curve(c)+'<div class="spec-console"><div class="spec-bar"><strong>'+c['unit']+'::MONETARY_RULES</strong><span>'+('REFERENCE CANDIDATE' if ident in ['l10n','nexus'] else 'RETAINED DESIGN')+'</span></div><dl class="spec-rows">'+''.join('<div><dt>'+a+'</dt><dd>'+b+'</dd></div>' for a,b in rows)+'</dl></div><p class="monetary-detail">'+c['monetary']+'</p><div class="protocol-actions">'+btn('Compare the four curves','/#supply')+'</div></div></section>'
     proof=facts.protocol_study(c).replace('class="section protocol-study','class="module-section protocol-study').replace('class="container"','class="protocol-shell"')
+    proof=proof.replace('</section>','<div class="protocol-shell"><details class="protocol-schematic"><summary>Trace the '+c['unit']+' structure <span aria-hidden="true">＋</span></summary>'+original_visual+'</details></div></section>')
     final='<section class="module-section module-final" id="wallet"><div class="protocol-shell module-final-grid"><div class="module-final-copy"><p class="module-index">03 / WALLET + RECOVERY</p><h2>Wallets.<br><em>Recovery.</em></h2><p>'+c['wallet']+'</p><div class="protocol-actions">'+btn('Follow development','/status.html',True)+btn('Public Testnet','/testnet.html')+'</div></div><nav class="family-routes" aria-label="Other coins">'+''.join('<a class="family-route '+x['id']+'" href="'+x['path']+'"><span class="route-node" aria-hidden="true"></span><span><b>'+x['unit']+'</b><small>'+x['role']+'</small></span><span aria-hidden="true">↗</span></a>' for x in COINS if x!=c)+'</nav></div></section>'
     return shell(c['path'],c['name']+' — '+c['role']+' | DAARX',c['description'],hero+brief+supply+proof+final,'protocol-page p-'+ident)
 
@@ -88,6 +96,7 @@ def home():
     hero=hero.replace('BUILD STATE / PRE-TESTNET','FOUR COINS / FOUR SETS OF RULES')
     hero=hero.replace('Inspect the systems','Explore the family').replace('View system status','Follow the supply').replace('href="#status"','href="#supply"')
     hero=re.sub(r'<div class="hero-readout">[\s\S]*?</dl>[\s\S]*?</div>','<div class="hero-readout"><p class="readout-title"><span>FOUR NATIVE COINS</span><span>ONE FAMILY</span></p><dl>'+''.join('<div><dt class="'+cl+'">'+c['unit']+'</dt><dd>'+role+'</dd></div>' for c,cl,role in zip(COINS,['d','l','o','n'],['PRIVATE CAPITAL','PRIVATE CASH','BOUNDED AUTHORITY','BONDED SERVICES']))+'</dl></div>',hero)
+    hero=re.sub(r'<div class="hero-readout">[\s\S]*?</dl>[\s\S]*?</div>','<div class="hero-showcase">'+scene('family')+'</div>',hero)
     thesis=fragment(original,'thesis-section')
     thesis=thesis.replace('OPEN explores public accounting for machines.','OPEN makes authority public and bounded. NXXXS connects paid services to evidence and collateral.')
     thesis=thesis.replace('PRIVACY TARGET','PRIVATE LEDGER').replace('RELATIONSHIPS ARE THE PRIVACY TARGET','AMOUNTS AND MEMBERSHIP STAY SEALED').replace('MODEL / PRIVACY DESIGN TARGET','MODEL / PRIVATE VALUE')
@@ -104,8 +113,7 @@ def home():
         panels+='<div class="protocol-panel protocol-'+c['id']+(' is-active' if i==0 else '')+'" id="panel-'+c['id']+'" role="tabpanel" aria-labelledby="tab-'+c['id']+'"><div class="protocol-state"><span>'+c['material']+'</span><strong>'+c['rule']+'</strong></div><h3>'+c['unit']+' <span>/ '+['the one to keep','the one to spend','authority with limits','work with proof'][i]+'</span></h3><p>'+c['description']+'</p><dl class="protocol-facts">'+''.join('<div><dt>'+a+'</dt><dd>'+b+'</dd></div>' for a,b in DETAILS[c['id']][:3])+'</dl><a class="text-link" href="'+c['path']+'">Inside '+c['unit']+' <span aria-hidden="true">↗</span></a></div>'
     first=switch.index('<div class="protocol-panel');switch=switch[:first]+panels+'</div></div></div></section>'
     ethics='<section class="network-section architecture-section" id="principles"><div class="network-shell architecture-grid"><header class="section-intro"><p class="section-index">03 / THE PRINCIPLES</p><h2>Who gets<br><em>the money.</em></h2><p>The distribution matters as much as the supply. Each coin makes a different choice. You should be able to see it.</p></header><div class="architecture-stack">'+''.join('<article class="architecture-card"><p class="architecture-number">0'+str(i+1)+'</p><div><p class="panel-code '+cl+'">'+c['unit']+'</p><h3>'+title+'</h3><p>'+text+'</p></div></article>' for i,(c,cl,title,text) in enumerate(zip(COINS,['d','l','o','n'],['Mined, from beginning to end.','A security budget that continues.','A public endowment allocation.','A finite founder stream.'],['No premine, presale or founder reward. Issuance rises into a delayed peak, then winds down to zero.','All issuance and fees go to miners. A permanent positive tail keeps funding security. Fees stay in circulation.','The current subsidy allocates 11% to the endowment and the rest to miners. The designed dividend is disarmed.','The reference candidate assigns 2% of subsidy to the founder stream for roughly seven target years. It ends before peak issuance.'])))+'</div></div></section>'
-    supply=facts.issuance_study().replace('id="thesis"','id="supply"').replace('class="section issuance-section"','class="network-section issuance-section"').replace('class="container"','class="network-shell"')
-    supply=supply.replace('Time changes<br><em>the distribution.</em>','The shape<br><em>of the supply.</em>')
+    supply=charts.issuance_study(COINS,R)
     ending='<section class="network-section showcase-entry"><div class="network-shell"><header class="section-intro"><p class="section-index">05 / TAKE PART</p><h2>More than<br><em>a balance.</em></h2></header><div class="entry-paths"><a href="/testnet.html"><span>01 / MINE</span><h3>Bring computing power.</h3><p>Scheduled block rewards and transaction fees pay for chain security. RandomX parent work carries the three child commitments.</p><b aria-hidden="true">↗</b></a><a href="/nexus.html"><span>02 / OPERATE</span><h3>Do work someone needs.</h3><p>Relay, prove, solve, coordinate settlement. Service providers earn fees from customers who choose their work.</p><b aria-hidden="true">↗</b></a><a href="/daarx.html"><span>03 / OWN + USE</span><h3>Choose the rules you hold.</h3><p>Private savings, spending balances, Agent backing and service collateral give the coins different reasons to be held and used.</p><b aria-hidden="true">↗</b></a></div></div></section><section class="network-section status-section" id="status"><div class="network-shell showcase-development"><header class="section-intro"><p class="section-index">06 / THE BUILD</p><h2>Next stop.<br><em>Public Testnet.</em></h2><p>Private proofs, transfers, wallets and recovery are in place. Reproducible release work and four-chain integration lead into public participation.</p></header><div class="protocol-actions">'+btn('Inside development','/status.html',True)+btn('The participant path','/testnet.html')+'</div></div></section>'
     strip='<section class="signal-strip" aria-label="The four coin roles"><div class="signal-strip-track">'+''.join('<span><b class="'+cl+'">'+c['unit']+'</b> / '+c['role'].upper()+'</span>' for c,cl in zip(COINS,['d','l','o','n']))+'</div></section>'
     return shell('/','DAARX — Money designed for privacy.','Four coins: private capital, private cash, bounded authority and bonded services. Explore the monetary design and the people it pays.',hero+strip+thesis+switch+ethics+supply+ending,'network-home')
@@ -114,7 +122,15 @@ def utility_page(name,source):
     body=content(source)
     hero=fragment(body,'page-hero')
     # Keep current factual utility prose, in the original site's typography and shell.
-    body=body.replace(hero,hero.replace('page-hero','utility-hero').replace('page-hero-grid','utility-hero-grid'))
+    kind={'status.html':'development','testnet.html':'testnet','break-it.html':'security','mine.html':'hardware','faq.html':'questions','privacy.html':'privacy'}[name]
+    utility_scene=scene(kind).replace('<canvas data-prism-canvas aria-hidden="true"></canvas>','<canvas data-prism-canvas aria-hidden="true"></canvas><div class="prism-map" aria-hidden="true">'+utility_diagram(kind)+'</div>')
+    enhanced=hero.replace('page-hero','utility-hero')
+    enhanced=re.sub(r'<div class="hero-aside">[\s\S]*?</div></div></div><div class="horizon-line"',lambda m:'<div class="hero-aside">'+utility_scene+'</div></div></div><div class="horizon-line"',enhanced)
+    action,anchor={'status.html':('Follow the release work','#release-work'),'testnet.html':('Taking part','#participant-path'),'break-it.html':('Explore the layers','#more'),'mine.html':('Explore configurations','#concepts'),'faq.html':('Search the questions','#questions'),'privacy.html':('Read the data register','#data-register')}[name]
+    enhanced=enhanced.replace('</p></div><div class="hero-aside">','</p><div class="protocol-actions">'+btn(action,anchor,True)+'</div></div><div class="hero-aside">',1)
+    body=body.replace(hero,enhanced)
+    if name in ('status.html','testnet.html'):
+        body=body.replace('<section class="section">','<section class="section" id="'+anchor[1:]+'">',1)
     title=re.search(r'<title>(.*?)</title>',source).group(1)
     desc=re.search(r'<meta name="description" content="([^"]*)',source).group(1)
     schema=None
@@ -123,13 +139,14 @@ def utility_page(name,source):
 
 def build():
     # The data module remains the sole researched fact collection and print author.
+    charts.build_assets(R)
     form=template('hardware-form.fragment')
     pages={'index.html':home()}
     pages.update({c['path'][1:]:coin_page(c) for c in COINS})
     functions={'status.html':facts.status_page,'testnet.html':facts.testnet_page,'break-it.html':facts.security_page,'faq.html':facts.faq_page,'privacy.html':facts.privacy_page,'mine.html':lambda:facts.hardware_page(form)}
     for name,fn in functions.items():pages[name]=utility_page(name,fn())
     qr=re.search(r'<svg[^>]*class="segno"[\s\S]*?</svg>',(R/'flyer.html').read_text()).group()
-    pages['flyer.html']=facts.flyer_page(qr)
+    pages['flyer.html']=facts.flyer_page(qr).replace('<main class="print-sheet">','<main class="print-sheet"><div class="print-sigil" aria-hidden="true">'+svg('family',True)+'</div>')
     for name,s in pages.items():facts.write_page(name,"\n".join(line.rstrip() for line in s.splitlines()))
     print('Generated12 showcase pages from original design and researched four-coin facts.')
 if __name__=='__main__':build()
