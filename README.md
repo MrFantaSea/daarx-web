@@ -25,3 +25,11 @@ The site has no build-time framework, external font request or runtime account
 service. `site.js` provides keyboard-accessible tabs, FAQ filtering, the existing
 interest-form interaction and a procedural spectral visual. The visual honors
 reduced-motion preferences and has a page-local pause control.
+
+The public monetary study follows the selected FEM-20261106-v1 reference.
+To regenerate exact chart data from an independently retained, hash-pinned FEM
+package, run `PYTHONDONTWRITEBYTECODE=1 python3 scripts/build-remodel-data.py
+--model-dir /path/to/selected-model`, then regenerate pages as above. The model
+package is an explicit input; private evidence paths and receipts are excluded
+from public output. The older build-emission-data.py reconstructs the historical
+pre-remodel schedule and must not overwrite the selected public study.

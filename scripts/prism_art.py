@@ -12,12 +12,12 @@ SCENES={
  ('Eventually, zero new coins','The finite integer schedule winds down after about 100 target years. Transaction fees then pay miners.','The horizon')]),
 'l10n':('PRIVATE CASH',[
  ('Money for passing on','Private amounts and native spending rules serve everyday circulation.','Circulate'),
- ('Security keeps getting paid','The monetary design keeps a permanent positive mining tail. Issuance and fees go to miners.','Secure'),
+ ('A baseline beyond the bonus','Selected FEM: 1 L10N per paid block plus a finite 77.7-year bonus, peaking near year 7.77. Issuance and fees go to miners; security is not guaranteed.','Secure'),
  ('Beyond the connection','The offline layer is being developed around local exchange, receipts, later settlement and recovery.','Settle')]),
 'open':('BOUNDED AUTHORITY',[
  ('Someone gives the permission','Human, Institution and Agent are distinct native account classes. Institutions use threshold authority.','Principal'),
  ('Permission has a budget','Per-transaction, epoch and lifetime caps follow the mandate ancestry. Delegation cannot multiply the allowance.','Mandate'),
- ('Capital behind the action','HALO backs admitted Agent value acts. Public accounts and committed records make authority inspectable.','Agent')]),
+ ('Capital and allocation','HALO backs admitted Agent value acts. Selected FEM delays issuance toward year 7.77 while preserving the lifetime budget and 11% endowment share.','Agent')]),
 'nexus':('BONDED SERVICES',[
  ('A customer asks for work','Relays, proofs, solvers and settlement services give the native coin a job to do.','Request'),
  ('A provider commits capital','Native collateral backs declared capacity and obligations. A bond is committed capital.','Commit'),

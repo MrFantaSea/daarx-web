@@ -319,10 +319,10 @@ POLICY = {
  'l10n': dict(line='Money moves.<br>The details don’t.', description='Private cash for the everyday exchange between people.',
    rule='Permanent miner funding', material='PRIVATE CASH', word='Move',
    emission='Security keeps getting paid.',
-   economics='L10N is money for circulation. Its monetary design keeps a permanent positive mining reward, with fees also going to miners. A continuing security budget is part of the money itself.',
+   economics='L10N is money for circulation. The selected FEM model combines a permanent 1 L10N per paid block with a finite distribution bonus. This keeps a nominal miner incentive after the bonus ends; its purchasing power and actual security depend on participation, costs and demand.',
    allocation='All mined. No premine, presale or founder reward. Transaction fees stay with miners; the design does not burn them.',
    numbers=[('∞','positive tail design'),('12','candidate decimal places'),('CTS','shared privacy lineage')],
-   monetary='The structure is a declining reward followed by a fixed, nonzero tail. The current reference curve uses 50 L10N per block, declining to 1. Those numeric parameters and the exact blocktime remain candidates while the economic model is reconciled.',
+   monetary='The selected FEM-20261106-v1 model pays a 1 L10N baseline from the first paid block, plus a bonus rising toward year 7.77 and declining within a finite 77.7-target-year window. The bonus budget is 99,892,796.491812251840 L10N; the baseline continues forever, so supply is uncapped. The block target remains 30 seconds. Consensus integration and release qualification remain pending.',
    detail='Spending patterns deserve privacy. The offline-cash work adds receipts, a separate anti-fraud bond and later settlement to the online money.',
    study='Private spending. Verifiable obligations.', nodes=['Private payer','Sealed amount','Payment proof','Private payee']),
  'open': dict(line='Give permission.<br>Keep the limits.', description='Public accounts and bounded authority for people, institutions and agents.',
@@ -331,7 +331,7 @@ POLICY = {
    economics='OPEN gives delegated activity its own economic structure. Principals fund agents, mandates limit what they can spend, and HALO puts capital behind Agent value acts.',
    allocation='The current subsidy sends 11% to the endowment and the remainder to miners. The designed dividend is disarmed; its share currently goes to miners.',
    numbers=[('7','maximum mandate depth'),('11%','endowment subsidy share'),('HALO','native Agent backing')],
-   monetary='OPEN starts at its highest issuance rate and declines. Its ceiling is 2,718,281,828,459 OPEN, with actual minted supply remaining below it. Base transaction fees burn; priority fees go to miners. Dividend activation is a separate protocol change.',
+   monetary='The selected FEM model rises toward year 7.77, then declines slowly with no permanent tail. Lifetime gross issuance remains exactly 2,718,281,828,456.627160420 OPEN, below the unchanged 2,718,281,828,459 ceiling. Rewards end after height 992,817,450. The block target remains 27 seconds. Base fees burn; priority fees go to miners. Monetary amendment, consensus integration and release qualification remain pending; dividend activation is separate.',
    detail='Per-transaction, per-epoch and lifetime caps apply through the mandate ancestry. Delegating a mandate does not multiply its budget.',
    study='Inspect the authority behind the action.', nodes=['Principal','Mandate + limits','Agent + HALO','Receipt']),
  'nexus': dict(line='Useful work.<br>Something behind it.', description='Proof, relay and settlement services with native collateral behind the commitment.',
@@ -351,7 +351,7 @@ for coin in COINS:
     coin['intro']=coin['description']
     coin['story']=coin['detail']
 
-FAQ = FAQ[:4] + [('What does peak issuance mean?', 'The highest scheduled rate at which new coins enter circulation. DAARX and the NXXXS reference candidate peak near 7.77 target years. OPEN begins at its highest rate. L10N’s current provisional curve declines from its initial reward into a permanent tail.'),('Who receives newly issued coins?', 'DAARX and L10N have no premine, presale or founder reward in the retained monetary policy. OPEN currently allocates 11% to an endowment and the rest to miners, with its dividend disarmed. NXXXS’s reference candidate has a finite 2% founder stream ending before peak; miners receive the remaining subsidy.')] + FAQ[4:]
+FAQ = FAQ[:4] + [('What does peak issuance mean?', 'The highest scheduled rate of new gross issuance. In the selected FEM model all four curves peak near 7.77 target years, then decline. DAARX and NXXXS are unchanged; L10N and OPEN replace their former launch maxima. Heights and existing epochs govern rewards, so target years are approximate timing, not calendar appointments.'),('Who receives newly issued coins?', 'DAARX and L10N have no premine, presale or founder reward in the retained monetary policy. OPEN currently allocates 11% to an endowment and the rest to miners, with its dividend disarmed. NXXXS’s reference candidate has a finite 2% founder stream ending before peak; miners receive the remaining subsidy.')] + FAQ[4:]
 
 def art(cls='', decorative=True):
     return '<div class="dream-art '+cls+'" aria-hidden="true"><picture><source media="(max-width: 600px)" srcset="/assets/dream-gateway-mobile-v1.webp"><img src="'+ART+'" width="1672" height="941" alt="" fetchpriority="high"></picture><canvas data-dream-canvas></canvas><div class="art-vignette"></div></div>'
@@ -425,6 +425,18 @@ FAQ_UPDATES={
  'Why would I hold DAARX?':'For private ownership and a distribution that unfolds over time. DAARX’s issuance peaks around year 7.77, when roughly 22.19% of the literal cap is scheduled to have been issued. The retained monetary policy has no premine, presale or founder reward.'
 }
 FAQ=[(question,FAQ_UPDATES.get(question,answer)) for question,answer in FAQ]
+
+# These answers use the existing searchable, native-details FAQ and shared JSON-LD.
+FAQ += [
+ ('Why distribute coins gradually?', 'A slower start leaves more issuance available as participation and software access develop. In the selected model, L10N first-year issuance falls from about 41.89 million to 2.13 million; OPEN falls from about 98.19 billion to 5.64 billion. This reduces the advantage of arriving at launch, but mining access, equipment, electricity costs and concentration still determine who receives coins. Lower early rewards also make launch security an important tradeoff.'),
+ ('Does year 7.77 prove fairness?', 'No. The 7.77 and 77.7 motifs are symbolic design choices. Fairness depends on practical access, participation and transparent allocations. A delayed peak does not promise equal ownership, demand, price or returns. L10N has already distributed more than half its finite bonus by peak; the claim that most supply remains after peak applies to DAARX, not automatically to every coin.'),
+ ('Does L10N have a supply cap or guaranteed security?', 'L10N remains uncapped. Its selected model adds a finite 77.7-target-year bonus to a permanent 1 L10N baseline per paid block. A nominal floor supports continuing miner incentives, but cannot guarantee sufficient security: reward purchasing power, mining costs, fees and participation matter. Continuing issuance also dilutes existing balances.'),
+ ('Does the OPEN remodel create more coins?', 'No. It redistributes the same lifetime gross budget of 2,718,281,828,456.627160420 OPEN over time, with no permanent tail. Cumulative issuance never exceeds the former schedule. The 11% endowment allocation and miner remainder are retained with the dividend disarmed; early endowment receipts fall, and per-block rounding means its exact lifetime receipts differ slightly.'),
+ ('What makes an allocation ethical?', 'Disclosure lets people judge the tradeoffs. DAARX and L10N have no premine, presale or founder reward. OPEN directs 11% of subsidy to an endowment, concentrating resources there while reducing the miner share. NXXXS retains its finite 2% founder stream, ending before peak. These are visible policy choices, not proof of fair ownership; who can actually mine matters too.'),
+ ('Are the FEM curves already active on a public network?', 'FEM-20261106-v1 is the selected economic reference. Consensus integration, qualification and release remain pending. This explanation does not establish activation, public-network readiness or a mainnet launch.')
+]
+
+FAQ += [('Why is this architecture suited to a future of people, institutions and AI?', 'People need private savings and payments. Institutions need shared authority and clear records. AI agents need permission to act within enforceable limits. The four native roles give those needs distinct rules: DAARX for private capital, L10N for private spending, OPEN for accountable authority and NXXXS for chosen bonded services. OPEN delegation consumes ancestor budgets, including fees, so passing authority onward does not create more spending power. Providers earn when customers select their services; ordinary sibling-chain transfers incur no automatic NXXXS toll. Shared mining connects the chains while each validates its own rules. This is a concrete design for useful automation under human and institutional control. Private tests support specific components; complete public deployment remains ahead.')]
 
 if __name__ == '__main__':
     build()
