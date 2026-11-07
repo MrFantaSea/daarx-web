@@ -33,3 +33,10 @@ package, run `PYTHONDONTWRITEBYTECODE=1 python3 scripts/build-remodel-data.py
 package is an explicit input; private evidence paths and receipts are excluded
 from public output. The older build-emission-data.py reconstructs the historical
 pre-remodel schedule and must not overwrite the selected public study.
+
+The protocol-atlas presentation is authored in `scripts/atelier.py`, with a
+local deterministic sculpture in `scripts/atelier_art.py`. `atelier.css`,
+`atelier.js` and `atlas-story.js` supply responsive presentation and progressive
+interactions. No service credentials, third-party scripts or new dependencies
+are needed. Visual changes leave the selected monetary JSON and exact chart
+geometry independent of presentation.
